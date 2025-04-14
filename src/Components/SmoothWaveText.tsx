@@ -15,7 +15,7 @@ interface SmoothWaveTextProps extends TypographyProps {
 const SmoothWaveText: React.FC<SmoothWaveTextProps> = ({
   children,
   fontSize,
-  fontFamily = 'GilroyBold, sans-serif',
+  fontFamily = 'Inter, sans-serif',
   color = '#1a1a1a',
   sx,
   variant = 'h1',
@@ -33,35 +33,29 @@ const SmoothWaveText: React.FC<SmoothWaveTextProps> = ({
       scale: 0.9,
     });
 
-    const trigger = ScrollTrigger.create({
-      trigger: containerRef.current,
-      start: 'top 85%',
-      end: 'bottom 5%',
-      onEnter: () => {
-        gsap.to(chars, {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 0.8,
-          ease: 'power2.out',
-          stagger: {
-            amount: 0.5,
-            from: 'center',
-            ease: 'power2.inOut',
-          },
-        });
+    const tl = gsap.to(chars, {
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      duration: 0.8,
+      ease: 'power2.out',
+      stagger: {
+        amount: 0.5,
+        from: 'center',
+        ease: 'power2.inOut',
       },
-      onLeaveBack: () => {
-        gsap.set(chars, {
-          y: 30,
-          opacity: 0,
-          scale: 0.9,
-        });
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 85%',
+        end: 'bottom 5%',
+        toggleActions: 'play none none none',
+        scrub: false,
       },
     });
 
     return () => {
-      trigger.kill();
+      tl.scrollTrigger?.kill();
+      tl.kill();
     };
   }, [children]);
 
@@ -73,7 +67,7 @@ const SmoothWaveText: React.FC<SmoothWaveTextProps> = ({
     ));
 
   return (
-    <Box ref={containerRef} sx={{ overflow: 'hidden' }}>
+    <Box ref={containerRef} sx={{ overflow: 'hidden',  }}>
       <Typography
         variant={variant}
         component={variant}
