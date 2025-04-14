@@ -1,0 +1,150 @@
+.headerlg {
+    
+    overflow: hidden;
+    transform: translateY(0);
+    transition: all .3s ease
+}
+
+ /* .overlay_bg:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #171818;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    z-index: 1;
+    transition: all .3s ease
+} */
+
+.headerlg.opened .overlay_bg:after,
+.headerlg.opened .overlay_bg:before {
+    border-radius: 0
+}
+
+.headerlg .overlay_bg:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    /* background-image: url(../assets/images/home/headerbg.png); */
+    background-repeat: repeat;
+    opacity: .3;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    /* z-index: 100; */
+    transition: all .3s ease
+}
+
+.headerlg .overlay_content {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #343434;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    padding: 10px 45px;
+    align-items: center;
+    transition: all .3s ease
+    
+}
+
+
+/* .headerlg.opened .overlay_content {
+    padding: 15px 75px;
+    border-radius: 0
+} */
+
+.headerlg .logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-right: 35px;
+    position: relative
+}
+
+.headerlg .logo:before {
+    position: absolute;
+    content: "";
+    background-color: #fff;
+    width: 1px;
+    top: -1000px;
+    bottom: -1000px;
+    right: 0
+}
+
+/* .headerlg .logo img {
+    max-width: 200px;
+    max-height: 80px
+} */
+
+/* .headerlg ul {
+    display: flex;
+    margin-right: -46px
+} */
+
+/* .headerlg li {
+    margin-right: 46px
+} */
+
+.headerlg .menu  {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .3s ease
+}
+
+.headerlg .menu a.active,
+.headerlg .menu a:hover,
+.headerlg .menu li.current a {
+    color: #0F63A5
+}
+
+.headerlg .button {
+    /* border-left: 1px solid #343434; */
+    padding-left: 35px;
+    position: relative;
+    font-family: 'GilroyMedium,  sans-serif',
+
+}
+
+.headerlg .button:before {
+    position: absolute;
+    content: "";
+    background-color: #fff;
+    width: 1px;
+    top: -1000px;
+    bottom: -1000px;
+    left: 0
+}
+
+.headerlg .button  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0F63A5;
+    text-align: center;
+    line-height: 1;
+    /* padding: 20px 40px; */
+    border-radius: 10px;
+    color: #171818;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    /* transition: all .3s ease */
+    font-family: 'GilroyMedium,  sans-serif',
+}
+
+.drawer-content .Mui-selected {
+  border-left: 4px solid #000; /* Active state border */
+}
+
+.drawer-content .MuiListItemButton {
+  color: #FFF; /* Ensure white color for menu items */
+}
+
+.drawer-content .MuiListItemButton:hover {
+  background-color: transparent;
+  border-left: 4px solid #000; /* Hover state border */
+}
+

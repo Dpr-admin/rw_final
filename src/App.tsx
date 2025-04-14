@@ -1,26 +1,59 @@
-import React from 'react';
-import logo from './logo.svg';
+// App.tsx
+import React, { useState, useEffect } from 'react';
+import { Box, ThemeProvider } from '@mui/material';
+import { RouterProvider } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
+import router from './Routes/routes';
+import { theme } from './Theme/theme';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Preloader from './Components/Preloader';
+import CustomCursor from './Components/CustomCursor';
+// import { CustomCursor } from './Components/CustomCursor'; // Use named import
 
-function App() {
+// Create a new instance of QueryClient
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
+
+const App: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <QueryClientProvider client={queryClient}>
+        <Box className="App">
+
+          <CustomCursor />
+          <RouterProvider router={router} />
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
+
+        </Box>
+      </QueryClientProvider>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
+
+
+
+
+
+
+
