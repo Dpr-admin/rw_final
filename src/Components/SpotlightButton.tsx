@@ -9,7 +9,8 @@ interface SpotlightButtonProps {
   textColor?: string;
   spotlightColor?: string;
   innerBackground?: string;
-  sx?: SxProps<Theme>; // ✅ Accept sx prop for custom styling
+  activeTextColor?: string; // ✅ color when spotlight is active
+  sx?: SxProps<Theme>;
 }
 
 const SpotlightButton: React.FC<SpotlightButtonProps> = ({
@@ -19,6 +20,7 @@ const SpotlightButton: React.FC<SpotlightButtonProps> = ({
   textColor = '#818cf8',
   spotlightColor = 'linear-gradient(to right, #4f46e5, #818cf8)',
   innerBackground = 'transparent',
+  activeTextColor = '#0a0a0a', // ✅ default active color
   sx = {},
 }) => {
   const spotlightRef = useRef<HTMLSpanElement | null>(null);
@@ -72,7 +74,7 @@ const SpotlightButton: React.FC<SpotlightButtonProps> = ({
           overflow: 'hidden',
           border: 'none',
           width: '100%',
-          ...sx, // ✅ Spread the custom styles here
+          ...sx,
         }}
       >
         {/* Spotlight */}
@@ -102,8 +104,9 @@ const SpotlightButton: React.FC<SpotlightButtonProps> = ({
             fontSize: '16px',
             color: textColor,
             transition: '300ms ease',
-            '&:hover': {
-              color: '#0a0a0a',
+            pointerEvents: 'none', // prevent direct hover
+            '.MuiButtonBase-root:hover &': {
+              color: activeTextColor, // ✅ when button hovered (spotlight active)
             },
           }}
         >

@@ -34,7 +34,7 @@ const Banner = () => {
                   <Typography
                     variant="h1"
                     sx={{
-                      fontSize: {xs:'50px',md:'60px'},
+                      fontSize: {xs:'50px',md:'40px'},
                       fontWeight: 500,
                       lineHeight: 1,
                       color: 'transparent',
@@ -53,7 +53,7 @@ const Banner = () => {
                       src={Homeimages.rwsign} // Replace with the actual image path
                       alt="Rajiv Williams"
                       sx={{
-                      width: {xs:'250px',md:'350px'},
+                      width: {xs:'250px',md:'400px'},
                       height: '150px',
                       }}
                     />
@@ -165,12 +165,20 @@ const Banner = () => {
                     >
                       <Box component="span" 
                       sx={{
+                         fontFamily: 'Holimount, sans-serif !important' ,
+                         fontSize: {xs:'50px',md:'90px'},
+                         color:'primary.main',
+                         fontWeight: 800,
+                         }}>
+                        L
+                      </Box><Box component="span" 
+                      sx={{
                          fontFamily: 'Moderline, sans-serif !important' ,
                          fontSize: {xs:'50px',md:'50px'},
                          color:'primary.main',
                          fontWeight: 800,
                          }}>
-                        Luxury
+                        uxury
                       </Box>{' '}
                       Sales Mentor
                     </Typography>

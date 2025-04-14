@@ -533,8 +533,9 @@ const Header: React.FC = () => {
                  onClick={handlePopupOpen}
                   background="linear-gradient(to right, #fff, #fff)"
                   textColor="#fff"
-                  spotlightColor="linear-gradient(to right, #000, #000)"
+                  spotlightColor="linear-gradient(to right, #fff, #fff)"
                   innerBackground="#0f63a5" 
+                  activeTextColor="#0f63a5"
                   sx={{
                   display: 'flex',
                   alignItems: 'center',
