@@ -478,6 +478,15 @@ const Header: React.FC = () => {
             {!isMobile && renderDesktopMenu()}
 
             <Box />
+            <Box
+              sx={{
+                width: '1px',
+                backgroundColor: '#ffffff66',
+                margin: '0 20px',
+                alignSelf: 'stretch',
+                display: isMobile ? 'none' : 'block',
+              }}
+            />
             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: '20px' }}>
               {!isMobile && (
                 // <Box className="button" sx={{ pl: '35px', }}>
@@ -521,22 +530,28 @@ const Header: React.FC = () => {
                 //   </Box>
                 // </Box>
                  <SpotlightButton
+                 onClick={handlePopupOpen}
                   background="linear-gradient(to right, #fff, #fff)"
                   textColor="#fff"
                   spotlightColor="linear-gradient(to right, #000, #000)"
                   innerBackground="#0f63a5" 
+                  sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  }}
                 >
-                  Submit
-                    <Box
-                      component="img"
-                      src={Homeimages.arrow}
-                      alt="arrow"
-                      sx={{
-                        width: '16px',
-                        marginLeft: '8px',
-                        filter: 'brightness(0) invert(1)',
-                      }}
-                    />
+                  Let's talk
+                  <Box
+                    component="img"
+                    src={Homeimages.arrow}
+                    alt="arrow"
+                    sx={{
+                    width: '16px',
+                    marginLeft: '8px',
+                    filter: 'brightness(0) invert(1)',
+                    }}
+                  />
                  
                 </SpotlightButton>
               )}

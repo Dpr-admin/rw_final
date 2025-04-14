@@ -158,7 +158,7 @@ const ContactCards = () => {
                                 {card.label}
                             </Typography>
                             <Typography
-                                variant="body1"
+                                variant="body2"
                                 className="hover-text"
                                 sx={{
                                     color: 'black',

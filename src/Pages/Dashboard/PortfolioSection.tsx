@@ -7,6 +7,7 @@ import EastIcon from '@mui/icons-material/East';
 import Marquee from 'react-fast-marquee';
 import { PortfolioDetailsData } from '../Portfolio/PortfolioDetails/PortfolioData';
 import SmoothWaveText from '../../Components/SmoothWaveText';
+import SpotlightButton from '../../Components/SpotlightButton';
 
 
 interface PortfolioItem {
@@ -203,7 +204,7 @@ const PortfolioSection: React.FC = () => {
                                                             {item.title}
                                                         </SmoothWaveText>
                                                     </Box>
-                                                    <Box
+                                                    {/* <Box
                                                     className='cursor-hover-target'
 
                                                         sx={{
@@ -222,7 +223,16 @@ const PortfolioSection: React.FC = () => {
                                                         }}
                                                     >
                                                         <EastIcon />
-                                                    </Box>
+                                                    </Box> */}
+                                                    <SpotlightButton
+                                                        background="linear-gradient(to right, #fff, #fff)"
+                                                        textColor="#fff"
+                                                        spotlightColor="linear-gradient(to right, #000, #000)"
+                                                        innerBackground="#0f63a5"
+                                                        sx={{px:2}}
+                                                    >
+                                                        <EastIcon />
+                                                    </SpotlightButton>
                                                 </Box>
                                             </Box>
                                         </Grid>

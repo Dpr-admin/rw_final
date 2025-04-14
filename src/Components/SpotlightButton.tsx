@@ -1,5 +1,5 @@
 import React, { useRef, MouseEvent, ReactNode } from 'react';
-import { Box, ButtonBase } from '@mui/material';
+import { Box, ButtonBase, SxProps, Theme } from '@mui/material';
 import { gsap } from 'gsap';
 
 interface SpotlightButtonProps {
@@ -8,7 +8,8 @@ interface SpotlightButtonProps {
   background?: string;
   textColor?: string;
   spotlightColor?: string;
-  innerBackground?: string; // ✅ NEW PROP
+  innerBackground?: string;
+  sx?: SxProps<Theme>; // ✅ Accept sx prop for custom styling
 }
 
 const SpotlightButton: React.FC<SpotlightButtonProps> = ({
@@ -17,7 +18,8 @@ const SpotlightButton: React.FC<SpotlightButtonProps> = ({
   background = 'linear-gradient(to right, #4f46e5, #818cf8)',
   textColor = '#818cf8',
   spotlightColor = 'linear-gradient(to right, #4f46e5, #818cf8)',
-  innerBackground = 'transparent', // ✅ Default transparent if none provided
+  innerBackground = 'transparent',
+  sx = {},
 }) => {
   const spotlightRef = useRef<HTMLSpanElement | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
@@ -48,7 +50,7 @@ const SpotlightButton: React.FC<SpotlightButtonProps> = ({
     <Box
       sx={{
         display: 'inline-flex',
-        borderRadius: '23.5px',
+        borderRadius: '8px',
         padding: '2px',
         background: background,
       }}
@@ -64,12 +66,13 @@ const SpotlightButton: React.FC<SpotlightButtonProps> = ({
           alignItems: 'center',
           justifyContent: 'center',
           height: 45,
-          px: 6,
-          borderRadius: '22.5px',
-          backgroundColor: innerBackground, // ✅ Dynamic background color
+          px: 4,
+          borderRadius: '8px',
+          backgroundColor: innerBackground,
           overflow: 'hidden',
           border: 'none',
           width: '100%',
+          ...sx, // ✅ Spread the custom styles here
         }}
       >
         {/* Spotlight */}
@@ -89,19 +92,19 @@ const SpotlightButton: React.FC<SpotlightButtonProps> = ({
           }}
         />
 
-        {/* Text */}
+        {/* Text/Icon */}
         <Box
           sx={{
             position: 'relative',
             zIndex: 2,
             fontFamily: 'sans-serif',
             fontWeight: 700,
-            fontSize: '18px',
+            fontSize: '16px',
             color: textColor,
             transition: '300ms ease',
-            // '&:hover': {
-            //   color: '#0a0a0a',
-            // },
+            '&:hover': {
+              color: '#0a0a0a',
+            },
           }}
         >
           {children}

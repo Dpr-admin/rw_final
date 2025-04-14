@@ -23,6 +23,7 @@ import {
 import CustomInput from '../../Components/CustomInput';
 import { Homeimages } from '../../assets';
 import AnimatedBorderButton from '../../Components/AnimatedBorderButton';
+import SpotlightButton from '../../Components/SpotlightButton';
 
 
 const socialLinks: { name: string; url: string }[] = [
@@ -34,7 +35,7 @@ const socialLinks: { name: string; url: string }[] = [
 
 const ContactSection = () => {
   return (
-    <Box sx={{ bgcolor: '#0f63a5', color: '#fff', mt:5}}>
+    <Box sx={{ bgcolor: '#0f63a5', color: '#fff', mt: 5 }}>
       {/* Vertical Divider */}
 
 
@@ -80,7 +81,7 @@ const ContactSection = () => {
                 </Box>
                 <Box sx={{ display: "flex", alignItems: "start", gap: { xs: 2, lg: 0 } }}>
                   <Email sx={{ fontSize: { xs: 50, lg: 24 }, color: "white", minWidth: "40px" }} />
-                  <Link href="mailto:connect@rajivwilliams.com" color="inherit" sx={{ textDecoration: "none", fontSize: { xs: "20px",  md: "16px" } }}>
+                  <Link href="mailto:connect@rajivwilliams.com" color="inherit" sx={{ textDecoration: "none", fontSize: { xs: "20px", md: "16px" } }}>
                     connect@rajivwilliams.com
                   </Link>
                 </Box>
@@ -193,7 +194,7 @@ const ContactSection = () => {
                   </AnimatedBorderButton>
 
                 </Grid>
-               
+
 
               </Grid>
             </Grid>
@@ -218,7 +219,7 @@ const ContactSection = () => {
 
             {/* Center: Scroll to Top */}
             <Grid item xs={12} md={4} sx={{ textAlign: 'center' }}>
-              <IconButton
+              {/* <IconButton
                 sx={{
                   bgcolor: 'white',
                   color: '#000',
@@ -231,7 +232,17 @@ const ContactSection = () => {
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               >
                 <NorthIcon />
-              </IconButton>
+              </IconButton> */}
+              <SpotlightButton
+                background="linear-gradient(to right, #fff, #fff)"
+                textColor="#fff"
+                spotlightColor="linear-gradient(to right, #000, #000)"
+                innerBackground="#0f63a5"
+                sx={{ px: 1 }}
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
+                <NorthIcon />
+              </SpotlightButton>
             </Grid>
 
             {/* Right: Terms */}

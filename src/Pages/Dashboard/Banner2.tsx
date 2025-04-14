@@ -155,7 +155,7 @@ const Banner = () => {
                     <Typography
                       variant='h1'
                       sx={{
-                        fontSize: {xs:'38px',md:'100px'}, 
+                        fontSize: {xs:'38px',md:'90px'}, 
                         fontWeight: 500,
                         lineHeight: 1,
                         color: 'black',
@@ -165,8 +165,8 @@ const Banner = () => {
                     >
                       <Box component="span" 
                       sx={{
-                         fontFamily: 'Holimount, sans-serif !important' ,
-                         fontSize: {xs:'50px',md:'100px'},
+                         fontFamily: 'Moderline, sans-serif !important' ,
+                         fontSize: {xs:'50px',md:'50px'},
                          color:'primary.main',
                          fontWeight: 800,
                          }}>
