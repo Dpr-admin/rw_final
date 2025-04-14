@@ -8,6 +8,7 @@ interface SpotlightButtonProps {
   background?: string;
   textColor?: string;
   spotlightColor?: string;
+  innerBackground?: string; // ✅ NEW PROP
 }
 
 const SpotlightButton: React.FC<SpotlightButtonProps> = ({
@@ -16,6 +17,7 @@ const SpotlightButton: React.FC<SpotlightButtonProps> = ({
   background = 'linear-gradient(to right, #4f46e5, #818cf8)',
   textColor = '#818cf8',
   spotlightColor = 'linear-gradient(to right, #4f46e5, #818cf8)',
+  innerBackground = 'transparent', // ✅ Default transparent if none provided
 }) => {
   const spotlightRef = useRef<HTMLSpanElement | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
@@ -64,7 +66,7 @@ const SpotlightButton: React.FC<SpotlightButtonProps> = ({
           height: 45,
           px: 6,
           borderRadius: '22.5px',
-          backgroundColor: 'transparent',
+          backgroundColor: innerBackground, // ✅ Dynamic background color
           overflow: 'hidden',
           border: 'none',
           width: '100%',
@@ -97,9 +99,9 @@ const SpotlightButton: React.FC<SpotlightButtonProps> = ({
             fontSize: '18px',
             color: textColor,
             transition: '300ms ease',
-            '&:hover': {
-              color: '#0a0a0a',
-            },
+            // '&:hover': {
+            //   color: '#0a0a0a',
+            // },
           }}
         >
           {children}

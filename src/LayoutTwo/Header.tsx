@@ -523,7 +523,8 @@ const Header: React.FC = () => {
                  <SpotlightButton
                   background="linear-gradient(to right, #fff, #fff)"
                   textColor="#fff"
-                  spotlightColor="linear-gradient(to right, #f97316, #fb923c)"
+                  spotlightColor="linear-gradient(to right, #000, #000)"
+                  innerBackground="#0f63a5" 
                 >
                   Submit
                     <Box
@@ -533,6 +534,7 @@ const Header: React.FC = () => {
                       sx={{
                         width: '16px',
                         marginLeft: '8px',
+                        filter: 'brightness(0) invert(1)',
                       }}
                     />
                  
