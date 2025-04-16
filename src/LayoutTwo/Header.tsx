@@ -195,10 +195,11 @@ const Header: React.FC = () => {
       submenu: [
         { label: "Mentoring", route: "/services/mentoring" },
         { label: "Sales", route: "/services/sales" },
+        { label: "Branding", route: "/services/branding" },
       ],
     },
     { label: "Portfolio", route: "/portfolio" },
-    { label: "Blog", route: "/blog" },
+    { label: "Blogs", route: "/blog" },
     { label: "Contact Us", route: "/contactus" },
   ];
 
@@ -211,7 +212,12 @@ const Header: React.FC = () => {
           (item.label === "Home" && location.pathname === "/");
 
         return (
-          <Box key={index} sx={{ position: "relative" }} onMouseEnter={() => handleDropdownToggle(item.label)} onMouseLeave={() => setDropdownOpen(null)}>
+          <Box
+            key={index}
+            sx={{ position: "relative" }}
+            onMouseEnter={() => handleDropdownToggle(item.label)}
+            onMouseLeave={() => setDropdownOpen(null)}
+          >
             <Typography
               className="nav-link"
               variant="body2"
@@ -219,6 +225,25 @@ const Header: React.FC = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
+                position: 'relative',
+                color: isActive ? '#000 !important' : '#000',
+                '&:hover': {
+                  color: '#CF464E',
+                },
+                '&:before': {
+                  content: "''",
+                  position: 'absolute',
+                  bottom: '-4px',
+                  width: '100%',
+                  height: '2px',
+                  backgroundColor: '#fff',
+                  transform: isActive ? 'scale(1)' : 'scale(0)',
+                  transformOrigin: '50%',
+                  transition: 'transform 0.27s',
+                },
+                '&:hover:before': {
+                  transform: 'scale(1)',
+                },
               }}
               onClick={() => handleNavigate(item.route)}
             >
@@ -226,44 +251,38 @@ const Header: React.FC = () => {
             </Typography>
 
             {item.submenu && dropdownOpen === item.label && (
-              <Box className="dropdown-menu" ref={dropdownRef}>
-                {item.submenu.map((subItem, subIndex) => {
-                  const isSubItemActive =
-                    location.pathname === subItem.route ||
-                    (subItem.label === "Mentoring" && location.pathname.startsWith("/services/mentoring")) ||
-                    (subItem.label === "Sales" && location.pathname.startsWith("/services/sales"));
-
-                  return (
-                    <Box key={subIndex}>
-                        <Typography
-                        className="dropdown-item"
-                        variant="body2"
-                        onClick={() => handleNavigate(subItem.route)}
-                        sx={{
-                          display: 'flex',
-                          justifyContent: 'start',
-                          alignItems: 'start',
-                          cursor: 'pointer',
-                          // borderLeft: isSubItemActive ? "3px solid red" : "3px solid transparent",
-                          // backgroundColor: isSubItemActive ? "#0f63a5" : "transparent",
-                          // color: isSubItemActive ? "white" : "inherit",
-                          // padding: "8px 16px",
-                          borderRadius: "4px",
-                          // '&:hover': {
-                          // backgroundColor: "#0f63a5",
-                          // color: "white",
-                          // },
-                        }}
-                        >
-                        {subItem.label}
-                        </Typography>
-
-                      {subIndex !== item.submenu.length - 1 && (
-                        <Divider sx={{ backgroundColor: "gray" }} />
-                      )}
-                    </Box>
-                  );
-                })}
+              <Box
+                className="dropdown-menu"
+                ref={dropdownRef}
+                sx={{
+                  position: "absolute",
+                  top: "100%",
+                  left: 0,
+                  overflow: "hidden",
+                }}
+              >
+                {item.submenu.map((subItem, subIndex) => (
+                  <Box
+                    key={subIndex}
+                    className={`dropdown-item-${subIndex + 1}`}
+                    sx={{
+                      padding: "15px 46px",
+                      cursor: "pointer",
+                      opacity: 0,
+                      transform: "translateX(60px)",
+                      animation: `translateX 300ms ${(subIndex + 1) * 60}ms ease-in-out forwards`,
+                      '&:hover': {
+                        backgroundColor: "rgba(1, 5, 15, 0.8)",
+                        color: "white",
+                      },
+                      background: "rgba(52, 73, 94, 0.8)",
+                      width: "100px",
+                    }}
+                    onClick={() => handleNavigate(subItem.route)}
+                  >
+                    {subItem.label}
+                  </Box>
+                ))}
               </Box>
             )}
           </Box>
@@ -309,8 +328,28 @@ const Header: React.FC = () => {
       </IconButton>
 
       {/* Logo */}
-      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mt: 6, mb: 4 }}>
-        <Box component="img" src={Homeimages.rwlogo} alt="Logo" sx={{ width: "100px", height: "100px" }} />
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          mt: 6,
+          mb: 4,
+          opacity: 0,
+          transform: "translateX(60px)",
+          animation: `translateX 300ms ease-in-out forwards`,
+        }}
+      >
+        <Box
+          component="img"
+          src={Homeimages.rwlogo}
+          alt="Logo"
+          sx={{
+            width: "100px",
+            height: "100px",
+            color: "#FFF !important", // Ensure logo text color is white
+          }}
+        />
       </Box>
 
       {/* Navigation List */}
@@ -337,10 +376,20 @@ const Header: React.FC = () => {
                   color: "#FFF !important", // Ensure menu item text is white in mobile view
                   fontSize: "32px",
                   transition: "border-left 0.3s ease-in-out",
-                  borderLeft: isActive ? "3px solid black" : "3px solid transparent", 
+                  borderLeft: isActive ? "3px solid black" : "3px solid transparent",
+                  padding: "15px 46px",
+                  cursor: "pointer",
+                  opacity: 0,
+                  transform: "translateX(60px)",
+                  animation: `translateX 300ms ${index * 60}ms ease-in-out forwards`,
+                  '&:hover': {
+                    backgroundColor: "rgba(1, 5, 15, 0.8)",
+                    color: "white",
+                  },
+                  // background: "rgba(52, 73, 94, 0.8)",
                 }}
               >
-                <ListItemText primary={item.label} />
+                <ListItemText style={{color:'white'}} primary={item.label} />
                 {item.submenu && (
                   <ArrowDropDownIcon sx={{ transform: drawerSubmenuOpen === item.label ? "rotate(180deg)" : "rotate(0deg)" }} />
                 )}
@@ -364,7 +413,17 @@ const Header: React.FC = () => {
                           fontSize: "20px",
                           pl: 4,
                           transition: "border-left 0.3s ease-in-out",
-                          borderLeft: isSubItemActive ? "3px solid red" : "3px solid transparent", 
+                          borderLeft: isSubItemActive ? "3px solid black" : "3px solid transparent",
+                          padding: "15px 46px",
+                          cursor: "pointer",
+                          opacity: 0,
+                          transform: "translateX(60px)",
+                          animation: `translateX 300ms ${(subIndex + 1) * 60}ms ease-in-out forwards`,
+                          '&:hover': {
+                            backgroundColor: "rgba(1, 5, 15, 0.8)",
+                            color: "white",
+                          },
+                          background: "none", // Removed background change
                         }}
                       >
                         {subItem.label}
@@ -446,6 +505,30 @@ const Header: React.FC = () => {
       color: '#FFFFFF',
     },
   };
+
+  // Add the keyframes for the translateX animation
+  const styles = `
+    @keyframes translateX {
+      0% {
+        opacity: 0;
+        transform: translateX(60px);
+      }
+      80% {
+        transform: translateX(-5px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+  `;
+
+  // Inject the styles into the document
+  const styleSheet = document.createElement("style");
+  styleSheet.type = "text/css";
+  styleSheet.innerText = styles;
+  document.head.appendChild(styleSheet);
+
   return (
     <Container maxWidth='lg'>
       {/* Navigation Bar */}
@@ -489,46 +572,6 @@ const Header: React.FC = () => {
             />
             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: '20px' }}>
               {!isMobile && (
-                // <Box className="button" sx={{ pl: '35px', }}>
-                //   <Box
-                //     onClick={handlePopupOpen}
-                //     sx={{
-                //       display: 'flex',
-                //       justifyContent: 'center',
-                //       alignItems: 'center',
-                //       backgroundColor: '#ffffff',
-                //       textAlign: 'center',
-                //       lineHeight: 1,
-                //       padding: '20px 40px',
-                //       borderRadius: '10px',
-                //       color: '#0F63A5',
-                //       fontSize: '18px',
-                //       fontWeight: 700,
-                //       textDecoration: 'none',
-                //       whiteSpace: 'nowrap',
-                //       cursor: 'pointer',
-                //       fontFamily: 'GilroyMedium, sans-serif',
-                //       '&:hover': {
-                //         backgroundColor: '#000',
-                //         color: '#ffffff',
-                //       },
-                //       '&:hover img': {
-                //         filter: 'brightness(0) invert(1)',
-                //       },
-                //     }}
-                //   >
-                //     Let's talk
-                //     <Box
-                //       component="img"
-                //       src={Homeimages.arrow}
-                //       alt="arrow"
-                //       sx={{
-                //         width: '16px',
-                //         marginLeft: '8px',
-                //       }}
-                //     />
-                //   </Box>
-                // </Box>
                  <SpotlightButton
                  onClick={handlePopupOpen}
                   background="linear-gradient(to right, #fff, #fff)"

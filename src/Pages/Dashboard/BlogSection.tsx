@@ -8,13 +8,14 @@ import { useNavigate } from 'react-router-dom';
 import { blogContent } from '../Blog/BlogDetails/blogContent';
 import SmoothWaveText from '../../Components/SmoothWaveText';
 import TextFillScroll from '../../Components/TextFillScroll';
+import ImageReveal from '../../Components/ImageReveal';
 
 // Replace the hardcoded blogPosts array with data from blogContent
-const blogPosts = blogContent.map(({ id, date, title, featuredImage }) => ({
+const blogPosts = blogContent.map(({ id, date, title, blogtitleImage }) => ({
     id,
     date,
     title,
-    image: featuredImage,
+    image: blogtitleImage,
 }));
 
 const marqueeWords = [
@@ -130,7 +131,7 @@ const BlogSection = () => {
                                     {/* <Typography  className='cursor-hover-target' variant="h3" sx={{ mt: 1, mb: 2 }}>
                                         {post.title}
                                     </Typography> */}
-                                    <TextFillScroll textColor="#777777" fillColor="#000">
+                                    <TextFillScroll textColor="#777777" fillColor="#000" sx={{ fontsize: "20px" }}>
                                         {post.title}
                                     </TextFillScroll>
                                     <Typography
@@ -149,7 +150,7 @@ const BlogSection = () => {
                                     </Typography>
                                 </Grid>
                                 <Grid item xs={12} md={5}>
-                                    <Box
+                                    {/* <Box
                                         component="img"
                                         src={post.image}
                                         alt={post.title}
@@ -159,11 +160,28 @@ const BlogSection = () => {
                                             borderRadius: 1,
                                             objectFit: 'cover',
                                         }}
+                                    /> */}
+                                    <ImageReveal
+                                        src={post.image}
+                                        alt={post.title}
+                                        width="100%"
+                                        height="250px"
+                                        threshold={0.8}
+                                        scaleDuration={3}
                                     />
                                 </Grid>
                             </Grid>
                         </Box>
                     ))}
+
+                    {/* <ImageReveal
+        src="https://images.unsplash.com/photo-1580215935060-a5adc57c5157?auto=format&fit=crop&w=634&q=80"
+        alt="Mountain"
+        width="100%"
+        height="300px"
+        threshold={0.8}
+        scaleDuration={3}
+      /> */}
                 </Box>
             </Container>
         </Box>

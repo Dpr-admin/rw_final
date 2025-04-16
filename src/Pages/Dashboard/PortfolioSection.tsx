@@ -8,6 +8,7 @@ import Marquee from 'react-fast-marquee';
 import { PortfolioDetailsData } from '../Portfolio/PortfolioDetails/PortfolioData';
 import SmoothWaveText from '../../Components/SmoothWaveText';
 import SpotlightButton from '../../Components/SpotlightButton';
+import ImageReveal from '../../Components/ImageReveal';
 
 
 interface PortfolioItem {
@@ -163,7 +164,7 @@ const PortfolioSection: React.FC = () => {
                                                         },
                                                     }}
                                                 >
-                                                    <img
+                                                    {/* <img
                                                         src={item.image}
                                                         alt={item.title}
                                                         style={{
@@ -173,6 +174,15 @@ const PortfolioSection: React.FC = () => {
                                                             transition: 'all .3s ease',
                                                         }}
 
+                                                    /> */}
+
+                                                    <ImageReveal
+                                                        src={item.image}
+                                                        alt={item.title}
+                                                        width="100%"
+                                                        height="300px"
+                                                        threshold={0.8}
+                                                        scaleDuration={3}
                                                     />
                                                 </Box>
 
@@ -230,7 +240,7 @@ const PortfolioSection: React.FC = () => {
                                                         spotlightColor="linear-gradient(to right, #fff, #fff)"
                                                         innerBackground="#0f63a5"
                                                         activeTextColor='#0f63a5'
-                                                        sx={{px:2}}
+                                                        sx={{ px: 2 }}
                                                     >
                                                         <EastIcon />
                                                     </SpotlightButton>

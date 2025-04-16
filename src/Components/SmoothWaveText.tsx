@@ -60,9 +60,14 @@ const SmoothWaveText: React.FC<SmoothWaveTextProps> = ({
   }, [children]);
 
   const splitToChars = (text: string) =>
-    text.split('').map((char, index) => (
-      <span key={index} className="char" style={{ display: 'inline-block' }}>
-        {char === ' ' ? '\u00A0' : char}
+    text.split(' ').map((word, wordIndex) => (
+      <span key={wordIndex} style={{ whiteSpace: 'nowrap', display: 'inline-block' }}>
+        {word.split('').map((char, charIndex) => (
+          <span key={charIndex} className="char" style={{ display: 'inline-block' }}>
+            {char}
+          </span>
+        ))}
+        <span style={{ display: 'inline-block' }}>&nbsp;</span>
       </span>
     ));
 

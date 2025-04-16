@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import CloseIcon from '@mui/icons-material/Close';
 import { About } from '../../assets';
+import ImageReveal from '../../Components/ImageReveal';
 
 const AboutVideoSection: React.FC = () => {
   const videoRef = useRef<HTMLDivElement | null>(null);
@@ -34,7 +35,7 @@ const AboutVideoSection: React.FC = () => {
               aspectRatio: '11 / 5',
             }}
           >
-            <Box
+            {/* <Box
               component="img"
               src={About.aboutvideo}
               alt="about video"
@@ -44,6 +45,14 @@ const AboutVideoSection: React.FC = () => {
                 objectFit: 'cover',
                 borderRadius: '40px',
               }}
+            /> */}
+            <ImageReveal
+              src={About.aboutvideo}
+              alt=""
+              width="100%"
+              height="600px"
+              threshold={0.8}
+              scaleDuration={3}
             />
           </Box>
 

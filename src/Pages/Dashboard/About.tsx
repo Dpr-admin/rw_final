@@ -17,6 +17,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import gsap from 'gsap';
 import { Homeimages } from '../../assets';
 import SmoothWaveText from '../../Components/SmoothWaveText';
+import ImageReveal from '../../Components/ImageReveal';
 
 
 const About = () => {
@@ -104,7 +105,7 @@ const About = () => {
                                             About me
                                         </SmoothWaveText>
                                         <Typography variant='body2' sx={{color:'white'}}>
-                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt
+                                        Empowering excellence in luxury real estate sales | RERA Registered | Concierge to iconic realty brands | Member – HRA & NAR India
                                         </Typography>
                                     </Box>
                                     <Box sx={{textAlign:'left'}}>
@@ -132,7 +133,7 @@ const About = () => {
                                             variant='body2'
                                             sx={{color:'white'}}
                                         >
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nisl lacinia mi, nec luctus odio nisl at sapien. 
+                                           I help transform premium property portfolios through luxury sales mastery. I specialize in helping real estate businesses scale in the uber-luxury segment through tailored mentorship, strategic branding, and elite sales frameworks. 
                                         </Typography>
                                     </Box>
                                 </Box>
@@ -154,7 +155,15 @@ const About = () => {
                                         boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
                                     }}
                                 >
-                                    <img src={Homeimages.rwimg} alt="1" />
+                                    {/* <img src={Homeimages.rwimg} alt="1" /> */}
+                                    <ImageReveal
+                                        src={Homeimages.rwimg}
+                                        alt=""
+                                        width="100%"
+                                        height="500px"
+                                        threshold={0.8}
+                                        scaleDuration={3}
+                                    />
                                 </Box>
                             </Grid>
 
@@ -186,7 +195,7 @@ const About = () => {
                                          variant='body2'
                                          sx={{color:'white'}}
                                         >
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nisl lacinia mi, nec luctus odio nisl at sapien. 
+                                        Let's connect and elevate your brand in the uber-luxury real estate space.
                                         </Typography>
                                     </Box>
                                     <Box>

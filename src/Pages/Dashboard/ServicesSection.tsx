@@ -2,24 +2,37 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Box, Container, Typography, Grid } from '@mui/material';
 import { gsap } from 'gsap';
 import { Link as RouterLink, useNavigate } from 'react-router-dom'; // <--- for routing
-import { Homeimages } from '../../assets';
-import { servicesDetailsData } from '../Services/ServicesDetails/ServicesData'; // Import the JSON data
+import { Homeimages, Services } from '../../assets';
 import SmoothWaveText from '../../Components/SmoothWaveText';
 
 type ServiceItem = {
   number: string;
   title: string;
   image: string;
-  slug: string;
+  Link: string;
 };
 
-const services: ServiceItem[] = servicesDetailsData.map((service, index) => ({
-  number: ['I', 'II',][index] || '', // Assign Roman numerals based on index
-  title: service.heading,
-  image: service.topImage,
-  slug: service.id,
-}));
-
+const services: ServiceItem[] = [
+  {
+    number: 'I',
+    title: 'Mentoring',
+    image: Services.servicesdetails1,
+    Link: 'services/mentoring',
+  },
+  {
+    number: 'II',
+    title: 'Sales',
+    image: Services.servicesdetails1,
+    Link: 'services/sales',
+  },
+  {
+    number: 'III',
+    title: 'Branding',
+    image: Services.servicesdetails1,
+    Link: 'services/branding',
+  },
+  // Add more services as needed
+];
 const ServicesSection: React.FC = () => {
   const previewRef = useRef<HTMLDivElement>(null);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
@@ -79,8 +92,7 @@ const ServicesSection: React.FC = () => {
           </Grid>
           <Grid item xs={12} md={7} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
             <Typography variant='h6' sx={{ fontSize: 18, textAlign: 'center', }}>
-              Our work builds more loyal audiences by combining an unwavering focus on their needs
-              and desires, and our relentless pursuit of design excellence.
+            I specialize in curating high-performance sales frameworks for real estate businesses in the premium and luxury segments. My strategic counsel ensures your brand stands out, earns trust, and delivers unmatched value to affluent buyers. Think growth, elegance, and exclusivity—expertly aligned.
             </Typography>
           </Grid>
           <Grid item xs={12} md={2}>
@@ -118,7 +130,7 @@ const ServicesSection: React.FC = () => {
           {services.map((service) => (
             <Grid item xs={12} key={service.title}>
               <Box
-                onClick={() => navigate(`/services/${service.slug}`)}
+                 onClick={() => navigate(`/${service.Link}`)}
                 sx={{ textDecoration: 'none' }}
               >
                 <Box

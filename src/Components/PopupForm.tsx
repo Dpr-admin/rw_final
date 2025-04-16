@@ -81,7 +81,9 @@ const PopupForm: React.FC<PopupFormProps> = ({ open, onClose, onHoverReset }) =>
                 boxShadow: 3,
               },
               transition: 'all 0.2s ease-in-out',
-              zIndex: 2
+              zIndex: 2,
+              width:'30px',
+              height:'30px'
             }}
           >
             <CloseIcon sx={{ color: '#333' }} />
@@ -91,8 +93,8 @@ const PopupForm: React.FC<PopupFormProps> = ({ open, onClose, onHoverReset }) =>
             <Box
               component='img'
               src={Homeimages.bluelogo}
-              width='80px'
-              height='80px'
+              width='100px'
+              height='100px'
               alt='logo'
               sx={{ mx: 'auto', mb: 2, display: 'block' }}
             />

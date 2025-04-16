@@ -19,6 +19,7 @@ import { servicesDetailsData } from './ServicesData';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import TextFillScroll from '../../../Components/TextFillScroll';
 import SmoothWaveText from '../../../Components/SmoothWaveText';
+import ImageReveal from '../../../Components/ImageReveal';
 
 gsap.registerPlugin(ScrollToPlugin);
 const faqData = [
@@ -165,7 +166,7 @@ const ServicesDetails: React.FC = () => {
             />
           </Box>
 
-          <Box
+          {/* <Box
             component="img"
             src={service.topImage}
             alt="Main Visual"
@@ -177,6 +178,15 @@ const ServicesDetails: React.FC = () => {
               display: 'block',
               mx: 'auto',
             }}
+          /> */}
+          <ImageReveal
+            src={service.topImage}
+            alt=""
+            width="100%"
+            height="600px"
+            threshold={0.8}
+            scaleDuration={3}
+            sx={{borderRadius: '40px',}}
           />
         </Box>
 
@@ -219,7 +229,7 @@ const ServicesDetails: React.FC = () => {
 
         {/* Section Title and Paragraph */}
         <Box sx={{ mb: 6 }}>
-          <SmoothWaveText variant="h4" sx={{ fontSize: 36, mb: 2, textAlign: 'start' ,fontWeight:700}}>
+          <SmoothWaveText variant="h4" sx={{ fontSize: 36, mb: 2, textAlign: 'start', fontWeight: 700 }}>
             {service.sectionTitle}
           </SmoothWaveText>
           <Typography variant="body2" sx={{ textAlign: 'start' }}>
@@ -261,7 +271,7 @@ const ServicesDetails: React.FC = () => {
 
           {/* Bottom Image */}
           <Box sx={{ mb: 6, }}>
-            <Box
+            {/* <Box
               component="img"
               src={service.bottomImage}
               alt="Final Visual"
@@ -273,7 +283,16 @@ const ServicesDetails: React.FC = () => {
                 display: 'block',
                 mx: 'auto',
               }}
-            />
+            /> */}
+             <ImageReveal
+            src={service.topImage}
+            alt=""
+            width="100%"
+            height="600px"
+            threshold={0.8}
+            scaleDuration={3}
+            sx={{borderRadius: '40px',}}
+          />
           </Box>
 
           {/* Final Text */}

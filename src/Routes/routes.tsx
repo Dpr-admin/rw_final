@@ -12,6 +12,9 @@ import AllPortfolioDetails from "../Pages/Portfolio/PortfolioDetails/AllPortfoli
 import Blog from "../Pages/Blog";
 import AllBlogDetails from "../Pages/Blog/BlogDetails/AllBlogDetails";
 import Contactus from "../Pages/Contactus";
+import MentoringServices from "../Pages/Services/ServicesDetails/MentoringService";
+import SalesServices from "../Pages/Services/ServicesDetails/SalesServices";
+import Branding from "../Pages/Services/ServicesDetails/Branding";
 
 
 
@@ -38,11 +41,27 @@ const router = createBrowserRouter([
         path: "/services",
         element: <Services />,
       },
+      // {
+      //   path:"/services/:id",
+      //   element:<ServicesDetails/>
+
+      // },
       {
-        path:"/services/:id",
-        element:<ServicesDetails/>
+        path:"/services/mentoring",
+        element:<MentoringServices/>
 
       },
+      {
+        path:"/services/sales",
+        element:<SalesServices/>
+
+      },
+      {
+        path:"/services/branding",
+        element:<Branding/>
+
+      },
+
       {
         path: "/portfolio",
         element: <Portfolio/>,

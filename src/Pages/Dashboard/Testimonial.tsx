@@ -5,40 +5,35 @@ import Slider, { Settings } from "react-slick";
 import { Box, Typography, Grid, IconButton, Container } from "@mui/material";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import { Homeimages } from "../../assets";
+import { Blog, Homeimages } from "../../assets";
 import SmoothWaveText from "../../Components/SmoothWaveText";
 
 // Testimonials data
 const testimonials = [
     {
-        name: "Jonas Morgan",
-        role: "Web Developer",
-        image: "img/testimonials/1.jpg",
-        text: "Duis aute irure dolor in velit esse dolore eu fugiat nulla pariatur. Excepteur cupidatat non proident, sunt in culpa qui deserunt mollit anim id est laborum."
+        name: "Vijay Kanth",
+        image: Blog.bloguser,
+        text: "Myself Vijay from Suman TV, Got a chance to meet Mr. Rajiv- really such a great pleasure to meet him and he has all the expertise & knowledge in real estate industry. He is a great influencer and mentor, he is always positive and he always comes with the best solution for any kind of issue. Wishing all the very best and look forward for a great collaboration in near future."
     },
     {
-        name: "Nicolas Jhon",
-        role: "Web Developer",
-        image: "img/testimonials/2.jpg",
-        text: "Duis aute irure dolor in velit esse dolore eu fugiat nulla pariatur. Excepteur cupidatat non proident, sunt in culpa qui deserunt mollit anim id est laborum."
+        name: "Shoban Babu",
+        image: Blog.bloguser,
+        text: "Rajiv stands out as a remarkable individual, blending exceptional personal qualities with a profound understanding of Hyderabad's real estate landscape. His expertise extends across the spectrum of business operations, offering a comprehensive, end-to-end perspective on establishing effective sales ecosystems. The best part of him is He is a people’s person."
     },
     {
-        name: "Jhonson Smith",
-        role: "Web Developer",
-        image: "img/testimonials/3.jpg",
-        text: "Duis aute irure dolor in velit esse dolore eu fugiat nulla pariatur. Excepteur cupidatat non proident, sunt in culpa qui deserunt mollit anim id est laborum."
+        name: "Deepak Bathini",
+        image: Blog.bloguser,
+        text: "Rajiv is one of very few successful entrepreneurs who have carved a niche for himself in the realty industry. One can consider him as an encyclopedia when it comes to brand strategies for budding companies in the professional realty market. He is a successful restauranteur as well."
     },
     {
-        name: "Alexa Hudson",
-        role: "Designer",
-        image: "img/testimonials/1.jpg",
-        text: "Great service and support. Highly recommended for design-oriented projects."
+        name: "Mugdha B",
+        image: Blog.bloguser,
+        text: "It's a privilege to know RAJIV, who is so passionate about his work and mentorship and so impromptu to help others who seek immediate guidance. If you want to have clarity in your goals and want to reach your full potential, RAJIV is the person for you."
     },
     {
-        name: "Mark Anthony",
-        role: "Frontend Engineer",
-        image: "img/testimonials/2.jpg",
-        text: "Loved the communication and fast delivery. Great experience!"
+        name: "Shyam Kiran",
+        image: Blog.bloguser,
+        text: "Firstly, it is very difficult to find a professional with the ethics in this industry; however, Rajiv is one of those very few people who is very professional, and has profound knowledge in Real Estate. He had given  us very good recommendations about increasing sales. Any person or company that is looking out for any service in real estate sector, I strongly recommend them to reach out to Rajiv."
     },
 ];
 
@@ -115,7 +110,7 @@ const TestimonialsSection: React.FC = () => {
                                                 display: "flex",
                                                 flexDirection: "column",
                                                 justifyContent: "space-between",
-                                                height: "300px",
+                                                height: "500px",
                                                 // bgcolor: "rgba(15, 99, 165, 0.3)",
                                                 // backdropFilter: "blur(10px)",
                                                 // WebkitBackdropFilter: "blur(10px)",
@@ -126,7 +121,7 @@ const TestimonialsSection: React.FC = () => {
                                             {/* Quote Section */}
                                             <Box>
                                                 <Box component="img" src={Homeimages.quote} alt="quote" sx={{ width: 40, mb: 2 }} />
-                                                <Typography sx={{ fontSize: 16, color: "#111", textAlign: 'start' }}>
+                                                <Typography sx={{ fontSize: 16, color: "#000", textAlign: 'start' }}>
                                                     {item.text}
                                                 </Typography>
                                             </Box>
@@ -150,7 +145,7 @@ const TestimonialsSection: React.FC = () => {
                                                     <Typography variant="h6" sx={{ fontSize: 20, mb: 0.5 }}>
                                                         {item.name}
                                                     </Typography>
-                                                    <Typography sx={{ color: "black", fontSize: 14 }}>{item.role}</Typography>
+                                                    {/* <Typography sx={{ color: "black", fontSize: 14 }}>{item.role}</Typography> */}
                                                 </Box>
                                             </Box>
                                         </Box>

@@ -11,6 +11,7 @@ import Testimonial from './Testimonial'
 import ClientsLogo from './ClientsLogo'
 import BlogSection from './BlogSection'
 import Banner3 from './Banner3'
+import ImageRevealAnimation from './ImageRevealAnimation'
 
 
 const Dashboard:React.FC = () => {
@@ -22,6 +23,7 @@ const Dashboard:React.FC = () => {
       <AboutDetails/>
       <MarqueeScroll/>
       <ServicesSection/>
+      {/* <ImageRevealAnimation/> */}
       <PortfolioSection/>
       <Testimonial/>
       <ClientsLogo/>

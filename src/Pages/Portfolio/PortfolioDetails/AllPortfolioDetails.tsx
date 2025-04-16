@@ -20,15 +20,16 @@ import { Homeimages } from '../../../assets';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Slider from 'react-slick';
+import ImageReveal from '../../../Components/ImageReveal';
 
 
 const images = [
-    Homeimages.services1,
-    Homeimages.services2,
-    Homeimages.services1,
-    Homeimages.services2,
-    Homeimages.services1,
-    Homeimages.services2,
+  Homeimages.services1,
+  Homeimages.services2,
+  Homeimages.services1,
+  Homeimages.services2,
+  Homeimages.services1,
+  Homeimages.services2,
 
 
 ];
@@ -36,7 +37,7 @@ const images = [
 const AllPortfolioDetails: React.FC = () => {
   const { id } = useParams(); // Get `id` from URL like `/portfolio/:id`
   const sliderRef = useRef<Slider>(null);
-  
+
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -95,14 +96,14 @@ const AllPortfolioDetails: React.FC = () => {
     centerMode: true,
     centerPadding: '0',
     responsive: [
-        {
-            breakpoint: 900,
-            settings: {
-                slidesToShow: 1,
-            },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 1,
         },
+      },
     ],
-};
+  };
   return (
     <Box sx={{ color: '#000', pt: 24 }}>
       {/* Breadcrumbs */}
@@ -255,7 +256,7 @@ const AllPortfolioDetails: React.FC = () => {
       <Box sx={{ background: '#0f63a5', py: 6 }}>
         <Container maxWidth="lg">
           <Box sx={{ mb: 6 }}>
-            <Box
+            {/* <Box
               component="img"
               src={portfolio.bottomImage}
               alt="Final Visual"
@@ -267,6 +268,15 @@ const AllPortfolioDetails: React.FC = () => {
                 display: 'block',
                 mx: 'auto',
               }}
+            /> */}
+            <ImageReveal
+              src={portfolio.bottomImage}
+              alt=""
+              width="100%"
+              height="500px"
+              threshold={0.8}
+              scaleDuration={3}
+              sx={{ borderRadius: '40px', }}
             />
           </Box>
 
@@ -279,17 +289,17 @@ const AllPortfolioDetails: React.FC = () => {
         </Container>
       </Box>
       <Box sx={{ backgroundColor: '', py: 6 }}>
-            <Container maxWidth="lg">
-                <Box sx={{ mx: 'auto', px: 2 }}>
-                    <Slider ref={sliderRef} {...settings}>
-                        {images.map((src, index) => (
-                            <Box
-                                key={index}
-                                sx={{
-                                    px: 2, // Adds space between images
-                                }}
-                            >
-                                <Box
+        <Container maxWidth="lg">
+          <Box sx={{ mx: 'auto', px: 2 }}>
+            <Slider ref={sliderRef} {...settings}>
+              {images.map((src, index) => (
+                <Box
+                  key={index}
+                  sx={{
+                    px: 2, // Adds space between images
+                  }}
+                >
+                  {/* <Box
                                     component="img"
                                     src={src}
                                     alt={`slide-${index}`}
@@ -303,64 +313,73 @@ const AllPortfolioDetails: React.FC = () => {
                                             transform: 'scale(1.1)', // Hover zoom effect
                                         },
                                     }}
-                                />
-                            </Box>
-                        ))}
-                    </Slider>
-
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            mt: 4,
-                            py: 2,
-                            alignItems: 'center',
-                            background:'#0f63a5',
-                            borderRadius:   '10px',
-                        }}
-                    >
-                        <IconButton
-                            onClick={() => sliderRef.current?.slickPrev()}
-                            sx={{
-                                // backgroundColor: '#1e1e1e',
-                                color: '#fff',
-                                // borderRadius: '8px',
-                                px: 2,
-                                py: 1,
-                                '&:hover': {
-                                    backgroundColor: 'none',
-                                },
-                            }}
-                        >
-                            <ArrowBackIosNewIcon sx={{ fontSize: 16, mr: 1 }} />
-                            <Typography variant="h6" fontWeight={700} sx={{color:'#fff'}}>
-                                Previous
-                            </Typography>
-                        </IconButton>
-
-                        <IconButton
-                            onClick={() => sliderRef.current?.slickNext()}
-                            sx={{
-                                // backgroundColor: '#1e1e1e',
-                                color: '#fff',
-                                // borderRadius: '8px',
-                                px: 2,
-                                py: 1,
-                                '&:hover': {
-                                    backgroundColor: 'none',
-                                },
-                            }}
-                        >
-                            <Typography variant="h6" fontWeight={700} sx={{ mr: 1,color:'#fff' }}>
-                                Next
-                            </Typography>
-                            <ArrowForwardIosIcon sx={{ fontSize: 16 }} />
-                        </IconButton>
-                    </Box>
+                                /> */}
+                  <ImageReveal
+                    src={src}
+                    alt={`slide-${index}`}
+                    width="300px"
+                    height="300px"
+                    threshold={0.8}
+                    scaleDuration={3}
+                    sx={{ borderRadius: '40px', }}
+                  />
                 </Box>
-                
-            </Container>
-        </Box>
+              ))}
+            </Slider>
+
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                mt: 4,
+                py: 2,
+                alignItems: 'center',
+                background: '#0f63a5',
+                borderRadius: '10px',
+              }}
+            >
+              <IconButton
+                onClick={() => sliderRef.current?.slickPrev()}
+                sx={{
+                  // backgroundColor: '#1e1e1e',
+                  color: '#fff',
+                  // borderRadius: '8px',
+                  px: 2,
+                  py: 1,
+                  '&:hover': {
+                    backgroundColor: 'none',
+                  },
+                }}
+              >
+                <ArrowBackIosNewIcon sx={{ fontSize: 16, mr: 1 }} />
+                <Typography variant="h6" fontWeight={700} sx={{ color: '#fff' }}>
+                  Previous
+                </Typography>
+              </IconButton>
+
+              <IconButton
+                onClick={() => sliderRef.current?.slickNext()}
+                sx={{
+                  // backgroundColor: '#1e1e1e',
+                  color: '#fff',
+                  // borderRadius: '8px',
+                  px: 2,
+                  py: 1,
+                  '&:hover': {
+                    backgroundColor: 'none',
+                  },
+                }}
+              >
+                <Typography variant="h6" fontWeight={700} sx={{ mr: 1, color: '#fff' }}>
+                  Next
+                </Typography>
+                <ArrowForwardIosIcon sx={{ fontSize: 16 }} />
+              </IconButton>
+            </Box>
+          </Box>
+
+        </Container>
+      </Box>
 
     </Box>
   );

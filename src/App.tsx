@@ -10,6 +10,7 @@ import { theme } from './Theme/theme';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Preloader from './Components/Preloader';
 import CustomCursor from './Components/CustomCursor';
+import Preloader2 from './Components/Preloader2';
 // import { CustomCursor } from './Components/CustomCursor'; // Use named import
 
 // Create a new instance of QueryClient
@@ -29,7 +30,7 @@ const App: React.FC = () => {
       <QueryClientProvider client={queryClient}>
         <Box className="App">
 
-          <CustomCursor />
+          {/* <CustomCursor />
           <RouterProvider router={router} />
           <ToastContainer
             position="top-right"
@@ -41,7 +42,33 @@ const App: React.FC = () => {
             pauseOnFocusLoss
             draggable
             pauseOnHover
-          />
+          /> */}
+
+{isLoading ? (
+            // Display Preloader if still loading
+            <Preloader2
+              videoSrc="https://dprstorage.b-cdn.net/RW/preloader.mp4"
+              onEnd={() => setIsLoading(false)} // Set loading to false when the Preloader finishes
+            />
+          ) : (
+            <>
+              {/* RouterProvider is loaded once the Preloader finishes */}
+              <RouterProvider router={router} />
+              <CustomCursor />
+              <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+              />
+              
+            </>
+          )}
 
         </Box>
       </QueryClientProvider>

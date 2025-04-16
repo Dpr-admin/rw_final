@@ -2,23 +2,37 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Box, Container, Typography, Grid } from '@mui/material';
 import { gsap } from 'gsap';
 import { Link as RouterLink, useNavigate } from 'react-router-dom'; // <--- for routing
-import { Homeimages } from '../../assets';
-import { servicesDetailsData } from './ServicesDetails/ServicesData';
 import SmoothWaveText from '../../Components/SmoothWaveText';
+import { Services } from '../../assets';
 
 type ServiceItem = {
     number: string;
     title: string;
     image: string;
-    slug: string;
+    Link: string;
 };
 
-const services: ServiceItem[] = servicesDetailsData.map((service, index) => ({
-  number: ['I', 'II',][index] || '', // Assign Roman numerals based on index
-  title: service.heading,
-  image: service.topImage,
-  slug: service.id,
-}));
+const services: ServiceItem[] = [
+  {
+    number: 'I',
+    title: 'Mentoring',
+    image: Services.servicesdetails1,
+    Link: 'services/mentoring',
+  },
+  {
+    number: 'II',
+    title: 'Sales',
+    image: Services.servicesdetails1,
+    Link: 'services/sales',
+  },
+  {
+    number: 'III',
+    title: 'Branding',
+    image: Services.servicesdetails1,
+    Link: 'services/branding',
+  },
+  // Add more services as needed
+];
 
 const AllServices: React.FC = () => {
     const previewRef = useRef<HTMLDivElement>(null);
@@ -132,7 +146,7 @@ const AllServices: React.FC = () => {
                     {services.map((service) => (
                         <Grid item xs={12} key={service.title}>
                             <Box
-                                onClick={() => navigate(`/services/${service.slug}`)}
+                                onClick={() => navigate(`/${service.Link}`)} // Fixed navigation path
                                 sx={{ textDecoration: 'none' }}
                             >
                                 <Box
@@ -153,7 +167,6 @@ const AllServices: React.FC = () => {
                                             position: 'absolute',
                                             left: 0,
                                             bottom: '0px',
-                                            // fontSize: '18px',
                                             color: '#fff',
                                             fontWeight: 500,
                                         }}

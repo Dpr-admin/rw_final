@@ -25,12 +25,19 @@ import awardsimage from './images/about/awardsimage.png'
 
 //services
 import servicesdetails1 from './images/services/services1.jpg'
+import realgrowth from './images/services/realgrowth1.jpg'
 
 //portfolio
 import portfolioslider1 from './images//portfolio/portfolio1.jpg'
 
 //Blog 
 import blogslider1 from './images/blog/blogslider.png'
+import blogouter1 from './images/blog/blogouter1.png'
+import bloginnerf1 from './images/blog/bloginner1.png'
+import bloginnerf2 from './images/blog/bloginner2.png'
+import bloguser from './images/blog/user.png'
+import bloginnert1 from './images/blog/bloginnert1.jpg'
+import bloginnert2 from './images/blog/bloginnert2.jpg'
 
 export const Homeimages = {
     rwlogo,
@@ -52,12 +59,12 @@ export const About ={
 }
 
 export const Services={
-    servicesdetails1
+    servicesdetails1,realgrowth
 }
 
 export const Portfolio={
     portfolioslider1
 }
 export const Blog={
-    blogslider1
+    blogslider1,blogouter1,bloginnerf1,bloginnerf2,bloguser,bloginnert1,bloginnert2
 }

@@ -56,17 +56,17 @@
   position: absolute;
   top: 100%;
   left: 15%;
-  background-color: white;
+  /* background-color: white; */
   /* background-color: "rgba(15, 99, 165, 0.7)";
     backdrop-filter: "blur(10px)";
     -webkit-backdrop-filter: "blur(10px)"; */
-    color: black;
+    /* color: black;
   min-width: 150px;
   border-top: 4px solid #000;   
     border-bottom: 4px solid #000;
   padding: 8px 28px;
   border-radius: 8px;
-  text-align: justify;
+  text-align: justify; */
 
 
 }
@@ -239,4 +239,101 @@
   top: -1000px;
   bottom: -1000px;
   right: 0
+}
+
+
+
+
+
+
+.menu2 {
+  display: flex;
+  justify-content: center;
+}
+
+.dropdown2 {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: #34495e;
+  position: relative;
+  font-size: 18px;
+  perspective: 1000px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.dropdown2:hover {
+  background: #2980b9;
+}
+
+.dropdown2:hover .dropdown_menu li {
+  display: block;
+}
+
+.dropdown_menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  perspective: 1000px;
+  z-index: -1;
+}
+
+.dropdown_menu li {
+  display: none;
+  color: white;
+  background-color: #34495e;
+  padding: 10px 20px;
+  font-size: 16px;
+  opacity: 0;
+}
+
+.dropdown_menu li:hover {
+  background-color: #2980b9;
+}
+
+.dropdown2:hover .dropdown_menu--animated {
+  display: block;
+}
+
+.dropdown_menu--animated {
+  display: none;
+}
+
+.dropdown_menu--animated li {
+  display: block;
+  opacity: 1;
+}
+
+/* Animation items */
+.dropdown_item-1,
+.dropdown_item-2,
+.dropdown_item-3,
+.dropdown_item-4,
+.dropdown_item-5 {
+  transform-origin: top center;
+  animation: translateX 300ms ease-in-out forwards;
+}
+
+.dropdown_item-1 { animation-delay: 60ms; }
+.dropdown_item-2 { animation-delay: 120ms; }
+.dropdown_item-3 { animation-delay: 180ms; }
+.dropdown_item-4 { animation-delay: 240ms; }
+.dropdown_item-5 { animation-delay: 300ms; }
+
+@keyframes translateX {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  80% {
+    transform: translateX(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }

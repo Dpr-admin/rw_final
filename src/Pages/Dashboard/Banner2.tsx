@@ -165,16 +165,16 @@ const Banner = () => {
                     >
                       <Box component="span" 
                       sx={{
-                         fontFamily: 'Holimount, sans-serif !important' ,
-                         fontSize: {xs:'50px',md:'90px'},
+                         fontFamily: 'Moderline, sans-serif !important' ,
+                         fontSize: {xs:'50px',md:'50px'},
                          color:'primary.main',
                          fontWeight: 800,
                          }}>
                         L
                       </Box><Box component="span" 
                       sx={{
-                         fontFamily: 'Moderline, sans-serif !important' ,
-                         fontSize: {xs:'50px',md:'50px'},
+                         fontFamily: 'Holimount, sans-serif !important' ,
+                         fontSize: {xs:'50px',md:'90px'},
                          color:'primary.main',
                          fontWeight: 800,
                          }}>

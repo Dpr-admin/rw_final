@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Typography, Box } from '@mui/material';
+import { Typography, Box, SxProps, Theme } from '@mui/material';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
@@ -9,12 +9,14 @@ interface TextFillScrollProps {
   children: string;
   textColor?: string;
   fillColor?: string;
+  sx?: SxProps<Theme>; // <- Allow sx prop
 }
 
 const TextFillScroll: React.FC<TextFillScrollProps> = ({
   children,
   textColor = 'black',
   fillColor = '#0f63a5',
+  sx = {},
 }) => {
   const fillRef = useRef<HTMLSpanElement | null>(null);
 
@@ -49,30 +51,29 @@ const TextFillScroll: React.FC<TextFillScrollProps> = ({
 
   return (
     <Typography
-      variant="h2"
+      variant="h5"
       component="h2"
       sx={{
-        fontSize: '5vw',
+        // fontSize: '5vw',
         fontWeight: 'bold',
         position: 'relative',
         fontFamily: 'GilroyBold, sans-serif',
         display: 'inline-block',
         lineHeight: 1.2,
+        ...sx, // <- Merge custom styles
       }}
     >
-      {/* Static base color text */}
       <Box
         component="span"
         sx={{
           color: textColor,
           display: 'inline-block',
-          opacity:0.3
+          opacity: 0.3,
         }}
       >
         {children}
       </Box>
 
-      {/* Animated fill overlay */}
       <Box
         component="span"
         ref={fillRef}

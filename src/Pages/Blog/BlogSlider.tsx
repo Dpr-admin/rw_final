@@ -7,6 +7,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Blog } from '../../assets';
 import SmoothWaveText from '../../Components/SmoothWaveText';
+import ImageReveal from '../../Components/ImageReveal';
 
 interface Slide {
   image: string;
@@ -68,18 +69,18 @@ const BlogSlider: React.FC = () => {
   return (
     <Box sx={{ background: '#0f63a5', py: 8, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 
-        <Container maxWidth="lg"  sx={{px:5}}>
+      <Container maxWidth="lg" sx={{ px: 5 }}>
 
-            <Box sx={{ width: '100%', position: 'relative', overflow: 'hidden',}}>
-            <Slider {...settings}>
-                {slides.map((slide, index) => (
-                <Box key={index} sx={{ position: 'relative' }}>
-                  <Box
-                   sx={{
+        <Box sx={{ width: '100%', position: 'relative', overflow: 'hidden', }}>
+          <Slider {...settings}>
+            {slides.map((slide, index) => (
+              <Box key={index} sx={{ position: 'relative' }}>
+                <Box
+                  sx={{
                     borderRadius: '10px',
-                }}>
+                  }}>
 
-                      <Box
+                  {/* <Box
                       component="img"
                       src={slide.image}
                       alt={slide.title}
@@ -88,50 +89,59 @@ const BlogSlider: React.FC = () => {
                           height: 'auto',
                           objectFit: 'cover',
                       }}
-                      />
-                  </Box>
-
-                    {/* Overlay */}
-                    <Box
-                    ref={(el) => {
-                        if (el) contentRef.current[index] = el as HTMLDivElement;
-                    }}
-                    sx={{
-                        position: 'absolute',
-                        bottom: 0,
-                        left: 0,
-                        backgroundColor: '#000',
-                        color: '#fff',
-                        px: 4,
-                        py: 3,
-                        maxWidth: 560,
-                        borderTopRightRadius: '10px',
-                        height: '250px',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'center',
-                        textAlign: 'start',
-                        alignItems:'start'
-                    }}
-                    >
-                      <Box>
-
-                      <Typography variant="body1" sx={{ color: '#fff', textAlign: 'start' }}>
-                          ● {slide.date}
-                      </Typography>
-                      <SmoothWaveText variant="h2" fontWeight={700} mt={1} sx={{ color: '#fff', textAlign: 'start' }}>
-                          {slide.title}
-                      </SmoothWaveText>
-                      <Typography variant="body2" mt={1} sx={{ color: '#fff', textAlign: 'start' }}>
-                          {slide.desc}
-                      </Typography>
-                      </Box>
-                    </Box>
+                      /> */}
+                  <ImageReveal
+                    src={slide.image}
+                    alt={slide.title}
+                    width="100%"
+                    height="600px"
+                    threshold={0.8}
+                    scaleDuration={3}
+                    sx={{ borderRadius: '40px', }}
+                  />
                 </Box>
-                ))}
-            </Slider>
-            </Box>
-        </Container>
+
+                {/* Overlay */}
+                <Box
+                  ref={(el) => {
+                    if (el) contentRef.current[index] = el as HTMLDivElement;
+                  }}
+                  sx={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    backgroundColor: '#000',
+                    color: '#fff',
+                    px: 4,
+                    py: 3,
+                    maxWidth: 560,
+                    borderTopRightRadius: '10px',
+                    height: '250px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    textAlign: 'start',
+                    alignItems: 'start'
+                  }}
+                >
+                  <Box>
+
+                    <Typography variant="body1" sx={{ color: '#fff', textAlign: 'start' }}>
+                      ● {slide.date}
+                    </Typography>
+                    <SmoothWaveText variant="h2" fontWeight={700} mt={1} sx={{ color: '#fff', textAlign: 'start' }}>
+                      {slide.title}
+                    </SmoothWaveText>
+                    <Typography variant="body2" mt={1} sx={{ color: '#fff', textAlign: 'start' }}>
+                      {slide.desc}
+                    </Typography>
+                  </Box>
+                </Box>
+              </Box>
+            ))}
+          </Slider>
+        </Box>
+      </Container>
     </Box>
   );
 };

@@ -66,7 +66,8 @@ const AboutDetails = () => {
           </Grid>
           <Grid item xs={12} md={6}>
             <Typography variant="body2" sx={{ color: "#555", textAlign: 'start' }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tinciduntLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt
+            When prestige meets performance, real estate transforms. I help elite professionals and developers elevate their brand, close premium deals, and command presence in luxury markets. RERA certified, HRA & NAR India member, and an architect of sales excellence.
+
             </Typography>
           </Grid>
           <Grid item md={3} xs={12} sx={{ display: { xs: "none", lg: 'flex' } }} justifyContent="center">
