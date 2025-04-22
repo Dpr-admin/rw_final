@@ -12,6 +12,8 @@ import ClientsLogo from './ClientsLogo'
 import BlogSection from './BlogSection'
 import Banner3 from './Banner3'
 import ImageRevealAnimation from './ImageRevealAnimation'
+import About2 from './About2'
+import Portfolio2 from './Portfolio2'
 
 
 const Dashboard:React.FC = () => {
@@ -20,11 +22,13 @@ const Dashboard:React.FC = () => {
       {/* <Banner3/> */}
       <Banner2/>
       <About/>
+      {/* <About2/> */}
       <AboutDetails/>
       <MarqueeScroll/>
       <ServicesSection/>
       {/* <ImageRevealAnimation/> */}
       <PortfolioSection/>
+      {/* <Portfolio2/> */}
       <Testimonial/>
       <ClientsLogo/>
       <BlogSection/>

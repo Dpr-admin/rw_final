@@ -29,7 +29,7 @@ const Preloader: React.FC<PreloaderProps> = ({ videoSrc, onEnd }) => {
         display: isVideoLoaded ? "none" : "flex",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "black",
+        // backgroundColor: "black",
         zIndex: 1301, // Ensures it's above other content
       }}
     >
@@ -43,8 +43,8 @@ const Preloader: React.FC<PreloaderProps> = ({ videoSrc, onEnd }) => {
           onEnd();
         }}
         style={{
-          maxWidth: "100%",
-          maxHeight: "100%",
+          width: "100vw",
+          height: "100vh",
           objectFit: "cover",
         }}
       />

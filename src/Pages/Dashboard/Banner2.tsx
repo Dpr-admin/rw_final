@@ -27,7 +27,7 @@ const Banner = () => {
     >
         <Container maxWidth='lg' sx={{}}>
 
-       <Box id="home" sx={{  display: 'flex', py: {xs:0,md:8},pb:{xs:6,md:0}, justifyContent: 'center',height:'50vh',alignItems:'center'}}>
+       <Box id="home" sx={{  display: 'flex', py: {xs:0,md:8},pb:{xs:8,md:0}, justifyContent: 'center',height:'50vh',alignItems:'center'}}>
               <Grid container spacing={2} sx={{mb:{xs:0,md:6 }}}>
                 {/* Left Side */}
                 <Grid item xs={12} md={6} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
@@ -155,7 +155,7 @@ const Banner = () => {
                     <Typography
                       variant='h1'
                       sx={{
-                        fontSize: {xs:'38px',md:'90px'}, 
+                        fontSize: {xs:'70px',md:'90px'}, 
                         fontWeight: 500,
                         lineHeight: 1,
                         color: 'black',
@@ -174,7 +174,7 @@ const Banner = () => {
                       </Box><Box component="span" 
                       sx={{
                          fontFamily: 'Holimount, sans-serif !important' ,
-                         fontSize: {xs:'50px',md:'90px'},
+                         fontSize: {xs:'78px',md:'90px'},
                          color:'primary.main',
                          fontWeight: 800,
                          }}>

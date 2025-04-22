@@ -37,9 +37,21 @@ const images = [
 const AllPortfolioDetails: React.FC = () => {
   const { id } = useParams(); // Get `id` from URL like `/portfolio/:id`
   const sliderRef = useRef<Slider>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
 
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  // Animation hook using GSAP to fade in
+  useEffect(() => {
+    if (gridRef.current?.children) {
+      gsap.fromTo(
+        gridRef.current.children,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 1, stagger: 0.2, ease: "power4.out" }
+      );
+    }
+  }, []);
 
   useEffect(() => {
     contentRefs.current.forEach((ref, index) => {
@@ -87,6 +99,9 @@ const AllPortfolioDetails: React.FC = () => {
     );
   }
 
+  const handleImageClick = (portfolioId: string) => {
+    window.location.href = `/portfolio/${portfolioId}`; // Navigate to the portfolio details page
+  };
 
   const settings = {
     infinite: true,
@@ -175,12 +190,66 @@ const AllPortfolioDetails: React.FC = () => {
             }}
           />
         </Box>
+        <Container maxWidth='md'>
 
+          <Box sx={{ backgroundColor: "#0f63a5", padding: 4, borderRadius: '10px', mb: 5 }}>
+            <Grid container ref={gridRef} spacing={2}>
+              {/* Client */}
+              <Grid item xs={12} sm={6} md={4}>
+                <Typography variant="h6" color="white">
+                  Program
+                </Typography>
+                <Typography variant="body2" color="white" mt={1}>
+                  {portfolio.projectData.program}
+                </Typography>
+              </Grid>
+
+              {/* Category */}
+              {/* <Grid item xs={12} sm={6} md={3}>
+                <Typography variant="h6" color="white">
+                  Category:
+                </Typography>
+                <Typography variant="h6" color="white">
+                  {portfolio.projectData.category}
+                </Typography>
+              </Grid> */}
+
+              {/* Date */}
+              <Grid item xs={12} sm={6} md={4}>
+                <Typography variant="h6" color="white">
+                  Year:
+                </Typography>
+                <Typography variant="body2" color="white" mt={1}>
+                  {portfolio.projectData.year}
+                </Typography>
+              </Grid>
+
+              {/* Location */}
+              <Grid item xs={12} sm={6} md={4}>
+                <Typography variant="h6" color="white">
+                  Location:
+                </Typography>
+                <Typography variant="body2" color="white" mt={1}>
+                  {portfolio.projectData.location}
+                </Typography>
+              </Grid>
+
+
+            </Grid>
+          </Box>
+        </Container>
+        <Box id="text" sx={{ mb: 4 }}>
+          <Typography variant="h6" sx={{ textAlign: 'start' }}>
+            {portfolio.title}
+          </Typography>
+        </Box>
         {/* Paragraph */}
         <Box id="text" sx={{ mb: 4 }}>
-          <Typography variant="body2" sx={{ textAlign: 'start' }}>
-            {portfolio.paragraph}
-          </Typography>
+          {Array.isArray(portfolio.paragraph) && portfolio.paragraph.map((text: string, index: number) => (
+            <Typography key={index} variant="body2" sx={{ textAlign: 'start', mb: 2 }}>
+              {text}
+            </Typography>
+          ))}
         </Box>
 
         {/* Bullet List */}
@@ -241,10 +310,10 @@ const AllPortfolioDetails: React.FC = () => {
                   >
                     {String(i + 1).padStart(2, '0')}
                   </Typography>
-                  <Typography variant="h6" sx={{ fontSize: 24, mb: 2 }}>
+                  {/* <Typography variant="h6" sx={{ fontSize: 24, mb: 2 }}>
                     {step.title}
                   </Typography>
-                  <Typography>{step.desc}</Typography>
+                  <Typography>{step.desc}</Typography> */}
                 </Box>
               </Grid>
             ))}
@@ -281,10 +350,17 @@ const AllPortfolioDetails: React.FC = () => {
           </Box>
 
           {/* Final Text */}
-          <Box sx={{ mb: 8 }}>
+          {/* <Box sx={{ mb: 8 }}>
             <Typography variant="body2" sx={{ textAlign: 'start', color: 'white' }}>
               {portfolio.finalText}
             </Typography>
+          </Box> */}
+          <Box id="text" sx={{ mb: 4 }}>
+            {Array.isArray(portfolio.finalText) && portfolio.finalText.map((text: string, index: number) => (
+              <Typography key={index} variant="body2" sx={{ textAlign: 'start', mb: 2, color: 'white' }}>
+                {text}
+              </Typography>
+            ))}
           </Box>
         </Container>
       </Box>
@@ -292,40 +368,38 @@ const AllPortfolioDetails: React.FC = () => {
         <Container maxWidth="lg">
           <Box sx={{ mx: 'auto', px: 2 }}>
             <Slider ref={sliderRef} {...settings}>
-              {images.map((src, index) => (
+              
+
+              {PortfolioDetailsData.map((portfolio, index) => (
                 <Box
                   key={index}
                   sx={{
                     px: 2, // Adds space between images
                   }}
+                  onClick={() => handleImageClick(portfolio.id)} // Navigate on click
                 >
-                  {/* <Box
-                                    component="img"
-                                    src={src}
-                                    alt={`slide-${index}`}
-                                    sx={{
-                                        width: '300px',
-                                        height: '300px',
-                                        objectFit: 'cover',
-                                        borderRadius: '20px',
-                                        transition: 'transform 0.3s ease',
-                                        '&:hover': {
-                                            transform: 'scale(1.1)', // Hover zoom effect
-                                        },
-                                    }}
-                                /> */}
                   <ImageReveal
-                    src={src}
+               
+                    src={portfolio.mainImage}
                     alt={`slide-${index}`}
                     width="300px"
                     height="300px"
                     threshold={0.8}
                     scaleDuration={3}
-                    sx={{ borderRadius: '40px', }}
+                    sx={{
+                      borderRadius: '20px',
+                      
+                      // transition: 'transform 0.3s ease',
+                      // '&:hover': {
+                      //   transform: 'scale(1.1)', // Hover zoom effect
+                      // },
+                    }}
                   />
                 </Box>
               ))}
             </Slider>
+
+
 
             <Box
               sx={{

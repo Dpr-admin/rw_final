@@ -12,16 +12,14 @@ const Services:React.FC = () => {
   return (
     <Box>
          <HeroHeadline>
-            <span data-outline>Lorem ipsum dolor</span>{" "}
-            <span data-highlight>sit amet, consectetur</span>{" "}
-           <span data-outline>adipiscing </span>{" "}
+            <span data-highlight>Sales mentoring </span>{" "}
+           <span data-outline>with a strong focus on</span>{" "}
       
-            <span data-highlight>Sed euismod </span>
+            <span data-highlight>Branding</span>
           </HeroHeadline>
           <AllServices/>
           <Testimonial/>
           <WorkingProcess/>
-         <Mentoring/>
           <ClientsLogo/>
       
     </Box>

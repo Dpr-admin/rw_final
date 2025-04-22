@@ -9,6 +9,7 @@ import { PortfolioDetailsData } from '../Portfolio/PortfolioDetails/PortfolioDat
 import SmoothWaveText from '../../Components/SmoothWaveText';
 import SpotlightButton from '../../Components/SpotlightButton';
 import ImageReveal from '../../Components/ImageReveal';
+import Portfolio2 from './Portfolio2';
 
 
 interface PortfolioItem {
@@ -22,7 +23,7 @@ const portfolioItems: PortfolioItem[] = PortfolioDetailsData.map(item => ({
     id: item.id,
     category: item.breadcrumb.current,
     title: item.heading,
-    image: item.topImage,
+    image: item.mainImage,
 }));
 
 const marqueeWords = [
@@ -134,10 +135,11 @@ const PortfolioSection: React.FC = () => {
                     </Marquee>
                 </Box>
             </Box>
-            <Container maxWidth="lg" >
+            <Container maxWidth="xl" >
+                <Portfolio2/>
 
-                {/* Portfolio Rows */}
-                <Box sx={{ overflow: 'hidden', borderTop: '1px solid #777777', }}>
+              
+                {/* <Box sx={{ overflow: 'hidden', borderTop: '1px solid #777777', }}>
                     {rows.map((pair, rowIndex) => (
                         <React.Fragment key={rowIndex}>
                             <Box sx={{ position: 'relative' }}>
@@ -164,17 +166,7 @@ const PortfolioSection: React.FC = () => {
                                                         },
                                                     }}
                                                 >
-                                                    {/* <img
-                                                        src={item.image}
-                                                        alt={item.title}
-                                                        style={{
-                                                            width: '100%',
-                                                            aspectRatio: '5/3',
-                                                            borderRadius: '40px',
-                                                            transition: 'all .3s ease',
-                                                        }}
-
-                                                    /> */}
+                                                   
 
                                                     <ImageReveal
                                                         src={item.image}
@@ -214,26 +206,7 @@ const PortfolioSection: React.FC = () => {
                                                             {item.title}
                                                         </SmoothWaveText>
                                                     </Box>
-                                                    {/* <Box
-                                                    className='cursor-hover-target'
-
-                                                        sx={{
-                                                            width: 65,
-                                                            height: 65,
-                                                            display: 'flex',
-                                                            alignItems: 'center',
-                                                            justifyContent: 'center',
-                                                            border: '1px solid #777777',
-                                                            borderRadius: '6px',
-                                                            transition: 'all .3s ease',
-                                                            '&:hover': {
-                                                                backgroundColor: '#000',
-                                                                borderColor: '#000',
-                                                            },
-                                                        }}
-                                                    >
-                                                        <EastIcon />
-                                                    </Box> */}
+                                                   
                                                     <SpotlightButton
                                                         background="linear-gradient(to right, #fff, #fff)"
                                                         textColor="#fff"
@@ -250,7 +223,7 @@ const PortfolioSection: React.FC = () => {
                                     ))}
                                 </Grid>
 
-                                {/* Vertical Divider exactly between columns */}
+                                
                                 {pair.length === 2 && (
                                     <Box
                                         sx={{
@@ -268,13 +241,13 @@ const PortfolioSection: React.FC = () => {
                                 )}
                             </Box>
 
-                            {/* Horizontal Divider below each row */}
+                          
                             <Grid item xs={12}>
                                 <Divider sx={{ borderColor: '#777777', }} />
                             </Grid>
                         </React.Fragment>
                     ))}
-                </Box>
+                </Box> */}
             </Container>
         </Box>
     );

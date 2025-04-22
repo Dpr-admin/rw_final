@@ -2,8 +2,8 @@ import { Box } from '@mui/material'
 import React from 'react'
 import HeroHeadline from '../../Components/HeroHeadline'
 import PortfolioSlider from './PortfolioSlider'
-import PortfolioSection from '../Dashboard/PortfolioSection'
 import WorkingProcess from './WorkingProcess'
+import PortfolioSection from './PortfolioSection'
 
 
 const Portfolio: React.FC = () => {
@@ -16,7 +16,7 @@ const Portfolio: React.FC = () => {
 
         <span data-highlight>Sed euismod </span>
       </HeroHeadline>
-      <PortfolioSlider />
+      {/* <PortfolioSlider /> */}
       <PortfolioSection />
       <WorkingProcess />
 

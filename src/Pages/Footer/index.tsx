@@ -17,6 +17,7 @@ import {
 
   Phone,
   Email,
+  Height,
 
 
 } from "@mui/icons-material";
@@ -55,7 +56,7 @@ const ContactSection = () => {
             height: '100%',
           }}
         />
-        <Container maxWidth="lg" >
+        <Container maxWidth="xl" >
           <Grid container spacing={4} py={4}>
             {/* Left Info Section */}
             <Grid item xs={12} md={6} px={4} py={6} >
@@ -141,7 +142,7 @@ const ContactSection = () => {
             {/* Right Form Section */}
             <Grid item xs={12} md={6} py={6}>
               <Grid container spacing={3} px={4}>
-                <CustomInput label="Name" xs={12} required />
+                <CustomInput  label="Name" xs={12} required />
                 <CustomInput label="Email" xs={12} required />
                 <CustomInput label="Number" xs={12} required />
                 <CustomInput label="Message" xs={12} />
@@ -202,7 +203,7 @@ const ContactSection = () => {
         </Container>
       </Box>
 
-      <Container maxWidth='lg'>
+      <Container maxWidth='xl'>
         {/* Bottom Footer */}
         <Box
           px={4}

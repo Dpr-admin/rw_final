@@ -1,10 +1,10 @@
- // components/BlogContentFromJson.tsx
+// components/BlogContentFromJson.tsx
 import React from 'react';
 import { Box, Typography, Avatar, Chip, Divider, Stack, List, ListItem, ListItemText, ListItemIcon, Grid, Container } from '@mui/material';
 import { blogContent } from './blogContent';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import SmoothWaveText from '../../../Components/SmoothWaveText';
 import ImageReveal from '../../../Components/ImageReveal';
 
@@ -31,7 +31,7 @@ const BlogContentFromJson = () => {
                     mt: 12,
                 }}
             >
-                <Container maxWidth='lg'>
+                <Container maxWidth='xl'>
 
                     {/* Date */}
                     <Typography variant="body2" color="#000" gutterBottom fontWeight={500}>
@@ -47,7 +47,7 @@ const BlogContentFromJson = () => {
                     </SmoothWaveText> */}
                     <Grid container>
 
-                        <Grid item xs={12} md={10} sx={{ mx: 'auto', mt: 1,textAlign:'center' }}>
+                        <Grid item xs={12} md={10} sx={{ mx: 'auto', mt: 1, textAlign: 'center' }}>
                             <SmoothWaveText
                                 variant="h3"
                                 sx={{ mx: 'auto', mt: 1, fontWeight: 700 }}
@@ -100,10 +100,10 @@ const BlogContentFromJson = () => {
                     height="500px"
                     threshold={0.8}
                     scaleDuration={3}
-                    sx={{ borderRadius: '40px',  my: 4,}}
+                    sx={{ my: 4, }}
                 />
             </Box>
-            <Container maxWidth='lg'>
+            <Container maxWidth='xl'>
 
                 <Grid container>
                     <Grid item xs={12} md={9} style={{ position: 'sticky', top: 0 }}>
@@ -359,32 +359,44 @@ const BlogContentFromJson = () => {
                                 Recent Post
                             </Typography>
                             <Stack spacing={2}>
-                                {content.recentPosts.map((post: { title: string; date: string; image: string }, idx: number) => (
-                                    <Box key={idx} sx={{ display: 'flex', gap: 2 }}>
-                                        <Avatar
-                                            src={post.image}
-                                            alt={post.title}
-                                            variant="rounded"
-                                            sx={{ width: 60, height: 60 }}
-                                        />
-                                        <Box>
-                                            <Stack direction="row" alignItems="center" spacing={1}>
-                                                <AccessTimeIcon sx={{ fontSize: 14, color: '#fff' }} />
-                                                <Typography variant="caption" color="grey.400">
-                                                    {post.date}
-                                                </Typography>
-                                            </Stack>
-                                            <Typography
-                                                variant="body2"
-                                                fontWeight={600}
-                                                color="#f9fafb"
-                                                sx={{ mt: 0.5 }}
-                                            >
-                                                {post.title}
-                                            </Typography>
-                                        </Box>
-                                    </Box>
-                                ))}
+                                {content.recentPosts.map((post, idx) => {
+                                    const matchedBlog = blogContent.find(blog => blog.title === post.title); // get the blog object to extract the `id`
+
+                                    if (!matchedBlog) return null;
+
+                                    return (
+                                        <Link
+                                            to={`/blog/${matchedBlog.id}`}
+                                            key={idx}
+                                            style={{ textDecoration: 'none' }}
+                                        >
+                                            <Box sx={{ display: 'flex', gap: 2 }}>
+                                                <Avatar
+                                                    src={post.image}
+                                                    alt={post.title}
+                                                    variant="rounded"
+                                                    sx={{ width: 60, height: 60 }}
+                                                />
+                                                <Box>
+                                                    <Stack direction="row" alignItems="center" spacing={1}>
+                                                        <AccessTimeIcon sx={{ fontSize: 14, color: '#fff' }} />
+                                                        <Typography variant="caption" color="grey.400">
+                                                            {post.date}
+                                                        </Typography>
+                                                    </Stack>
+                                                    <Typography
+                                                        variant="body2"
+                                                        fontWeight={600}
+                                                        color="#f9fafb"
+                                                        sx={{ mt: 0.5 }}
+                                                    >
+                                                        {post.title}
+                                                    </Typography>
+                                                </Box>
+                                            </Box>
+                                        </Link>
+                                    );
+                                })}
                             </Stack>
 
                             <Divider sx={{ my: 3, borderColor: '#fff' }} />

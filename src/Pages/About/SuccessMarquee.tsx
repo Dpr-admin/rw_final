@@ -28,7 +28,7 @@ const MarqueeText: React.FC = () => {
     ];
 
     return (
-        <MarqueeContainer mb={4} sx={{ mt: { xs: 8, lg: 0 } }}>
+        <MarqueeContainer mb={4} sx={{ mt: { xs: 8, lg: 8 }, }}>
             <Marquee speed={80} gradient={false}>
                 <MarqueeContent sx={{ padding: { xs: "10px 0px", lg: "10px 30px" },cursor: "pointer" }}>
                     {items.map((item, index) => (

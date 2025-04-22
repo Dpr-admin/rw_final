@@ -204,7 +204,7 @@ const Header: React.FC = () => {
   ];
 
   const renderDesktopMenu = () => (
-    <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3 }}>
+    <Box  sx={{ display: { xs: "none", md: "flex" }, gap: 3 }}>
       {navItems.map((item, index) => {
         const isActive =
           location.pathname === item.route ||
@@ -217,9 +217,11 @@ const Header: React.FC = () => {
             sx={{ position: "relative" }}
             onMouseEnter={() => handleDropdownToggle(item.label)}
             onMouseLeave={() => setDropdownOpen(null)}
+            className='cursor-hover-target'
           >
             <Typography
               className="nav-link"
+              
               variant="body2"
               sx={{
                 display: 'flex',
@@ -299,7 +301,7 @@ const Header: React.FC = () => {
       sx={{
       "& .MuiDrawer-paper": {
         width: "300px",
-        color: "white",
+        color: "white !important",
         border: "none",
         overflow: "hidden",
         backgroundColor: "#0f63a5",
@@ -372,11 +374,13 @@ const Header: React.FC = () => {
                     handleNavigate(item.route); // Navigate to the route when clicking the label
                   }
                 }}
+                style={{color:'white !important'}}
                 sx={{
                   color: "#FFF !important", // Ensure menu item text is white in mobile view
+                  fontFamily:' GilroyRegular, sans-serif !important',
                   fontSize: "32px",
                   transition: "border-left 0.3s ease-in-out",
-                  borderLeft: isActive ? "3px solid black" : "3px solid transparent",
+                  borderLeft: isActive ? "3px solid #fff" : "3px solid transparent",
                   padding: "15px 46px",
                   cursor: "pointer",
                   opacity: 0,
@@ -384,12 +388,20 @@ const Header: React.FC = () => {
                   animation: `translateX 300ms ${index * 60}ms ease-in-out forwards`,
                   '&:hover': {
                     backgroundColor: "rgba(1, 5, 15, 0.8)",
-                    color: "white",
+                    color: "white !important",
                   },
                   // background: "rgba(52, 73, 94, 0.8)",
                 }}
               >
-                <ListItemText style={{color:'white'}} primary={item.label} />
+                <ListItemText style={{color:'white'}}
+                 primaryTypographyProps={{
+                  sx: {
+                    color: '#fff',
+                    fontFamily: 'GilroyBold, sans-serif',
+                    fontSize: '32px',
+                  },
+                }}
+                 primary={item.label}    />
                 {item.submenu && (
                   <ArrowDropDownIcon sx={{ transform: drawerSubmenuOpen === item.label ? "rotate(180deg)" : "rotate(0deg)" }} />
                 )}
@@ -397,7 +409,7 @@ const Header: React.FC = () => {
               <Divider sx={{ backgroundColor: "#FFFFFF80" }} />
 
               {item.submenu && drawerSubmenuOpen === item.label && (
-                <List sx={{ pl: 2 }}>
+                <List sx={{ pl: 2, color:'#fff' }}>
                   {item.submenu.map((subItem, subIndex) => {
                     const isSubItemActive =
                       location.pathname === subItem.route ||
@@ -406,6 +418,7 @@ const Header: React.FC = () => {
 
                     return (
                       <ListItemButton
+                      style={{color:'white !important'}}
                         key={subIndex}
                         onClick={() => handleNavigate(subItem.route)}
                         sx={{

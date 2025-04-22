@@ -131,7 +131,7 @@ const BlogSection = () => {
                                     {/* <Typography  className='cursor-hover-target' variant="h3" sx={{ mt: 1, mb: 2 }}>
                                         {post.title}
                                     </Typography> */}
-                                    <TextFillScroll textColor="#777777" fillColor="#000" sx={{ fontsize: "20px" }}>
+                                    <TextFillScroll textColor="#777777" fillColor="#000" sx={{ fontsize: "20px",my:2 }}>
                                         {post.title}
                                     </TextFillScroll>
                                     <Typography

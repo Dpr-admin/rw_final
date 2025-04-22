@@ -9,6 +9,7 @@ import SmoothWaveText from '../../../../Components/SmoothWaveText';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import Mentoring from './MentoringTabs';
+import MobaileMentoring from './MobaileMentoring';
 gsap.registerPlugin(ScrollToPlugin);
 
 const MentoringServices = () => {
@@ -48,22 +49,22 @@ const MentoringServices = () => {
     };
   }, []);
 
-    const handleScroll = (targetId: string) => {
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        gsap.to(window, {
-          scrollTo: {
-            y: targetElement,
-            offsetY: 100, // Optional offset for spacing
-          },
-          duration: 1,
-          ease: 'power2.inOut',
-        });
-      } else {
-        console.error(`Element with ID ${targetId} not found.`);
-      }
-    };
-  
+  const handleScroll = (targetId: string) => {
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      gsap.to(window, {
+        scrollTo: {
+          y: targetElement,
+          offsetY: 100, // Optional offset for spacing
+        },
+        duration: 1,
+        ease: 'power2.inOut',
+      });
+    } else {
+      console.error(`Element with ID ${targetId} not found.`);
+    }
+  };
+
   return (
     <Box sx={{ color: '#000', pt: 24 }}>
       <Box sx={{ mb: 6 }}>
@@ -93,9 +94,9 @@ const MentoringServices = () => {
           <Box
             component="a"
             onClick={(e) => {
-                e.preventDefault();
-                handleScroll('#text');
-              }}
+              e.preventDefault();
+              handleScroll('#text');
+            }}
             sx={{
               display: 'flex',
               width: 120,
@@ -123,7 +124,7 @@ const MentoringServices = () => {
           </Box>
 
           <ImageReveal
-            src={Services.servicesdetails1}
+            src={Services.serv1}
             alt=""
             width="100%"
             height="600px"
@@ -135,23 +136,28 @@ const MentoringServices = () => {
 
         <Box id="text" sx={{ mb: 4 }}>
           <Typography variant="body2" sx={{ textAlign: 'start' }}>
-            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-            in some form, by injected humour, or randomised slightly in believable. If you are going to use a passage
-            of Lorem Ipsum, you need to be sure there isn’t anything embarrassing hidden in the middle of text.
+
+            The fastest way to build trust and close big? Learn from the best luxury real estate sales coach with over 15 years  real estate experience This one of its kind exclusive luxury real estate sales coaching combines real-world strategies, advanced sales psychology techniques hands-on training, and other best practices.
+
           </Typography>
         </Box>
 
         <Box sx={{ mb: 6 }}>
           <List sx={{ listStyle: 'none', pl: 0 }}>
-            {["All the Lorem Ipsum generators on the Internet tend to repeat",
-              "The generated Lorem Ipsum is therefore always free from repetition,",
-              "Many desktop publishing packages and web page editors now"].map((text, i) => (
+            {[
+              "Master the art of real estate sales",
+              "Build promising pipeline",
+              "Leverage relentless follow-up strategies that convert",
+              "Powerful negotiation and sales psychology tactics to close bigger deals, faster",
+              "Developing sales mindset,  and unshakeable confidence",
+              "Dominate the ultra-competitive real estate market"
+            ].map((text, i) => (
               <ListItem
                 key={i}
                 sx={{
                   position: 'relative',
                   pl: 3,
-                  mb: i === 2 ? 6 : 2,
+                  mb: 1,
                   '&::before': {
                     content: '""',
                     width: 10,
@@ -174,16 +180,14 @@ const MentoringServices = () => {
 
         <Box sx={{ mb: 6 }}>
           <SmoothWaveText variant="h4" sx={{ fontSize: 36, mb: 2, textAlign: 'start', fontWeight: 700 }}>
-            The way we work
+            What I Do
           </SmoothWaveText>
           <Typography variant="body2" sx={{ textAlign: 'start' }}>
-            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
-            dolores eos qui ratione voluptatem sequi nesciunt. neque porro quisquam est, qui dolorem ipsum quia dolor
-            sit amet...
+            I help transform premium property portfolios through luxury sales mastery. I specialize in helping real estate businesses scale in the uber-luxury segment through tailored mentorship, strategic branding, and elite sales frameworks.
           </Typography>
         </Box>
 
-        
+
       </Container>
 
       <Box sx={{ background: '#0f63a5', py: 6 }}>
@@ -201,17 +205,29 @@ const MentoringServices = () => {
           </Box>
 
           <Box sx={{ mb: 8 }}>
+          <SmoothWaveText variant="h4" sx={{ fontSize: 36, mb: 2, textAlign: 'start', fontWeight: 700,color:'white' }}>
+             About Me
+          </SmoothWaveText>
             <Typography variant="body2" sx={{ textAlign: 'start', color: 'white' }}>
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
-              dolores eos qui ratione voluptatem sequi nesciunt...
+            When prestige meets performance, real estate transforms. I help elite professionals and developers elevate their brand, close premium deals, and command presence in luxury markets. RERA certified, HRA & NAR India member, and an architect of sales excellence.
+            </Typography>
+          </Box>
+          <Box sx={{ mb: 8 }}>
+          <SmoothWaveText variant="h4" sx={{ fontSize: 36, mb: 2, textAlign: 'start', fontWeight: 700,color:'white' }}>
+          My Services
+          </SmoothWaveText>
+            <Typography variant="body2" sx={{ textAlign: 'start', color: 'white' }}>
+            I specialize in curating high-performance sales frameworks for real estate businesses in the premium and luxury segments. My strategic counsel ensures your brand stands out, earns trust, and delivers unmatched value to affluent buyers. Think growth, elegance, and exclusivity—expertly aligned.
             </Typography>
           </Box>
         </Container>
       </Box>
-      <Box>
-        <Mentoring/>
+      <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+        <Mentoring />
       </Box>
-
+      <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+        <MobaileMentoring />
+      </Box>
     </Box>
   );
 };

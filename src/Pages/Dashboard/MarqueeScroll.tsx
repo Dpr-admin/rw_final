@@ -21,11 +21,11 @@ const MarqueeContent = styled(Box)({
 
 const MarqueeText: React.FC = () => {
     const items = [
-        "Creative",
-        "Designer",
-        "Developer",
+        "luxury real estate sales",
+        " RERA Registered",
+        "Concierge to iconic realty brands ",
+        "HRA & NAR India Member ",
         "Mentor",
-        "Strategist",
     ];
 
     return (

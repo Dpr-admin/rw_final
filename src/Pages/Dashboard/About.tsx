@@ -157,7 +157,7 @@ const About = () => {
                                 >
                                     {/* <img src={Homeimages.rwimg} alt="1" /> */}
                                     <ImageReveal
-                                        src={Homeimages.rwimg}
+                                        src={  Homeimages.rwimg2}
                                         alt=""
                                         width="100%"
                                         height="500px"
@@ -223,7 +223,7 @@ const About = () => {
                                         <Box
                                             sx={{
                                                 display: 'flex',
-                                                justifyContent: 'flex-end',
+                                                justifyContent: {xs:'flex-start',md:'flex-end'},
                                                 gap: 2,
                                                 textAlign: 'right'
                                             }}

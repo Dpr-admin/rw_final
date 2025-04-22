@@ -56,7 +56,7 @@ const AboutDetails = () => {
 
   return (
     <Box id="about" sx={{ py: 10, backgroundColor: "#fff" }}>
-      <Container>
+      <Container maxWidth='xl'>
         {/* Title & Intro Section */}
         <Grid container spacing={3} alignItems="start" sx={{ mb: 5 }}>
           <Grid item xs={12} md={3}>

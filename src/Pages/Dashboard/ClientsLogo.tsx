@@ -51,13 +51,13 @@ const CustomersSection = () => {
           variant="h6"
           sx={{
             textAlign: 'center',
-            fontWeight: 400,
+            fontWeight: 600,
             lineHeight: 1.8,
             maxWidth: 700,
             mx: 'auto',
           }}
         >
-          <b>My journey began with a fascination for the digital world</b> to make it more beautiful and accessible. With a degree in Interaction Design and over a decade of experience,
+          With 15+ years of success in real estate, I now mentor ambitious agents to build personal brands that attract trust and deliver results. I combine branding, sales psychology, and strategic positioning to help agents sell smarter, close faster, and grow sustainably in any market condition.
         </Typography>
 
         <Box mt={5} sx={{ borderTop: '1px solid #ddd', borderBottom: '1px solid #ddd', py: 2, overflow: 'hidden' }}>

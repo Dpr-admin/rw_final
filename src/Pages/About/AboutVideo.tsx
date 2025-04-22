@@ -32,7 +32,7 @@ const AboutVideoSection: React.FC = () => {
               borderRadius: '40px',
               overflow: 'hidden',
               width: '100%',
-              aspectRatio: '11 / 5',
+              // aspectRatio: '11 / 5',
             }}
           >
             {/* <Box
@@ -50,7 +50,7 @@ const AboutVideoSection: React.FC = () => {
               src={About.aboutvideo}
               alt=""
               width="100%"
-              height="600px"
+              height="500px"
               threshold={0.8}
               scaleDuration={3}
             />
@@ -130,7 +130,7 @@ const AboutVideoSection: React.FC = () => {
               component="iframe"
               src={
                 open
-                  ? 'https://www.youtube.com/embed/7e90gBu4pas?autoplay=1'
+                  ? 'https://dprstorage.b-cdn.net/dprstorage/rw/WhatsApp%20Video%202024-12-27%20at%2017.05.28.mp4'
                   : ''
               }
               allow="autoplay; encrypted-media"

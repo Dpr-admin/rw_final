@@ -17,6 +17,10 @@ import bannerarrow from './images/home/bannerarrow.png'
 import rwbannerbg from './images/home/rwbanner.jpg'
 import rwimage from './images/home/rwimage.png'
 import bluelogo from './images/home/rwlogoblue.png'
+import whatsapp from './images/home/whatsapp.png'
+import rwimg2 from './images/home/rwimage1.jpg'
+
+
 
 
 //about
@@ -26,9 +30,41 @@ import awardsimage from './images/about/awardsimage.png'
 //services
 import servicesdetails1 from './images/services/services1.jpg'
 import realgrowth from './images/services/realgrowth1.jpg'
+import bgimgone from './images/services/zoom-image-head-bg.jpg'
+import bgimgtwo from './images/services/zoom-image-head-bg2.png'
+import counterbg from './images/services/zoom-count-bg.jpg'
+import  project1 from './images/services/project_1_1.jpg'
+import  project2 from './images/services/project_1_3.jpg'
+import overview1 from './images/services/service_list_1.svg'
+import overview2 from './images/services/service_list_2.svg'
+import overview3 from './images/services/service_list_3.svg'
+
+import m1 from './images/services/megalio/m1.jpg'
+import m2 from './images/services/megalio/m2.jpg'
+import m3 from './images/services/megalio/m3.jpg'
+import m4 from './images/services/megalio/m4.jpg'
+import m5 from './images/services/megalio/m5.jpg'
+import choosebg  from './images/services/choose_bg.png'
+import pattern from './images/services/pattern.png'
+import p1 from './images/services/Megaleio.png'
+import p2 from './images/services/candeur.png'
+import p3 from './images/services/vamsiram.png'
+import p4 from './images/services/raghava.png'
+import p5 from './images/services/songs.png'
+import serv1 from './images/services/serv1.png'
+import serv2 from './images/services/serv2.png'
+import serv3 from './images/services/serv3.png'
+
+
 
 //portfolio
 import portfolioslider1 from './images//portfolio/portfolio1.jpg'
+import portouter1 from './images/portfolio/exhibit1.png'
+import portinnerf1 from './images/portfolio/portinnerf1.png'
+import portouter2 from './images/portfolio/exhibit3.png'
+import portinner2_1 from './images/portfolio/portinner2-1.png'
+import salesprograminner from './images/portfolio/salesprograminner.png'
+import allproject from './images/services/project1.jpg'
 
 //Blog 
 import blogslider1 from './images/blog/blogslider.png'
@@ -50,7 +86,7 @@ export const Homeimages = {
     services1,
     services2,
     quote,user,clientlogos,bannerbg2,blog1,rwsign,bannerarrow,rwbannerbg,rwimage,
-    bluelogo
+    bluelogo,whatsapp,rwimg2
   
 };
 
@@ -59,11 +95,12 @@ export const About ={
 }
 
 export const Services={
-    servicesdetails1,realgrowth
+    servicesdetails1,realgrowth,bgimgone,bgimgtwo,counterbg,project1,project2,allproject,
+    m1,m2,m3,m4,m5,overview1,overview2,overview3,choosebg,pattern,p1,p2,p3,p4,p5,serv1,serv2,serv3
 }
 
 export const Portfolio={
-    portfolioslider1
+    portfolioslider1,portouter1,portinnerf1,portouter2,portinner2_1,salesprograminner,
 }
 export const Blog={
     blogslider1,blogouter1,bloginnerf1,bloginnerf2,bloguser,bloginnert1,bloginnert2

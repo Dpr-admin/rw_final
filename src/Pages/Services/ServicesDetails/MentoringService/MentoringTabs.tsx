@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import {
     Box,
     Button,
+    Container,
     Grid,
     Typography,
 } from "@mui/material";
@@ -65,7 +66,7 @@ const tabs = [
         subtitle: 'Who can apply:',
         description: "Agents and teams focusing on selling high-value properties and serving affluent clientele.",
         image:
-            "https://images.unsplash.com/photo-1684242598938-554af99784c9?q=80&w=1863&auto=format&fit=crop",
+            "https://plus.unsplash.com/premium_photo-1667861383156-4aa2b5d2c35d?q=80&w=1887&auto=format&fit=crop",
         list: {
             listTitle: "Key Features:",
             listItems: [
@@ -192,156 +193,152 @@ const MentoringTabs: React.FC = () => {
     }, [activeIndex]);
 
     return (
-        <Box sx={{ py: 8, overflow: "visible", bgcolor: "#fff", display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <Box sx={{ py: 8, overflow: "visible", bgcolor: "#fff", display: 'flex', flexDirection: 'column', }}>
             <Box sx={{ mx: "auto", px: 4 }}>
                 <Typography variant="h2" sx={{mb:5,color:'primary.main',textAlign:'center',}}>
                     Advisory, Training & Mentoring
                 </Typography>
-                <Grid container spacing={8} alignItems="flex-start">
+                <Container maxWidth='lg'>
 
-                    {/* Tab List */}
-                    <Grid item xs={12} md={4} style={{ position: 'sticky', top: 0, alignSelf: 'flex-start' }}>
-                        <Box sx={{ pl: 2, position: "sticky", top: 0, height: '100%' }}>
-                            {/* Vertical Line */}
-                            <Box
-                                sx={{
-                                    position: "absolute",
-                                    top: 0,
-                                    bottom: 0,
-                                    left: 0,
-                                    width: "1px",
-                                    backgroundColor: "black",
-                                }}
-                            />
-                            {/* Active Marker */}
-                            <Box
-                                sx={{
-                                    position: "absolute",
-                                    left: -1,
-                                    width: "3px",
-                                    height: `${100 / tabs.length}%`,
-                                    top: `${(100 / tabs.length) * activeIndex}%`,
-                                    backgroundColor: "black",
-                                    transition: "top 1s cubic-bezier(0.4, 0, 0, 1)",
-                                }}
-                            />
-                            {/* Buttons */}
-                            <Box sx={{ display: "grid", gap: 1 }}>
-                                {tabs.map((tab, index) => (
-                                    <Button
-                                        key={tab.title}
-                                        onClick={() => setActiveIndex(index)}
-                                        sx={{
-                                            justifyContent: "flex-start",
-                                            textAlign: "left",
-                                            textTransform: "none",
-                                            color: activeIndex === index ? "black" : "white",
-                                            fontWeight: activeIndex === index ? 600 : 400,
-                                            height:'80px'
-                                        }}
-                                    >
-                                        {tab.title}
-                                    </Button>
-                                ))}
-                            </Box>
-                        </Box>
-                    </Grid>
+                    <Grid container spacing={8} alignItems="stretch">
 
-                    {/* Image and Content */}
-                    <Grid item xs={12} md={8} sx={{ position: 'relative', alignSelf: 'flex-start', textAlign: 'left' }}>
-                        <Box sx={{ position: "relative", height: "500px" }}>
-                            {tabs.map((tab, i) => (
+                        {/* Tab List */}
+                        <Grid item xs={12} md={4} style={{ position: 'sticky', top: 0, alignSelf: 'flex-start' }}>
+                            <Box sx={{ pl: 2, position: "sticky", top: 0, height: '100%',width:'100%' }}>
+                                {/* Vertical Line */}
                                 <Box
-                                    key={tab.title}
                                     sx={{
                                         position: "absolute",
-                                        inset: 0,
-                                        zIndex: i === activeIndex ? 3 : 1,
-                                        display: i === activeIndex ? "block" : "none",
+                                        top: 0,
+                                        bottom: 0,
+                                        left: 0,
+                                        width: "1px",
+                                        backgroundColor: "black",
                                     }}
-                                >
-                                    <img
-                                        ref={(el) => {
-                                            imageRefs.current[i] = el;
-                                        }}
-                                        src={tab.image}
-                                        alt={tab.title}
-                                        style={{
-                                            width: "100%",
-                                            height: "500px",
-                                            objectFit: "cover",
-                                            position: "absolute",
-                                            top: 0,
-                                            left: 0,
-                                        }}
-                                    />
+                                />
+                                {/* Active Marker */}
+                                <Box
+                                    sx={{
+                                        position: "absolute",
+                                        left: -1,
+                                        width: "3px",
+                                        height: `${100 / tabs.length}%`,
+                                        top: `${(100 / tabs.length) * activeIndex}%`,
+                                        backgroundColor: "black",
+                                        transition: "top 1s cubic-bezier(0.4, 0, 0, 1)",
+                                    }}
+                                />
+                                {/* Buttons */}
+                                <Box sx={{ display: "grid", gap: 1 }}>
+                                    {tabs.map((tab, index) => (
+                                        <Button
+                                            key={tab.title}
+                                            onClick={() => setActiveIndex(index)}
+                                            sx={{
+                                                justifyContent: "flex-start",
+                                                textAlign: "left",
+                                                textTransform: "none",
+                                                color: activeIndex === index ? "black" : "white",
+                                                fontWeight: activeIndex === index ? 600 : 400,
+                                                height:'95px',
+                                                background: activeIndex === index ? "white" : "primary.main",
+                                                border:activeIndex===index?'2px solid #0f63a5':'1px solid transparent',
+                                            }}
+                                        >
+                                            {tab.title}
+                                        </Button>
+                                    ))}
                                 </Box>
-                            ))}
-                        </Box>
-                        {/* Content */}
-                        <Box ref={contentRef} sx={{ color: "black", textAlign: 'start' }}>
-                            <Typography variant="h4" component="h2" mb={2} sx={{ color: "black", mt: 2 }}>
-                                {tabs[activeIndex].title}
-                            </Typography>
-                            <Typography variant="h6" sx={{ color: "black", mb: 1 }}>
-                                {tabs[activeIndex].subtitle}
-                            </Typography>
-                            <Typography sx={{ color: "black" }}>
-                                {tabs[activeIndex].description}
-                            </Typography>
-                            <Box>
-                                <Typography variant="h6" sx={{ color: "black", mt: 2 }}>
-                                    {tabs[activeIndex].list.listTitle}
-                                </Typography>
-                                {tabs[activeIndex].list.listItems.map((item, index) => (
-                                    <Typography key={index} variant="body2" sx={{ color: "black", ml: 2, mb: 1 }}>
-                                        • {item}
-                                    </Typography>
-                                ))}
                             </Box>
-                            {/* Paragraph Section */}
-                            <Box sx={{ mt: 3 }}>
-                                {tabs[activeIndex].paragraph.map((para, index) => (
-                                    <Box key={index} sx={{ mb: 2 }}>
-                                        <Typography variant="h6" sx={{ color: "black" }}>
-                                            {para.title}
-                                        </Typography>
-                                        <Typography variant="body2" sx={{ color: "black" }}>
-                                            {para.discription}
-                                        </Typography>
+                        </Grid>
+
+                        {/* Image and Content */}
+                        <Grid item xs={12} md={8} sx={{ position: 'relative', alignSelf: 'flex-start', textAlign: 'left' }}>
+                            <Box sx={{ position: "relative", height: "500px" }}>
+                                {tabs.map((tab, i) => (
+                                    <Box
+                                        key={tab.title}
+                                        sx={{
+                                            position: "absolute",
+                                            inset: 0,
+                                            zIndex: i === activeIndex ? 3 : 1,
+                                            display: i === activeIndex ? "block" : "none",
+                                        }}
+                                    >
+                                        <img
+                                            ref={(el) => {
+                                                imageRefs.current[i] = el;
+                                            }}
+                                            src={tab.image}
+                                            alt={tab.title}
+                                            style={{
+                                                width: "100%",
+                                                height: "auto",
+                                                objectFit: "cover",
+                                                position: "absolute",
+                                                top: 0,
+                                                left: 0,
+                                            }}
+                                        />
                                     </Box>
                                 ))}
                             </Box>
-                            {/* Contact Us Button */}
-                            {/* <Button
-                                variant="contained"
-                                color="primary"
-                                sx={{ mt: 3 }}
-                                onClick={handleOpenPopup}
-                            >
-                                Contact Us
-                            </Button> */}
-                            <SpotlightButton
-                                onClick={handleOpenPopup}
-                                background="linear-gradient(to right, #fff, #fff)"
-                                textColor="#fff"
-                                spotlightColor="linear-gradient(to right, #000, #000)"
-                                innerBackground="#0f63a5"
-                                activeTextColor="white"
-                                sx={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
+                            {/* Content */}
+                            <Box ref={contentRef} sx={{ color: "black", textAlign: 'start' }}>
+                                <Typography variant="h4" component="h2" mb={2} sx={{ color: "black", mt: 2 }}>
+                                    {tabs[activeIndex].title}
+                                </Typography>
+                                <Typography variant="h6" sx={{ color: "black", mb: 1 }}>
+                                    {tabs[activeIndex].subtitle}
+                                </Typography>
+                                <Typography sx={{ color: "black" }}>
+                                    {tabs[activeIndex].description}
+                                </Typography>
+                                <Box>
+                                    <Typography variant="h6" sx={{ color: "black", mt: 2 }}>
+                                        {tabs[activeIndex].list.listTitle}
+                                    </Typography>
+                                    {tabs[activeIndex].list.listItems.map((item, index) => (
+                                        <Typography key={index} variant="body2" sx={{ color: "black", ml: 2, mb: 1 }}>
+                                            • {item}
+                                        </Typography>
+                                    ))}
+                                </Box>
+                            
+                                <Box sx={{ mt: 3 }}>
+                                    {tabs[activeIndex].paragraph.map((para, index) => (
+                                        <Box key={index} sx={{ mb: 2 }}>
+                                            <Typography variant="h6" sx={{ color: "black" }}>
+                                                {para.title}
+                                            </Typography>
+                                            <Typography variant="body2" sx={{ color: "black" }}>
+                                                {para.discription}
+                                            </Typography>
+                                        </Box>
+                                    ))}
+                                </Box>
+                                <SpotlightButton
+                                    onClick={handleOpenPopup}
+                                    background="linear-gradient(to right, #fff, #fff)"
+                                    textColor="#fff"
+                                    spotlightColor="linear-gradient(to right, #000, #000)"
+                                    innerBackground="#0f63a5"
+                                    activeTextColor="white"
+                                    sx={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
 
-                                }}
-                            >
-                                Contact Us
+                                    }}
+                                >
+                                    Contact Us
 
 
-                            </SpotlightButton>
-                        </Box>
+                                </SpotlightButton>
+                            </Box>
+                        </Grid>
                     </Grid>
-                </Grid>
+                </Container>
             </Box>
 
             {/* Popup Form */}

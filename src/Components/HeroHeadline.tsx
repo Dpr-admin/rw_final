@@ -15,10 +15,10 @@ const HeroHeadline: React.FC<HeroHeadlineProps> = ({ children }) => {
         justifyContent: 'center', // Horizontal center
         // px: 4,
         // backgroundColor: '#121212',
-        textAlign: { xs: 'center', md: 'left' },
+        textAlign: { xs: 'center', md: 'center' },
       }}
     >
-        <Container maxWidth='md'>
+        <Container maxWidth='lg'>
 
             <Typography
                 variant="h3"

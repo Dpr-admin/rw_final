@@ -9,19 +9,25 @@ import Experience from './Experience'
 import Awards from './Awards'
 import Testimonial from '../Dashboard/Testimonial'
 import ClientsLogo from '../Dashboard/ClientsLogo'
+import Breadcrumb from './Breadcrumb'
 
 const About:React.FC = () => {
   return (
     <Box>
-       <HeroHeadline>
-            <span data-outline>Lorem ipsum dolor</span>{" "}
-            <span data-highlight>sit amet, consectetur</span>{" "}
-           <span data-outline>adipiscing </span>{" "}
+       {/* <HeroHeadline>
+            <span data-outline >Empowering excellence in</span>{" "}
+            <span data-highlight>luxury </span>{" "}
+           <span data-outline>real estate sales |  </span>{" "}
+            <span data-highlight>RERA Registered  </span>
+           <span data-outline>| Concierge to iconic realty brands | </span>{" "}
+           <span data-highlight>Member – HRA & NAR India  </span>
+
+
       
-            <span data-highlight>Sed euismod </span>
-          </HeroHeadline>
+          </HeroHeadline> */}
+          <Breadcrumb/>
           <AboutVideo/>
-          <AboutDetails/>
+          {/* <AboutDetails/> */}
           <SuccessMarquee/>
           {/* <Counter/> */}
           <Experience/>

@@ -63,8 +63,8 @@ const TestimonialsSection: React.FC = () => {
     const sliderRef = useRef<Slider | null>(null);
 
     return (
-        <Box sx={{ py: 10 }}>
-            <Container maxWidth="lg">
+        <Box sx={{ pt: 10,pb:{xs:0,md:8} }}>
+            <Container maxWidth="xl">
 
                 <Box sx={{   }}>
                     {/* Title Section */}
@@ -82,17 +82,17 @@ const TestimonialsSection: React.FC = () => {
                                  // Satisfied clients
                             </SmoothWaveText>
                         </Grid>
-                        <Grid item xs={12} md={7} sx={{display: "flex", alignItems: "center",justifyContent: "center"}}>
+                        <Grid item xs={12} md={7} sx={{display: "flex", alignItems: "center",justifyContent: "center",my:{xs:3,md:0}}}>
                             <Typography variant='h6' sx={{ fontSize: 18 ,textAlign:{xs:'start',md:'center'},mb:{xs: 2, md: 0 },}}>
-                                Our happy customers give us impactful and positive feedback on our services, customer support & more.
+                            RW Mentoring Program Reviews- What clients and mentees say about Rajiv Williams
                             </Typography>
                         </Grid>
-                        <Grid item xs={12} md={2} sx={{ display: "flex", justifyContent: {xs:'start',md:"flex-end"}, gap: 2 }}>
+                        <Grid item xs={12} md={2} sx={{ display: "flex", justifyContent: {xs:'flex-end',md:"flex-end"}, gap: 2 }}>
                             <IconButton onClick={() => sliderRef.current?.slickPrev()} sx={arrowStyle}>
                                 <ArrowBackIosNewIcon fontSize="small" />
                             </IconButton>
                             <IconButton onClick={() => sliderRef.current?.slickNext()} sx={arrowStyle}>
-                                <ArrowForwardIosIcon fontSize="small" />
+                                <ArrowForwardIosIcon fontSize="small" /> 
                             </IconButton>
                         </Grid>
                     </Grid>
@@ -110,7 +110,7 @@ const TestimonialsSection: React.FC = () => {
                                                 display: "flex",
                                                 flexDirection: "column",
                                                 justifyContent: "space-between",
-                                                height: "500px",
+                                                height: {xs:'auto',md:"450px"},
                                                 // bgcolor: "rgba(15, 99, 165, 0.3)",
                                                 // backdropFilter: "blur(10px)",
                                                 // WebkitBackdropFilter: "blur(10px)",

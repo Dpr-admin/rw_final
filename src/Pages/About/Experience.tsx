@@ -83,15 +83,14 @@ const ExperienceSection: React.FC = () => {
         <Typography
             variant='h6'
             sx={{
-                textAlign: 'center',
+                textAlign: 'justify',
                 fontWeight: 400,
                 lineHeight: 1.8,
                 maxWidth: 700,
                 mx: 'auto',
               }}
         >
-          We believe in the transformative power of digital experiences. We craft websites and
-          digital products that elevate your online presence but also drive real business value.
+         Backed by 15+ years in the luxury real estate industry, I offer more than just advice—I offer a transformation. My Luxury Real Estate Sales Mentoring is trusted by top agents looking to close high-ticket deals fast. From smart negotiation to personal brand positioning, this is where future top agents are made. Let’s turn your potential into ₹Cr+ closings.
         </Typography>
               <Box pt={5}>
 

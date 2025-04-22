@@ -56,7 +56,7 @@ const WorkingProcess: React.FC = () => {
 
   return (
     <Box sx={{ backgroundColor: '#0f63a5', color: 'white', py: 8, height: {xs:'auto',md:'100vh'} }}>
-      <Container maxWidth='lg'>
+      <Container maxWidth='xl'>
 
         <Grid container alignItems="start" sx={{
           mb: 6,

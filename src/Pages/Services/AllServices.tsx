@@ -16,19 +16,19 @@ const services: ServiceItem[] = [
   {
     number: 'I',
     title: 'Mentoring',
-    image: Services.servicesdetails1,
+    image: Services.serv1,
     Link: 'services/mentoring',
   },
   {
     number: 'II',
     title: 'Sales',
-    image: Services.servicesdetails1,
+    image: Services.serv2,
     Link: 'services/sales',
   },
   {
     number: 'III',
     title: 'Branding',
-    image: Services.servicesdetails1,
+    image: Services.serv3,
     Link: 'services/branding',
   },
   // Add more services as needed
@@ -82,7 +82,7 @@ const AllServices: React.FC = () => {
             justifyContent: 'center',
             alignItems: 'center'
         }}>
-            <Container maxWidth="lg" sx={{ py: 6, }}>
+            <Container maxWidth="xl" sx={{ py: 6, }}>
                 {/* Header */}
 
 

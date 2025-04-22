@@ -73,7 +73,7 @@ const DiagonalPortfolioSlider: React.FC = () => {
 
   return (
     <Box sx={{ pb: 12 }}>
-      <Box sx={{ transform: 'skewY(-1.5deg)', overflow: 'hidden' , height: {xs:'auto',md:'100vh'}}}>
+      <Box sx={{ transform: 'skewY(-1.5deg)', overflow: 'hidden' , height: {xs:'auto',md:'55vh'}}}>
         <Container maxWidth="xl">
           <Slider {...settings}>
             {slides.map((slide) => (

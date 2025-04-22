@@ -16,19 +16,19 @@ const services: ServiceItem[] = [
   {
     number: 'I',
     title: 'Mentoring',
-    image: Services.servicesdetails1,
+    image: Services.serv1,
     Link: 'services/mentoring',
   },
   {
     number: 'II',
     title: 'Sales',
-    image: Services.servicesdetails1,
+    image: Services.serv2,
     Link: 'services/sales',
   },
   {
     number: 'III',
     title: 'Branding',
-    image: Services.servicesdetails1,
+    image: Services.serv3,
     Link: 'services/branding',
   },
   // Add more services as needed
@@ -74,7 +74,7 @@ const ServicesSection: React.FC = () => {
 
   return (
     <Box id="service" sx={{ position: 'relative', py: 8 }}>
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         {/* Header */}
         <Grid container sx={{ mb: 4, py: 4, borderBottom: '1px solid #c9ced1', borderTop: '1px solid #c9ced1' }}>
           <Grid item xs={12} md={3}>
@@ -90,8 +90,8 @@ const ServicesSection: React.FC = () => {
               // My services
             </SmoothWaveText>
           </Grid>
-          <Grid item xs={12} md={7} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <Typography variant='h6' sx={{ fontSize: 18, textAlign: 'center', }}>
+          <Grid item xs={12} md={7} sx={{ display: "flex", alignItems: "center", justifyContent: "center" ,my:{xs:3,md:0}}}>
+            <Typography variant='h6' sx={{ fontSize: 18, textAlign: {xs:'justify',md:'start'}, }}>
             I specialize in curating high-performance sales frameworks for real estate businesses in the premium and luxury segments. My strategic counsel ensures your brand stands out, earns trust, and delivers unmatched value to affluent buyers. Think growth, elegance, and exclusivity—expertly aligned.
             </Typography>
           </Grid>

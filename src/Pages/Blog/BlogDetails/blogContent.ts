@@ -99,7 +99,7 @@ export const blogContent = [
       {
         title: "From Dream Homes to Smart Investments: Discover the Best Real Estate Agents in Hyderabad",
         date: "13 August, 2024",
-        image: Homeimages.blog1,
+        image: Blog.bloginnert1,
       },
     ],
     tags: [
