@@ -234,10 +234,10 @@ const AllProjectsMerged: React.FC = () => {
                     <Grid container spacing={2} sx={{ mt: 2 }}>
                       {service.bhk && (
                         <Grid item xs={12} sm={6} md={6}>
-                          <Box sx={{ display: 'flex', gap: 1, justifyContent: 'space-between' }}>
-                            <Typography variant="body2" sx={{ fontWeight: 800, color: 'primary.main' }}>
-                              BHK:
-                            </Typography>
+                          <Box sx={{ display: 'flex', gap: 1, justifyContent: 'start' }}>
+                            <Box sx={{ fontWeight: 700, color: 'primary.main' ,fontSize:'16px'}}>
+                              BHK :
+                            </Box>
                             <Typography variant="body2" sx={{ textAlign: 'start' }}>{service.bhk}</Typography>
                           </Box>
                         </Grid>
@@ -252,9 +252,9 @@ const AllProjectsMerged: React.FC = () => {
                           }}
                         >
                           <Box sx={{ display: 'flex', gap: 1, justifyContent: 'space-between' }}>
-                            <Typography variant="body2" sx={{ fontWeight: 800, color: 'primary.main' }}>
+                            <Box sx={{ fontWeight: 700, color: 'primary.main' ,fontSize:'16px'}}>
                               RERA:
-                            </Typography>
+                            </Box>
                             <Typography variant="body2" sx={{ textAlign: 'start' }}>{service.rera}</Typography>
                           </Box>
                         </Grid>
@@ -266,11 +266,11 @@ const AllProjectsMerged: React.FC = () => {
 
                           }}
                         >
-                          <Box sx={{ display: 'flex', gap: 1, justifyContent: 'space-between' }}>
-                            <Typography variant="body2" sx={{ fontWeight: 800, color: 'primary.main' }}>
+                          <Box sx={{ display: 'flex', gap: 1, justifyContent: 'start' }}>
+                            <Box sx={{ fontWeight: 700, color: 'primary.main' ,fontSize:'16px'}}>
                               Location:
-                            </Typography>
-                            <Typography variant="body2">{service.location}</Typography>
+                            </Box>
+                            <Typography variant="body2"  sx={{ textAlign: 'start' }}>{service.location}</Typography>
                           </Box>
                         </Grid>
                       )}
@@ -278,25 +278,25 @@ const AllProjectsMerged: React.FC = () => {
                       {service.developer && (
                         <Grid item xs={12} sm={6} md={6}>
                           <Box sx={{ display: 'flex', gap: 1, justifyContent: 'space-between' }}>
-                            <Typography variant="body2" sx={{ fontWeight: 800, color: 'primary.main' }}>
+                            <Box sx={{ fontWeight: 700, color: 'primary.main' ,fontSize:'16px'}}>
                               Developer:
-                            </Typography>
-                            <Typography variant="body2">{service.developer}</Typography>
+                            </Box>
+                            <Typography variant="body2"  sx={{ textAlign: 'start' }}>{service.developer}</Typography>
                           </Box>
                         </Grid>
                       )}
                       {service.status && (
                         <Grid item xs={12} sm={6} md={6}>
-                          <Box sx={{ display: 'flex', gap: 1, justifyContent: 'space-between' }}>
-                            <Typography variant="body2" sx={{ fontWeight: 800, color: 'primary.main' }}>
+                          <Box sx={{ display: 'flex', gap: 1, justifyContent: 'start' }}>
+                            <Box sx={{ fontWeight: 700, color: 'primary.main' ,fontSize:'16px'}}>
                               Status:
-                            </Typography>
-                            <Typography variant="body2">{service.status}</Typography>
+                            </Box>
+                            <Typography variant="body2"  sx={{ textAlign: 'start' }}>{service.status}</Typography>
                           </Box>
                         </Grid>
                       )}
                     </Grid>
-
+                 
 
 
 

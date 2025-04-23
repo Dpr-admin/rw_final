@@ -204,13 +204,13 @@ const Header: React.FC = () => {
   ];
 
   const renderDesktopMenu = () => (
-    <Box  sx={{ display: { xs: "none", md: "flex" }, gap: 3 }}>
+    <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3 }}>
       {navItems.map((item, index) => {
         const isActive =
           location.pathname === item.route ||
           (item.label === "Services" && location.pathname.startsWith("/services")) ||
           (item.label === "Home" && location.pathname === "/");
-
+  
         return (
           <Box
             key={index}
@@ -221,7 +221,6 @@ const Header: React.FC = () => {
           >
             <Typography
               className="nav-link"
-              
               variant="body2"
               sx={{
                 display: 'flex',
@@ -229,9 +228,7 @@ const Header: React.FC = () => {
                 alignItems: 'center',
                 position: 'relative',
                 color: isActive ? '#000 !important' : '#000',
-                '&:hover': {
-                  color: '#CF464E',
-                },
+                '&:hover': { color: '#CF464E' },
                 '&:before': {
                   content: "''",
                   position: 'absolute',
@@ -251,7 +248,7 @@ const Header: React.FC = () => {
             >
               {item.label} {item.submenu && <ArrowDropDownIcon />}
             </Typography>
-
+  
             {item.submenu && dropdownOpen === item.label && (
               <Box
                 className="dropdown-menu"
@@ -264,26 +261,37 @@ const Header: React.FC = () => {
                 }}
               >
                 {item.submenu.map((subItem, subIndex) => (
-                  <Box
-                    key={subIndex}
-                    className={`dropdown-item-${subIndex + 1}`}
-                    sx={{
-                      padding: "15px 46px",
-                      cursor: "pointer",
-                      opacity: 0,
-                      transform: "translateX(60px)",
-                      animation: `translateX 300ms ${(subIndex + 1) * 60}ms ease-in-out forwards`,
-                      '&:hover': {
-                        backgroundColor: "rgba(1, 5, 15, 0.8)",
-                        color: "white",
-                      },
-                      background: "rgba(52, 73, 94, 0.8)",
-                      width: "100px",
-                    }}
-                    onClick={() => handleNavigate(subItem.route)}
-                  >
-                    {subItem.label}
-                  </Box>
+                  <React.Fragment key={subIndex}>
+                    <Box
+                      className={`dropdown-item-${subIndex + 1}`}
+                      sx={{
+                        padding: "15px 46px",
+                        cursor: "pointer",
+                        opacity: 0,
+                        transform: "translateX(60px)",
+                        animation: `translateX 300ms ${(subIndex + 1) * 60}ms ease-in-out forwards`,
+                        '&:hover': {
+                          backgroundColor: "#0f63a5",
+                          color: "white",
+                        },
+                        background: "rgba(52, 73, 94, 0.8)",
+                        width: "100px",
+                      }}
+                      onClick={() => handleNavigate(subItem.route)}
+                    >
+                      {subItem.label}
+                    </Box>
+  
+                    {/* Divider between items, except after the last */}
+                    {subIndex < item.submenu.length - 1 && (
+                      <Divider
+                        sx={{
+                          backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                          // mx: 2,
+                        }}
+                      />
+                    )}
+                  </React.Fragment>
                 ))}
               </Box>
             )}
@@ -292,6 +300,7 @@ const Header: React.FC = () => {
       })}
     </Box>
   );
+  
 
   const renderMobileMenu = () => (
     <Drawer

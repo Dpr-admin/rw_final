@@ -54,11 +54,11 @@ const HeroHeadline: React.FC = () => {
           <Box
             component="span"
             sx={{
-              WebkitTextStroke: '1px black',
-              WebkitTextFillColor: 'transparent',
-              fontWeight: 700,
-              display: 'inline',
-              fontSize: { xs: '32px', md: '30px' },
+                fontWeight: 800,
+                textDecoration: 'underline',
+                color: 'primary.main',
+                display: 'inline',
+                fontSize: { xs: '32px', md: '30px' },
               
             }}
           >
@@ -79,11 +79,11 @@ const HeroHeadline: React.FC = () => {
           <Box
             component="span"
             sx={{
-              WebkitTextStroke: '1px black',
-              WebkitTextFillColor: 'transparent',
-              fontWeight: 700,
-              display: 'inline',
-              fontSize: { xs: '32px', md: '30px' },
+                fontWeight: 800,
+                textDecoration: 'underline',
+                color: 'primary.main',
+                display: 'inline',
+                fontSize: { xs: '32px', md: '30px' },
             }}
           >
               Member – HRA & NAR India

@@ -10,21 +10,21 @@ gsap.registerPlugin(ScrollTrigger);
 const steps = [
   {
     id: '01',
-    title: 'Send up your project',
+    title: 'High-Impact & Strategic Mentoring',
     description:
-      'Duis aute irure dolor in voluptate excepteur sint occaecat cupidatat none proident, sunt in officia deserunt mollit anim id est',
+      'I now coach agents to scale smarter through the power of branding and behavioral sales.I teach proven strategies to build authority, win client trust, and sell with clarity—so you can thrive in any cycle.',
   },
   {
     id: '02',
-    title: 'Get it delivered on time',
+    title: 'GResults-Focused & Empowered Sales',
     description:
-      'Duis aute irure dolor in voluptate excepteur sint occaecat cupidatat none proident, sunt in officia deserunt mollit anim id est',
+      'Results‑oriented mentorship to help real estate sales professionals close ₹Cr+ deals faster, backed by 15+ years of real‑world success. As a RERA‑registered Realtor & NAR/HRA member, I blend strategic branding, sales psychology, and hands‑on training. Ready to scale your high‑ticket closings?',
   },
   {
     id: '03',
-    title: 'Take on more clients & scale up',
+    title: 'Strategic and Powerful Branding  ',
     description:
-      'Duis aute irure dolor in voluptate excepteur sint occaecat cupidatat none proident, sunt in officia deserunt mollit anim id est',
+      'Command attention with strategic branding. Define your edge, craft a premium story, and magnetize high-net-worth clients. Elevate trust and dominate the luxury real estate market.',
   },
 ];
 
@@ -86,7 +86,7 @@ const WorkingProcess: React.FC = () => {
               <Paper
                 elevation={0}
                 sx={{
-                  height: '100%',
+                  height: '300px',
                   p: 4,
                   backgroundColor: 'transparent',
                   border: '1px dashed #fff',

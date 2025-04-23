@@ -66,15 +66,10 @@ const MentoringServices = () => {
   };
 
   return (
-    <Box sx={{ color: '#000', pt: 24 }}>
+    <Box sx={{ color: '#000', pt: 18 }}>
       <Box sx={{ mb: 6 }}>
-        <Container maxWidth="lg">
-          <Box sx={{ mb: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Breadcrumbs separator={<span style={{ color: '#000' }}>–</span>}>
-              <Box color="black">Home</Box>
-              <Typography sx={{ color: 'primary.main' }}>Mentoring</Typography>
-            </Breadcrumbs>
-          </Box>
+        <Container maxWidth="xl">
+         
 
           <SmoothWaveText
             variant="h3"
@@ -99,8 +94,8 @@ const MentoringServices = () => {
             }}
             sx={{
               display: 'flex',
-              width: 120,
-              height: 120,
+              width: 60,
+              height: 60,
               alignItems: 'center',
               justifyContent: 'center',
               backgroundColor: '#171818',
@@ -119,7 +114,7 @@ const MentoringServices = () => {
           >
             <SouthIcon
               className="south-icon"
-              sx={{ width: 50, height: 50, transition: 'all .3s ease', color: '#fff' }}
+              sx={{ width: 30, height: 30, transition: 'all .3s ease', color: '#fff' }}
             />
           </Box>
 
@@ -127,7 +122,7 @@ const MentoringServices = () => {
             src={Services.serv1}
             alt=""
             width="100%"
-            height="600px"
+            height="300px"
             threshold={0.8}
             scaleDuration={3}
             sx={{ borderRadius: '40px' }}

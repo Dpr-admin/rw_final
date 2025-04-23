@@ -10,11 +10,15 @@ const Portfolio: React.FC = () => {
   return (
     <Box>
       <HeroHeadline>
-        <span data-outline>Lorem ipsum dolor</span>{" "}
-        <span data-highlight>sit amet, consectetur</span>{" "}
-        <span data-outline>adipiscing </span>{" "}
+        <span data-outline>Trusted by industry leaders,</span>{" "}
+        <span data-highlight> Backed by Awards.</span>{" "}
+        <span data-outline>Browse my</span>{" "}
 
-        <span data-highlight>Sed euismod </span>
+        <span data-highlight>Portfolio </span>
+        <span data-outline>of premium clients, </span>{" "}
+        <span data-highlight> Milestones & Media Features. </span>
+
+
       </HeroHeadline>
       {/* <PortfolioSlider /> */}
       <PortfolioSection />

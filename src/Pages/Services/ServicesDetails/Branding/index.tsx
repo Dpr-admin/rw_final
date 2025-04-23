@@ -1,19 +1,90 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Box, Container, Typography, Breadcrumbs, List, ListItem, Grid, IconButton, Divider } from '@mui/material';
+import { Box, Container, Typography, Breadcrumbs, List, ListItem, Grid, IconButton, Divider, Button } from '@mui/material';
 import SouthIcon from '@mui/icons-material/South';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ImageReveal from '../../../../Components/ImageReveal';
 import { Services } from '../../../../assets';
 import SmoothWaveText from '../../../../Components/SmoothWaveText';
-import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+import AnimatedBorderButton from '../../../../Components/AnimatedBorderButton';
+import { gsap } from 'gsap';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 gsap.registerPlugin(ScrollToPlugin);
 
 const Branding = () => {
 
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const arrowRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const borderRef = useRef<HTMLSpanElement>(null);
+  const timeline = useRef<gsap.core.Timeline | null>(null);
+
+  useEffect(() => {
+    // Bounce animation for arrow
+    gsap.to(arrowRef.current, {
+      y: 10,
+      repeat: -1,
+      yoyo: true,
+      duration: 0.6,
+      ease: 'power1.inOut',
+    });
+
+    // Animated border
+    gsap.fromTo(buttonRef.current,
+      { boxShadow: '0 0 0px 0px #00f' },
+      {
+        boxShadow: '0 0 15px 5px #00f',
+        repeat: -1,
+        yoyo: true,
+        duration: 1.2,
+        ease: 'power2.inOut',
+      }
+    );
+  }, []);
+  useEffect(() => {
+    const container = containerRef.current;
+    const border = borderRef.current;
+
+    if (!container || !border) return;
+
+    const width = container.offsetWidth;
+    const height = container.offsetHeight;
+
+    timeline.current = gsap.timeline({ paused: true });
+
+    timeline.current
+      .to(border, { rotation: 0, duration: 0.2 })
+      .to(border, { height: height, y: -1, duration: 0.2 }, '+=0.2')
+      .to(border, { width: width, duration: 0.3 }, '+=0.3');
+
+    const handleEnter = () => {
+      border.style.borderColor = '#0f63a5';
+      timeline.current?.play();
+    };
+
+    const handleLeave = () => {
+      timeline.current?.reverse();
+      setTimeout(() => {
+        if (border) border.style.borderColor = '#0f63a5';
+      }, 800);
+    };
+
+    container.addEventListener('mouseenter', handleEnter);
+    container.addEventListener('mouseleave', handleLeave);
+
+    return () => {
+      container.removeEventListener('mouseenter', handleEnter);
+      container.removeEventListener('mouseleave', handleLeave);
+    };
+  }, []);
+
+  const handleClick = () => {
+    window.open('https://dezignshark.com', '_blank');
+  };
 
   useEffect(() => {
     contentRefs.current.forEach((ref, index) => {
@@ -47,33 +118,26 @@ const Branding = () => {
     };
   }, []);
 
-    const handleScroll = (targetId: string) => {
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        gsap.to(window, {
-          scrollTo: {
-            y: targetElement,
-            offsetY: 100, // Optional offset for spacing
-          },
-          duration: 1,
-          ease: 'power2.inOut',
-        });
-      } else {
-        console.error(`Element with ID ${targetId} not found.`);
-      }
-    };
-  
-  return (
-    <Box sx={{ color: '#000', pt: 24 }}>
-      <Box sx={{ mb: 6 }}>
-        <Container maxWidth="lg">
-          <Box sx={{ mb: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Breadcrumbs separator={<span style={{ color: '#000' }}>–</span>}>
-              <Box color="black">Home</Box>
-              <Typography sx={{ color: 'primary.main' }}>Mentoring</Typography>
-            </Breadcrumbs>
-          </Box>
+  const handleScroll = (targetId: string) => {
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      gsap.to(window, {
+        scrollTo: {
+          y: targetElement,
+          offsetY: 100, // Optional offset for spacing
+        },
+        duration: 1,
+        ease: 'power2.inOut',
+      });
+    } else {
+      console.error(`Element with ID ${targetId} not found.`);
+    }
+  };
 
+  return (
+    <Box sx={{ color: '#000', pt: 18 }}>
+      <Box sx={{ mb: 6 }}>
+        <Container maxWidth="xl">
           <SmoothWaveText
             variant="h3"
             sx={{
@@ -87,25 +151,25 @@ const Branding = () => {
         </Container>
       </Box>
 
-      <Container maxWidth="lg" sx={{ mt: 10 }}>
+      <Container maxWidth="xl" sx={{ mt: 10 }}>
         <Box sx={{ position: 'relative', mb: 6, textAlign: 'start' }}>
           <Box
             component="a"
             onClick={(e) => {
-                e.preventDefault();
-                handleScroll('#text');
-              }}
+              e.preventDefault();
+              handleScroll('#text');
+            }}
             sx={{
               display: 'flex',
-              width: 120,
-              height: 120,
+              width: 60,
+              height: 60,
               alignItems: 'center',
               justifyContent: 'center',
               backgroundColor: '#171818',
               border: '10px solid #171818',
               borderRadius: '50%',
               position: 'absolute',
-              top: -60,
+              top: -70,
               left: '50%',
               transform: 'translateX(-50%)',
               transition: 'all .3s ease',
@@ -117,123 +181,116 @@ const Branding = () => {
           >
             <SouthIcon
               className="south-icon"
-              sx={{ width: 50, height: 50, transition: 'all .3s ease', color: '#fff' }}
+              sx={{ width: 30, height: 30, transition: 'all .3s ease', color: '#fff' }}
             />
           </Box>
 
           <ImageReveal
-            src={Services.servicesdetails1}
+            src={Services.serv3}
             alt=""
             width="100%"
-            height="600px"
+            height="300px"
             threshold={0.8}
             scaleDuration={3}
             sx={{ borderRadius: '40px' }}
           />
         </Box>
+        <SmoothWaveText variant="h4" sx={{ fontSize: 36, mb: 2, textAlign: 'start', fontWeight: 700 ,color:'primary.main'}}>
+          Build a Magnetic Brand That Converts
+        </SmoothWaveText>
 
         <Box id="text" sx={{ mb: 4 }}>
           <Typography variant="body2" sx={{ textAlign: 'start' }}>
-            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-            in some form, by injected humour, or randomised slightly in believable. If you are going to use a passage
-            of Lorem Ipsum, you need to be sure there isn’t anything embarrassing hidden in the middle of text.
+            Most agents chase leads. Top agents attract them. With over 15 years of luxury real estate experience, I mentor professionals to lead with brand power—not desperation. I’m Rajiv Williams, your trusted brand management consultant and real estate growth mentor.
+          </Typography>
+          <Typography variant="body2" sx={{ textAlign: 'start', mt: 2 }}>
+            Through my brand consultant services, I empower realtors and builders to rise above the noise. Whether you’re a growing team or a builder entering premium markets, a solid brand marketing strategy is your foundation.
+          </Typography>
+          <Typography variant="body2" sx={{ textAlign: 'start', mt: 2 }}>
+            As a brand marketing strategist, I design systems that build influence, unlock elite referrals, and accelerate deal flow. This isn’t just personal branding—it’s positioning for high-ticket success.
+          </Typography>
+          <Typography variant="body2" sx={{ textAlign: 'start', mt: 2 }}>
+            Ready to attract rather than chase? Let’s align your identity, messaging, and sales approach with what high-net-worth clients want.
           </Typography>
         </Box>
 
-        <Box sx={{ mb: 6 }}>
-          <List sx={{ listStyle: 'none', pl: 0 }}>
-            {["All the Lorem Ipsum generators on the Internet tend to repeat",
-              "The generated Lorem Ipsum is therefore always free from repetition,",
-              "Many desktop publishing packages and web page editors now"].map((text, i) => (
-              <ListItem
-                key={i}
+        {/* <AnimatedBorderButton>
+          Know More
+        </AnimatedBorderButton> */}
+
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          position="relative"
+          gap={2}
+         sx={{
+          px:3
+         }}
+        >
+
+
+    
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'flex-start', // flex-start alignment
+              alignItems: 'center',
+              width: '100%',
+              
+            }}
+          >
+            <Box
+              ref={containerRef}
+              onClick={handleClick}
+              sx={{
+                position: 'relative',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                background: 'transparent',
+                padding: '10px 20px',
+              }}
+            >
+              <span
+                ref={borderRef}
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  height: '50%',
+                  transform: 'translateY(50%) rotate(90deg)',
+                  border: '1px solid #0f63a5',
+                  background: 'transparent',
+                  zIndex: 1,
+                  transition: 'border-color 0.2s ease',
+                  pointerEvents: 'none',
+                }}
+              />
+              <Box
                 sx={{
+                  fontSize: '35px',
+                  fontWeight: 100,
+                  letterSpacing: '1 px',
+                  color: '#0f63a5',
+                  zIndex: 2,
                   position: 'relative',
-                  pl: 3,
-                  mb: i === 2 ? 6 : 2,
-                  '&::before': {
-                    content: '""',
-                    width: 10,
-                    height: 10,
-                    borderRadius: '50%',
-                    backgroundColor: '#0f63a5',
-                    position: 'absolute',
-                    left: 0,
-                    top: 12,
-                  },
+                  userSelect: 'none',
                 }}
               >
-                <Typography variant="body2" sx={{ textAlign: 'start' }}>
-                  {text}
-                </Typography>
-              </ListItem>
-            ))}
-          </List>
+                Know More
+              </Box>
+            </Box>
+          </Box>
+
         </Box>
 
-        <Box sx={{ mb: 6 }}>
-          <SmoothWaveText variant="h4" sx={{ fontSize: 36, mb: 2, textAlign: 'start', fontWeight: 700 }}>
-            The way we work
-          </SmoothWaveText>
-          <Typography variant="body2" sx={{ textAlign: 'start' }}>
-            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
-            dolores eos qui ratione voluptatem sequi nesciunt. neque porro quisquam est, qui dolorem ipsum quia dolor
-            sit amet...
-          </Typography>
-        </Box>
 
-        <Box sx={{ mb: 6 }}>
-          <Grid container spacing={6}>
-            {["Research and analytics", "Planning and Strategy", "Design and Develop", "Testing and Launch"].map((title, i) => (
-              <Grid item xs={12} sm={6} md={3} key={i}>
-                <Box sx={{ pl: { xs: 0, md: 6 }, textAlign: 'start' }}>
-                  <Typography
-                    component="span"
-                    sx={{
-                      display: 'inline-block',
-                      color: 'primary.main',
-                      fontSize: 18,
-                      fontWeight: 700,
-                      mb: 1,
-                    }}
-                  >
-                    {String(i + 1).padStart(2, '0')}
-                  </Typography>
-                  <Typography variant="h6" sx={{ fontSize: 24, mb: 2 }}>
-                    {title}
-                  </Typography>
-                  <Typography>
-                    Nor again is there anyone who loves or pursues or desires to obtain itself because it is pain,
-                  </Typography>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
+
+
       </Container>
-
-      <Box sx={{ background: '#0f63a5', py: 6 }}>
-        <Container maxWidth="lg">
-          <Box sx={{ mb: 6 }}>
-            <ImageReveal
-              src={Services.servicesdetails1}
-              alt=""
-              width="100%"
-              height="600px"
-              threshold={0.8}
-              scaleDuration={3}
-              sx={{ borderRadius: '40px' }}
-            />
-          </Box>
-
-          <Box sx={{ mb: 8 }}>
-            <Typography variant="body2" sx={{ textAlign: 'start', color: 'white' }}>
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
-              dolores eos qui ratione voluptatem sequi nesciunt...
-            </Typography>
-          </Box>
-        </Container>
-      </Box>
 
     </Box>
   );

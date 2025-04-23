@@ -67,8 +67,8 @@ const ArrowRight = ({ onClick }: any) => (
 );
 
 const settings = {
-    dots: false,
-    arrows: true,
+    dots: true,
+    arrows: false, // Removed arrows
     infinite: true,
     speed: 700,
     slidesToShow: 2,
@@ -76,17 +76,44 @@ const settings = {
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: false,
-    nextArrow: <ArrowRight />,
-    prevArrow: <ArrowLeft />,
+    customPaging: () => (
+      <Box
+        sx={{
+          width: 10,
+          height: 10,
+          backgroundColor: '#fff',
+          borderRadius: '50%',
+          display: 'inline-block',
+          mx: 0.5,
+        }}
+      />
+    ),
+    appendDots: (dots: any) => (
+      <Box
+        component="ul"
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          mt: 3,
+          listStyle: 'none',
+          '& li.slick-active div': {
+            backgroundColor: '#000', // Active dot color
+          },
+        }}
+      >
+        {dots}
+      </Box>
+    ),
     responsive: [
-        {
-            breakpoint: 900,
-            settings: {
-                slidesToShow: 1,
-            },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 1,
         },
+      },
     ],
-};
+  };
+  
 
 const formatUrl = (id: string): string => id.toLowerCase().replace(/\s+/g, '-');
 
@@ -94,7 +121,7 @@ const formatUrl = (id: string): string => id.toLowerCase().replace(/\s+/g, '-');
 const PortfolioSlider: React.FC = () => {
        const navigate = useNavigate();
     return (
-        <Box sx={{ px: 4, py: 8, position: 'relative' }}>
+        <Box sx={{ px: 4, py: 4, position: 'relative' }}>
             <Slider {...settings}>
                 {portfolioItems.map((item, index) => (
                     <Box key={index} sx={{}}>
@@ -129,7 +156,9 @@ const PortfolioSlider: React.FC = () => {
                                     zIndex: 99,
                                     px: 4,
                                     // py: 2.5,
-                                    pt:2
+                                    pt:2,
+                                    fontWeight:700
+
                                 }}
                             >
                                 <Box
@@ -138,6 +167,7 @@ const PortfolioSlider: React.FC = () => {
                                         height: '1px',
                                         bgcolor: '#0f63a5',
                                         mr: 2,
+                                        fontWeight:800
                                     }}
                                 />
                                 {item.category}
@@ -223,25 +253,6 @@ const PortfolioSlider: React.FC = () => {
                                 </Box>
                             </Box>
 
-                            {/* Caption Title */}
-                            {/* <Typography
-                                sx={{
-                                    position: 'absolute',
-                                    left: 110,
-                                    bottom: 30,
-                                    right: 45,
-                                    fontSize: 20,
-                                    fontWeight: 500,
-                                    fontFamily: 'Oswald',
-                                    textTransform: 'uppercase',
-                                    color: '#fff',
-                                    zIndex: 9,
-                                }}
-                            >
-                             
-                                    {item.title}
-                               
-                            </Typography> */}
                         </Box>
                     </Box>
                 ))}
