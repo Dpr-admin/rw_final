@@ -51,7 +51,7 @@ const cardData = [
     },
 ];
 
-const ContactCards = () => {
+const Locations = () => {
     return (
         <Box
             sx={{
@@ -63,10 +63,11 @@ const ContactCards = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 flexDirection: 'column',
+              
             }}
         >
             <Box sx={{}}>
-                <Container maxWidth="lg" sx={{ mb: 0, pt: 4 }}>
+                <Container maxWidth="lg" sx={{ mb: 0, pt: {xs:14,md:4}, }}>
                     <Box sx={{ mb: 2, display: 'flex', alignItems: 'center', justifyContent: 'center', }}>
                         <Breadcrumbs separator={<span style={{ color: '#000' }}>–</span>}>
                             <Box color="black">Home</Box>
@@ -81,13 +82,13 @@ const ContactCards = () => {
                     </SmoothWaveText>
                 </Container>
             </Box>
-            <Grid container spacing={4} maxWidth="xl" mx="auto" justifyContent="center">
+            <Grid container spacing={4} maxWidth="xl"  justifyContent="center" sx={{  width:'100%'}}>
                 {cardData.map((card, idx) => (
                     <Grid item xs={12} sm={4} md={4} key={idx}>
                         <Box
                             sx={{
                                 position: 'relative',
-                                height: '230px',
+                                height: {xs:'auto',md:'230px'},
                                 cursor: 'pointer',
                                 overflow: 'hidden',
                                 bgcolor: 'white',
@@ -176,4 +177,4 @@ const ContactCards = () => {
     );
 };
 
-export default ContactCards;
+export default Locations;

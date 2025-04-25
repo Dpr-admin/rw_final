@@ -87,7 +87,7 @@ const WorkingProcess: React.FC = () => {
               <Paper
                 elevation={0}
                 sx={{
-                  height: '300px',
+                  height: {xs:'auto',md:'300px'},
                   p: 4,
                   backgroundColor: 'transparent',
                   border: '1px dashed #0f63a5',

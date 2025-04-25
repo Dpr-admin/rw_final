@@ -176,6 +176,8 @@ const HeroHeadline: React.FC = () => {
                 sx={{
                   WebkitTextStroke: '1px black',
                   WebkitTextFillColor: 'transparent',
+                  textDecoration: 'underline',
+                  textDecorationColor: '#0f63a5',
                   fontWeight: 700,
                   display: 'inline',
                   fontSize: { xs: '32px', md: '47px' },
