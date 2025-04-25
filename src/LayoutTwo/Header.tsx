@@ -352,7 +352,7 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
       onClose={handleDrawerToggle}
       sx={{
       "& .MuiDrawer-paper": {
-        width: "300px",
+        width: "350px",
         color: "white !important",
         border: "none",
         overflow: "hidden",
@@ -362,7 +362,7 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
       }}
     >
       {/* Drawer Content */}
-      <Box className="drawer-content" sx={{ width: 300, display: "flex", flexDirection: "column", height: "100%" }}>
+      <Box className="drawer-content" sx={{ width: 350, display: "flex", flexDirection: "column", height: "100%" }}>
       {/* Close Button */}
       <IconButton
         onClick={handleDrawerToggle}
@@ -380,183 +380,193 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
       >
         <CloseIcon sx={{ color: "#000", fontSize: "24px" }} />
       </IconButton>
-
-      {/* Logo */}
       <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          mt: 6,
-          mb: 4,
-          opacity: 0,
-          transform: "translateX(60px)",
-          animation: `translateX 300ms ease-in-out forwards`,
-        }}
+       sx={{
+        flexGrow: 1,
+        overflowY: "auto",
+        pt: 8,
+        pb: 4,
+      }}
       >
-        <Box
-          component="img"
-          src={Homeimages.rwlogo}
-          alt="Logo"
-          sx={{
-            width: "100px",
-            height: "100px",
-            color: "#FFF !important", // Ensure logo text color is white
-          }}
-        />
+
+          {/* Logo */}
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              mt: 6,
+              mb: 4,
+              opacity: 0,
+              transform: "translateX(60px)",
+              animation: `translateX 300ms ease-in-out forwards`,
+            }}
+          >
+            <Box
+              component="img"
+              src={Homeimages.rwlogo}
+              alt="Logo"
+              sx={{
+                width: "150px",
+                height: "150px",
+                color: "#FFF !important", // Ensure logo text color is white
+              }}
+            />
+          </Box>
+
+          {/* Navigation List */}
+          <List>
+            {navItems.map((item, index) => {
+              const isActive =
+                location.pathname === item.route ||
+                (item.label === "Services" && location.pathname.startsWith("/services")) ||
+                (item.label === "Home" && location.pathname === "/");
+
+              return (
+                <Box key={index}>
+                  <ListItemButton
+                    onClick={(e) => {
+                      const target = e.target as HTMLElement; // Cast e.target to HTMLElement
+                      if (target.tagName === 'svg' || target.tagName === 'path') {
+                        e.stopPropagation(); // Prevent navigation when clicking the dropdown icon
+                        handleDrawerSubmenuToggle(item.label);
+                      } else {
+                        handleNavigate(item.route); // Navigate to the route when clicking the label
+                      }
+                    }}
+                    style={{color:'white !important'}}
+                    sx={{
+                      color: "#FFF !important", // Ensure menu item text is white in mobile view
+                      fontFamily:' GilroyRegular, sans-serif !important',
+                      fontSize: "32px",
+                      transition: "border-left 0.3s ease-in-out",
+                      borderLeft: isActive ? "3px solid #fff" : "3px solid transparent",
+                      padding: "15px 46px",
+                      cursor: "pointer",
+                      opacity: 0,
+                      transform: "translateX(60px)",
+                      animation: `translateX 300ms ${index * 60}ms ease-in-out forwards`,
+                      '&:hover': {
+                        backgroundColor: "rgba(1, 5, 15, 0.8)",
+                        color: "white !important",
+                      },
+                      // background: "rgba(52, 73, 94, 0.8)",
+                    }}
+                  >
+                    <ListItemText style={{color:'white'}}
+                    primaryTypographyProps={{
+                      sx: {
+                        color: '#fff',
+                        fontFamily: 'GilroyBold, sans-serif',
+                        fontSize: '32px',
+                      },
+                    }}
+                    primary={item.label}    />
+                    {item.submenu && (
+                      <ArrowDropDownIcon sx={{ transform: drawerSubmenuOpen === item.label ? "rotate(180deg)" : "rotate(0deg)" }} />
+                    )}
+                  </ListItemButton>
+                  <Divider sx={{ backgroundColor: "#FFFFFF80" }} />
+
+                  {item.submenu && drawerSubmenuOpen === item.label && (
+                    <List sx={{ pl: 2, color:'#fff' }}>
+                      {item.submenu.map((subItem, subIndex) => {
+                        const isSubItemActive =
+                          location.pathname === subItem.route ||
+                          (subItem.label === "Mentoring" && location.pathname.startsWith("/services/mentoring")) ||
+                          (subItem.label === "Sales" && location.pathname.startsWith("/services/sales"));
+
+                        return (
+                          <ListItemButton
+                          style={{color:'white !important'}}
+                            key={subIndex}
+                            onClick={() => handleNavigate(subItem.route)}
+                            sx={{
+                              color: "#FFF !important",
+                              fontSize: "20px",
+                              pl: 4,
+                              transition: "border-left 0.3s ease-in-out",
+                              borderLeft: isSubItemActive ? "3px solid black" : "3px solid transparent",
+                              padding: "15px 46px",
+                              cursor: "pointer",
+                              opacity: 0,
+                              transform: "translateX(60px)",
+                              animation: `translateX 300ms ${(subIndex + 1) * 60}ms ease-in-out forwards`,
+                              '&:hover': {
+                                backgroundColor: "rgba(1, 5, 15, 0.8)",
+                                color: "white",
+                              },
+                              background: "none", // Removed background change
+                            }}
+                          >
+                            {subItem.label}
+                          </ListItemButton>
+                        );
+                      })}
+                    </List>
+                  )}
+                </Box>
+              );
+            })}
+          </List>
+
+          {/* Social Icons & Footer (Positioned at Bottom) */}
+          <Box sx={{}} />
+          <Box sx={{ display: "flex", justifyContent: "center", gap: 2, mt: 5 }}>
+            <IconButton
+            sx={{
+              color: "#000",
+              backgroundColor: "#fff",
+              "&:hover": { backgroundColor: "rgba(223, 10, 10, 0.2)" },
+              borderRadius: "50%",
+              padding: "10px",
+            }}>
+            <WhatsAppIcon />
+            </IconButton>
+            <IconButton sx={{
+            color: "#000",
+            backgroundColor: "#fff",
+            "&:hover": { backgroundColor: "rgba(19, 29, 56, 0.2)" },
+            borderRadius: "50%",
+            padding: "10px",
+            }}>
+            <TwitterIcon />
+            </IconButton>
+            <IconButton sx={{
+            color: "#000",
+            backgroundColor: "#fff",
+            "&:hover": { backgroundColor: "rgba(223, 10, 10, 0.2)" },
+            borderRadius: "50%",
+            padding: "10px",
+            }}>
+            <InstagramIcon />
+            </IconButton>
+            <IconButton sx={{
+            color: "#000",
+            backgroundColor: "#fff",
+            "&:hover": { backgroundColor: "rgba(223, 10, 10, 0.2)" },
+            borderRadius: "50%",
+            padding: "10px",
+            }}>
+            <FacebookIcon />
+            </IconButton>
+            <IconButton sx={{
+            color: "#000",
+            backgroundColor: "#fff",
+            "&:hover": { backgroundColor: "rgba(223, 10, 10, 0.2)" },
+            borderRadius: "50%",
+            padding: "10px",
+            }}>
+            <LinkedInIcon />
+            </IconButton>
+          </Box>
+
+          {/* Footer Text */}
+          <Typography variant="body2" align="center" sx={{ mt: 5, color: "#FFFFFF80", }}>
+            ©2025 All Rights Reserved. Designed by Dezign Shark.
+          </Typography>
       </Box>
 
-      {/* Navigation List */}
-      <List>
-        {navItems.map((item, index) => {
-          const isActive =
-            location.pathname === item.route ||
-            (item.label === "Services" && location.pathname.startsWith("/services")) ||
-            (item.label === "Home" && location.pathname === "/");
-
-          return (
-            <Box key={index}>
-              <ListItemButton
-                onClick={(e) => {
-                  const target = e.target as HTMLElement; // Cast e.target to HTMLElement
-                  if (target.tagName === 'svg' || target.tagName === 'path') {
-                    e.stopPropagation(); // Prevent navigation when clicking the dropdown icon
-                    handleDrawerSubmenuToggle(item.label);
-                  } else {
-                    handleNavigate(item.route); // Navigate to the route when clicking the label
-                  }
-                }}
-                style={{color:'white !important'}}
-                sx={{
-                  color: "#FFF !important", // Ensure menu item text is white in mobile view
-                  fontFamily:' GilroyRegular, sans-serif !important',
-                  fontSize: "32px",
-                  transition: "border-left 0.3s ease-in-out",
-                  borderLeft: isActive ? "3px solid #fff" : "3px solid transparent",
-                  padding: "15px 46px",
-                  cursor: "pointer",
-                  opacity: 0,
-                  transform: "translateX(60px)",
-                  animation: `translateX 300ms ${index * 60}ms ease-in-out forwards`,
-                  '&:hover': {
-                    backgroundColor: "rgba(1, 5, 15, 0.8)",
-                    color: "white !important",
-                  },
-                  // background: "rgba(52, 73, 94, 0.8)",
-                }}
-              >
-                <ListItemText style={{color:'white'}}
-                 primaryTypographyProps={{
-                  sx: {
-                    color: '#fff',
-                    fontFamily: 'GilroyBold, sans-serif',
-                    fontSize: '32px',
-                  },
-                }}
-                 primary={item.label}    />
-                {item.submenu && (
-                  <ArrowDropDownIcon sx={{ transform: drawerSubmenuOpen === item.label ? "rotate(180deg)" : "rotate(0deg)" }} />
-                )}
-              </ListItemButton>
-              <Divider sx={{ backgroundColor: "#FFFFFF80" }} />
-
-              {item.submenu && drawerSubmenuOpen === item.label && (
-                <List sx={{ pl: 2, color:'#fff' }}>
-                  {item.submenu.map((subItem, subIndex) => {
-                    const isSubItemActive =
-                      location.pathname === subItem.route ||
-                      (subItem.label === "Mentoring" && location.pathname.startsWith("/services/mentoring")) ||
-                      (subItem.label === "Sales" && location.pathname.startsWith("/services/sales"));
-
-                    return (
-                      <ListItemButton
-                      style={{color:'white !important'}}
-                        key={subIndex}
-                        onClick={() => handleNavigate(subItem.route)}
-                        sx={{
-                          color: "#FFF !important",
-                          fontSize: "20px",
-                          pl: 4,
-                          transition: "border-left 0.3s ease-in-out",
-                          borderLeft: isSubItemActive ? "3px solid black" : "3px solid transparent",
-                          padding: "15px 46px",
-                          cursor: "pointer",
-                          opacity: 0,
-                          transform: "translateX(60px)",
-                          animation: `translateX 300ms ${(subIndex + 1) * 60}ms ease-in-out forwards`,
-                          '&:hover': {
-                            backgroundColor: "rgba(1, 5, 15, 0.8)",
-                            color: "white",
-                          },
-                          background: "none", // Removed background change
-                        }}
-                      >
-                        {subItem.label}
-                      </ListItemButton>
-                    );
-                  })}
-                </List>
-              )}
-            </Box>
-          );
-        })}
-      </List>
-
-      {/* Social Icons & Footer (Positioned at Bottom) */}
-      <Box sx={{}} />
-      <Box sx={{ display: "flex", justifyContent: "center", gap: 2, mt: 5 }}>
-        <IconButton
-        sx={{
-          color: "#000",
-          backgroundColor: "#fff",
-          "&:hover": { backgroundColor: "rgba(223, 10, 10, 0.2)" },
-          borderRadius: "50%",
-          padding: "10px",
-        }}>
-        <WhatsAppIcon />
-        </IconButton>
-        <IconButton sx={{
-        color: "#000",
-        backgroundColor: "#fff",
-        "&:hover": { backgroundColor: "rgba(19, 29, 56, 0.2)" },
-        borderRadius: "50%",
-        padding: "10px",
-        }}>
-        <TwitterIcon />
-        </IconButton>
-        <IconButton sx={{
-        color: "#000",
-        backgroundColor: "#fff",
-        "&:hover": { backgroundColor: "rgba(223, 10, 10, 0.2)" },
-        borderRadius: "50%",
-        padding: "10px",
-        }}>
-        <InstagramIcon />
-        </IconButton>
-        <IconButton sx={{
-        color: "#000",
-        backgroundColor: "#fff",
-        "&:hover": { backgroundColor: "rgba(223, 10, 10, 0.2)" },
-        borderRadius: "50%",
-        padding: "10px",
-        }}>
-        <FacebookIcon />
-        </IconButton>
-        <IconButton sx={{
-        color: "#000",
-        backgroundColor: "#fff",
-        "&:hover": { backgroundColor: "rgba(223, 10, 10, 0.2)" },
-        borderRadius: "50%",
-        padding: "10px",
-        }}>
-        <LinkedInIcon />
-        </IconButton>
-      </Box>
-
-      {/* Footer Text */}
-      <Typography variant="body2" align="center" sx={{ mt: 5, color: "#FFFFFF80", }}>
-        ©2025 All Rights Reserved. Designed by Dezign Shark.
-      </Typography>
       </Box>
     </Drawer>
   );
