@@ -139,7 +139,7 @@ const BlogSection = () => {
         }}
       >
         {/* Content */}
-        <Grid item xs={12} md={7} sx={{ textAlign: 'start' }}>
+        <Grid item xs={12} md={7} order={{ xs: 1, md: 2 }} sx={{ textAlign: 'start' ,}}>
           <Typography variant="h6" sx={{ color: 'primary.main' }}>
             ● {post.date}
           </Typography>
@@ -167,7 +167,7 @@ const BlogSection = () => {
         </Grid>
 
         {/* Image */}
-        <Grid item xs={12} md={5}>
+        <Grid item xs={12} md={5} order={{ xs: 2, md: 1 }}>
           <ImageReveal
             src={post.image}
             alt={post.title}
