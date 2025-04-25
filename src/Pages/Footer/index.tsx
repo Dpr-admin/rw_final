@@ -25,6 +25,7 @@ import CustomInput from '../../Components/CustomInput';
 import { Homeimages } from '../../assets';
 import AnimatedBorderButton from '../../Components/AnimatedBorderButton';
 import SpotlightButton from '../../Components/SpotlightButton';
+import FooterForm from './FooterForm';
 
 
 const socialLinks: { name: string; url: string }[] = [
@@ -44,7 +45,7 @@ const ContactSection = () => {
         alt="Decorative"
         sx={{
           position: 'absolute',
-          bottom: 0,
+          bottom: -5,
           right: 0,
           // width: { xs: '100px', md: '600px' },
           height:"400px",
@@ -93,13 +94,13 @@ const ContactSection = () => {
                   STAY UP TO DATE
                 </Typography>
                 <Box sx={{ display: "flex", alignItems: "start", mb: 2, gap: { xs: 2, lg: 0 } }}>
-                  <Phone sx={{ fontSize: { xs: 50, lg: 24 }, color: "white", minWidth: "40px", }} />
+                  <Phone sx={{ fontSize: { xs: 29, lg: 24 }, color: "white", minWidth: "40px", }} />
                   <Link href="tel:+91 98854 20885" color="inherit" sx={{ textDecoration: "none", fontSize: { xs: "20px", md: "16px" } }}>
                     +91 98854 20885
                   </Link>
                 </Box>
                 <Box sx={{ display: "flex", alignItems: "start", gap: { xs: 2, lg: 0 } }}>
-                  <Email sx={{ fontSize: { xs: 50, lg: 24 }, color: "white", minWidth: "40px" }} />
+                  <Email sx={{ fontSize: { xs: 29, lg: 24 }, color: "white", minWidth: "40px" }} />
                   <Link href="mailto:connect@rajivwilliams.com" color="inherit" sx={{ textDecoration: "none", fontSize: { xs: "20px", md: "16px" } }}>
                     connect@rajivwilliams.com
                   </Link>
@@ -159,63 +160,7 @@ const ContactSection = () => {
 
             {/* Right Form Section */}
             <Grid item xs={12} md={6} py={6}>
-              <Grid container spacing={3} px={4}>
-                <CustomInput label="Name" xs={12} required />
-                <CustomInput label="Email" xs={12} required />
-                <CustomInput label="Number" xs={12} required />
-                <CustomInput label="Message" xs={12} />
-
-
-
-                {/* Submit Button */}
-                {/* <Grid item xs={12}>
-                  <Box display="flex" justifyContent="center">
-                    <Button
-                      variant="contained"
-                      sx={{
-                        bgcolor: 'white',
-                        color: '#000',
-                        borderRadius: '50%',
-                        width: 150,
-                        height: 150,
-                        fontWeight: 700,
-                        textTransform: 'none',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        gap: 1, 
-                        '&:hover': {
-                          bgcolor: '#000',
-                          color: 'white',
-                        },
-                      }}
-                    >
-                      
-                      <Box display="flex" alignItems="center">
-                        Submit
-                        <Box
-                          component="img"
-                          src={Homeimages.arrow}
-                          alt="arrow"
-                          sx={{
-                            width: 16,
-                            height: 16,
-                            ml: 1, 
-                          }}
-                        />
-                      </Box>
-                    </Button>
-                  </Box>
-                </Grid> */}
-                <Grid item xs={12} md={12} mt={5}>
-                  <AnimatedBorderButton>
-                    Submit
-                  </AnimatedBorderButton>
-
-                </Grid>
-
-
-              </Grid>
+              <FooterForm/>
             </Grid>
           </Grid>
         </Container>

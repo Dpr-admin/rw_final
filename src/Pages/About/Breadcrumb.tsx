@@ -17,8 +17,8 @@ const fillAni = keyframes`
 `;
 
 const SvgWrapper = styled(Box)(({ theme }) => ({
-  width: 500,
-  height: 500,
+  width: 600,
+  height: 600,
   position: 'absolute',
   left: 0,
   top: '50%',
@@ -33,7 +33,7 @@ const SvgWrapper = styled(Box)(({ theme }) => ({
     strokeWidth: 1,
     strokeDasharray: 2500,
     strokeDashoffset: 2500,
-    stroke: 'black',
+    stroke: '#0f63a5',
     fill: 'black',
   },
   '&.active path': {
@@ -57,7 +57,7 @@ const HeroHeadline: React.FC = () => {
         alignItems: 'center',
         justifyContent: 'center',
         position: 'relative',
-        textAlign: { xs: 'center', md: 'left' },
+        textAlign: { xs: 'left', md: 'left' },
       }}
     >
       {/* <SvgWrapper className={isActive ? 'active' : ''}>

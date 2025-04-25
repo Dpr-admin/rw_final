@@ -50,55 +50,191 @@ const HeroHeadline: React.FC = () => {
   }, []);
 
   return (
-    <Box
-      sx={{
-        height: { xs: '27vh', md: '50vh' },
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'relative',
-        textAlign: { xs: 'center', md: 'left' },
-      }}
-    >
-      {/* <SvgWrapper className={isActive ? 'active' : ''}>
-        <Overview1 />
-      </SvgWrapper> */}
+    // <Box
+    //   sx={{
+    //     height: { xs: '27vh', md: '100vh' },
+    //     display: 'flex',
+    //     alignItems: 'center',
+    //     justifyContent: 'center',
+    //     position: 'relative',
+    //     textAlign: { xs: 'center', md: 'left' },
+    //   }}
+    // >
+    //   {/* <SvgWrapper className={isActive ? 'active' : ''}>
+    //     <Overview1 />
+    //   </SvgWrapper> */}
 
-      <Container maxWidth="lg">
-        <Typography
-          variant="h3"
-          component="h1"
+    //   <Container maxWidth="lg">
+    //     <Typography
+    //       variant="h3"
+    //       component="h1"
+    //       sx={{
+    //         fontWeight: 700,
+    //         fontSize: { xs: '32px', md: '52px' },
+    //         lineHeight: 1.3,
+    //         color: '#fff',
+    //         textAlign: 'center',
+    //         display: 'flex',
+    //         alignItems: 'center',
+    //         justifyContent: 'center',
+    //         mt: 16
+    //       }}
+    //     >
+
+    //       <Box
+    //         component="span"
+    //         sx={{
+    //           fontWeight: 800,
+    //           textDecoration: 'underline',
+    //           color: 'primary.main',
+    //           display: 'inline',
+    //           fontSize: { xs: '32px', md: '47px' },
+    //           alignItems: 'center',
+    //           justifyContent: 'center',
+    //         }}
+    //       >
+    //         Learn. Grow. Succeed
+
+    //       </Box>{' '}
+    //       {/* </br> */}
+    //       <Box
+    //         component="span"
+    //         sx={{
+    //           fontWeight: 800,
+    //           textDecoration: 'underline',
+    //           color: 'primary.main',
+    //           display: 'inline',
+    //           fontSize: { xs: '32px', md: '47px' },
+    //           alignItems: 'center',
+    //           justifyContent: 'center',
+    //         }}
+    //       >
+    //        Our blog brings you
+
+    //       </Box>{' '}
+    //       <Box
+    //         component="span"
+    //         sx={{
+    //           fontWeight: 800,
+    //           textDecoration: 'underline',
+    //           color: 'primary.main',
+    //           display: 'inline',
+    //           fontSize: { xs: '32px', md: '47px' },
+    //         }}
+    //       >
+    //        real stories, expert advice, and timeless strategies 
+    //       </Box>{' '}
+    //       <Box
+    //         component="span"
+    //         sx={{
+    //           fontWeight: 800,
+    //           textDecoration: 'underline',
+    //           color: 'primary.main',
+    //           display: 'inline',
+    //           fontSize: { xs: '32px', md: '47px' },
+    //           alignItems: 'center',
+    //           justifyContent: 'center',
+    //         }}
+    //       >
+    //       to navigate the property world.
+
+    //       </Box>{' '}
+          
+
+    //     </Typography>
+    //   </Container>
+    // </Box>
+        <Box
           sx={{
-            fontWeight: 700,
-            fontSize: { xs: '32px', md: '52px' },
-            lineHeight: 1.3,
-            color: '#fff',
-            textAlign: 'center',
+            height: { xs: '65vh', md: '100vh' },
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            mt:16
+            position: 'relative',
+            textAlign: { xs: 'center', md: 'left' },
           }}
         >
-
-          <Box
-            component="span"
-            sx={{
-              fontWeight: 800,
-              textDecoration: 'underline',
-              color: 'primary.main',
-              display: 'inline',
-              fontSize: { xs: '32px', md: '47px' },
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            Blogs
-          </Box>{' '}
-
-        </Typography>
-      </Container>
-    </Box>
+          {/* <SvgWrapper className={isActive ? 'active' : ''}>
+            <Overview1 />
+          </SvgWrapper> */}
+    
+          <Container maxWidth="lg">
+            <Typography
+              variant="h3"
+              component="h1"
+              sx={{
+                fontWeight: 700,
+                fontSize: { xs: '32px', md: '52px' },
+                lineHeight: 1.3,
+                color: '#fff',
+                textAlign: 'center',
+                mt:{xs:3,lg:5}
+              }}
+            >
+              <Box
+                component="span"
+                sx={{
+                  WebkitTextStroke: '1px black',
+                  WebkitTextFillColor: 'transparent',
+                  fontWeight: 700,
+                  display: 'inline',
+                  fontSize: { xs: '32px', md: '47px' },
+                }}
+              >
+                   Learn. Grow. Succeed
+              </Box>{' '}<br/>
+              <Box
+                component="span"
+                sx={{
+                  WebkitTextStroke: '1px black',
+                  WebkitTextFillColor: 'transparent',
+                  fontWeight: 700,
+                  display: 'inline',
+                  fontSize: { xs: '32px', md: '30px' },
+                }}
+              >
+                Our blog brings you
+              </Box>{' '}
+              <Box
+                component="span"
+                sx={{
+                  fontWeight: 800,
+                  textDecoration: 'underline',
+                  color: 'primary.main',
+                  display: 'inline',
+                  fontSize: { xs: '32px', md: '30px' },
+                }}
+              >
+                Luxury real estate sales
+              </Box>{' '}
+              <Box
+                component="span"
+                sx={{
+                  fontWeight: 800,
+                  textDecoration: 'underline',
+                  color: 'primary.main',
+                  display: 'inline',
+                  fontSize: { xs: '32px', md: '30px' },
+                }}
+              >
+                real stories, expert advice, and timeless strategies 
+              </Box>{' '}
+              <Box
+                component="span"
+                sx={{
+                  WebkitTextStroke: '1px black',
+                  WebkitTextFillColor: 'transparent',
+                  fontWeight: 700,
+                  display: 'inline',
+                  fontSize: { xs: '32px', md: '30px' },
+                }}
+              >
+              to navigate the property world.
+              </Box>{' '}
+              
+            </Typography>
+          </Container>
+        </Box>
   );
 };
 

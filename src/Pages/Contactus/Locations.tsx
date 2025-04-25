@@ -81,9 +81,9 @@ const ContactCards = () => {
                     </SmoothWaveText>
                 </Container>
             </Box>
-            <Grid container spacing={4} maxWidth="lg" mx="auto" justifyContent="center">
+            <Grid container spacing={4} maxWidth="xl" mx="auto" justifyContent="center">
                 {cardData.map((card, idx) => (
-                    <Grid item xs={12} sm={6} md={4} key={idx}>
+                    <Grid item xs={12} sm={4} md={4} key={idx}>
                         <Box
                             sx={{
                                 position: 'relative',
@@ -91,6 +91,7 @@ const ContactCards = () => {
                                 cursor: 'pointer',
                                 overflow: 'hidden',
                                 bgcolor: 'white',
+                                
                                 px: 4,
                                 py: 3,
                                 boxShadow: 3,

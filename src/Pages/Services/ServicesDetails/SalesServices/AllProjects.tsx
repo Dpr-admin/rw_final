@@ -251,7 +251,7 @@ const AllProjectsMerged: React.FC = () => {
                             },
                           }}
                         >
-                          <Box sx={{ display: 'flex', gap: 1, justifyContent: 'space-between' }}>
+                          <Box sx={{ display: 'flex', gap: 1, justifyContent: 'start' }}>
                             <Box sx={{ fontWeight: 700, color: 'primary.main' ,fontSize:'16px'}}>
                               RERA:
                             </Box>
@@ -277,7 +277,7 @@ const AllProjectsMerged: React.FC = () => {
 
                       {service.developer && (
                         <Grid item xs={12} sm={6} md={6}>
-                          <Box sx={{ display: 'flex', gap: 1, justifyContent: 'space-between' }}>
+                          <Box sx={{ display: 'flex', gap: 1, justifyContent: 'start' }}>
                             <Box sx={{ fontWeight: 700, color: 'primary.main' ,fontSize:'16px'}}>
                               Developer:
                             </Box>

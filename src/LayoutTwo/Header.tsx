@@ -70,8 +70,8 @@ const Header: React.FC = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   const logoRef = useRef<HTMLDivElement | null>(null);
-const navRefs = useRef<Array<HTMLDivElement | null>>([]);
-const talkButtonRef = useRef<HTMLButtonElement | null>(null);
+  const navRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const talkButtonRef = useRef<HTMLButtonElement | null>(null);
 
 
   const handlePopupOpen = () => {
@@ -92,7 +92,7 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
         { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
       );
     }
-  
+
     // Animate nav items
     if (navRefs.current.length) {
       gsap.fromTo(
@@ -107,7 +107,7 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
         }
       );
     }
-  
+
     // Animate "Let's talk" button
     if (talkButtonRef.current) {
       gsap.fromTo(
@@ -117,7 +117,7 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
       );
     }
   }, []);
-  
+
 
   // GSAP Dropdown Animation
   useEffect(() => {
@@ -226,7 +226,7 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
     }
   }, [mobileOpen]);
 
-  
+
   const navItems = [
     { label: "Home", route: "/" },
     { label: "About", route: "/aboutus" },
@@ -251,7 +251,7 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
           location.pathname === item.route ||
           (item.label === "Services" && location.pathname.startsWith("/services")) ||
           (item.label === "Home" && location.pathname === "/");
-  
+
         return (
           <Box
             key={index}
@@ -291,7 +291,7 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
             >
               {item.label} {item.submenu && <ArrowDropDownIcon />}
             </Typography>
-  
+
             {item.submenu && dropdownOpen === item.label && (
               <Box
                 className="dropdown-menu"
@@ -324,7 +324,7 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
                     >
                       {subItem.label}
                     </Box>
-  
+
                     {/* Divider between items, except after the last */}
                     {subIndex < item.submenu.length - 1 && (
                       <Divider
@@ -343,7 +343,7 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
       })}
     </Box>
   );
-  
+
 
   const renderMobileMenu = () => (
     <Drawer
@@ -351,44 +351,44 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
       open={mobileOpen}
       onClose={handleDrawerToggle}
       sx={{
-      "& .MuiDrawer-paper": {
-        width: "300px",
-        color: "white !important",
-        border: "none",
-        overflow: "hidden",
-        backgroundColor: "#0f63a5",
-        backdropFilter: "blur(10px)",
-        height:'100vh'
-      },
+        "& .MuiDrawer-paper": {
+          width: "300px",
+          color: "white !important",
+          border: "none",
+          overflow: "hidden",
+          backgroundColor: "#0f63a5",
+          backdropFilter: "blur(10px)",
+          height: '100vh'
+        },
       }}
     >
       {/* Drawer Content */}
       <Box className="drawer-content" sx={{ width: 300, display: "flex", flexDirection: "column", height: "100%" }}>
-      {/* Close Button */}
-      <IconButton
-        onClick={handleDrawerToggle}
-        sx={{
-        position: "absolute",
-        top: "10px",
-        right: "10px",
-        backgroundColor: "#fff",
-        "&:hover": { backgroundColor: "rgba(223, 10, 10, 0.2)" },
-        borderRadius: "50%",
-        padding: "10px",
-        width: "30px",
-        height: "30px",
-        }}
-      >
-        <CloseIcon sx={{ color: "#000", fontSize: "24px" }} />
-      </IconButton>
-      <Box
-       sx={{
-        flexGrow: 1,
-        overflowY: "auto",
-        pt: 8,
-        pb: 4,
-      }}
-      >
+        {/* Close Button */}
+        <IconButton
+          onClick={handleDrawerToggle}
+          sx={{
+            position: "absolute",
+            top: "10px",
+            right: "10px",
+            backgroundColor: "#fff",
+            "&:hover": { backgroundColor: "rgba(223, 10, 10, 0.2)" },
+            borderRadius: "50%",
+            padding: "10px",
+            width: "30px",
+            height: "30px",
+          }}
+        >
+          <CloseIcon sx={{ color: "#000", fontSize: "24px" }} />
+        </IconButton>
+        <Box
+          sx={{
+            flexGrow: 1,
+            overflowY: "auto",
+            pt: 8,
+            pb: 4,
+          }}
+        >
 
           {/* Logo */}
           <Box
@@ -435,10 +435,10 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
                         handleNavigate(item.route); // Navigate to the route when clicking the label
                       }
                     }}
-                    style={{color:'white !important'}}
+                    style={{ color: 'white !important' }}
                     sx={{
                       color: "#FFF !important", // Ensure menu item text is white in mobile view
-                      fontFamily:' GilroyRegular, sans-serif !important',
+                      fontFamily: ' GilroyRegular, sans-serif !important',
                       fontSize: "32px",
                       transition: "border-left 0.3s ease-in-out",
                       borderLeft: isActive ? "3px solid #fff" : "3px solid transparent",
@@ -454,15 +454,15 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
                       // background: "rgba(52, 73, 94, 0.8)",
                     }}
                   >
-                    <ListItemText style={{color:'white'}}
-                    primaryTypographyProps={{
-                      sx: {
-                        color: '#fff',
-                        fontFamily: 'GilroyBold, sans-serif',
-                        fontSize: '32px',
-                      },
-                    }}
-                    primary={item.label}    />
+                    <ListItemText style={{ color: 'white' }}
+                      primaryTypographyProps={{
+                        sx: {
+                          color: '#fff',
+                          fontFamily: 'GilroyBold, sans-serif',
+                          fontSize: '32px',
+                        },
+                      }}
+                      primary={item.label} />
                     {item.submenu && (
                       <ArrowDropDownIcon sx={{ transform: drawerSubmenuOpen === item.label ? "rotate(180deg)" : "rotate(0deg)" }} />
                     )}
@@ -470,7 +470,7 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
                   <Divider sx={{ backgroundColor: "#FFFFFF80" }} />
 
                   {item.submenu && drawerSubmenuOpen === item.label && (
-                    <List sx={{ pl: 2, color:'#fff' }}>
+                    <List sx={{ pl: 2, color: '#fff' }}>
                       {item.submenu.map((subItem, subIndex) => {
                         const isSubItemActive =
                           location.pathname === subItem.route ||
@@ -479,7 +479,7 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
 
                         return (
                           <ListItemButton
-                          style={{color:'white !important'}}
+                            style={{ color: 'white !important' }}
                             key={subIndex}
                             onClick={() => handleNavigate(subItem.route)}
                             sx={{
@@ -515,50 +515,83 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
           <Box sx={{}} />
           <Box sx={{ display: "flex", justifyContent: "center", gap: 2, mt: 5 }}>
             <IconButton
-            sx={{
-              color: "#000",
-              backgroundColor: "#fff",
-              "&:hover": { backgroundColor: "rgba(223, 10, 10, 0.2)" },
-              borderRadius: "50%",
-              padding: "10px",
-            }}>
-            <WhatsAppIcon />
+              component="a"
+              href="https://www.facebook.com/williamsrajiv" // 👉 change to your number
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: "#000",
+                backgroundColor: "#fff",
+                "&:hover": { backgroundColor: "rgba(223, 10, 10, 0.2)" },
+                borderRadius: "50%",
+                padding: "10px",
+              }}
+            >
+              <FacebookIcon />
             </IconButton>
-            <IconButton sx={{
-            color: "#000",
-            backgroundColor: "#fff",
-            "&:hover": { backgroundColor: "rgba(19, 29, 56, 0.2)" },
-            borderRadius: "50%",
-            padding: "10px",
-            }}>
-            <TwitterIcon />
+
+            <IconButton
+              component="a"
+              href="https://x.com/RajivWilliams?t=2UnilCIJUvX9kQG1dAaXaw&s=09" // 👉 change to your Twitter link
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: "#000",
+                backgroundColor: "#fff",
+                "&:hover": { backgroundColor: "rgba(19, 29, 56, 0.2)" },
+                borderRadius: "50%",
+                padding: "10px",
+              }}
+            >
+              <TwitterIcon />
             </IconButton>
-            <IconButton sx={{
-            color: "#000",
-            backgroundColor: "#fff",
-            "&:hover": { backgroundColor: "rgba(223, 10, 10, 0.2)" },
-            borderRadius: "50%",
-            padding: "10px",
-            }}>
-            <InstagramIcon />
+
+            <IconButton
+              component="a"
+              href="https://www.instagram.com/williams_rajiv/" // 👉 change to your Instagram link
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: "#000",
+                backgroundColor: "#fff",
+                "&:hover": { backgroundColor: "rgba(223, 10, 10, 0.2)" },
+                borderRadius: "50%",
+                padding: "10px",
+              }}
+            >
+              <InstagramIcon />
             </IconButton>
-            <IconButton sx={{
-            color: "#000",
-            backgroundColor: "#fff",
-            "&:hover": { backgroundColor: "rgba(223, 10, 10, 0.2)" },
-            borderRadius: "50%",
-            padding: "10px",
-            }}>
-            <FacebookIcon />
+
+            <IconButton
+              component="a"
+              href="https://www.youtube.com/@maverick20885" // 👉 change to your Facebook page
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: "#000",
+                backgroundColor: "#fff",
+                "&:hover": { backgroundColor: "rgba(223, 10, 10, 0.2)" },
+                borderRadius: "50%",
+                padding: "10px",
+              }}
+            >
+              <YouTubeIcon />
             </IconButton>
-            <IconButton sx={{
-            color: "#000",
-            backgroundColor: "#fff",
-            "&:hover": { backgroundColor: "rgba(223, 10, 10, 0.2)" },
-            borderRadius: "50%",
-            padding: "10px",
-            }}>
-            <LinkedInIcon />
+
+            <IconButton
+              component="a"
+              href="https://www.linkedin.com/in/williamsrajiv" // 👉 change to your LinkedIn
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: "#000",
+                backgroundColor: "#fff",
+                "&:hover": { backgroundColor: "rgba(223, 10, 10, 0.2)" },
+                borderRadius: "50%",
+                padding: "10px",
+              }}
+            >
+              <LinkedInIcon />
             </IconButton>
           </Box>
 
@@ -566,7 +599,7 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
           <Typography variant="body2" align="center" sx={{ mt: 5, color: "#FFFFFF80", }}>
             ©2025 All Rights Reserved. Designed by Dezign Shark.
           </Typography>
-      </Box>
+        </Box>
 
       </Box>
     </Drawer>
@@ -617,14 +650,26 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
           borderBottomLeftRadius: '40px',
           borderBottomRightRadius: '40px',
           transition: 'all 0.3s ease',
-        }}>
+        }}
+      >
         <Container maxWidth='lg'>
-          <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", }}>
-            <Box 
-            ref={logoRef}
-            sx={{ display: "flex", alignItems: "center", cursor: "pointer", padding: {xs:'10px 0px',md:'15px 0px'}, }} onClick={() => handleNavigate("/")}>
+          <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+
+            {/* Logo */}
+            <Box
+              ref={logoRef}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                cursor: "pointer",
+                padding: { xs: '10px 0px', md: '15px 0px' },
+              }}
+              onClick={() => handleNavigate("/")}
+            >
               <img src={Homeimages.rwlogo} alt="logo" style={{ maxWidth: '100px', maxHeight: '80px' }} />
             </Box>
+
+            {/* Divider */}
             <Box
               sx={{
                 width: '1px',
@@ -639,6 +684,8 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
             {!isMobile && renderDesktopMenu()}
 
             <Box />
+
+            {/* Divider */}
             <Box
               sx={{
                 width: '1px',
@@ -648,51 +695,56 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
                 display: isMobile ? 'none' : 'block',
               }}
             />
-            <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: '20px' }}>
-              {!isMobile && (
-                <Box  ref={talkButtonRef}>
 
-                  <SpotlightButton
-                  
+            {/* Buttons and Mobile Menu */}
+            <Box sx={{ display: "flex", alignItems: "center", gap: '10px' }}>
+
+              {/* Always show Let's Talk button */}
+              <Box ref={talkButtonRef}>
+                <SpotlightButton
                   onClick={handlePopupOpen}
-                    background="linear-gradient(to right, #fff, #fff)"
-                    textColor="#fff"
-                    spotlightColor="linear-gradient(to right, #fff, #fff)"
-                    innerBackground="#0f63a5" 
-                    activeTextColor="#0f63a5"
-                    sx={{
+                  background="linear-gradient(to right, #fff, #fff)"
+                  textColor="#fff"
+                  spotlightColor="linear-gradient(to right, #fff, #fff)"
+                  innerBackground="#0f63a5"
+                  activeTextColor="#0f63a5"
+                  sx={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    }}
-                  >
-                    Let's talk
-                    <Box
-                      component="img"
-                      src={Homeimages.arrow}
-                      alt="arrow"
-                      sx={{
+                    padding: { xs: "5px 12px", md: "10px 20px" },
+                    fontSize: { xs: "12px", md: "16px" },
+                  }}
+                >
+                  Let's talk
+                  <Box
+                    component="img"
+                    src={Homeimages.arrow}
+                    alt="arrow"
+                    sx={{
                       width: '16px',
                       marginLeft: '8px',
                       filter: 'brightness(0) invert(1)',
-                      }}
-                    />
-                  
-                  </SpotlightButton>
-                </Box>
-              )}
+                    }}
+                  />
+                </SpotlightButton>
+              </Box>
 
-              {/* Mobile Toggle Button */}
+              {/* Only show hamburger in mobile */}
               {isMobile && (
                 <IconButton color="inherit" onClick={handleDrawerToggle}>
                   <MenuIcon />
                 </IconButton>
               )}
-              {renderMobileMenu()}
             </Box>
+
+            {/* Always Render Mobile Menu */}
+            {renderMobileMenu()}
+
           </Toolbar>
         </Container>
       </Box>
+
 
       {/* Popup Form */}
       {showPopup && <PopupForm open={showPopup} onClose={handlePopupClose} onHoverReset={resetHoverState} />}

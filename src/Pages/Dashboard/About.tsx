@@ -42,6 +42,9 @@ const About = () => {
                 mt: { xs: 5, md: 5 },
                 // background: `url("${Homeimages.aboutbg}") no-repeat center center/cover`,
                 // position: 'relative',
+                display:'flex',
+                justifyContent:'center',
+                alignItems:'center'
             }}
         >
             <Box

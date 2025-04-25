@@ -112,8 +112,8 @@ const settings = {
   };
   
 const marqueeWords = [
-    "WORK", "WORK", "WORK", "WORK", "WORK",
-    "WORK", "WORK", "WORK", "WORK", "WORK",
+    "Exhibits", "Exhibits", "Exhibits", "Exhibits", "Exhibits",
+    "Exhibits", "Exhibits", "Exhibits", "Exhibits", "Exhibits",
 ];
 // Helper to split array into chunks of 2
 const chunkArray = (arr: PortfolioItem[], size: number): PortfolioItem[][] =>
@@ -223,7 +223,7 @@ const PortfolioSection: React.FC = () => {
             <Container maxWidth="xl" >
                 {/* <Portfolio2/> */}
 
-                <Box sx={{ px: 4, py: 4, position: 'relative' }}>
+                <Box sx={{ py: 4, position: 'relative' }}>
             <Slider {...settings}>
                 {portfolioItems.map((item, index) => (
                     <Box key={index} sx={{}}>

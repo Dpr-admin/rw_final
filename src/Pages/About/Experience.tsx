@@ -43,7 +43,7 @@ const ExperienceSection: React.FC = () => {
             justifyContent: 'space-between',
             alignItems: 'flex-start',
             mb: 6,
-            flexDirection: { xs: 'column', sm: 'row' },
+            flexDirection: { xs: 'row', sm: 'row' },
             gap: 2,
           }}
         >

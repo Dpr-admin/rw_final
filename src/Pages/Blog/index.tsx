@@ -9,11 +9,10 @@ const Blog:React.FC = () => {
   return (
     <Box>
         {/* <HeroHeadline>
-            <span data-outline>Lorem ipsum dolor</span>{" "}
-            <span data-highlight>sit amet, consectetur</span>{" "}
-           <span data-outline>adipiscing </span>{" "}
-      
-            <span data-highlight>Sed euismod </span>
+            <span data-outline>Learn. Grow. Succeed </span>{" "}
+            <span data-outline>Our blog brings you </span>{" "}
+            <span data-highlight> real stories,expert advice, and timeless strategies</span>{" "}
+           <span data-outline> to navigate the property world.</span>{" "}
           </HeroHeadline> */}
           <Breadcrumb/>
           {/* <BlogSlider/> */}

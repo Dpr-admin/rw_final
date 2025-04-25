@@ -8,6 +8,7 @@ type Props = {
   sx?: SxProps<Theme>;
   borderColor?: string;
   textColor?: string;
+  type?: 'button' | 'submit' | 'reset'; // ✅ ADDED
 };
 
 const AnimatedBorderButton: React.FC<Props> = ({
@@ -16,8 +17,9 @@ const AnimatedBorderButton: React.FC<Props> = ({
   sx = {},
   borderColor = '#e5f7ff',
   textColor = '#ffffff',
+  type = 'button', // ✅ DEFAULTS TO 'button'
 }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLButtonElement>(null);
   const borderRef = useRef<HTMLSpanElement>(null);
   const timeline = useRef<gsap.core.Timeline | null>(null);
 
@@ -61,6 +63,8 @@ const AnimatedBorderButton: React.FC<Props> = ({
   return (
     <Box
       ref={containerRef}
+      component="button" // ✅ Make it a <button />
+      type={type}        // ✅ Native support
       onClick={onClick}
       sx={{
         position: 'relative',
@@ -69,6 +73,7 @@ const AnimatedBorderButton: React.FC<Props> = ({
         justifyContent: 'center',
         cursor: 'pointer',
         background: 'transparent',
+        border: 'none',
         padding: '10px 20px',
         ...sx,
       }}

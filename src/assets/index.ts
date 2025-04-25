@@ -22,6 +22,7 @@ import aboutbg from './images/home/aboutbg.jpg'
 import footerbg from './images/home/footerbg.png'
 import charminar from './images/home/charminar.svg'
 import rwimg2 from './images/home/rwimage1.jpg'
+import popupbg from './images/home/popupbg.jpeg'
 
 
 
@@ -104,7 +105,7 @@ export const Homeimages = {
     services1,
     services2,
     quote,user,clientlogos,bannerbg2,blog1,rwsign,bannerarrow,rwbannerbg,rwimage,
-    bluelogo,whatsapp,rwimg2,aboutbg,footerbg,charminar
+    bluelogo,whatsapp,rwimg2,aboutbg,footerbg,charminar,popupbg
   
 };
 

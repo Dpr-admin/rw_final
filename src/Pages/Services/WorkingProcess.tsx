@@ -16,7 +16,7 @@ const steps = [
   },
   {
     id: '02',
-    title: 'GResults-Focused & Empowered Sales',
+    title: 'Results-Focused & Empowered Sales',
     description:
       'Results‑oriented mentorship to help real estate sales professionals close ₹Cr+ deals faster, backed by 15+ years of real‑world success. As a RERA‑registered Realtor & NAR/HRA member, I blend strategic branding, sales psychology, and hands‑on training. Ready to scale your high‑ticket closings?',
   },
@@ -55,7 +55,8 @@ const WorkingProcess: React.FC = () => {
   }, []);
 
   return (
-    <Box sx={{ bgcolor: '#f7f5f0', borderTop: '1px solid #0f63a5', borderBottom: '1px solid #ccc', color: 'primary.main', py: 4, height: {xs:'auto',md:'100vh'} }}>
+    <Box sx={{ bgcolor: '#f7f5f0', borderTop: '1px solid #0f63a5', borderBottom: '1px solid #ccc', color: 'primary.main', py: 4,
+     height: {xs:'auto',md:'auto'} }}>
       <Container maxWidth='xl'>
 
         <Grid container alignItems="start" sx={{
@@ -94,9 +95,9 @@ const WorkingProcess: React.FC = () => {
                   color: '#000',
                   textAlign: 'start',
                 }}
-                ref={(el: HTMLDivElement | null) => {
-                  cardsRef.current[i] = el;
-                }}
+                // ref={(el: HTMLDivElement | null) => {
+                //   cardsRef.current[i] = el;
+                // }}
               >
                 <Typography variant='h6' sx={{ color: '#0f63a5', mb: 1, fontWeight: 700, }}>//{step.id}</Typography>
                 <Typography variant="h3" sx={{ fontWeight: 700, color: '#0f63a5', mb: 2 }}>
