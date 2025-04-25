@@ -67,11 +67,9 @@ const MentoringServices = () => {
 
   return (
     <Box sx={{ color: '#000', pt: 18 }}>
-      <Box sx={{ mb: 6 }}>
+      <Box sx={{ mb: 6, }}>
         <Container maxWidth="lg"
-        sx={{
-          height:'100vh'
-        }}
+
         >
 
 
@@ -102,7 +100,7 @@ const MentoringServices = () => {
                 border: '10px solid #171818',
                 borderRadius: '50%',
                 position: 'absolute',
-                top: -60,
+                top: -15,
                 left: '50%',
                 transform: 'translateX(-50%)',
                 transition: 'all .3s ease',
@@ -110,6 +108,7 @@ const MentoringServices = () => {
                 '&:hover': {
                   backgroundColor: '#0f63a5',
                 },
+                // mb:{xs:8,lg:0}
               }}
             >
               <SouthIcon
@@ -117,11 +116,8 @@ const MentoringServices = () => {
                 sx={{ width: 30, height: 30, transition: 'all .3s ease', color: '#fff' }}
               />
             </Box>
-            <Box
-            sx={{
-              height:'100%'
-            }}
-            >
+
+            <Box  >
               <ImageReveal
                 src={Services.serv1}
                 alt=""
@@ -129,16 +125,31 @@ const MentoringServices = () => {
                 height="auto"
                 threshold={0.8}
                 scaleDuration={3}
-                sx={{ borderRadius: '40px' }}
+                sx={{ borderRadius: '40px',}}
               />
-
             </Box>
+
+            {/* <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+              <ImageReveal
+                src={Services.servm1}
+                alt=""
+                width="100%"
+                height="400px"
+                threshold={0.8}
+                scaleDuration={3}
+                sx={{ borderRadius: '40px', mt: 2 }}
+              />
+            </Box> */}
+
+
+
+
 
           </Box>
         </Container>
       </Box>
 
-      <Container maxWidth="lg" sx={{ mt:1 }}>
+      <Container maxWidth="lg" sx={{ mt: 1 }}>
 
 
         <Box id="text" sx={{ mb: 4 }}>

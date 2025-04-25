@@ -137,7 +137,9 @@ const Branding = () => {
   return (
     <Box sx={{ color: '#000', pt: 18 }}>
       <Box sx={{ mb: 6 }}>
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" sx={{
+            height: '100vh'
+          }}>
           <SmoothWaveText
             variant="h3"
             sx={{
@@ -148,11 +150,7 @@ const Branding = () => {
           >
             Branding
           </SmoothWaveText>
-        </Container>
-      </Box>
-
-      <Container maxWidth="xl" sx={{ mt: 10 }}>
-        <Box sx={{ position: 'relative', mb: 6, textAlign: 'start' }}>
+          <Box sx={{ position: 'relative', mb: 6, textAlign: 'start' }}>
           <Box
             component="a"
             onClick={(e) => {
@@ -169,7 +167,7 @@ const Branding = () => {
               border: '10px solid #171818',
               borderRadius: '50%',
               position: 'absolute',
-              top: -70,
+              top: -15,
               left: '50%',
               transform: 'translateX(-50%)',
               transition: 'all .3s ease',
@@ -195,6 +193,11 @@ const Branding = () => {
             sx={{ borderRadius: '40px' }}
           />
         </Box>
+        </Container>
+      </Box>
+
+      <Container maxWidth="xl" sx={{ mt: 10 }}>
+        
         <SmoothWaveText variant="h4" sx={{ fontSize: 36, mb: 2, textAlign: 'start', fontWeight: 700 ,color:'primary.main'}}>
           Build a Magnetic Brand That Converts
         </SmoothWaveText>

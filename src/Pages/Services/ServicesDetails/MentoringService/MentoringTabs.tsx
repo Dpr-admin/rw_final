@@ -5,6 +5,8 @@ import {
     Container,
     Grid,
     Typography,
+    useMediaQuery,
+    useTheme,
 } from "@mui/material";
 import gsap from "gsap";
 import PopupForm from "../../../../Components/PopupForm";

@@ -54,7 +54,7 @@ const PortfolioSection: React.FC = () => {
     const rows = chunkArray(portfolioItems, 2);
 
     return (
-        <Box id="portfolio" ref={sectionRef} sx={{ py: 10, bgcolor: '#0f63a5',}}>
+        <Box id="portfolio" ref={sectionRef} sx={{ py:{xs:6,md:10}, bgcolor: '#0f63a5',}}>
 
             <Box
             >

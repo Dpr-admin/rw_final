@@ -63,6 +63,13 @@ import mentoring2 from './images/services/Acceleratorhero.jpg'
 import mentoring3 from './images/services/Organizationalbanner.jpg'
 import mentoring4 from './images/services/Luxuryheroban.jpg'
 import mentoring5 from './images/services/Personalizedhero.jpg'
+import servsmall1 from './images/services/servsmall1.png'
+import servsmall2 from './images/services/servsmall2.png'
+import servsmall3 from './images/services/servsmall3.png'
+import servm1 from './images/services/servm1.png'
+import servm2 from './images/services/servm2.png'
+import servm3 from './images/services/servm3.png'
+
 
 
 
@@ -108,7 +115,8 @@ export const About ={
 export const Services={
     servicesdetails1,realgrowth,bgimgone,bgimgtwo,counterbg,project1,project2,allproject,
     m1,m2,m3,m4,m5,overview1,overview2,overview3,choosebg,pattern,p1,p2,p3,p4,p5,serv1,serv2,serv3,
-    mentoring1,mentoring2,mentoring3,mentoring4,mentoring5
+    mentoring1,mentoring2,mentoring3,mentoring4,mentoring5,servsmall1,servsmall2,servsmall3,
+    servm1,servm2,servm3
     
 
 }

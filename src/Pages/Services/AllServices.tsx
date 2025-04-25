@@ -16,19 +16,19 @@ const services: ServiceItem[] = [
   {
     number: 'I',
     title: 'Mentoring',
-    image: Services.serv1,
+    image: Services.servsmall1,
     Link: 'services/mentoring',
   },
   {
     number: 'II',
     title: 'Sales',
-    image: Services.serv2,
+    image: Services.servsmall2,
     Link: 'services/sales',
   },
   {
     number: 'III',
     title: 'Branding',
-    image: Services.serv3,
+    image: Services.servsmall3,
     Link: 'services/branding',
   },
   // Add more services as needed

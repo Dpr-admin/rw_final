@@ -352,17 +352,18 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
       onClose={handleDrawerToggle}
       sx={{
       "& .MuiDrawer-paper": {
-        width: "350px",
+        width: "300px",
         color: "white !important",
         border: "none",
         overflow: "hidden",
         backgroundColor: "#0f63a5",
         backdropFilter: "blur(10px)",
+        height:'100vh'
       },
       }}
     >
       {/* Drawer Content */}
-      <Box className="drawer-content" sx={{ width: 350, display: "flex", flexDirection: "column", height: "100%" }}>
+      <Box className="drawer-content" sx={{ width: 300, display: "flex", flexDirection: "column", height: "100%" }}>
       {/* Close Button */}
       <IconButton
         onClick={handleDrawerToggle}
@@ -621,7 +622,7 @@ const talkButtonRef = useRef<HTMLButtonElement | null>(null);
           <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", }}>
             <Box 
             ref={logoRef}
-            sx={{ display: "flex", alignItems: "center", cursor: "pointer", padding: '15px 0px', }} onClick={() => handleNavigate("/")}>
+            sx={{ display: "flex", alignItems: "center", cursor: "pointer", padding: {xs:'10px 0px',md:'15px 0px'}, }} onClick={() => handleNavigate("/")}>
               <img src={Homeimages.rwlogo} alt="logo" style={{ maxWidth: '100px', maxHeight: '80px' }} />
             </Box>
             <Box

@@ -121,7 +121,7 @@ const formatUrl = (id: string): string => id.toLowerCase().replace(/\s+/g, '-');
 const PortfolioSlider: React.FC = () => {
        const navigate = useNavigate();
     return (
-        <Box sx={{ px: 4, py: 4, position: 'relative' }}>
+        <Box sx={{ px: {xs:0,md:4}, py: 4, position: 'relative' }}>
             <Slider {...settings}>
                 {portfolioItems.map((item, index) => (
                     <Box key={index} sx={{}}>

@@ -1,22 +1,27 @@
 import { useEffect, useState } from "react";
-import { Box } from "@mui/material";
+import { Box, useTheme, useMediaQuery } from "@mui/material";
 
 interface PreloaderProps {
-  videoSrc: string;
+  desktopVideoSrc: string;
+  mobileVideoSrc: string;
   onEnd: () => void;
 }
 
-const Preloader: React.FC<PreloaderProps> = ({ videoSrc, onEnd }) => {
+const Preloader: React.FC<PreloaderProps> = ({ desktopVideoSrc, mobileVideoSrc, onEnd }) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVideoLoaded(true);
       onEnd();
-    }, 4000); // Fallback timeout in case the video doesn't end
+    }, 5000); // Fallback in case video doesn't trigger onEnded
 
     return () => clearTimeout(timer);
   }, [onEnd]);
+
+  const selectedVideo = isMobile ? mobileVideoSrc : desktopVideoSrc;
 
   return (
     <Box
@@ -29,12 +34,11 @@ const Preloader: React.FC<PreloaderProps> = ({ videoSrc, onEnd }) => {
         display: isVideoLoaded ? "none" : "flex",
         alignItems: "center",
         justifyContent: "center",
-        // backgroundColor: "black",
-        zIndex: 1301, // Ensures it's above other content
+        zIndex: 1301,
       }}
     >
       <video
-        src={videoSrc}
+        src={selectedVideo}
         autoPlay
         muted
         playsInline

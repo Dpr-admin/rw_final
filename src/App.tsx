@@ -46,10 +46,15 @@ const App: React.FC = () => {
 
 {isLoading ? (
             // Display Preloader if still loading
+            // <Preloader2
+            //   videoSrc="https://dprstorage.b-cdn.net/RW/whitepreloder.mp4"
+            //   onEnd={() => setIsLoading(false)} // Set loading to false when the Preloader finishes
+            // />
             <Preloader2
-              videoSrc="https://dprstorage.b-cdn.net/RW/whitepreloder.mp4"
-              onEnd={() => setIsLoading(false)} // Set loading to false when the Preloader finishes
-            />
+            desktopVideoSrc="https://dprstorage.b-cdn.net/RW/whitepreloder.mp4"
+            mobileVideoSrc="https://dprstorage.b-cdn.net/RW/mobilepreloder.mp4"
+            onEnd={() => setIsLoading(false)}
+          />
           ) : (
             <>
               {/* RouterProvider is loaded once the Preloader finishes */}

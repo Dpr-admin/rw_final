@@ -27,7 +27,7 @@ const Banner = () => {
     <Box
       sx={{
         position: "relative",
-        background: `url(${Homeimages.bannerbg2}) no-repeat center center/cover`,
+        background: 'url("https://dprstorage.b-cdn.net/RW/bannerbg2.png") no-repeat center center/cover',
         color: "#fff",
         minHeight: { xs: "100vh", md: "100vh" },
         display: "flex",
@@ -81,7 +81,7 @@ const Banner = () => {
                 <Box
                   component="img"
                   ref={signRef}
-                  src={Homeimages.rwsign}
+                  src="https://dprstorage.b-cdn.net/RW/rwsign.png"
                   alt="Rajiv Williams"
                   sx={{
                     width: { xs: "250px", md: "400px" },
