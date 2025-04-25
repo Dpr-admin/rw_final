@@ -138,7 +138,7 @@ const Branding = () => {
     <Box sx={{ color: '#000', pt: 18 }}>
       <Box sx={{ mb: 6 }}>
         <Container maxWidth="xl" sx={{
-            height: '100vh'
+            height: {xs:'auto',md:'100vh'}
           }}>
           <SmoothWaveText
             variant="h3"
@@ -167,7 +167,7 @@ const Branding = () => {
               border: '10px solid #171818',
               borderRadius: '50%',
               position: 'absolute',
-              top: -15,
+              top: {xs:-57,md:-15},
               left: '50%',
               transform: 'translateX(-50%)',
               transition: 'all .3s ease',
@@ -183,7 +183,7 @@ const Branding = () => {
             />
           </Box>
 
-          <ImageReveal
+          {/* <ImageReveal
             src={Services.serv3}
             alt=""
             width="100%"
@@ -191,7 +191,29 @@ const Branding = () => {
             threshold={0.8}
             scaleDuration={3}
             sx={{ borderRadius: '40px' }}
-          />
+          /> */}
+          <Box  >
+              <ImageReveal
+                src={Services.serv3}
+                alt=""
+                width="100%"
+                height="auto"
+                threshold={0.8}
+                scaleDuration={3}
+                sx={{ borderRadius: '40px',display: { xs: 'none', md: 'block' } }}
+              />
+              </Box>
+              <Box sx={{mt:10}}>
+              <ImageReveal
+                src={Services.servm3}
+                alt=""
+                width="100%"
+                height="auto"
+                threshold={0.8}
+                scaleDuration={3}
+                sx={{ borderRadius: '40px',display: { xs: 'block', md: 'none' } }}
+              />
+            </Box>
         </Box>
         </Container>
       </Box>

@@ -100,7 +100,7 @@ const MentoringServices = () => {
                 border: '10px solid #171818',
                 borderRadius: '50%',
                 position: 'absolute',
-                top: -15,
+                top: {xs:-57,md:-15},
                 left: '50%',
                 transform: 'translateX(-50%)',
                 transition: 'all .3s ease',
@@ -125,7 +125,18 @@ const MentoringServices = () => {
                 height="auto"
                 threshold={0.8}
                 scaleDuration={3}
-                sx={{ borderRadius: '40px',}}
+                sx={{ borderRadius: '40px',display: { xs: 'none', md: 'block' } }}
+              />
+              </Box>
+              <Box sx={{mt:10}}>
+              <ImageReveal
+                src={Services.servm1}
+                alt=""
+                width="100%"
+                height="auto"
+                threshold={0.8}
+                scaleDuration={3}
+                sx={{ borderRadius: '40px',display: { xs: 'block', md: 'none' } }}
               />
             </Box>
 
