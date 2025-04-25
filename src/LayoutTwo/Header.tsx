@@ -69,6 +69,11 @@ const Header: React.FC = () => {
   const iconRefs = useRef<HTMLButtonElement[]>([]);
   const [showPopup, setShowPopup] = useState(false);
 
+  const logoRef = useRef<HTMLDivElement | null>(null);
+const navRefs = useRef<Array<HTMLDivElement | null>>([]);
+const talkButtonRef = useRef<HTMLButtonElement | null>(null);
+
+
   const handlePopupOpen = () => {
     setShowPopup(true);
   };
@@ -77,6 +82,42 @@ const Header: React.FC = () => {
     setShowPopup(false);
     resetHoverState(); // Reset cursor hover state when popup closes
   };
+
+  useEffect(() => {
+    // Animate logo
+    if (logoRef.current) {
+      gsap.fromTo(
+        logoRef.current,
+        { opacity: 0, y: -20 },
+        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
+      );
+    }
+  
+    // Animate nav items
+    if (navRefs.current.length) {
+      gsap.fromTo(
+        navRefs.current,
+        { opacity: 0, y: -20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power2.out",
+          stagger: 0.08,
+        }
+      );
+    }
+  
+    // Animate "Let's talk" button
+    if (talkButtonRef.current) {
+      gsap.fromTo(
+        talkButtonRef.current,
+        { opacity: 0, y: -20 },
+        { opacity: 1, y: 0, duration: 0.6, delay: 0.4, ease: "power2.out" }
+      );
+    }
+  }, []);
+  
 
   // GSAP Dropdown Animation
   useEffect(() => {
@@ -214,6 +255,8 @@ const Header: React.FC = () => {
         return (
           <Box
             key={index}
+            ref={(el: HTMLDivElement | null) => { navRefs.current[index] = el; }}
+
             sx={{ position: "relative" }}
             onMouseEnter={() => handleDropdownToggle(item.label)}
             onMouseLeave={() => setDropdownOpen(null)}
@@ -566,7 +609,9 @@ const Header: React.FC = () => {
         }}>
         <Container maxWidth='lg'>
           <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", }}>
-            <Box sx={{ display: "flex", alignItems: "center", cursor: "pointer", padding: '15px 0px', }} onClick={() => handleNavigate("/")}>
+            <Box 
+            ref={logoRef}
+            sx={{ display: "flex", alignItems: "center", cursor: "pointer", padding: '15px 0px', }} onClick={() => handleNavigate("/")}>
               <img src={Homeimages.rwlogo} alt="logo" style={{ maxWidth: '100px', maxHeight: '80px' }} />
             </Box>
             <Box
@@ -594,32 +639,36 @@ const Header: React.FC = () => {
             />
             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: '20px' }}>
               {!isMobile && (
-                 <SpotlightButton
-                 onClick={handlePopupOpen}
-                  background="linear-gradient(to right, #fff, #fff)"
-                  textColor="#fff"
-                  spotlightColor="linear-gradient(to right, #fff, #fff)"
-                  innerBackground="#0f63a5" 
-                  activeTextColor="#0f63a5"
-                  sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  }}
-                >
-                  Let's talk
-                  <Box
-                    component="img"
-                    src={Homeimages.arrow}
-                    alt="arrow"
+                <Box  ref={talkButtonRef}>
+
+                  <SpotlightButton
+                  
+                  onClick={handlePopupOpen}
+                    background="linear-gradient(to right, #fff, #fff)"
+                    textColor="#fff"
+                    spotlightColor="linear-gradient(to right, #fff, #fff)"
+                    innerBackground="#0f63a5" 
+                    activeTextColor="#0f63a5"
                     sx={{
-                    width: '16px',
-                    marginLeft: '8px',
-                    filter: 'brightness(0) invert(1)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                     }}
-                  />
-                 
-                </SpotlightButton>
+                  >
+                    Let's talk
+                    <Box
+                      component="img"
+                      src={Homeimages.arrow}
+                      alt="arrow"
+                      sx={{
+                      width: '16px',
+                      marginLeft: '8px',
+                      filter: 'brightness(0) invert(1)',
+                      }}
+                    />
+                  
+                  </SpotlightButton>
+                </Box>
               )}
 
               {/* Mobile Toggle Button */}

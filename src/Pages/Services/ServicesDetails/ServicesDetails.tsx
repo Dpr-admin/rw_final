@@ -183,7 +183,7 @@ const ServicesDetails: React.FC = () => {
             src={service.topImage}
             alt=""
             width="100%"
-            height="600px"
+            height="auto"
             threshold={0.8}
             scaleDuration={3}
             sx={{borderRadius: '40px',}}
@@ -288,7 +288,7 @@ const ServicesDetails: React.FC = () => {
             src={service.topImage}
             alt=""
             width="100%"
-            height="600px"
+            height="auto"
             threshold={0.8}
             scaleDuration={3}
             sx={{borderRadius: '40px',}}

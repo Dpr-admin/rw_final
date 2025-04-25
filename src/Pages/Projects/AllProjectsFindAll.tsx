@@ -75,7 +75,7 @@ const AllProjectsMerged: React.FC = () => {
                       src={service.image}
                       alt=""
                       width="490px"
-                      height="440px"
+                      height="auto"
                       threshold={0.8}
                       scaleDuration={3}
                       sx={{

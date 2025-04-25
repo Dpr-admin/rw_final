@@ -16,8 +16,7 @@ const tabs = [
         title: "Beginner’s Path to Real Estate Excellence",
         subtitle: 'Who can apply:',
         description: "First-time realtors and newly established agents looking to build a strong foundation in the real estate industry.",
-        image:
-            "https://plus.unsplash.com/premium_photo-1667861383156-4aa2b5d2c35d?q=80&w=1887&auto=format&fit=crop",
+        image:Services.mentoring1,
         list: {
             listTitle: "Key Benefits:",
             listItems: [
@@ -41,7 +40,7 @@ const tabs = [
         title: "Real Estate Growth Accelerator",
         subtitle: 'Who can apply:',
         description: "Mid-level professionals and small teams seeking to improve their sales effectiveness and negotiation skills.",
-        image:Services.realgrowth,
+        image:Services.mentoring2,
         list: {
             listTitle: "Key Features:",
             listItems: [
@@ -65,8 +64,7 @@ const tabs = [
         title: "Luxury Sales Mastery",
         subtitle: 'Who can apply:',
         description: "Agents and teams focusing on selling high-value properties and serving affluent clientele.",
-        image:
-            "https://plus.unsplash.com/premium_photo-1667861383156-4aa2b5d2c35d?q=80&w=1887&auto=format&fit=crop",
+        image:Services.mentoring3,
         list: {
             listTitle: "Key Features:",
             listItems: [
@@ -90,8 +88,7 @@ const tabs = [
         title: "Organizational mentoring",
         subtitle: 'Who can apply:',
         description: "Business owners, developers, and team leaders aiming to elevate their organization’s performance and brand image.",
-        image:
-            "https://images.unsplash.com/photo-1655906541920-09ccb02adf51?q=80&w=1879&auto=format&fit=crop",
+        image:Services.mentoring4,
         list: {
             listTitle: "Key Features:",
             listItems: [
@@ -115,8 +112,7 @@ const tabs = [
         title: "Exclusive Personalized Mentorship",
         subtitle: 'Who can apply:',
         description: "Elite professionals seeking one-on-one mentorship tailored to their unique goals.",
-        image:
-            "https://images.unsplash.com/photo-1684242598938-554af99784c9?q=80&w=1863&auto=format&fit=crop",
+        image:Services.mentoring5,
         list: {
             listTitle: "Key Features:",
             listItems: [
@@ -193,14 +189,17 @@ const MentoringTabs: React.FC = () => {
     }, [activeIndex]);
 
     return (
-        <Box sx={{ py: 8, overflow: "visible", bgcolor: "#fff", display: 'flex', flexDirection: 'column', }}>
+        <Box sx={{ 
+            py: 8, overflow: "visible", bgcolor: "#fff", display: 'flex', flexDirection: 'column',
+            background: '#f7f5f0', borderTop: '1px solid #ccc', borderBottom: '1px solid #ccc' ,
+             }}>
             <Box sx={{ mx: "auto", px: 4 }}>
                 <Typography variant="h2" sx={{mb:5,color:'primary.main',textAlign:'center',}}>
                     Advisory, Training & Mentoring
                 </Typography>
                 <Container maxWidth='lg'>
 
-                    <Grid container spacing={8} alignItems="stretch">
+                    <Grid container spacing={8} alignItems="stretch" mt={1}>
 
                         {/* Tab List */}
                         <Grid item xs={12} md={4} style={{ position: 'sticky', top: 0, alignSelf: 'flex-start' }}>
@@ -213,7 +212,7 @@ const MentoringTabs: React.FC = () => {
                                         bottom: 0,
                                         left: 0,
                                         width: "1px",
-                                        backgroundColor: "black",
+                                        backgroundColor: "#0f63a5",
                                     }}
                                 />
                                 {/* Active Marker */}
@@ -224,7 +223,7 @@ const MentoringTabs: React.FC = () => {
                                         width: "3px",
                                         height: `${100 / tabs.length}%`,
                                         top: `${(100 / tabs.length) * activeIndex}%`,
-                                        backgroundColor: "black",
+                                        backgroundColor: "#0f63a5",
                                         transition: "top 1s cubic-bezier(0.4, 0, 0, 1)",
                                     }}
                                 />

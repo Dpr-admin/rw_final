@@ -342,7 +342,7 @@ const AllPortfolioDetails: React.FC = () => {
               src={portfolio.bottomImage}
               alt=""
               width="100%"
-              height="500px"
+              height="auto"
               threshold={0.8}
               scaleDuration={3}
               sx={{ borderRadius: '40px', }}
@@ -383,7 +383,7 @@ const AllPortfolioDetails: React.FC = () => {
                     src={portfolio.mainImage}
                     alt={`slide-${index}`}
                     width="300px"
-                    height="300px"
+                    height="auto"
                     threshold={0.8}
                     scaleDuration={3}
                     sx={{

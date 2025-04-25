@@ -97,7 +97,7 @@ const BlogContentFromJson = () => {
                     src={content.featuredImage}
                     alt=""
                     width="100%"
-                    height="500px"
+                    height="auto"
                     threshold={0.8}
                     scaleDuration={3}
                     sx={{ my: 4, }}
@@ -171,7 +171,7 @@ const BlogContentFromJson = () => {
                                                     component="li"
                                                     variant="body2"
                                                     color="#000"
-                                                    sx={{ listStyleType: 'disc', '&::marker': { color: 'primary.main' } }}
+                                                    sx={{ listStyleType: 'disc', '&::marker': { color: 'primary.main' },mb:4 }}
                                                 >
                                                     {point}
                                                 </Typography>
@@ -203,7 +203,7 @@ const BlogContentFromJson = () => {
                             />
 
                             {content.paragraph2.map((item, index) => (
-                                <Box key={index} mb={3}>
+                                <Box key={index} mb={3} mt={3}>
                                     <Typography variant="h6" color="#000" sx={{ textAlign: 'start' }}>
                                         {item.title}
                                     </Typography>
@@ -325,7 +325,7 @@ const BlogContentFromJson = () => {
                             }}
                         >
                             {/* Categories */}
-                            <Typography variant="h6" fontWeight={600} gutterBottom sx={{ color: '#fff' }}>
+                            <Typography variant="h6" fontWeight={600} gutterBottom sx={{ color: '#fff',mb:3,textAlign:'center' }}>
                                 Categories
                             </Typography>
                             <List dense>
@@ -355,7 +355,7 @@ const BlogContentFromJson = () => {
                             <Divider sx={{ my: 3, borderColor: '#fff' }} />
 
                             {/* Recent Posts */}
-                            <Typography variant="h6" fontWeight={600} gutterBottom sx={{ color: '#fff' }}>
+                            <Typography variant="h6" fontWeight={600} gutterBottom sx={{ color: '#fff' ,mb:3,textAlign:'center'}}>
                                 Recent Post
                             </Typography>
                             <Stack spacing={2}>
@@ -388,7 +388,7 @@ const BlogContentFromJson = () => {
                                                         variant="body2"
                                                         fontWeight={600}
                                                         color="#f9fafb"
-                                                        sx={{ mt: 0.5 }}
+                                                        sx={{ mt: 0.5 ,textAlign:'start'}}
                                                     >
                                                         {post.title}
                                                     </Typography>
@@ -402,7 +402,7 @@ const BlogContentFromJson = () => {
                             <Divider sx={{ my: 3, borderColor: '#fff' }} />
 
                             {/* Tags */}
-                            <Typography variant="h6" fontWeight={600} gutterBottom sx={{ color: '#fff' }}>
+                            <Typography variant="h6" fontWeight={600} gutterBottom sx={{ color: '#fff' ,mb:3,textAlign:'center'}}>
                                 Tags
                             </Typography>
                             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
@@ -413,12 +413,14 @@ const BlogContentFromJson = () => {
                                         variant="outlined"
                                         sx={{
                                             borderColor: '#fff',
+                                            width:'100%',
                                             color: '#fff',
-                                            fontSize: 12,
+                                            fontSize: 14,
                                             px: 1,
                                             borderRadius: 1,
                                             '&:hover': {
-                                                backgroundColor: '#1e1e1e',
+                                                backgroundColor: '#fff',
+                                                color:'primary.main'
                                             },
                                         }}
                                     />

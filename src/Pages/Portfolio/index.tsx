@@ -22,7 +22,7 @@ const Portfolio: React.FC = () => {
       </HeroHeadline>
       {/* <PortfolioSlider /> */}
       <PortfolioSection />
-      <WorkingProcess />
+      {/* <WorkingProcess /> */}
 
 
     </Box>

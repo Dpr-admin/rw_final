@@ -21,7 +21,7 @@ import XIcon from '@mui/icons-material/X';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 
 // ✅ SVGs as components
-import { ReactComponent as Overview1 } from '../../assets/images/home/about.svg';
+import { ReactComponent as Overview1 } from '../../assets/images/home/charminar.svg';
 import { ReactComponent as Overview2 } from '../../assets/images/home/why.svg';
 import { ReactComponent as Overview3 } from '../../assets/images/home/contact.svg';
 import { ReactComponent as Overview4 } from '../../assets/images/home/social.svg';
@@ -58,8 +58,8 @@ const ServiceBlock = styled(Box)(({ theme }) => ({
 }));
 
 const SvgWrapper = styled(Box)(({ theme }) => ({
-    width: 60,
-    height: 60,
+    width: 500,
+    height: 500,
     margin: '0 auto 20px',
     '& svg': {
         width: '100%',
@@ -73,6 +73,7 @@ const SvgWrapper = styled(Box)(({ theme }) => ({
         strokeDasharray: 2500,
         strokeDashoffset: 2500,
         transition: 'fill 1.2s ease-in-out, stroke 1.2s ease-in-out',
+        
     },
     '&.active path': {
         animation: `${fillAni} 10s ease forwards`,
@@ -254,7 +255,7 @@ const FeatureSection: React.FC = () => {
                                     >
                                         {item.text}
                                     </Typography>
-                                    {/* <Box
+                                    <Box
                                         sx={{
                                             display: 'flex',
                                             justifyContent: { xs: 'flex-start', md: 'flex-end' },
@@ -277,7 +278,7 @@ const FeatureSection: React.FC = () => {
                                         <IconButton sx={iconButtonStyle} component="a" href="https://www.linkedin.com/in/williamsrajiv" target="_blank" rel="noopener noreferrer">
                                             <LinkedInIcon />
                                         </IconButton>
-                                    </Box> */}
+                                    </Box>
 
                                 </ServiceBlock>
                             );

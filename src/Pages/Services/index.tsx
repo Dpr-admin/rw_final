@@ -20,7 +20,7 @@ const Services:React.FC = () => {
           <AllServices/>
           <Testimonial/>
           <WorkingProcess/>
-          <ClientsLogo/>
+          {/* <ClientsLogo/> */}
       
     </Box>
   )

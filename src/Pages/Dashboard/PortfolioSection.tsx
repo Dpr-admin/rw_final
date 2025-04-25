@@ -27,8 +27,8 @@ const portfolioItems: PortfolioItem[] = PortfolioDetailsData.map(item => ({
 }));
 
 const marqueeWords = [
-    "WORK", "WORK", "WORK", "WORK", "WORK",
-    "WORK", "WORK", "WORK", "WORK", "WORK",
+    "Exhibits", "Exhibits", "Exhibits", "Exhibits", "Exhibits",
+    "Exhibits", "Exhibits", "Exhibits", "Exhibits", "Exhibits",
 ];
 // Helper to split array into chunks of 2
 const chunkArray = (arr: PortfolioItem[], size: number): PortfolioItem[][] =>

@@ -36,11 +36,29 @@ const socialLinks: { name: string; url: string }[] = [
 
 const ContactSection = () => {
   return (
-    <Box sx={{ bgcolor: '#0f63a5', color: '#fff', mt: 5 }}>
+    <Box sx={{ bgcolor: '#0f63a5', color: '#fff', mt: 5 ,position: 'relative' }}>
       {/* Vertical Divider */}
+      <Box
+        component="img"
+        src={Homeimages.footerbg} // ✅ Replace with your actual image
+        alt="Decorative"
+        sx={{
+          position: 'absolute',
+          bottom: 0,
+          right: 0,
+          // width: { xs: '100px', md: '600px' },
+          height:"400px",
+          // opacity: 0.1,
+          pointerEvents: 'none',
+          zIndex: 0,
+ 
+          
+        }}
+      />
 
 
-      <Box sx={{ position: 'relative' }}>
+
+      <Box sx={{ position: 'relative', zIndex: 1  }}>
 
         <Box
           sx={{
@@ -142,7 +160,7 @@ const ContactSection = () => {
             {/* Right Form Section */}
             <Grid item xs={12} md={6} py={6}>
               <Grid container spacing={3} px={4}>
-                <CustomInput  label="Name" xs={12} required />
+                <CustomInput label="Name" xs={12} required />
                 <CustomInput label="Email" xs={12} required />
                 <CustomInput label="Number" xs={12} required />
                 <CustomInput label="Message" xs={12} />

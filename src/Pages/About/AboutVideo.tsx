@@ -50,7 +50,7 @@ const AboutVideoSection: React.FC = () => {
               src={About.aboutvideo}
               alt=""
               width="100%"
-              height="500px"
+              height="auto"
               threshold={0.8}
               scaleDuration={3}
             />

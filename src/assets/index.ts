@@ -18,7 +18,11 @@ import rwbannerbg from './images/home/rwbanner.jpg'
 import rwimage from './images/home/rwimage.png'
 import bluelogo from './images/home/rwlogoblue.png'
 import whatsapp from './images/home/whatsapp.png'
+import aboutbg from './images/home/aboutbg.jpg'
+import footerbg from './images/home/footerbg.png'
+import charminar from './images/home/charminar.svg'
 import rwimg2 from './images/home/rwimage1.jpg'
+
 
 
 
@@ -54,6 +58,12 @@ import p5 from './images/services/songs.png'
 import serv1 from './images/services/serv1.png'
 import serv2 from './images/services/serv2.png'
 import serv3 from './images/services/serv3.png'
+import mentoring1 from './images/services/Beginnerhero.jpg'
+import mentoring2 from './images/services/Acceleratorhero.jpg'
+import mentoring3 from './images/services/Organizationalbanner.jpg'
+import mentoring4 from './images/services/Luxuryheroban.jpg'
+import mentoring5 from './images/services/Personalizedhero.jpg'
+
 
 
 
@@ -69,10 +79,11 @@ import allproject from './images/services/project1.jpg'
 //Blog 
 import blogslider1 from './images/blog/blogslider.png'
 import blogouter1 from './images/blog/blogouter1.png'
+import blogouter2 from './images/blog/blogouter2.png'
 import bloginnerf1 from './images/blog/bloginner1.png'
 import bloginnerf2 from './images/blog/bloginner2.png'
 import bloguser from './images/blog/user.png'
-import bloginnert1 from './images/blog/bloginnert1.jpg'
+import bloginnert1 from './images/blog/bloginnert1.png'
 import bloginnert2 from './images/blog/bloginnert2.jpg'
 
 export const Homeimages = {
@@ -86,7 +97,7 @@ export const Homeimages = {
     services1,
     services2,
     quote,user,clientlogos,bannerbg2,blog1,rwsign,bannerarrow,rwbannerbg,rwimage,
-    bluelogo,whatsapp,rwimg2
+    bluelogo,whatsapp,rwimg2,aboutbg,footerbg,charminar
   
 };
 
@@ -96,12 +107,15 @@ export const About ={
 
 export const Services={
     servicesdetails1,realgrowth,bgimgone,bgimgtwo,counterbg,project1,project2,allproject,
-    m1,m2,m3,m4,m5,overview1,overview2,overview3,choosebg,pattern,p1,p2,p3,p4,p5,serv1,serv2,serv3
+    m1,m2,m3,m4,m5,overview1,overview2,overview3,choosebg,pattern,p1,p2,p3,p4,p5,serv1,serv2,serv3,
+    mentoring1,mentoring2,mentoring3,mentoring4,mentoring5
+    
+
 }
 
 export const Portfolio={
     portfolioslider1,portouter1,portinnerf1,portouter2,portinner2_1,salesprograminner,
 }
 export const Blog={
-    blogslider1,blogouter1,bloginnerf1,bloginnerf2,bloguser,bloginnert1,bloginnert2
+    blogslider1,blogouter1,bloginnerf1,bloginnerf2,bloguser,bloginnert1,bloginnert2,blogouter2
 }

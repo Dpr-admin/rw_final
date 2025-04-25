@@ -26,6 +26,7 @@ const MarqueeText: React.FC = () => {
         "Concierge to iconic realty brands ",
         "HRA & NAR India Member ",
         "Mentor",
+        "Brand Strategist",
     ];
 
     return (

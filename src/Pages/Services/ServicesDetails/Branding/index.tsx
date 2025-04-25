@@ -189,7 +189,7 @@ const Branding = () => {
             src={Services.serv3}
             alt=""
             width="100%"
-            height="300px"
+            height="auto"
             threshold={0.8}
             scaleDuration={3}
             sx={{ borderRadius: '40px' }}

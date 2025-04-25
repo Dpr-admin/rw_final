@@ -52,7 +52,7 @@ const HeroHeadline: React.FC = () => {
   return (
     <Box
       sx={{
-        height: { xs: '65vh', md: '100vh' },
+        height: { xs: '27vh', md: '50vh' },
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -74,20 +74,13 @@ const HeroHeadline: React.FC = () => {
             lineHeight: 1.3,
             color: '#fff',
             textAlign: 'center',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            mt:16
           }}
         >
-          <Box
-            component="span"
-            sx={{
-              WebkitTextStroke: '1px black',
-              WebkitTextFillColor: 'transparent',
-              fontWeight: 700,
-              display: 'inline',
-              fontSize: { xs: '32px', md: '47px' },
-            }}
-          >
-            Empowering excellence in
-          </Box>{' '}
+
           <Box
             component="span"
             sx={{
@@ -96,46 +89,13 @@ const HeroHeadline: React.FC = () => {
               color: 'primary.main',
               display: 'inline',
               fontSize: { xs: '32px', md: '47px' },
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
-            Luxury real estate sales
+            Blogs
           </Box>{' '}
-          <Box
-            component="span"
-            sx={{
-              fontWeight: 800,
-              textDecoration: 'underline',
-              color: 'primary.main',
-              display: 'inline',
-              fontSize: { xs: '32px', md: '30px' },
-            }}
-          >
-            RERA Registered |
-          </Box>{' '}
-          <Box
-            component="span"
-            sx={{
-              fontWeight: 800,
-              textDecoration: 'underline',
-              color: 'primary.main',
-              display: 'inline',
-              fontSize: { xs: '32px', md: '30px' },
-            }}
-          >
-            Concierge to iconic realty brands |
-          </Box>{' '}
-          <Box
-            component="span"
-            sx={{
-              fontWeight: 800,
-              textDecoration: 'underline',
-              color: 'primary.main',
-              display: 'inline',
-              fontSize: { xs: '32px', md: '30px' },
-            }}
-          >
-            Member – HRA & NAR India
-          </Box>
+
         </Typography>
       </Container>
     </Box>

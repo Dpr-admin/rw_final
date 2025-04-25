@@ -103,23 +103,22 @@ export const blogContent = [
       },
     ],
     tags: [
-      "BUSINESS",
-      "DIGITAL",
-      "AUDIO POST",
-      "GALLERY POST",
-      "MARKETING",
-      "AGENCY",
-      "GRAPHIC",
+      "Property Types & Projects",
+      "Investment & Market Trends",
+      "Localities & Infrastructure",
+      "Buying & Legal Advice",
+      "Real Estate News & Insights",
+
     ],
   },
   {
     id: "from-dream-homes-to-smart-investments-discover-the-best-real-estate-agents-in-hyderabad",
     date: "26 January, 2024",
     title: "From Dream Homes to Smart Investments: Discover the Best Real Estate Agents in Hyderabad",
-    blogtitleImage: Blog.bloginnert1,
+    blogtitleImage: Blog.blogouter2,
     featuredImage: Blog.bloginnert1,
     author: {
-      name: "Willomson",
+      name: "Priyanka",
       avatar: Blog.bloguser,
     },
     paragraph1: [
@@ -194,7 +193,7 @@ export const blogContent = [
       quoteImage: Homeimages.quote,
       conclusionText:
         "Hyderabad's real estate market offers immense potential, but navigating it requires the right expertise. The best real estate agents and top commercial brokers in Hyderabad bring a wealth of knowledge and experience to the table, ensuring that your property search is seamless and rewarding. Whether you're looking to buy your dream home or make a smart investment, these professionals are your trusted allies in the journey to achieving your real estate aspirations.",
-      conclusiontitle: "— Priyanka",
+      conclusiontitle: "— Conclusion",
     },
     categories: ["Creative", "Business", "Design", "Marketing", "Lifestyle"],
     recentPosts: [
@@ -211,13 +210,12 @@ export const blogContent = [
       
     ],
     tags: [
-      "BUSINESS",
-      "DIGITAL",
-      "AUDIO POST",
-      "GALLERY POST",
-      "MARKETING",
-      "AGENCY",
-      "GRAPHIC",
+      "Property Types & Projects",
+      "Investment & Market Trends",
+      "Localities & Infrastructure",
+      "Buying & Legal Advice",
+      "Real Estate News & Insights",
+
     ],
   },
 ];

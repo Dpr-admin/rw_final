@@ -48,14 +48,14 @@ const AboutDetails = () => {
   }, []);
 
   const bioItems = [
-    { label: "Born in", value: "East legon Accra, Ghana" },
-    { label: "Experience", value: "15 years experience" },
-    { label: "Date of birth", value: "20 December, 1994" },
-    { label: "Language", value: "German, English, Spanish" },
+    { label: "15+ Years Realtor",  },
+    { label: "Luxury Sales Concierge",  },
+    { label: "Sales Mentor", },
+    { label: "  Brand Strategist ", },
   ];
 
   return (
-    <Box id="about" sx={{ py: 10, backgroundColor: "#fff" }}>
+    <Box id="about" sx={{ py: 4, backgroundColor: "#fff" }}>
       <Container maxWidth='xl'>
         {/* Title & Intro Section */}
         <Grid container spacing={3} alignItems="start" sx={{ mb: 5 }}>
@@ -130,12 +130,16 @@ const AboutDetails = () => {
             <Grid item xs={12} md={3} key={index}>
               <Box
                 sx={{
-                  height: "100px",
+                  height: "50px",
                   border: "1px solid #2f3030",
                   borderRadius: "10px",
-                  px: 4,
-                  py: 2,
+                  // px: 4,
+                  // py: 2,
                   // padding: "30px 35px",
+                  display:'flex',
+                  justifyContent:'center',
+                  alignItems:'center'
+
                 }}
               >
                 <Typography
@@ -145,14 +149,18 @@ const AboutDetails = () => {
                     // display: "block",
                     fontSize: "18px",
                     textTransform: "capitalize",
-                    mb: 1.5,
+                    // mb: 1.5,
+                    display:'flex',
+                    justifyContent:'center',
+                    alignItems:'center'
+  
                   }}
                 >
                   {item.label}
                 </Typography>
-                <Typography variant="body1" sx={{ fontSize: "18px", textTransform: "capitalize", textAlign: 'start' }}>
+                {/* <Typography variant="body1" sx={{ fontSize: "18px", textTransform: "capitalize", textAlign: 'start' }}>
                   {item.value}
-                </Typography>
+                </Typography> */}
               </Box>
             </Grid>
           ))}

@@ -110,7 +110,7 @@ const TestimonialsSection: React.FC = () => {
                                                 display: "flex",
                                                 flexDirection: "column",
                                                 justifyContent: "space-between",
-                                                height: {xs:'auto',md:"450px"},
+                                                height: {xs:'auto',md:"480px"},
                                                 // bgcolor: "rgba(15, 99, 165, 0.3)",
                                                 // backdropFilter: "blur(10px)",
                                                 // WebkitBackdropFilter: "blur(10px)",

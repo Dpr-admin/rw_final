@@ -34,28 +34,50 @@ const About = () => {
     }, []);
 
     return (
-        <Box sx={{ height: {xs:'auto',md:'100vh'},mb:6, mt:{xs:5,md:5} }}>
+        <Box
+            //  sx={{ height: {xs:'auto',md:'100vh'},mb:6, mt:{xs:5,md:5} }}
+            sx={{
+                height: { xs: 'auto', md: '100vh' },
+                mb: 6,
+                mt: { xs: 5, md: 5 },
+                // background: `url("${Homeimages.aboutbg}") no-repeat center center/cover`,
+                // position: 'relative',
+            }}
+        >
+            <Box
+                // sx={{
+                //     position: 'absolute',
+                //     width: '100%',
+                //     height: '100%',
+                //     backgroundColor: 'rgba(15, 99, 165, 0.8)', // Semi-transparent overlay
+                //     borderRadius: '40px',
+                //     zIndex: 1,
+                // }}
+            />
+
             <Container maxWidth="lg">
-           
+
 
                 {/* Overlay */}
                 <Box
                     sx={{
                         borderRadius: '40px',
-                        position: 'relative',
-                        overflow: 'hidden',
+                        background: `url("${Homeimages.aboutbg}") no-repeat center center/cover`,
+                        // filter: 'brightness(100%)  invert(1) )', // ✨ whiten effe
+
+                position: 'relative',
                     }}
                 >
                     {/* Background overlays */}
                     <Box
                         sx={{
-                            position: 'absolute',
-                            width: '100%',
-                            height: '100%',
-                            backgroundColor: '#0f63a5',
-                            borderRadius: '40px',
-                            zIndex: 1,
-                        }}
+                    position: 'absolute',
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: 'rgba(15, 99, 165, 0.9)', // Semi-transparent overlay
+                    borderRadius: '40px',
+                    zIndex: 1,
+                }}
                     />
                     <Box
                         sx={{
@@ -81,66 +103,66 @@ const About = () => {
                         <Grid container spacing={0}>
                             {/* Left */}
                             <Grid item xs={12} md={4}>
-                                <Box sx={{  }}>
-                                    <Box sx={{ mb:4,textAlign:'left'}}>
+                                <Box sx={{}}>
+                                    <Box sx={{ mb: 4, textAlign: 'left' }}>
                                         <Box
                                             component="img"
                                             src={Homeimages.aboutshape}
                                             alt="shape"
                                             sx={{
-                                                 mb:1,
+                                                mb: 1,
                                                 filter: 'brightness(0) invert(1)',
                                             }}
                                         />
                                         <SmoothWaveText
                                             variant="h5"
                                             sx={{
-                                               
+
                                                 textTransform: 'capitalize',
-                                               mb:2,
-                                               color:'white',
-                                               fontWeight:700
+                                                mb: 2,
+                                                color: 'white',
+                                                fontWeight: 700
                                             }}
                                         >
                                             About me
                                         </SmoothWaveText>
-                                        <Typography variant='body2' sx={{color:'white'}}>
-                                        Empowering excellence in luxury real estate sales | RERA Registered | Concierge to iconic realty brands | Member – HRA & NAR India
+                                        <Typography variant='body2' sx={{ color: 'white' }}>
+                                            Empowering excellence in luxury real estate sales | RERA Registered | Concierge to iconic realty brands | Member – HRA & NAR India
                                         </Typography>
                                     </Box>
-                                    <Box sx={{textAlign:'left'}}>
+                                    <Box sx={{ textAlign: 'left' }}>
                                         <Box
                                             component="img"
                                             src={Homeimages.aboutshape}
                                             alt="shape"
                                             sx={{
-                                                 mb:2,
+                                                mb: 2,
                                                 filter: 'brightness(0) invert(1)',
                                             }}
                                         />
                                         <SmoothWaveText
                                             variant="h5"
                                             sx={{
-                                                fontWeight:700,
+                                                fontWeight: 700,
                                                 textTransform: 'capitalize',
-                                                mb:2,
-                                                color:'white'
+                                                mb: 2,
+                                                color: 'white'
                                             }}
                                         >
                                             What I do
                                         </SmoothWaveText>
                                         <Typography
                                             variant='body2'
-                                            sx={{color:'white'}}
+                                            sx={{ color: 'white' }}
                                         >
-                                           I help transform premium property portfolios through luxury sales mastery. I specialize in helping real estate businesses scale in the uber-luxury segment through tailored mentorship, strategic branding, and elite sales frameworks. 
+                                            I help transform premium property portfolios through luxury sales mastery. I specialize in helping real estate businesses scale in the uber-luxury segment through tailored mentorship, strategic branding, and elite sales frameworks.
                                         </Typography>
                                     </Box>
                                 </Box>
                             </Grid>
 
                             {/* Center */}
-                            <Grid item xs={12} md={4} sx={{my:{xs:3,md:0}}}>
+                            <Grid item xs={12} md={4} sx={{ my: { xs: 3, md: 0 } }}>
                                 <Box
                                     sx={{
                                         display: 'flex',
@@ -157,10 +179,10 @@ const About = () => {
                                 >
                                     {/* <img src={Homeimages.rwimg} alt="1" /> */}
                                     <ImageReveal
-                                        src={  Homeimages.rwimg2}
+                                        src={Homeimages.rwimg2}
                                         alt=""
                                         width="100%"
-                                        height="500px"
+                                          height="auto"
                                         threshold={0.8}
                                         scaleDuration={3}
                                     />
@@ -169,53 +191,53 @@ const About = () => {
 
                             {/* Right */}
                             <Grid item xs={12} md={4}>
-                                <Box sx={{ paddingLeft: {xs:'0',md:'60px'}, textAlign: {xs:'left',md:'right'} }}>
-                                    <Box sx={{mb:4}}>
-                                    <Box
+                                <Box sx={{ paddingLeft: { xs: '0', md: '60px' }, textAlign: { xs: 'left', md: 'right' } }}>
+                                    <Box sx={{ mb: 4 }}>
+                                        <Box
                                             component="img"
                                             src={Homeimages.aboutshape}
                                             alt="shape"
                                             sx={{
-                                                 mb:2,
+                                                mb: 2,
                                                 filter: 'brightness(0) invert(1)',
                                             }}
                                         />
                                         <SmoothWaveText
                                             variant="h5"
                                             sx={{
-                                                fontWeight:700,
-                                                color:'white',
+                                                fontWeight: 700,
+                                                color: 'white',
                                                 textTransform: 'capitalize',
-                                               mb:2
+                                                mb: 2
                                             }}
                                         >
                                             Contact me
                                         </SmoothWaveText>
                                         <Typography
-                                         variant='body2'
-                                         sx={{color:'white'}}
+                                            variant='body2'
+                                            sx={{ color: 'white' }}
                                         >
-                                        Let's connect and elevate your brand in the uber-luxury real estate space.
+                                            Let's connect and elevate your brand in the uber-luxury real estate space.
                                         </Typography>
                                     </Box>
                                     <Box>
-                                    <Box
+                                        <Box
                                             component="img"
                                             src={Homeimages.aboutshape}
                                             alt="shape"
                                             sx={{
-                                                 mb:2,
+                                                mb: 2,
                                                 filter: 'brightness(0) invert(1)',
                                             }}
                                         />
                                         <SmoothWaveText
                                             variant="h5"
                                             sx={{
-                                                
+
                                                 textTransform: 'capitalize',
                                                 marginBottom: '28px',
-                                                color:'white',
-                                                fontWeight:700
+                                                color: 'white',
+                                                fontWeight: 700
                                             }}
                                         >
                                             Find with me
@@ -223,7 +245,7 @@ const About = () => {
                                         <Box
                                             sx={{
                                                 display: 'flex',
-                                                justifyContent: {xs:'flex-start',md:'flex-end'},
+                                                justifyContent: { xs: 'flex-start', md: 'flex-end' },
                                                 gap: 2,
                                                 textAlign: 'right'
                                             }}
@@ -258,7 +280,7 @@ const About = () => {
 const iconButtonStyle = {
     // paddingLeft: '20px',
     backgroundColor: '#000',
-    color:'white',
+    color: 'white',
     width: '38px',
     height: '38px',
     borderRadius: '4px',
@@ -268,7 +290,7 @@ const iconButtonStyle = {
     transition: 'all .3s ease',
     '&:hover': {
         backgroundColor: 'white',
-        color:'black'
+        color: 'black'
     },
 };
 

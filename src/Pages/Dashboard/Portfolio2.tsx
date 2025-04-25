@@ -154,7 +154,7 @@ const PortfolioSlider: React.FC = () => {
                                     textTransform: 'uppercase',
                                     letterSpacing: 2,
                                     zIndex: 99,
-                                    px: 4,
+                                    px: {xs:0,md:4},
                                     // py: 2.5,
                                     pt:2,
                                     fontWeight:700

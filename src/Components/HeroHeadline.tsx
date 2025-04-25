@@ -16,6 +16,7 @@ const HeroHeadline: React.FC<HeroHeadlineProps> = ({ children }) => {
         // px: 4,
         // backgroundColor: '#121212',
         textAlign: { xs: 'center', md: 'center' },
+        mt:4
       }}
     >
         <Container maxWidth='lg'>

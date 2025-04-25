@@ -68,8 +68,12 @@ const MentoringServices = () => {
   return (
     <Box sx={{ color: '#000', pt: 18 }}>
       <Box sx={{ mb: 6 }}>
-        <Container maxWidth="xl">
-         
+        <Container maxWidth="lg"
+        sx={{
+          height:'100vh'
+        }}
+        >
+
 
           <SmoothWaveText
             variant="h3"
@@ -81,53 +85,61 @@ const MentoringServices = () => {
           >
             Mentoring
           </SmoothWaveText>
+          <Box sx={{ position: 'relative', mb: 6, textAlign: 'start' }}>
+            <Box
+              component="a"
+              onClick={(e) => {
+                e.preventDefault();
+                handleScroll('#text');
+              }}
+              sx={{
+                display: 'flex',
+                width: 60,
+                height: 60,
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: '#171818',
+                border: '10px solid #171818',
+                borderRadius: '50%',
+                position: 'absolute',
+                top: -60,
+                left: '50%',
+                transform: 'translateX(-50%)',
+                transition: 'all .3s ease',
+                zIndex: 2,
+                '&:hover': {
+                  backgroundColor: '#0f63a5',
+                },
+              }}
+            >
+              <SouthIcon
+                className="south-icon"
+                sx={{ width: 30, height: 30, transition: 'all .3s ease', color: '#fff' }}
+              />
+            </Box>
+            <Box
+            sx={{
+              height:'100%'
+            }}
+            >
+              <ImageReveal
+                src={Services.serv1}
+                alt=""
+                width="100%"
+                height="auto"
+                threshold={0.8}
+                scaleDuration={3}
+                sx={{ borderRadius: '40px' }}
+              />
+
+            </Box>
+
+          </Box>
         </Container>
       </Box>
 
-      <Container maxWidth="lg" sx={{ mt: 10 }}>
-        <Box sx={{ position: 'relative', mb: 6, textAlign: 'start' }}>
-          <Box
-            component="a"
-            onClick={(e) => {
-              e.preventDefault();
-              handleScroll('#text');
-            }}
-            sx={{
-              display: 'flex',
-              width: 60,
-              height: 60,
-              alignItems: 'center',
-              justifyContent: 'center',
-              backgroundColor: '#171818',
-              border: '10px solid #171818',
-              borderRadius: '50%',
-              position: 'absolute',
-              top: -60,
-              left: '50%',
-              transform: 'translateX(-50%)',
-              transition: 'all .3s ease',
-              zIndex: 2,
-              '&:hover': {
-                backgroundColor: '#0f63a5',
-              },
-            }}
-          >
-            <SouthIcon
-              className="south-icon"
-              sx={{ width: 30, height: 30, transition: 'all .3s ease', color: '#fff' }}
-            />
-          </Box>
+      <Container maxWidth="lg" sx={{ mt:1 }}>
 
-          <ImageReveal
-            src={Services.serv1}
-            alt=""
-            width="100%"
-            height="300px"
-            threshold={0.8}
-            scaleDuration={3}
-            sx={{ borderRadius: '40px' }}
-          />
-        </Box>
 
         <Box id="text" sx={{ mb: 4 }}>
           <Typography variant="body2" sx={{ textAlign: 'start' }}>
@@ -185,7 +197,7 @@ const MentoringServices = () => {
 
       </Container>
 
-      <Box sx={{ background: '#0f63a5', py: 6 }}>
+      {/* <Box sx={{ background: '#0f63a5', py: 6 }}>
         <Container maxWidth="lg">
           <Box sx={{ mb: 6 }}>
             <ImageReveal
@@ -200,23 +212,23 @@ const MentoringServices = () => {
           </Box>
 
           <Box sx={{ mb: 8 }}>
-          <SmoothWaveText variant="h4" sx={{ fontSize: 36, mb: 2, textAlign: 'start', fontWeight: 700,color:'white' }}>
-             About Me
-          </SmoothWaveText>
+            <SmoothWaveText variant="h4" sx={{ fontSize: 36, mb: 2, textAlign: 'start', fontWeight: 700, color: 'white' }}>
+              About Me
+            </SmoothWaveText>
             <Typography variant="body2" sx={{ textAlign: 'start', color: 'white' }}>
-            When prestige meets performance, real estate transforms. I help elite professionals and developers elevate their brand, close premium deals, and command presence in luxury markets. RERA certified, HRA & NAR India member, and an architect of sales excellence.
+              When prestige meets performance, real estate transforms. I help elite professionals and developers elevate their brand, close premium deals, and command presence in luxury markets. RERA certified, HRA & NAR India member, and an architect of sales excellence.
             </Typography>
           </Box>
           <Box sx={{ mb: 8 }}>
-          <SmoothWaveText variant="h4" sx={{ fontSize: 36, mb: 2, textAlign: 'start', fontWeight: 700,color:'white' }}>
-          My Services
-          </SmoothWaveText>
+            <SmoothWaveText variant="h4" sx={{ fontSize: 36, mb: 2, textAlign: 'start', fontWeight: 700, color: 'white' }}>
+              My Services
+            </SmoothWaveText>
             <Typography variant="body2" sx={{ textAlign: 'start', color: 'white' }}>
-            I specialize in curating high-performance sales frameworks for real estate businesses in the premium and luxury segments. My strategic counsel ensures your brand stands out, earns trust, and delivers unmatched value to affluent buyers. Think growth, elegance, and exclusivity—expertly aligned.
+              I specialize in curating high-performance sales frameworks for real estate businesses in the premium and luxury segments. My strategic counsel ensures your brand stands out, earns trust, and delivers unmatched value to affluent buyers. Think growth, elegance, and exclusivity—expertly aligned.
             </Typography>
           </Box>
         </Container>
-      </Box>
+      </Box> */}
       <Box sx={{ display: { xs: 'none', md: 'block' } }}>
         <Mentoring />
       </Box>

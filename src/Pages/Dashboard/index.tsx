@@ -30,7 +30,7 @@ const Dashboard:React.FC = () => {
       <PortfolioSection/>
       {/* <Portfolio2/> */}
       <Testimonial/>
-      <ClientsLogo/>
+      {/* <ClientsLogo/> */}
       <BlogSection/>
       
     </Box>

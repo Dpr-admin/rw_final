@@ -55,26 +55,26 @@ const WorkingProcess: React.FC = () => {
   }, []);
 
   return (
-    <Box sx={{ backgroundColor: '#0f63a5', color: 'white', py: 8, height: {xs:'auto',md:'100vh'} }}>
+    <Box sx={{ bgcolor: '#f7f5f0', borderTop: '1px solid #0f63a5', borderBottom: '1px solid #ccc', color: 'primary.main', py: 4, height: {xs:'auto',md:'100vh'} }}>
       <Container maxWidth='xl'>
 
         <Grid container alignItems="start" sx={{
           mb: 6,
-          borderTop: '1px solid #c9ced1',
+          // borderTop: '1px solid #0f63a5',
           py: 4
         }}>
           <Grid item xs={12} md={3} sx={{}}>
             <SmoothWaveText variant="subtitle2"
               sx={{
                 textTransform: 'uppercase',
-                color: 'white',
+                color: '#0f63a5',
                 fontSize: '14px',
               }}>
                 // WORKING PROCESS
             </SmoothWaveText>
           </Grid>
           <Grid item xs={12} md={7} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <Typography variant='h6' sx={{ fontSize: 18, textAlign: 'center', color: 'white', }}>
+            <Typography variant='h6' sx={{ fontSize: 18, textAlign: 'center', color: 'black', }}>
               Over a decade of experience in interactive design and working with some of the most talented people in the business
             </Typography>
           </Grid>
@@ -89,20 +89,20 @@ const WorkingProcess: React.FC = () => {
                   height: '300px',
                   p: 4,
                   backgroundColor: 'transparent',
-                  border: '1px dashed #fff',
+                  border: '1px dashed #0f63a5',
                   borderRadius: 2,
-                  color: '#ccc',
+                  color: '#000',
                   textAlign: 'start',
                 }}
                 ref={(el: HTMLDivElement | null) => {
                   cardsRef.current[i] = el;
                 }}
               >
-                <Typography variant='h6' sx={{ color: '#fff', mb: 1, fontWeight: 700, }}>//{step.id}</Typography>
-                <Typography variant="h3" sx={{ fontWeight: 700, color: 'white', mb: 2 }}>
+                <Typography variant='h6' sx={{ color: '#0f63a5', mb: 1, fontWeight: 700, }}>//{step.id}</Typography>
+                <Typography variant="h3" sx={{ fontWeight: 700, color: '#0f63a5', mb: 2 }}>
                   {step.title}
                 </Typography>
-                <Typography variant="body2" sx={{ color: '#fff', }}>{step.description}</Typography>
+                <Typography variant="body2" sx={{ color: '#000', }}>{step.description}</Typography>
               </Paper>
             </Grid>
           ))}

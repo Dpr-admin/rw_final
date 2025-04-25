@@ -15,12 +15,11 @@ const About:React.FC = () => {
   return (
     <Box>
        {/* <HeroHeadline>
-            <span data-outline >Empowering excellence in</span>{" "}
-            <span data-highlight>luxury </span>{" "}
-           <span data-outline>real estate sales |  </span>{" "}
-            <span data-highlight>RERA Registered  </span>
-           <span data-outline>| Concierge to iconic realty brands | </span>{" "}
-           <span data-highlight>Member – HRA & NAR India  </span>
+            <span data-outline >The</span>{" "}
+            <span data-highlight>Ultimate Luxury Sales Mentoring </span>{" "}
+           <span data-outline>To </span>{" "}
+            <span data-highlight>Sell High Ticket Properties  </span>
+           <span data-outline>Faster Than Ever           </span>{" "}
 
 
       
@@ -33,7 +32,7 @@ const About:React.FC = () => {
           <Experience/>
           <Awards/>
           <Testimonial/>
-          <ClientsLogo/>
+          {/* <ClientsLogo/> */}
        
     </Box>
   )

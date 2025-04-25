@@ -9,7 +9,7 @@ interface ImageRevealProps {
   height?: string | number;
   threshold?: number;
   scaleDuration?: number;
-  sx?: SxProps<Theme>; // ✅ Allow custom styles via MUI `sx`
+  sx?: SxProps<Theme>;
 }
 
 const ImageReveal: React.FC<ImageRevealProps> = ({
@@ -22,6 +22,7 @@ const ImageReveal: React.FC<ImageRevealProps> = ({
   sx = {},
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const imgRef = useRef<HTMLImageElement | null>(null);
 
   useEffect(() => {
     const options = {
@@ -32,33 +33,39 @@ const ImageReveal: React.FC<ImageRevealProps> = ({
 
     const revealCallback: IntersectionObserverCallback = (entries, observer) => {
       entries.forEach((entry) => {
-        const container = entry.target as HTMLElement;
-        const img = container.querySelector('img') as HTMLImageElement;
-        const easeInOut = 'power3.out';
-        const revealAnim = gsap.timeline({ ease: easeInOut });
-
         if (entry.isIntersecting) {
+          const container = entry.target as HTMLElement;
+          const img = imgRef.current;
+          const easeInOut = 'power3.out';
+
+          const revealAnim = gsap.timeline({ defaults: { ease: easeInOut } });
+
           revealAnim.set(container, { visibility: 'visible' });
+
           revealAnim.fromTo(
             container,
             {
               clipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)',
-              webkitClipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)',
             },
             {
               clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
-              webkitClipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
               duration: 1,
-              ease: easeInOut,
             }
           );
-          revealAnim.from(img, {
-            scale: 1.4,
-            ease: easeInOut,
-            duration: scaleDuration,
-            delay: -1,
-          });
-          observer.unobserve(entry.target);
+
+          if (img) {
+            revealAnim.from(
+              img,
+              {
+                scale: 1.4,
+                duration: scaleDuration,
+                ease: easeInOut,
+              },
+              '<' // start at same time as clipPath animation
+            );
+          }
+
+          observer.unobserve(container);
         }
       });
     };
@@ -72,27 +79,40 @@ const ImageReveal: React.FC<ImageRevealProps> = ({
 
   return (
     <Box
-      ref={containerRef}
-      className="reveal"
+    ref={containerRef}
+    sx={{
+      visibility: 'hidden',
+      position: 'relative',
+      width,
+      height, // height: auto
+      overflow: 'hidden',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      ...sx,
+    }}
+  >
+    <Box
       sx={{
-        visibility: 'hidden',
-        position: 'relative',
-        width,
-        height,
+        width: '100%',
+        height: '100%', // this can stay 100% (it will inherit from parent)
         overflow: 'hidden',
-        ...sx, // ✅ Merge user-defined styles
       }}
     >
       <img
+        ref={imgRef}
         src={src}
         alt={alt}
         style={{
-          height: '100%',
           width: '100%',
+          height: 'auto', // 👈 important for natural image height
           objectFit: 'cover',
+          display: 'block',
         }}
       />
     </Box>
+  </Box>
+  
   );
 };
 

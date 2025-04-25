@@ -19,8 +19,8 @@ const blogPosts = blogContent.map(({ id, date, title, blogtitleImage }) => ({
 }));
 
 const marqueeWords = [
-    "News", "News", "News", "News", "News",
-    "News", "News", "News", "News", "News",
+    "BLOGS", "BLOGS", "BLOGS", "BLOGS", "BLOGS",
+    "BLOGS", "BLOGS", "BLOGS", "BLOGS", "BLOGS",
 ];
 
 const BlogSection = () => {
@@ -111,68 +111,76 @@ const BlogSection = () => {
                     </Box>
                 </Container>
             </Box>
-            <Container maxWidth="lg">
+            <Container maxWidth="xl">
                 <Box sx={{ color: '#fff', px: 5 }}>
-                    {blogPosts.map((post, index) => (
-                        <Box
-                            key={index}
-                            onClick={() => navigate(`/blog/${post.id}`)}
-                            style={{ cursor: 'pointer' }}
-                            sx={{
-                                borderTop: index !== 0 ? '1px solid #777777' : 'none',
-                                borderBottom: index === blogPosts.length - 1 ? '1px solid #777777' : 'none',
-                            }}
-                        >
-                            <Grid container spacing={3} alignItems="center" py={3}>
-                                <Grid item xs={12} md={7} sx={{ textAlign: 'start' }}>
-                                    <Typography variant="h6" sx={{ color: 'primary.main' }}>
-                                        ● {post.date}
-                                    </Typography>
-                                    {/* <Typography  className='cursor-hover-target' variant="h3" sx={{ mt: 1, mb: 2 }}>
-                                        {post.title}
-                                    </Typography> */}
-                                    <TextFillScroll textColor="#777777" fillColor="#000" sx={{ fontsize: "20px",my:2 }}>
-                                        {post.title}
-                                    </TextFillScroll>
-                                    <Typography
-                                        className='cursor-hover-target'
-                                        variant='h6'
-                                        sx={{
-                                            color: 'primary.main',
-                                            fontWeight: 700,
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'start',
-                                        }}
-                                    >
-                                        <Typography variant='h6' sx={{ color: 'primary.main', fontWeight: 700, }}>Read the story</Typography>
-                                        <EastIcon sx={{ fontSize: '1rem', ml: 1, fontWeight: 700, }} />
-                                    </Typography>
-                                </Grid>
-                                <Grid item xs={12} md={5}>
-                                    {/* <Box
-                                        component="img"
-                                        src={post.image}
-                                        alt={post.title}
-                                        sx={{
-                                            width: '100%',
-                                            height: '250px',
-                                            borderRadius: 1,
-                                            objectFit: 'cover',
-                                        }}
-                                    /> */}
-                                    <ImageReveal
-                                        src={post.image}
-                                        alt={post.title}
-                                        width="100%"
-                                        height="250px"
-                                        threshold={0.8}
-                                        scaleDuration={3}
-                                    />
-                                </Grid>
-                            </Grid>
-                        </Box>
-                    ))}
+                {blogPosts.map((post, index) => {
+  const isEven = index % 2 === 0;
+
+  return (
+    <Box
+      key={index}
+      onClick={() => navigate(`/blog/${post.id}`)}
+      style={{ cursor: 'pointer' }}
+      sx={{
+        borderTop: index !== 0 ? '1px solid #777777' : 'none',
+        borderBottom: index === blogPosts.length - 1 ? '1px solid #777777' : 'none',
+      }}
+    >
+      <Grid
+        container
+        spacing={3}
+        alignItems="center"
+        py={3}
+        sx={{
+          flexDirection: {
+            xs: 'column', // Always column on mobile
+            md: isEven ? 'row' : 'row-reverse' // Zig-zag on desktop
+          },
+        }}
+      >
+        {/* Content */}
+        <Grid item xs={12} md={7} sx={{ textAlign: 'start' }}>
+          <Typography variant="h6" sx={{ color: 'primary.main' }}>
+            ● {post.date}
+          </Typography>
+
+          <TextFillScroll textColor="#777777" fillColor="#000" sx={{ fontsize: "20px", my: 2 }}>
+            {post.title}
+          </TextFillScroll>
+
+          <Typography
+            className='cursor-hover-target'
+            variant='h6'
+            sx={{
+              color: 'primary.main',
+              fontWeight: 700,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'start',
+            }}
+          >
+            <Typography variant='h6' sx={{ color: 'primary.main', fontWeight: 700 }}>
+              Read the story
+            </Typography>
+            <EastIcon sx={{ fontSize: '1rem', ml: 1, fontWeight: 700 }} />
+          </Typography>
+        </Grid>
+
+        {/* Image */}
+        <Grid item xs={12} md={5}>
+          <ImageReveal
+            src={post.image}
+            alt={post.title}
+            width="100%"
+            height="auto"
+            threshold={0.8}
+            scaleDuration={3}
+          />
+        </Grid>
+      </Grid>
+    </Box>
+  );
+})}
 
                     {/* <ImageReveal
         src="https://images.unsplash.com/photo-1580215935060-a5adc57c5157?auto=format&fit=crop&w=634&q=80"

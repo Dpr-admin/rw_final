@@ -82,7 +82,7 @@ const BlogSlider: React.FC = () => {
                     src={slide.image}
                     alt={slide.title}
                     width="100%"
-                    height="600px"
+                    height="auto"
                     threshold={0.8}
                     scaleDuration={3}
                     sx={{ borderRadius: '40px' }}
