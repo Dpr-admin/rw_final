@@ -48,7 +48,7 @@ const ContactSection = () => {
           right: 0,
           // width: { xs: '100px', md: '600px' },
           height:"400px",
-          // opacity: 0.1,
+          opacity: 0.4,
           pointerEvents: 'none',
           zIndex: 0,
  
