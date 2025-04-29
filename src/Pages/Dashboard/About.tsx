@@ -5,6 +5,7 @@ import {
     Typography,
     IconButton,
     Grid,
+    Link,
 } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -23,6 +24,18 @@ import EastIcon from '@mui/icons-material/East'; // ✅ Import EastIcon
 
 const About = () => {
     const bounceRef = useRef<HTMLDivElement>(null);
+    const eastIconRef = useRef<SVGSVGElement>(null); // Create a reference for EastIcon
+
+    useEffect(() => {
+        // GSAP animation for bouncing EastIcon
+        gsap.to(eastIconRef.current, {
+            y: -10,
+            duration: 0.4,
+            yoyo: true,
+            repeat: -1,
+            ease: 'power1.inOut',
+        });
+    }, []);
 
     useEffect(() => {
         gsap.to(bounceRef.current, {
@@ -206,15 +219,18 @@ const About = () => {
                                         >
                                             Contact me
                                         </SmoothWaveText>
-                                        <Box
-                                            component="a"
-                                            href="https://wa.me/+919885420885?text=Hi%20there!%20I%20am%20interested%20in%20your%20real%20estate%20services."
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            sx={{
-
-                                                mb: 2,
-                                            }}
+                                        <Link
+                                           href="https://wa.me/+919885420885?text=Hi%20there!%20I%20am%20interested%20in%20your%20real%20estate%20services."
+                                           target="_blank"
+                                           rel="noopener noreferrer"
+                                           sx={{
+                                               color: 'white',
+                                               textDecoration: 'none !important', // No underline
+                                               display: 'inline',
+                                               '&:hover': {
+                                                   textDecoration: 'none', // Ensure no underline on hover
+                                               },
+                                           }}
                                         >
                                             <Typography
                                                 variant="body2"
@@ -227,23 +243,21 @@ const About = () => {
                                             >
                                                 {/* Text with inline link */}
                                                 <Box
-                                                    component="a"
-                                                    href="https://wa.me/919999999999?text=Hi%20there!%20I%20am%20interested%20in%20your%20real%20estate%20services."
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    sx={{
-                                                        color: 'white',
-                                                        textDecoration: 'none',
-                                                        display: 'inline',
-                                                        '&:hover': {
-                                                            textDecoration: 'underline',
-                                                        },
-                                                    }}
+                                                   
                                                 >
-                                                    Let's connect and elevate your brand in the uber-luxury real estate space.<EastIcon sx={{ color: 'white', fontSize: '18px', verticalAlign: 'middle', ml: '4px' }} />
+                                                    Let's connect and elevate your brand in the uber-luxury real estate space.
+                                                    <EastIcon
+                                                        ref={eastIconRef} // Attach ref to apply GSAP animation
+                                                        sx={{
+                                                            color: 'white',
+                                                            fontSize: '18px',
+                                                            verticalAlign: 'middle',
+                                                            ml: '4px',
+                                                        }}
+                                                    />
                                                 </Box>
                                             </Typography>
-                                        </Box>
+                                        </Link>
                                     </Box>
                                     <Box>
                                         <Box
