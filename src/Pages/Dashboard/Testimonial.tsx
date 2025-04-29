@@ -79,7 +79,7 @@ const TestimonialsSection: React.FC = () => {
                                     mb:{xs: 2, md: 0 },
                                     fontWeight:600
                                 }}>
-                                 // Satisfied clients
+                                 // Clients Speaks
                             </SmoothWaveText>
                         </Grid>
                         <Grid item xs={12} md={7} sx={{display: "flex", alignItems: "center",justifyContent: "center",my:{xs:3,md:0}}}>
@@ -97,7 +97,7 @@ const TestimonialsSection: React.FC = () => {
                         </Grid>
                     </Grid>
 
-                    {/* Slider Section */}
+                    {/* Slider Section */}        
                     <Slider ref={sliderRef} {...settings}>
                         {testimonials.map((item, index) => (
                             <Box key={index}>

@@ -702,7 +702,7 @@ const Header: React.FC = () => {
               {/* Always show Let's Talk button */}
               <Box ref={talkButtonRef}>
                 <SpotlightButton
-                  onClick={handlePopupOpen}
+                  onClick={() => window.open("http://bookanappointment.rajivwilliams.com/", "_blank")}
                   background="linear-gradient(to right, #fff, #fff)"
                   textColor="#fff"
                   spotlightColor="linear-gradient(to right, #fff, #fff)"

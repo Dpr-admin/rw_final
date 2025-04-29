@@ -48,10 +48,10 @@ const AboutDetails = () => {
   }, []);
 
   const bioItems = [
-    { label: "15+ Years Realtor",  },
-    { label: "Luxury Sales Concierge",  },
-    { label: "Sales Mentor", },
+    { label: "Luxury Sales Concierge", },
     { label: "  Brand Strategist ", },
+    { label: "Luxury Sales Mastery Trainer", },
+
   ];
 
   return (
@@ -65,8 +65,16 @@ const AboutDetails = () => {
             </SmoothWaveText>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Typography variant="body2" sx={{ color: "#555", textAlign: 'start' }}>
-            When prestige meets performance, real estate transforms. I help elite professionals and developers elevate their brand, close premium deals, and command presence in luxury markets. RERA certified, HRA & NAR India member, and an architect of sales excellence.
+            <Typography variant="body2"
+              sx={{
+                color: "#555",
+                textAlign: 'start',
+                '& b': { // 👉 Styles all <b> tags inside this Typography
+                  fontWeight: 800, // Make bold
+                  color: '#0f63a5',   // Optional: Make bold text darker
+                },
+              }}>
+              When prestige meets performance, real estate transforms. I help <b> Real Estate Developers</b>  and <b> elite professionals </b>  elevate their brand, close premium deals, and command presence in luxury markets. RERA certified, HRA & NAR India member, and an architect of sales excellence.
 
             </Typography>
           </Grid>
@@ -77,8 +85,8 @@ const AboutDetails = () => {
                 display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center",
-                width: "70px",
-                height: "70px",
+                width: "90px",
+                height: "90px",
                 borderRadius: "50%",
                 background: '#0f63a5',
                 border: "1px solid rgba(94, 94, 94, 0.18)",
@@ -118,16 +126,16 @@ const AboutDetails = () => {
               <img
                 src={Homeimages.rwlogo}
                 alt="Rotating Center"
-                style={{ width: "50px", height: "50px", borderRadius: "50%" }}
+                style={{ width: "60px", height: "60px", borderRadius: "50%" }}
               />
             </Box>
           </Grid>
         </Grid>
 
         {/* Biography Section */}
-        <Grid container spacing={3} sx={{ mb:4,mt:4 }}>
+        <Grid container spacing={3} sx={{ mb: 4, mt: 4 ,px:6}}>
           {bioItems.map((item, index) => (
-            <Grid item xs={12} md={3} key={index}>
+            <Grid item xs={12} md={4} key={index}>
               <Box
                 sx={{
                   height: "50px",
@@ -136,9 +144,9 @@ const AboutDetails = () => {
                   // px: 4,
                   // py: 2,
                   // padding: "30px 35px",
-                  display:'flex',
-                  justifyContent:'center',
-                  alignItems:'center'
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center'
 
                 }}
               >
@@ -150,10 +158,10 @@ const AboutDetails = () => {
                     fontSize: "18px",
                     textTransform: "capitalize",
                     // mb: 1.5,
-                    display:'flex',
-                    justifyContent:'center',
-                    alignItems:'center'
-  
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+
                   }}
                 >
                   {item.label}
@@ -165,7 +173,7 @@ const AboutDetails = () => {
             </Grid>
           ))}
         </Grid>
-       
+
       </Container>
     </Box>
   );

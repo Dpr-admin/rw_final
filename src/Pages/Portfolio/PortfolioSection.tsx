@@ -139,15 +139,13 @@ const PortfolioSection: React.FC = () => {
     const rows = chunkArray(portfolioItems, 2);
 
     return (
-        <Box id="portfolio" ref={sectionRef} sx={{ py: 10, bgcolor: '#f7f5f0', borderTop: '1px solid #ccc', borderBottom: '1px solid #ccc'}}>
+        <Box id="portfolio" ref={sectionRef} sx={{ py: 5, bgcolor: '#f7f5f0', borderTop: '1px solid #ccc', borderBottom: '1px solid #ccc'}}>
 
             <Box
             >
-                <Box sx={{ py: 4, overflow: 'hidden' }}>
+                <Box sx={{  overflow: 'hidden' }}>
                     <Container maxWidth="lg"
                         sx={{
-                            borderTop: '1px solid #777777',
-
                         }}>
 
                         {/* Header */}
@@ -158,7 +156,7 @@ const PortfolioSection: React.FC = () => {
                                 alignItems: 'center',
                                 // px: { xs: 2, md: 10 },
                                 my: 4,
-                                pt: 2
+                               
 
                             }}
                         >
@@ -174,24 +172,6 @@ const PortfolioSection: React.FC = () => {
                                  // let me show you
                             </SmoothWaveText>
 
-                            <SmoothWaveText
-                                variant="subtitle2"
-                                className='cursor-hover-target'
-                                onClick={() => navigate('/portfolio')}
-                                sx={{
-                                    color: '#0f63a5',
-                                    fontFamily: 'GilroyBold, sans-serif',
-                                    textTransform: 'uppercase',
-                                    fontSize: '14px',
-                                    textDecoration: 'underline',
-                                    cursor: 'pointer',
-                                    '&:hover': {
-                                        color: '#000',
-                                    },
-                                }}
-                            >
-                                (( project all ))
-                            </SmoothWaveText>
                         </Box>
                     </Container>
 

@@ -18,6 +18,7 @@ import gsap from 'gsap';
 import { Homeimages } from '../../assets';
 import SmoothWaveText from '../../Components/SmoothWaveText';
 import ImageReveal from '../../Components/ImageReveal';
+import EastIcon from '@mui/icons-material/East'; // ✅ Import EastIcon
 
 
 const About = () => {
@@ -35,52 +36,41 @@ const About = () => {
 
     return (
         <Box
-            //  sx={{ height: {xs:'auto',md:'100vh'},mb:6, mt:{xs:5,md:5} }}
             sx={{
                 height: { xs: 'auto', md: '100vh' },
                 mb: 6,
                 mt: { xs: 5, md: 5 },
-                // background: `url("${Homeimages.aboutbg}") no-repeat center center/cover`,
-                // position: 'relative',
-                display:'flex',
-                justifyContent:'center',
-                alignItems:'center'
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
             }}
         >
-            <Box
-                // sx={{
-                //     position: 'absolute',
-                //     width: '100%',
-                //     height: '100%',
-                //     backgroundColor: 'rgba(15, 99, 165, 0.8)', // Semi-transparent overlay
-                //     borderRadius: '40px',
-                //     zIndex: 1,
-                // }}
-            />
-
-            <Container maxWidth="lg">
+            <Container maxWidth="xl">
 
 
                 {/* Overlay */}
                 <Box
                     sx={{
                         borderRadius: '40px',
-                        background: `url("${Homeimages.aboutbg}") no-repeat center center/cover`,
-                        // filter: 'brightness(100%)  invert(1) )', // ✨ whiten effe
-
-                position: 'relative',
+                        bgcolor: '#0f63a5',
+                        position: 'relative',
                     }}
                 >
                     {/* Background overlays */}
                     <Box
+                        component="img"
+                        src={Homeimages.footerbg}
+                        alt="Decorative"
                         sx={{
-                    position: 'absolute',
-                    width: '100%',
-                    height: '100%',
-                    backgroundColor: 'rgba(15, 99, 165, 0.9)', // Semi-transparent overlay
-                    borderRadius: '40px',
-                    zIndex: 1,
-                }}
+                            position: 'absolute',
+                            bottom: -5,
+                            right: 0,
+                            // width: { xs: '100px', md: '600px' },
+                            height: "400px",
+                            opacity: 0.4,
+                            pointerEvents: 'none',
+                            zIndex: 0,
+                        }}
                     />
                     <Box
                         sx={{
@@ -106,7 +96,7 @@ const About = () => {
                         <Grid container spacing={0}>
                             {/* Left */}
                             <Grid item xs={12} md={4}>
-                                <Box sx={{}}>
+                                <Box sx={{ paddingRight: { xs: '0', md: '30px' } }}>
                                     <Box sx={{ mb: 4, textAlign: 'left' }}>
                                         <Box
                                             component="img"
@@ -185,7 +175,7 @@ const About = () => {
                                         src={Homeimages.rwimg2}
                                         alt=""
                                         width="100%"
-                                          height="auto"
+                                        height="auto"
                                         threshold={0.8}
                                         scaleDuration={3}
                                     />
@@ -194,7 +184,7 @@ const About = () => {
 
                             {/* Right */}
                             <Grid item xs={12} md={4}>
-                                <Box sx={{ paddingLeft: { xs: '0', md: '60px' }, textAlign: { xs: 'left', md: 'right' } }}>
+                                <Box sx={{ paddingLeft: { xs: '0', md: '40px' }, textAlign: { xs: 'left', md: 'right' } }}>
                                     <Box sx={{ mb: 4 }}>
                                         <Box
                                             component="img"
@@ -216,12 +206,44 @@ const About = () => {
                                         >
                                             Contact me
                                         </SmoothWaveText>
-                                        <Typography
-                                            variant='body2'
-                                            sx={{ color: 'white' }}
+                                        <Box
+                                            component="a"
+                                            href="https://wa.me/+919885420885?text=Hi%20there!%20I%20am%20interested%20in%20your%20real%20estate%20services."
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            sx={{
+
+                                                mb: 2,
+                                            }}
                                         >
-                                            Let's connect and elevate your brand in the uber-luxury real estate space.
-                                        </Typography>
+                                            <Typography
+                                                variant="body2"
+                                                sx={{
+                                                    color: 'white',
+                                                    fontSize: '16px',
+                                                    fontWeight: 400,
+                                                    lineHeight: 1.6,
+                                                }}
+                                            >
+                                                {/* Text with inline link */}
+                                                <Box
+                                                    component="a"
+                                                    href="https://wa.me/919999999999?text=Hi%20there!%20I%20am%20interested%20in%20your%20real%20estate%20services."
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    sx={{
+                                                        color: 'white',
+                                                        textDecoration: 'none',
+                                                        display: 'inline',
+                                                        '&:hover': {
+                                                            textDecoration: 'underline',
+                                                        },
+                                                    }}
+                                                >
+                                                    Let's connect and elevate your brand in the uber-luxury real estate space.<EastIcon sx={{ color: 'white', fontSize: '18px', verticalAlign: 'middle', ml: '4px' }} />
+                                                </Box>
+                                            </Typography>
+                                        </Box>
                                     </Box>
                                     <Box>
                                         <Box
@@ -233,7 +255,7 @@ const About = () => {
                                                 filter: 'brightness(0) invert(1)',
                                             }}
                                         />
-                                        <SmoothWaveText
+                                        {/* <SmoothWaveText
                                             variant="h5"
                                             sx={{
 
@@ -243,13 +265,13 @@ const About = () => {
                                                 fontWeight: 700
                                             }}
                                         >
-                                            Find with me
+                                            Connect with me
                                         </SmoothWaveText>
                                         <Box
                                             sx={{
                                                 display: 'flex',
                                                 justifyContent: { xs: 'flex-start', md: 'flex-end' },
-                                                gap: 2,
+                                                // gap: 1,
                                                 textAlign: 'right'
                                             }}
                                         >
@@ -268,6 +290,44 @@ const About = () => {
                                             <IconButton sx={iconButtonStyle} component="a" href="https://www.linkedin.com/in/williamsrajiv" target="_blank" rel="noopener noreferrer">
                                                 <LinkedInIcon />
                                             </IconButton>
+                                        </Box> */}
+
+                                        <Box>
+                                            <Typography
+                                                variant="h1"
+                                                sx={{
+                                                    fontSize: { xs: "70px", md: "60px" },
+                                                    fontWeight: 500,
+                                                    lineHeight: 1,
+                                                    color: "white",
+                                                    fontFamily: "Holimount, sans-serif !important",
+                                                    mt: { xs: 0, md: 2 },
+                                                }}
+                                            >
+                                                <Box
+                                                    component="span"
+                                                    sx={{
+                                                        fontFamily: "Moderline, sans-serif !important",
+                                                        fontSize: { xs: "50px", md: "45px" },
+                                                        color: "#fff",
+                                                        fontWeight: 800,
+                                                    }}
+                                                >
+                                                    L
+                                                </Box>
+                                                <Box
+                                                    component="span"
+                                                    sx={{
+                                                        fontFamily: "Holimount, sans-serif !important",
+                                                        fontSize: { xs: "78px", md: "80px" },
+                                                        color: "#fff",
+                                                        fontWeight: 800,
+                                                    }}
+                                                >
+                                                    uxury
+                                                </Box>{" "}
+                                                Sales Mentor
+                                            </Typography>
                                         </Box>
                                     </Box>
                                 </Box>
@@ -282,7 +342,7 @@ const About = () => {
 
 const iconButtonStyle = {
     // paddingLeft: '20px',
-    backgroundColor: '#000',
+    // backgroundColor: '#000',
     color: 'white',
     width: '38px',
     height: '38px',
@@ -293,7 +353,7 @@ const iconButtonStyle = {
     transition: 'all .3s ease',
     '&:hover': {
         backgroundColor: 'white',
-        color: 'black'
+        color: 'primary.main'
     },
 };
 

@@ -9,35 +9,41 @@ const Banner = () => {
   const titleRef = useRef<HTMLDivElement | null>(null);
   const mentorRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    gsap.fromTo(
-      [textRef.current, signRef.current, titleRef.current, mentorRef.current],
-      { opacity: 0, y: -40 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power2.out",
-      }
-    );
-  }, []);
+  // useEffect(() => {
+  //   gsap.fromTo(
+  //     [textRef.current, signRef.current, titleRef.current, mentorRef.current],
+  //     { opacity: 0, y: -40 },
+  //     {
+  //       opacity: 1,
+  //       y: 0,
+  //       duration: 0.8,
+  //       stagger: 0.2,
+  //       ease: "power2.out",
+  //     }
+  //   );
+  // }, []);
 
   return (
     <Box
-      sx={{
-        position: "relative",
-        background: 'url("https://dprstorage.b-cdn.net/RW/bannerbg2.png") no-repeat center center/cover',
-        color: "#fff",
-        minHeight: { xs: "100vh", md: "100vh" },
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        mt: { xs: 0, md: 0 },
-      }}
+    sx={{
+      position: "relative",
+      color: "#fff",
+      minHeight: { xs: "100vh", md: "100vh" },
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      mt: { xs: 0, md: 0 },
+      backgroundImage: {
+        xs: `url("${Homeimages.mobilebanner}")`, // ✅ Mobile view background
+        md: `url("${Homeimages.banner1}")`,      // ✅ Desktop view background
+      },
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center center',
+      backgroundSize: 'cover',
+    }}
     >
       <Container maxWidth="lg">
-        <Box
+        {/* <Box
           id="home"
           sx={{
             display: "flex",
@@ -49,7 +55,7 @@ const Banner = () => {
           }}
         >
           <Grid container spacing={2} sx={{ mb: { xs: 0, md: 6 } }}>
-            {/* Left Side */}
+       
             <Grid
               item
               xs={12}
@@ -157,7 +163,6 @@ const Banner = () => {
               </Box>
             </Grid>
 
-            {/* Right Side */}
             <Grid
               item
               xs={12}
@@ -223,7 +228,7 @@ const Banner = () => {
               </Box>
             </Grid>
           </Grid>
-        </Box>
+        </Box> */}
       </Container>
     </Box>
   );

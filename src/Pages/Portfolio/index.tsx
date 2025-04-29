@@ -11,7 +11,7 @@ const Portfolio: React.FC = () => {
     <Box>
       <HeroHeadline>
         <span data-outline>Trusted by industry leaders,</span>{" "}
-        <span data-highlight> Backed by Awards.</span>{" "}
+        <span data-highlight> Backed by Reputation.</span>{" "}
         <span data-outline>Browse my</span>{" "}
 
         <span data-highlight>Portfolio </span>

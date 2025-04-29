@@ -23,7 +23,9 @@ import footerbg from './images/home/footerbg.png'
 import charminar from './images/home/charminar.svg'
 import rwimg2 from './images/home/rwimage1.jpg'
 import popupbg from './images/home/popupbg.jpeg'
-
+import banner1 from './images/home/banner1.png'
+import mobilebanner from './images/home/mobilebanner.png'
+import hydcharminar from './images/home/hyderabad-charminar.png'
 
 
 
@@ -59,17 +61,21 @@ import p5 from './images/services/songs.png'
 import serv1 from './images/services/serv1.png'
 import serv2 from './images/services/serv2.png'
 import serv3 from './images/services/serv3.png'
-import mentoring1 from './images/services/Beginnerhero.jpg'
-import mentoring2 from './images/services/Acceleratorhero.jpg'
-import mentoring3 from './images/services/Organizationalbanner.jpg'
-import mentoring4 from './images/services/Luxuryheroban.jpg'
-import mentoring5 from './images/services/Personalizedhero.jpg'
+import mentoring1 from './images/services/Beginnerhero.png'
+import mentoring2 from './images/services/Acceleratorhero.png'
+import mentoring3 from './images/services/Organizationalbanner.png'
+import mentoring4 from './images/services/Luxuryheroban.png'
+import mentoring5 from './images/services/Personalizedhero.png'
+import mentoring6 from './images/services/uberluxury.png'
 import servsmall1 from './images/services/servsmall1.png'
 import servsmall2 from './images/services/servsmall2.png'
 import servsmall3 from './images/services/servsmall3.png'
 import servm1 from './images/services/servm1.png'
 import servm2 from './images/services/servm2.png'
 import servm3 from './images/services/servm3.png'
+
+
+
 
 
 
@@ -105,7 +111,7 @@ export const Homeimages = {
     services1,
     services2,
     quote,user,clientlogos,bannerbg2,blog1,rwsign,bannerarrow,rwbannerbg,rwimage,
-    bluelogo,whatsapp,rwimg2,aboutbg,footerbg,charminar,popupbg
+    bluelogo,whatsapp,rwimg2,aboutbg,footerbg,charminar,popupbg,banner1,mobilebanner,hydcharminar
   
 };
 
@@ -116,8 +122,8 @@ export const About ={
 export const Services={
     servicesdetails1,realgrowth,bgimgone,bgimgtwo,counterbg,project1,project2,allproject,
     m1,m2,m3,m4,m5,overview1,overview2,overview3,choosebg,pattern,p1,p2,p3,p4,p5,serv1,serv2,serv3,
-    mentoring1,mentoring2,mentoring3,mentoring4,mentoring5,servsmall1,servsmall2,servsmall3,
-    servm1,servm2,servm3
+    mentoring1,mentoring2,mentoring3,mentoring4,mentoring5,mentoring6,servsmall1,servsmall2,servsmall3,
+    servm1,servm2,servm3,
     
 
 }

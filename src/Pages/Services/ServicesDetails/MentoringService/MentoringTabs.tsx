@@ -17,7 +17,12 @@ const tabs = [
     {
         title: "Beginner’s Path to Real Estate Excellence",
         subtitle: 'Who can apply:',
-        description: "First-time realtors and newly established agents looking to build a strong foundation in the real estate industry.",
+        description: (
+            <>
+              <b style={{color:'#0f63a5',}}>First-time realtors</b> and <b style={{color:'#0f63a5'}}> newly established agents</b> looking to build a strong foundation in the real estate industry.
+            </>
+          ),
+          
         image:Services.mentoring1,
         list: {
             listTitle: "Key Benefits:",
@@ -41,7 +46,11 @@ const tabs = [
     {
         title: "Real Estate Growth Accelerator",
         subtitle: 'Who can apply:',
-        description: "Mid-level professionals and small teams seeking to improve their sales effectiveness and negotiation skills.",
+        description: (
+            <>
+                <b style={{color:'#0f63a5'}}>Mid-level professionals </b> and <b style={{color:'#0f63a5'}}> small teams seeking</b> to improve their sales effectiveness and negotiation skills.,
+            </>
+        ),
         image:Services.mentoring2,
         list: {
             listTitle: "Key Features:",
@@ -65,7 +74,11 @@ const tabs = [
     {
         title: "Luxury Sales Mastery",
         subtitle: 'Who can apply:',
-        description: "Agents and teams focusing on selling high-value properties and serving affluent clientele.",
+        description:(
+            <>
+               <b style={{color:'#0f63a5'}}>Agents and teams</b>  focusing on selling high-value properties and serving affluent clientele.,
+            </>
+        ),
         image:Services.mentoring3,
         list: {
             listTitle: "Key Features:",
@@ -89,7 +102,11 @@ const tabs = [
     {
         title: "Organizational mentoring",
         subtitle: 'Who can apply:',
-        description: "Business owners, developers, and team leaders aiming to elevate their organization’s performance and brand image.",
+        description: (
+            <>
+                 <b style={{color:'#0f63a5'}}>Business owners, developers, and team leaders </b>aiming to elevate their organization’s performance and brand image.,
+            </>
+        ),
         image:Services.mentoring4,
         list: {
             listTitle: "Key Features:",
@@ -131,6 +148,35 @@ const tabs = [
             {
                 title: "Ideal For",
                 discription: "Individuals who prefer personalized guidance to refine their strategies and achieve exceptional results in real estate."
+            }
+        ]
+    },
+    {
+        title: "Uber Luxury Sales Mastery",
+        subtitle: 'Who can apply:',
+        description: (
+            <>
+                <b style={{color:'#0f63a5'}}>Top-tier agents </b>and<b style={{color:'#0f63a5'}}>real estate professionals</b>  aiming to break into the ultra-luxury segment dealing with ₹10 Cr+ properties, NRI clientele, and iconic global listings.
+            </>
+        ),
+        image:Services.mentoring6,
+        list: {
+            listTitle: "Key Features:",
+            listItems: [
+                "Ultra-Luxury Buyer Psychology: Understand the mindset, expectations, and decision-making patterns of billionaires and elite investors",
+                "OPrivate Client Protocols: Learn the art of discretion, personalization, and delivering white-glove service to ultra-high-net-worth clients",
+                "Brand Authority & Networking: Build a globally recognized luxury brand and gain access to exclusive HNI networks and referral ecosystems",
+                
+            ],
+        },
+        paragraph: [
+            {
+                title: "Duration:",
+                discription: "7+1 sessions (including a personalized strategy refinement session)."
+            },
+            {
+                title: "Ideal For",
+                discription: "Elite realtors and boutique firms aiming to transition from luxury sales to commanding a presence in the ultra-luxury, global property market."
             }
         ]
     },

@@ -19,9 +19,11 @@ import Layout from "../LayoutTwo/Layout";
 import ProjectDetails from "../Pages/Projects/ProjectDetails";
 import {Dashboard, About,Services ,ServicesDetails,Portfolio,AllPortfolioDetails,Blog,
   AllBlogDetails,Contactus,MentoringServices,SalesServices,Branding,
-  Projects,
+  Projects,Faqs
 
 } from '../Pages/Exports';
+
+
 
 
 
@@ -96,6 +98,10 @@ const router = createBrowserRouter([
       {
         path: "/projectdetails",
         element: <ProjectDetails/>,
+      },
+      {
+        path: "/faqs",
+        element: <Faqs/>,
       },
 
     ]

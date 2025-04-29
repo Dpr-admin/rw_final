@@ -163,10 +163,10 @@ const MentoringServices = () => {
       <Container maxWidth="lg" sx={{ mt: 1 }}>
 
 
-        <Box id="text" sx={{ mb: 4 }}>
+        <Box id="text" sx={{ mb: 3 }}>
           <Typography variant="body2" sx={{ textAlign: 'start' }}>
 
-            The fastest way to build trust and close big? Learn from the best luxury real estate sales coach with over 15 years  real estate experience This one of its kind exclusive luxury real estate sales coaching combines real-world strategies, advanced sales psychology techniques hands-on training, and other best practices.
+          I help transform premium property portfolios through luxury sales mastery. I specialize in helping real estate businesses scale in the uber-luxury segment through tailored mentorship, strategic branding, and elite sales frameworks.
 
           </Typography>
         </Box>
@@ -205,14 +205,24 @@ const MentoringServices = () => {
               </ListItem>
             ))}
           </List>
+
+          <Typography variant="body2" sx={{ textAlign: 'start' }}>
+          
+          
+            The fastest way to build trust and close big? Learn from the best luxury real estate sales coach with over 15 years  real estate experience This one of its kind exclusive luxury real estate sales coaching combines real-world strategies, advanced sales psychology techniques hands-on training, and other best practices.
+          
+          </Typography>
         </Box>
 
         <Box sx={{ mb: 6 }}>
           <SmoothWaveText variant="h4" sx={{ fontSize: 36, mb: 2, textAlign: 'start', fontWeight: 700 }}>
-            What I Do
+          What You Gain
           </SmoothWaveText>
           <Typography variant="body2" sx={{ textAlign: 'start' }}>
-            I help transform premium property portfolios through luxury sales mastery. I specialize in helping real estate businesses scale in the uber-luxury segment through tailored mentorship, strategic branding, and elite sales frameworks.
+          
+          
+            The fastest way to build trust and close big? Learn from the best luxury real estate sales coach with over 15 years  real estate experience This one of its kind exclusive luxury real estate sales coaching combines real-world strategies, advanced sales psychology techniques hands-on training, and other best practices.
+          
           </Typography>
         </Box>
 

@@ -119,7 +119,7 @@ const PortfolioSection: React.FC = () => {
                                 variant='h2'
                                 component="span"
                                 sx={{
-                                    fontSize: { xs: '40px', md: '100px' },
+                                    fontSize: { xs: '40px', md: '90px' },
                                     fontFamily: 'GilroyBold, sans-serif',
                                     color: index % 2 === 0 ? '#fff' : 'transparent',
                                     WebkitTextStroke: index % 2 === 0 ? '0px' : '1px #fff',

@@ -18,7 +18,7 @@ export interface ProjectData {
 
 export const projectsData: ProjectData[] = [
   {
-    title: 'Megaleio by Navanaami',
+    title: 'Megaleio ',
     image: Services.p1,
     sqft: '8,888 - 11,111 sqft',
     location: 'Financial District',

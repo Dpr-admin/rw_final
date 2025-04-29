@@ -37,8 +37,8 @@ const Banner = () => {
 
         <Container maxWidth="lg">
           <Box id="home" sx={{ marginTop: '110px', display: 'flex', py: 5, justifyContent: 'center',height:'50vh'}}>
-            <Grid container spacing={2}>
-              {/* Left Side */}
+            {/* <Grid container spacing={2}>
+            
               <Grid item xs={12} md={7} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                 <Typography
                   variant="h1"
@@ -67,8 +67,6 @@ const Banner = () => {
                   >
                     Rajiv Williams
                   </Typography>
-
-                  {/* Decorative line with circles */}
                   <Box
                     sx={{
                       position: 'absolute',
@@ -78,8 +76,8 @@ const Banner = () => {
                       height: '2px',
                       backgroundColor: '#959595',
                       marginLeft: '45px',
-                      width: '300px', // LIMIT width to avoid overflow
-                      maxWidth: 'calc(100vw - 100%)', // just a safety cap
+                      width: '300px', 
+                      maxWidth: 'calc(100vw - 100%)', 
                     }}
                   >
                     <Box
@@ -134,10 +132,7 @@ const Banner = () => {
                     </Box>
                   </Box>
                 </Box>
-              </Grid>
-
-
-              {/* Right Side */}
+              </Grid> 
               <Grid item xs={12} md={5} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                 <Box sx={{ textAlign: 'right', marginTop: '60px' }}>
                   <Typography
@@ -167,7 +162,7 @@ const Banner = () => {
                   </Typography>
                 </Box>
               </Grid>
-            </Grid>
+            </Grid> */}
           </Box>
         </Container>
     </Box>

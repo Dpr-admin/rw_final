@@ -5,6 +5,7 @@ import { Box } from '@mui/material';
 import './Layout.css'; 
 import ScrollToTopButton from './ScrollToTopButton';
 import Footer from '../Pages/Footer';
+import SocialSidebar from './SocialSidebar';
 
 const Layout: React.FC = () => {
   const location = useLocation();
@@ -39,6 +40,7 @@ const Layout: React.FC = () => {
     
         <Header    />
         {/* <ScrollToTopButton /> */}
+        <SocialSidebar/>
       </Box>
       <Box className="content-container">
         

@@ -136,9 +136,9 @@ const Branding = () => {
 
   return (
     <Box sx={{ color: '#000', pt: 18 }}>
-      <Box sx={{ mb: 6 }}>
+      <Box sx={{ mb: 2 }}>
         <Container maxWidth="xl" sx={{
-            height: {xs:'auto',md:'100vh'}
+            height: {xs:'auto',md:'auto'}
           }}>
           <SmoothWaveText
             variant="h3"
@@ -218,7 +218,7 @@ const Branding = () => {
         </Container>
       </Box>
 
-      <Container maxWidth="xl" sx={{ mt: 10 }}>
+      <Container maxWidth="xl" sx={{ mt: 2 }}>
         
         <SmoothWaveText variant="h4" sx={{ fontSize: 36, mb: 2, textAlign: 'start', fontWeight: 700 ,color:'primary.main'}}>
           Build a Magnetic Brand That Converts
@@ -251,18 +251,17 @@ const Branding = () => {
           position="relative"
           gap={2}
          sx={{
-          px:3
+          px:3,
+          mb:5
          }}
-        >
-
-
-    
+        >    
           <Box
             sx={{
               display: 'flex',
               justifyContent: 'flex-start', // flex-start alignment
               alignItems: 'center',
               width: '100%',
+              mb:5
               
             }}
           >

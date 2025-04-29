@@ -26,6 +26,7 @@ import { Homeimages } from '../../assets';
 import AnimatedBorderButton from '../../Components/AnimatedBorderButton';
 import SpotlightButton from '../../Components/SpotlightButton';
 import FooterForm from './FooterForm';
+import gsap from 'gsap';
 
 
 const socialLinks: { name: string; url: string }[] = [
@@ -79,36 +80,39 @@ const ContactSection = () => {
           <Grid container spacing={4} py={4}>
             {/* Left Info Section */}
             <Grid item xs={12} md={6} px={4} py={6} >
-              <Typography variant="h6" fontWeight={700} sx={{ color: 'white', textDecoration: 'underline', textAlign: 'start' }}>
+              <Typography variant="body1" sx={{ color: 'white', textDecoration: 'underline', textAlign: 'start' }}>
                 Feel free to reach out to me.
                 I'm always open to discuss new projects
-
               </Typography>
 
               <Box mt={4} sx={{ display: 'flex', alignItems: 'start', justifyContent: 'start', flexDirection: 'column' }}>
 
-                <Typography variant="h6" sx={{
+                <Typography variant="body1" sx={{
                   color: 'white', textAlign: 'start', mb: 2, display: 'inline-block',
                   borderBottom: '1px solid #a5a5a5',
                 }}>
                   STAY UP TO DATE
                 </Typography>
                 <Box sx={{ display: "flex", alignItems: "start", mb: 2, gap: { xs: 2, lg: 0 } }}>
-                  <Phone sx={{ fontSize: { xs: 29, lg: 24 }, color: "white", minWidth: "40px", }} />
-                  <Link href="tel:+91 98854 20885" color="inherit" sx={{ textDecoration: "none", fontSize: { xs: "20px", md: "16px" } }}>
+                  <Phone sx={{ fontSize: { xs: 17, lg: 24 }, color: "white", minWidth: "40px", }} />
+                  <Link href="tel:+919885420885" color="inherit" sx={{ textDecoration: "none", fontSize: { xs: "20px", md: "16px" }, }}>
+                  <Typography variant='body1' sx={{color:'#ebd8d8'}}>
                     +91 98854 20885
+                  </Typography>
                   </Link>
                 </Box>
                 <Box sx={{ display: "flex", alignItems: "start", gap: { xs: 2, lg: 0 } }}>
-                  <Email sx={{ fontSize: { xs: 29, lg: 24 }, color: "white", minWidth: "40px" }} />
+                  <Email sx={{ fontSize: { xs: 17, lg: 24 }, color: "white", minWidth: "40px" }} />
                   <Link href="mailto:connect@rajivwilliams.com" color="inherit" sx={{ textDecoration: "none", fontSize: { xs: "20px", md: "16px" } }}>
+                  <Typography variant='body1' sx={{color:'#ebd8d8'}}>
                     connect@rajivwilliams.com
+                  </Typography>
                   </Link>
                 </Box>
               </Box>
 
               <Box mt={4} sx={{ display: 'flex', alignItems: 'start', justifyContent: 'start', flexDirection: 'column' }}>
-                <Typography variant="h6"
+                <Typography variant="body1"
                   sx={{
                     color: 'white',
                     textAlign: 'start',
@@ -119,7 +123,7 @@ const ContactSection = () => {
                   }}>
                   ADDRESS
                 </Typography>
-                <Typography variant='body2' sx={{ mt: 1, fontWeight: 600, color: 'white', textAlign: 'start' }}>
+                <Typography variant='body2' sx={{ mt: 1, fontWeight: 600, color: '#ebd8d8', textAlign: 'start' }}>
                   Plot no.68, Senore Colony, Veterinary Colony, Ambedkar Nagar, Shaikpet, Hyderabad, Telangana 500008
                 </Typography>
               </Box>
@@ -132,7 +136,7 @@ const ContactSection = () => {
                       onClick={() => window.open(platform.url, '_blank')}
 
                     >
-                      <Typography variant="h6" fontWeight={600}
+                      <Typography variant="body1" 
                         sx={{
                           display: 'flex',
                           alignItems: 'center',
