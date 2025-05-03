@@ -41,7 +41,7 @@ const SvgWrapper = styled(Box)(({ theme }) => ({
   },
 }));
 
-const HeroHeadline: React.FC = () => {
+const Breadcrumb: React.FC = () => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
@@ -98,7 +98,19 @@ const HeroHeadline: React.FC = () => {
               fontSize: { xs: '32px', md: '47px' },
             }}
           >
-            Luxury real estate sales
+            Uber Luxury
+          </Box><br/>
+          <Box
+            component="span"
+            sx={{
+              fontWeight: 800,
+              textDecoration: 'underline',
+              color: 'primary.main',
+              display: 'inline',
+              fontSize: { xs: '32px', md: '30px' },
+            }}
+          >
+            RERA Registered &nbsp;|
           </Box>{' '}
           <Box
             component="span"
@@ -110,19 +122,7 @@ const HeroHeadline: React.FC = () => {
               fontSize: { xs: '32px', md: '30px' },
             }}
           >
-            RERA Registered |
-          </Box>{' '}
-          <Box
-            component="span"
-            sx={{
-              fontWeight: 800,
-              textDecoration: 'underline',
-              color: 'primary.main',
-              display: 'inline',
-              fontSize: { xs: '32px', md: '30px' },
-            }}
-          >
-            Concierge to iconic realty brands |
+            Concierge to iconic realty brands &nbsp;|
           </Box>{' '}
           <Box
             component="span"
@@ -135,6 +135,19 @@ const HeroHeadline: React.FC = () => {
             }}
           >
             Member – HRA & NAR India
+          </Box><br/>
+          <Box
+            component="span"
+            sx={{
+              fontWeight: 800,
+              textDecoration: 'underline',
+              color: 'primary.main',
+              display: 'inline',
+              fontSize: { xs: '32px', md: '40px' },
+            }}
+          >
+            
+            Luxury real estate sales
           </Box>
         </Typography>
       </Container>
@@ -142,4 +155,4 @@ const HeroHeadline: React.FC = () => {
   );
 };
 
-export default HeroHeadline;
+export default Breadcrumb;

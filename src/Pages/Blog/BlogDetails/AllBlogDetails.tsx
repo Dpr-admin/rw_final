@@ -7,6 +7,7 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import { Link, useParams } from 'react-router-dom';
 import SmoothWaveText from '../../../Components/SmoothWaveText';
 import ImageReveal from '../../../Components/ImageReveal';
+import { NONAME } from 'dns';
 
 const BlogContentFromJson = () => {
     const { id } = useParams();
@@ -27,8 +28,8 @@ const BlogContentFromJson = () => {
                 sx={{
                     textAlign: 'center',
                     color: '#fff',
-                    py: 6,
-                    mt: 12,
+                    py: {xs:0,md:6},
+                    mt: {xs:14,md:12},
                 }}
             >
                 <Container maxWidth='xl'>
@@ -38,13 +39,6 @@ const BlogContentFromJson = () => {
                         {content.date}
                     </Typography>
 
-                    {/* Main Title */}
-                    {/* <SmoothWaveText
-                        variant="h3"
-                        sx={{  mx: 'auto', mt: 1, fontWeight: 700 }}
-                    >
-                        {content.title}
-                    </SmoothWaveText> */}
                     <Grid container>
 
                         <Grid item xs={12} md={10} sx={{ mx: 'auto', mt: 1, textAlign: 'center' }}>
@@ -72,35 +66,20 @@ const BlogContentFromJson = () => {
                                 sx={{ width: 40, height: 40 }}
                             />
                             <Box>
-                                {/* <Typography variant="caption" color="grey.400">
-                                    Written by
-                                </Typography> */}
                                 <Typography variant='h6' fontWeight={600}>{content.author.name}</Typography>
                             </Box>
                         </Stack>
                     </Stack>
                 </Container>
 
-
-                {/* Featured Image */}
-                {/* <Box
-                    component="img"
-                    src={content.featuredImage}
-                    alt="Design Discussion"
-                    sx={{
-                        width: '100%',
-                        my: 4,
-                        height: '600px'
-                    }}
-                /> */}
                 <ImageReveal
                     src={content.featuredImage}
-                    alt=""
+                    alt="Best Real Estate Mentor in Hyderabad"
                     width="100%"
                     height="auto"
                     threshold={0.8}
                     scaleDuration={3}
-                    sx={{ my: 4, }}
+                    sx={{ my: {xs:2,md:4} }}
                 />
             </Box>
             <Container maxWidth='xl'>
@@ -180,23 +159,11 @@ const BlogContentFromJson = () => {
                                     </Box>
                                 ))}
                             </Box>
-
-                            {/* <Box
-                                component="img"
-                                src={content.imageBlock}
-                                alt="Design Discussion"
-                                sx={{
-                                    width: '100%',
-                                    borderRadius: '16px',
-                                    my: 4,
-                                    // height:'410px'
-                                }}
-                            /> */}
                             <ImageReveal
                                 src={content.imageBlock}
-                                alt=""
+                                alt="Best Real Estate Mentor in Hyderabad"
                                 width="100%"
-                                height="400px"
+                                height="auto"
                                 threshold={0.8}
                                 scaleDuration={3}
                                 sx={{ borderRadius: '40px', }}
@@ -284,19 +251,6 @@ const BlogContentFromJson = () => {
                                     position: 'relative',
                                 }}
                             >
-                                {/* <Box
-                                    component="img"
-                                    src={content.quoteBlock.quoteImage}
-                                    alt="Quote"
-                                    sx={{
-                                        borderRadius: '16px',
-                                        my: 4,
-                                        position: 'absolute',
-                                        top: -10,
-                                        left: 20,
-                                    }}
-                                /> */}
-
                                 <Typography variant="subtitle2" color="#fff" textAlign='start' sx={{ mb: 2 }}>
                                     {content.conclusion.conclusiontitle}
                                 </Typography>
@@ -312,6 +266,7 @@ const BlogContentFromJson = () => {
                             top: 10,
                             alignSelf: 'flex-start',
                             textAlign: 'left',
+                            display:{xs:'none',md:'block'}
                         }}>
                         <Box
                             sx={{
@@ -431,6 +386,9 @@ const BlogContentFromJson = () => {
                     </Grid>
                 </Grid>
             </Container>
+            <Box>
+
+            </Box>
         </Box>
 
     );

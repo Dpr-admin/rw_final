@@ -10,6 +10,7 @@ import {
   Link as MuiLink,
   Container,
   Link,
+  useMediaQuery,
 } from '@mui/material';
 import NorthIcon from '@mui/icons-material/North';
 import EastIcon from '@mui/icons-material/East';
@@ -36,25 +37,38 @@ const socialLinks: { name: string; url: string }[] = [
   { name: 'Linkedin', url: 'https://www.linkedin.com/in/rajivwilliams/' },
 ];
 
-const ContactSection = () => {
+const Footer = () => {
+  const isMobile = useMediaQuery('(max-width:900px)'); // Modify this to match your desired mobile breakpoint
+  
   return (
     <Box sx={{ bgcolor: '#0f63a5', color: '#fff', mt: 5 ,position: 'relative' }}>
       {/* Vertical Divider */}
       <Box
         component="img"
-        src={Homeimages.footerbg} // ✅ Replace with your actual image
-        alt="Decorative"
-        sx={{
-          position: 'absolute',
-          bottom: -5,
-          right: 0,
-          // width: { xs: '100px', md: '600px' },
-          height:"400px",
-          opacity: 0.4,
-          pointerEvents: 'none',
-          zIndex: 0,
+        src={Homeimages.rwlogo} // ✅ Replace with your actual image
+        alt="Best Real Estate Mentor in Hyderabad"
+        // sx={{
+        //   position: 'absolute',
+        //   bottom: -5,
+        //   right: {xs:0,md:'10%'},
+        //   // width: { xs: '100px', md: '600px' },
+        //   height:"400px",
+        //   opacity: 0.2,
+        //   pointerEvents: 'none',
+        //   zIndex: 0,
  
           
+        // }}
+        sx={{
+          position: 'absolute',
+          top: isMobile ? '60%' : 'auto',  // Top at 50% for mobile view
+          bottom: isMobile ? 'auto' : -5,  // Bottom at -5px for desktop view
+          right: { xs: 0, md: '10%' }, // Right positioning
+          height: "400px", // Fixed height
+          opacity: 0.1, // Opacity set to 0.2
+          pointerEvents: 'none', // Prevent pointer events (clicks, etc.)
+          zIndex: 0, // Behind other content
+          transform: isMobile ? 'translateY(-50%)' : 'none', // Center vertically on mobile using translate
         }}
       />
 
@@ -175,7 +189,11 @@ const ContactSection = () => {
         <Box
           px={4}
           py={2}
+          
           borderTop="1px solid #a5a5a5"
+          sx={{
+            pb:{xs:10,md:3}
+          }}
         >
           <Grid container alignItems="center" spacing={2}>
             {/* Left: Copyright */}
@@ -230,4 +248,4 @@ const ContactSection = () => {
   );
 };
 
-export default ContactSection;
+export default Footer;

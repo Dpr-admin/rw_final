@@ -7,8 +7,8 @@ export const blogContent = [
     id: "commercial-vs.-residential-investment-in-hyderabad:-where-to-put-your-money",
     date: "26 February, 2025",
     title: "Commercial vs. Residential Investments in Hyderabad: Where to Put Your Money?",
-    blogtitleImage: Blog.blogouter1,
-    featuredImage: Blog.bloginnerf1,
+    blogtitleImage: "https://dprstorage.b-cdn.net/RW/blogouter1.png",
+    featuredImage: "https://dprstorage.b-cdn.net/RW/bloginner1.png",
     author: {
       name: "Soma Sekhar",
       avatar: Blog.bloguser,
@@ -79,7 +79,7 @@ export const blogContent = [
           ],
         },
       ],
-      imageBlock: Blog.bloginnerf2,
+      imageBlock: "https://dprstorage.b-cdn.net/RW/bloginner2.png",
     subheading2: "",
     paragraph4:
       "",
@@ -94,12 +94,12 @@ export const blogContent = [
       {
         title: "Commercial vs. Residential Investments in Hyderabad: Where to Put Your Money?",
         date: "7 February, 2025",
-        image:Blog.blogouter1,
+        image:"https://dprstorage.b-cdn.net/RW/blogouter1.png",
       },
       {
         title: "From Dream Homes to Smart Investments: Discover the Best Real Estate Agents in Hyderabad",
         date: "13 August, 2024",
-        image: Blog.bloginnert1,
+        image: "https://dprstorage.b-cdn.net/RW/bloginnert1.jpg",
       },
     ],
     tags: [
@@ -115,8 +115,8 @@ export const blogContent = [
     id: "from-dream-homes-to-smart-investments-discover-the-best-real-estate-agents-in-hyderabad",
     date: "26 January, 2024",
     title: "From Dream Homes to Smart Investments: Discover the Best Real Estate Agents in Hyderabad",
-    blogtitleImage: Blog.blogouter2,
-    featuredImage: Blog.bloginnert1,
+    blogtitleImage: "https://dprstorage.b-cdn.net/RW/blogouter2.png",
+    featuredImage: "https://dprstorage.b-cdn.net/RW/bloginnert1.png",
     author: {
       name: "Priyanka",
       avatar: Blog.bloguser,
@@ -184,7 +184,7 @@ export const blogContent = [
         ],
       },
     ],
-    imageBlock: Blog.bloginnert2,
+    imageBlock: "https://dprstorage.b-cdn.net/RW/bloginnert2.jpg",
     subheading2: "",
     paragraph4:
       "",
@@ -200,12 +200,12 @@ export const blogContent = [
       {
         title: "Commercial vs. Residential Investments in Hyderabad: Where to Put Your Money?",
         date: "7 February, 2025",
-        image:Blog.blogouter1,
+        image:"https://dprstorage.b-cdn.net/RW/blogouter1.png",
       },
       {
         title: "From Dream Homes to Smart Investments: Discover the Best Real Estate Agents in Hyderabad",
         date: "13 August, 2024",
-        image: Blog.bloginnert1,
+        image: "https://dprstorage.b-cdn.net/RW/bloginnert1.jpg",
       },
       
     ],

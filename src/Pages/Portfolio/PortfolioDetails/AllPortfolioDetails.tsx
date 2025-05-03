@@ -23,16 +23,16 @@ import Slider from 'react-slick';
 import ImageReveal from '../../../Components/ImageReveal';
 
 
-const images = [
-  Homeimages.services1,
-  Homeimages.services2,
-  Homeimages.services1,
-  Homeimages.services2,
-  Homeimages.services1,
-  Homeimages.services2,
+// const images = [
+//   Homeimages.services1,
+//   Homeimages.services2,
+//   Homeimages.services1,
+//   Homeimages.services2,
+//   Homeimages.services1,
+//   Homeimages.services2,
 
 
-];
+// ];
 
 const AllPortfolioDetails: React.FC = () => {
   const { id } = useParams(); // Get `id` from URL like `/portfolio/:id`
@@ -179,7 +179,7 @@ const AllPortfolioDetails: React.FC = () => {
           <Box
             component="img"
             src={portfolio.topImage}
-            alt="Main Visual"
+            alt="Best Real Estate Mentor in Hyderabad"
             sx={{
               width: '100%',
               maxWidth: '1320px',
@@ -203,16 +203,6 @@ const AllPortfolioDetails: React.FC = () => {
                   {portfolio.projectData.program}
                 </Typography>
               </Grid>
-
-              {/* Category */}
-              {/* <Grid item xs={12} sm={6} md={3}>
-                <Typography variant="h6" color="white">
-                  Category:
-                </Typography>
-                <Typography variant="h6" color="white">
-                  {portfolio.projectData.category}
-                </Typography>
-              </Grid> */}
 
               {/* Date */}
               <Grid item xs={12} sm={6} md={4}>
@@ -310,10 +300,7 @@ const AllPortfolioDetails: React.FC = () => {
                   >
                     {String(i + 1).padStart(2, '0')}
                   </Typography>
-                  {/* <Typography variant="h6" sx={{ fontSize: 24, mb: 2 }}>
-                    {step.title}
-                  </Typography>
-                  <Typography>{step.desc}</Typography> */}
+
                 </Box>
               </Grid>
             ))}
@@ -325,22 +312,10 @@ const AllPortfolioDetails: React.FC = () => {
       <Box sx={{ background: '#0f63a5', py: 6 }}>
         <Container maxWidth="lg">
           <Box sx={{ mb: 6 }}>
-            {/* <Box
-              component="img"
-              src={portfolio.bottomImage}
-              alt="Final Visual"
-              sx={{
-                width: '100%',
-                maxWidth: '1320px',
-                maxHeight: '650px',
-                borderRadius: '40px',
-                display: 'block',
-                mx: 'auto',
-              }}
-            /> */}
+
             <ImageReveal
               src={portfolio.bottomImage}
-              alt=""
+              alt="Best Real Estate Mentor in Hyderabad"
               width="100%"
               height="auto"
               threshold={0.8}
@@ -348,13 +323,6 @@ const AllPortfolioDetails: React.FC = () => {
               sx={{ borderRadius: '40px', }}
             />
           </Box>
-
-          {/* Final Text */}
-          {/* <Box sx={{ mb: 8 }}>
-            <Typography variant="body2" sx={{ textAlign: 'start', color: 'white' }}>
-              {portfolio.finalText}
-            </Typography>
-          </Box> */}
           <Box id="text" sx={{ mb: 4 }}>
             {Array.isArray(portfolio.finalText) && portfolio.finalText.map((text: string, index: number) => (
               <Typography key={index} variant="body2" sx={{ textAlign: 'start', mb: 2, color: 'white' }}>

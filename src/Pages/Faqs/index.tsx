@@ -4,6 +4,8 @@ import { Box, Typography, IconButton, Container } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import CloseIcon from '@mui/icons-material/Close';
 import { Homeimages } from '../../assets'; // ✅ Assume `bluelogo` is defined here
+import Marquee from 'react-fast-marquee';
+
 
 type FAQItem = {
   question: string;
@@ -11,86 +13,55 @@ type FAQItem = {
 };
 
 const faqData: FAQItem[] = [
-    {
-        question: 'Why do I need mentoring if I can sell already?',
-        answer: 'Because selling luxury is an art, not a side hustle.',
-    },
-    {
-        question: 'What’s the big deal about luxury sales?',
-        answer: 'It’s the difference between selling a car and selling a lifestyle.',
-    },
-    {
-        question: 'Can’t I just learn from YouTube?',
-        answer: 'Sure. If you like learning by trial and error while your competitors pass you by.',
-    },
-    {
-        question: 'Can’t I just wing luxury sales?',
-        answer: 'You could. But "winging it" won’t get you ₹10 Cr homes.',
-    },
-    {
-        question: 'Experience is enough, right?',
-        answer: 'Experience is great. But a mentor speeds up the process.',
-    },
-    {
-        question: 'Can’t I sell luxury homes alone?',
-        answer: 'You can. But you’ll be outclassed by those who actually know what they’re doing.',
-    },
-    {
-        question: 'Is luxury-specific training really necessary?',
-        answer: 'If you think a ₹50,00,000 deal is the same as a ₹5 Cr one, we can’t help you.',
-    },
-    {
-        question: 'Why is luxury mentoring so expensive?',
-        answer: 'Because greatness doesn’t come cheap.',
-    },
-    {
-        question: 'Is now a good time for luxury real estate?',
-        answer: "If you're not jumping in, someone else is.",
-    },
-    {
-        question: 'What makes you different from other sales coaches?',
-        answer: 'We don’t just teach sales; we teach how to dominate them.',
-    },
-    {
-        question: 'Can’t I just read books on luxury sales?',
-        answer: "Sure, if you want to read about swimming while you're sinking.",
-    },
-    {
-        question: 'I’m already good at closing deals. Why luxury?',
-        answer: 'Because closing deals isn’t enough—luxury requires finesse.',
-    },
-    {
-        question: 'How do I know mentoring will work?',
-        answer: 'You’ll know when you’re landing deals worth more than your car.',
-    },
-    {
-        question: 'What if I fail after mentoring?',
-        answer: 'Fail? With us? Not on your watch.',
-    },
-    {
-        question: 'What’s the difference between luxury sales and regular sales?',
-        answer: 'Luxury isn’t about selling—it’s about creating desire.',
-    },
-    {
-        question: 'Why focus on luxury properties?',
-        answer: 'Because big commissions don’t come from small deals.',
-    },
-    {
-        question: 'Is this really for me?',
-        answer: 'If you’re here to play small, it’s not. If you’re here to crush it, welcome.',
-    },
-    {
-        question: 'Why are you the expert?',
-        answer: 'Because we’ve been there, done that, and made the sale.',
-    },
-    {
-        question: 'What’s the advantage of mentoring over a sales team?',
-        answer: 'A team can close deals. A mentor makes deals come to you.',
-    },
-    {
-        question: 'Can I skip mentoring and just hire a team?',
-        answer: "You could. But you'd be managing a team while others are closing the big ones.",
-    },
+  {
+    "question": "What qualifies a property as 'ultra-luxury'?",
+    "answer": "We define ultra-luxury as properties that offer exceptional architecture, privacy, location, and prestige typically starting at 4+ Crores and up."
+  },
+  {
+    "question": "Are all listings on the website publicly available?",
+    "answer": "No. Many of our most exclusive properties are sold privately and never appear online. Contact us directly for access to off-market opportunities."
+  },
+  {
+    "question": "Can you assist international buyers?",
+    "answer": "Absolutely. We work closely with legal, tax, and immigration advisors to help non-residents invest seamlessly in high-end real estate."
+  },
+  {
+    "question": "What level of discretion can I expect?",
+    "answer": "Total confidentiality is standard practice. NDAs are available, and all inquiries are handled with the utmost care and privacy."
+  },
+  {
+    "question": "How do I schedule a private showing?",
+    "answer": "Private showings are by appointment only and require financial pre-qualification or proof of funds."
+  },
+  {
+    "question": "How do you market ultra-luxury properties?",
+    "answer": "We combine global reach with targeted discretion — including private network placements, elite publications, curated events, and vetted buyer databases."
+  },
+  {
+    "question": "Can you sell my property off-market?",
+    "answer": "Yes. Many of our highest-value sales happen entirely off-market to preserve privacy and exclusivity."
+  },
+  {
+    "question": "What qualifies you to sell at this level?",
+    "answer": "Our team brings deep experience in luxury transactions, white-glove service, and a curated client base of high-net-worth individuals, family offices, and institutional investors."
+  },
+  {
+    "question": "What is your approach to client relationships?",
+    "answer": "We operate as strategic advisors, not just agents — combining market insight, negotiation mastery, and personalized service from start to close."
+  },
+  {
+    "question": "What makes your service different from traditional brokerages?",
+    "answer": "We offer concierge-level attention, global perspective, and access to opportunities others don’t see — all with total discretion."
+  },
+  {
+    "question": "How do I start working with you?",
+    "answer": "Contact us directly to schedule a confidential consultation. We’ll tailor the next steps based on your goals, timeline, and preferences."
+  }
+];
+
+const marqueeWords = [
+  "FAQ'S", "FAQ'S", "FAQ'S", "FAQ'S", "FAQ'S",
+  "FAQ'S", "FAQ'S", "FAQ'S", "FAQ'S", "FAQ'S",
 ];
 
 const FAQ: React.FC = () => {
@@ -113,7 +84,7 @@ const FAQ: React.FC = () => {
       <Box
         component="img"
         src={Homeimages.bluelogo}
-        alt="Background"
+        alt="Best Real Estate Mentor in Hyderabad"
         sx={{
           position: 'fixed', // Fix it on the screen
           top: '50%', // Center it vertically
@@ -127,11 +98,32 @@ const FAQ: React.FC = () => {
           pointerEvents: 'none', // Avoid interfering with other elements
         }}
       />
+      <Box sx={{mt:12,py:4}}>
+        <Marquee gradient={false} speed={80} style={{ overflow: 'hidden', }}>
+          {marqueeWords.map((word, index) => (
+            <Typography
+              className='cursor-hover-target'
+              key={index}
+              variant='h2'
+              component="span"
+              sx={{
+                fontSize: { xs: '40px', md: '90px' },
+                fontFamily: 'GilroyBold, sans-serif',
+                color: index % 2 === 0 ? '#0f63a5' : 'transparent',
+                WebkitTextStroke: index % 2 === 0 ? '0px' : '1px #0f63a5',
+                textTransform: 'uppercase',
+                mx: 3,
+                whiteSpace: 'nowrap',
+                fontWeight: 700
+              }}
+            >
+              {word}
+            </Typography>
+          ))}
+        </Marquee>
+      </Box>
 
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
-        <Typography variant="h3" sx={{ textAlign: 'center', mt: 6, mb: 4 }}>
-          Frequently Asked Questions
-        </Typography>
 
         <Box>
           {faqData.map((faq, index) => {
@@ -156,28 +148,10 @@ const FAQ: React.FC = () => {
                   cursor: 'pointer',
                 }}
               >
-                {/* Per-Item Background Image (optional, reused here) */}
-                {/* {isActive && (
-                  <Box
-                    component="img"
-                    src={Homeimages.hydcharminar}
-                    alt="FAQ Background"
-                    sx={{
-                      position: 'absolute',
-                      top: '10px',
-                      left: '10px',
-                      width: '80%',
-                      height: '80%',
-                      opacity: 0.4,
-                      objectFit: 'contain',
-                      zIndex: 0,
-                    }}
-                  />
-                )} */}
 
                 <Typography
                   variant="h6"
-                  sx={{ marginRight: '35px', position: 'relative', zIndex: 1 ,color:'primary.main'}}
+                  sx={{ marginRight: '35px', position: 'relative', zIndex: 1, color: 'primary.main' }}
                 >
                   {faq.question}
                 </Typography>
@@ -218,7 +192,7 @@ const FAQ: React.FC = () => {
                   {isActive ? (
                     <CloseIcon sx={{ color: 'white', fontSize: '20px' }} />
                   ) : (
-                    <ExpandMoreIcon sx={{ fontSize: '20px' ,color:'#0f63a5'}} />
+                    <ExpandMoreIcon sx={{ fontSize: '20px', color: '#0f63a5' }} />
                   )}
                 </IconButton>
               </Box>

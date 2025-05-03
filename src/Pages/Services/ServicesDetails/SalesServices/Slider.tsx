@@ -7,19 +7,19 @@ import { Services } from '../../../../assets';
 
 const imageList = [
   {
-    url: Services.m1,
+    url: "https://dprstorage.b-cdn.net/RW/m2.jpg",
   },
   {
-    url:Services.m2,
+    url:"https://dprstorage.b-cdn.net/RW/m3.jpg",
   },
   {
-    url: Services.m3,
+    url: "https://dprstorage.b-cdn.net/RW/m4.jpg",
   },
   {
-    url: Services.m4,
+    url: "https://dprstorage.b-cdn.net/RW/m6.jpg",
   },
   {
-    url: Services.m5,
+    url:"https://dprstorage.b-cdn.net/RW/m1.jpg",
   },
 ];
 
@@ -38,7 +38,7 @@ const ProjectSlider: React.FC = () => {
   const sliderImages = generateImages();
 
   return (
-    <Box sx={{ position: 'relative', width: '100%', overflow: 'hidden', height: '100vh' }}>
+    <Box sx={{ position: 'relative', width: '100%', overflow: 'hidden', height: '90vh' }}>
       {/* Main Slider */}
       <Slider
         asNavFor={nav2 as Slider}

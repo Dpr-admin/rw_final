@@ -48,9 +48,9 @@ const AboutDetails = () => {
   }, []);
 
   const bioItems = [
+    { label: "Luxury Sales Mastery Trainer", },
     { label: "Luxury Sales Concierge", },
     { label: "  Brand Strategist ", },
-    { label: "Luxury Sales Mastery Trainer", },
 
   ];
 

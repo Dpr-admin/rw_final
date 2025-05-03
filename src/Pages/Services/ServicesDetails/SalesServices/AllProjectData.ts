@@ -19,7 +19,7 @@ export interface ProjectData {
 export const projectsData: ProjectData[] = [
   {
     title: 'Megaleio ',
-    image: Services.p1,
+    image:"https://dprstorage.b-cdn.net/RW/Megaleio.png",
     sqft: '8,888 - 11,111 sqft',
     location: 'Financial District',
     bhk: '4 & 5 BHK',
@@ -36,8 +36,8 @@ export const projectsData: ProjectData[] = [
     
   },
   {
-    title: ' Candeur Skyline',
-    image: Services.p2,
+    title: '  Skyline',
+    image: "https://dprstorage.b-cdn.net/RW/candeur.png",
     sqft: '6,520 – 11,999 sq.ft',
     isReverse: true,
     bhk: '4 BHK ',
@@ -55,7 +55,7 @@ export const projectsData: ProjectData[] = [
   },
   {
     title: ' Vamsiram Newmark',
-    image: Services.p3,
+    image: "https://dprstorage.b-cdn.net/RW/vamsiram.png",
     location: 'Narsingi',
     sqft: '4,595 – 6,500 sq.ft',
     bhk: '4 BHK',
@@ -71,8 +71,8 @@ export const projectsData: ProjectData[] = [
     link: '/',
   },
   {
-    title: ' Raghava Iris',
-    image: Services.p4,
+    title: '  Iris',
+    image: "https://dprstorage.b-cdn.net/RW/raghava.png",
     sqft: '5,430 – 6,605 sq.ft.',
     location: ' Gachibowli',
     bhk: '4 & 6 BHK',
@@ -88,8 +88,8 @@ export const projectsData: ProjectData[] = [
     link: '/',
   },
   {
-    title: ' Songs of the Sun by Myscape',
-    image: Services.p5,
+    title: ' Songs of the Sun ',
+    image:"https://dprstorage.b-cdn.net/RW/songs.png",
     sqft: '2825.00 - 3295.00 sq.ft',
     location: ' Financial District',
     bhk: ' 3 & 4 BHK',

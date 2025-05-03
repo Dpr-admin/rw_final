@@ -55,7 +55,7 @@ const MarqueeText: React.FC = () => {
                             <Box
                                 component="img"
                                 src={Homeimages.star}
-                                alt="star"
+                                alt="Best Real Estate Mentor in Hyderabad"
                                 sx={{
                                     width: 50,
                                     height: 50,

@@ -7,6 +7,7 @@ import {
 } from '@mui/material';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import gsap from 'gsap';
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
 
 const ScrollToTopButton: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -68,50 +69,55 @@ const ScrollToTopButton: React.FC = () => {
   };
 
   return (
-    <Box
-      ref={buttonRef}
-      sx={{
-        position: 'fixed',
-        bottom: 20,
-        right: 30,
-        zIndex: 1000,
-        borderRadius: '50%',
-        width: isSmallScreen ? 40 : 55,
-        height: isSmallScreen ? 40 : 55,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        bgcolor: 'white',
-        boxShadow: '0px 0px 10px rgba(101, 131, 187, 0.3)',
-        border: '2px solidrgb(197, 85, 85)',
-        opacity: isVisible ? 1 : 0,
-        transition: 'opacity 0.3s ease-in-out',
-      }}
-    >
-      <CircularProgress
-        variant="determinate"
-        value={scrollProgress}
-        size={isSmallScreen ? 40 : 55}
-        thickness={3}
+    <Box>
+
+      <Box
+        ref={buttonRef}
         sx={{
-          color: 'primary.main',
-          position: 'absolute',
-        }}
-      />
-      <IconButton
-        onClick={scrollToTop}
-        sx={{
-          color: 'primary.main',
-          bgcolor: 'white',
+          position: 'fixed',
+          bottom: 20,
+          right: 30,
+          zIndex: 1000,
           borderRadius: '50%',
-          zIndex: 2,
-          '&:hover': {
-            bgcolor: 'rgba(219, 19, 19, 0.1)',
-          },
+          width: isSmallScreen ? 40 : 55,
+          height: isSmallScreen ? 40 : 55,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          bgcolor: 'white',
+          boxShadow: '0px 0px 10px rgba(101, 131, 187, 0.3)',
+          border: '2px solidrgb(197, 85, 85)',
+          opacity: isVisible ? 1 : 0,
+          transition: 'opacity 0.3s ease-in-out',
         }}
       >
-        <ArrowUpwardIcon fontSize={isSmallScreen ? 'small' : 'medium'} />
-      </IconButton>
+        <CircularProgress
+          variant="determinate"
+          value={scrollProgress}
+          size={isSmallScreen ? 40 : 55}
+          thickness={3}
+          sx={{
+            color: 'primary.main',
+            position: 'absolute',
+          }}
+        />
+        <IconButton
+          onClick={scrollToTop}
+          sx={{
+            color: 'primary.main',
+            bgcolor: 'white',
+            borderRadius: '50%',
+            zIndex: 2,
+            '&:hover': {
+              bgcolor: 'rgba(219, 19, 19, 0.1)',
+            },
+          }}
+        >
+          <ArrowUpwardIcon fontSize={isSmallScreen ? 'small' : 'medium'} />
+        </IconButton>
+      </Box>
+
+
     </Box>
   );
 };

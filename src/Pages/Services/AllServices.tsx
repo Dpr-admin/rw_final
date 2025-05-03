@@ -16,19 +16,19 @@ const services: ServiceItem[] = [
   {
     number: 'I',
     title: 'Mentoring',
-    image: Services.servsmall1,
+    image: "https://dprstorage.b-cdn.net/RW/servsmall1.png",
     Link: 'services/mentoring',
   },
   {
     number: 'II',
     title: 'Sales',
-    image: Services.servsmall2,
+    image: "https://dprstorage.b-cdn.net/RW/servsmall2.png",
     Link: 'services/sales',
   },
   {
     number: 'III',
     title: 'Branding',
-    image: Services.servsmall3,
+    image: "https://dprstorage.b-cdn.net/RW/servsmall3.png",
     Link: 'services/branding',
   },
   // Add more services as needed

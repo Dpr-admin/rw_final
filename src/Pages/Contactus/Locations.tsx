@@ -4,6 +4,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import SmoothWaveText from '../../Components/SmoothWaveText';
+import { useNavigate } from 'react-router-dom';
 
 const cardData = [
     {
@@ -52,6 +53,12 @@ const cardData = [
 ];
 
 const Locations = () => {
+    const navigate = useNavigate();  // Initialize the navigate hook
+
+    const handleHomeClick = () => {
+      // Programmatically navigate to the home page
+      navigate('/');
+    };
     return (
         <Box
             sx={{
@@ -70,7 +77,11 @@ const Locations = () => {
                 <Container maxWidth="lg" sx={{ mb: 0, pt: {xs:14,md:4}, }}>
                     <Box sx={{ mb: 2, display: 'flex', alignItems: 'center', justifyContent: 'center', }}>
                         <Breadcrumbs separator={<span style={{ color: '#000' }}>–</span>}>
-                            <Box color="black">Home</Box>
+                            <Box color="black"onClick={handleHomeClick} 
+                            className='cursor-hover-target'
+                                sx={{
+                                    // cursor:'pointer'
+                                }}>Home</Box>
                             <Typography variant='h6' sx={{ color: 'primary.main', fontWeight: 700, }}>Contact me</Typography>
                         </Breadcrumbs>
                     </Box>

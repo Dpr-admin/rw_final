@@ -181,7 +181,7 @@ const ServicesDetails: React.FC = () => {
           /> */}
           <ImageReveal
             src={service.topImage}
-            alt=""
+            alt="Best Real Estate Mentor in Hyderabad"
             width="100%"
             height="auto"
             threshold={0.8}
@@ -286,7 +286,7 @@ const ServicesDetails: React.FC = () => {
             /> */}
              <ImageReveal
             src={service.topImage}
-            alt=""
+            alt="Best Real Estate Mentor in Hyderabad"
             width="100%"
             height="auto"
             threshold={0.8}

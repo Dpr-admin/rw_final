@@ -1,27 +1,24 @@
 import { createBrowserRouter } from "react-router-dom";
-// import Layout from "../Layout/Layout";
-// import Dashboard from "../Pages/Dashboard";
 import NotFound from "../Pages/NotFound/NotFound";
 import Layout from "../LayoutTwo/Layout";
-// import About from "../Pages/About";
-// import Services from "../Pages/Services";
-// import ServicesDetails from "../Pages/Services/ServicesDetails";
-// import Portfolio from "../Pages/Portfolio";
-// import PortfolioDetails from "../Pages/Portfolio/PortfolioDetails";
-// import AllPortfolioDetails from "../Pages/Portfolio/PortfolioDetails/AllPortfolioDetails";
-// import Blog from "../Pages/Blog";
-// import AllBlogDetails from "../Pages/Blog/BlogDetails/AllBlogDetails";
-// import Contactus from "../Pages/Contactus";
-// import MentoringServices from "../Pages/Services/ServicesDetails/MentoringService";
-// import SalesServices from "../Pages/Services/ServicesDetails/SalesServices";
-// import Branding from "../Pages/Services/ServicesDetails/Branding";
-// import Projects from "../Pages/Projects";
-import ProjectDetails from "../Pages/Projects/ProjectDetails";
-import {Dashboard, About,Services ,ServicesDetails,Portfolio,AllPortfolioDetails,Blog,
-  AllBlogDetails,Contactus,MentoringServices,SalesServices,Branding,
-  Projects,Faqs
+// import {Dashboard, About,Services ,ServicesDetails,Portfolio,AllPortfolioDetails,Blog,
+//   AllBlogDetails,Contactus,MentoringServices,SalesServices,Branding,Faqs
 
-} from '../Pages/Exports';
+// } from '../Pages/Exports';
+import LinkedinBlogDetails from "../Pages/Blog/BlogDetails/LinkedinBlogDetails";
+import Dashboard from "../Pages/Dashboard";
+import About from "../Pages/About";
+import Services from "../Pages/Services";
+import MentoringServices from "../Pages/Services/ServicesDetails/MentoringService";
+import SalesServices from "../Pages/Services/ServicesDetails/SalesServices";
+import Branding from "../Pages/Services/ServicesDetails/Branding";
+import Portfolio from "../Pages/Portfolio";
+import AllPortfolioDetails from "../Pages/Portfolio/PortfolioDetails/AllPortfolioDetails";
+import Blog from "../Pages/Blog";
+import AllBlogDetails from "../Pages/Blog/BlogDetails/AllBlogDetails";
+import Contactus from "../Pages/Contactus";
+import Faqs from "../Pages/Faqs";
+
 
 
 
@@ -29,11 +26,7 @@ import {Dashboard, About,Services ,ServicesDetails,Portfolio,AllPortfolioDetails
 
 
 const router = createBrowserRouter([
-  // {
-  //   path: '/',
-  //   element: <Dashboard />, 
-  //   errorElement: <NotFound />, 
-  // },
+
 
   {
     element: <Layout />,
@@ -43,7 +36,7 @@ const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: "/aboutus",
+        path: "/about-us",
         element: <About />,
       },
       {
@@ -56,7 +49,7 @@ const router = createBrowserRouter([
 
       // },
       {
-        path:"/services/mentoring",
+        path:"/services/real-estate-mentor",
         element:<MentoringServices/>
 
       },
@@ -80,7 +73,7 @@ const router = createBrowserRouter([
         element: <AllPortfolioDetails/>,
       },
       {
-        path: "/blog",
+        path: "/blogs",
         element: <Blog/>,
       },
       {
@@ -92,20 +85,22 @@ const router = createBrowserRouter([
         element: <Contactus/>,
       },
       {
-        path: "/projects",
-        element: <Projects/>,
-      },
-      {
-        path: "/projectdetails",
-        element: <ProjectDetails/>,
-      },
-      {
         path: "/faqs",
         element: <Faqs/>,
       },
+      {
+        path: "/blogs/:slug",
+        element: <LinkedinBlogDetails/>,
+      },
+      
+      
 
     ]
-  }
+  },
+  {
+    path: "*", // Catch-all route for 404 Not Found
+    element: <NotFound />,
+  },
 ]);
 
 

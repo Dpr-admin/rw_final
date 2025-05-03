@@ -18,7 +18,7 @@ const awards = [
   { title: 'Motion Graphics', badge: 'TechnoWorld' },
 ];
 
-const AwardsSection = () => {
+const Awards = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const AwardsSection = () => {
             <Box
               component="img"
               src={About.awardsimage}
-              alt="Awards Illustration"
+              alt="Best Real Estate Mentor in Hyderabad"
               sx={{ width: '100%', maxWidth: 400, mx: 'auto', display: 'block' }}
             />
           </Grid>
@@ -110,4 +110,4 @@ const AwardsSection = () => {
   );
 };
 
-export default AwardsSection;
+export default Awards;

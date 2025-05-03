@@ -79,7 +79,7 @@ const TestimonialsSection: React.FC = () => {
                                     mb:{xs: 2, md: 0 },
                                     fontWeight:600
                                 }}>
-                                 // Clients Speaks
+                                 // Client Speaks 
                             </SmoothWaveText>
                         </Grid>
                         <Grid item xs={12} md={7} sx={{display: "flex", alignItems: "center",justifyContent: "center",my:{xs:3,md:0}}}>

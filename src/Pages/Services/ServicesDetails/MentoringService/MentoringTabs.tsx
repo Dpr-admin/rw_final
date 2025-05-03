@@ -19,11 +19,11 @@ const tabs = [
         subtitle: 'Who can apply:',
         description: (
             <>
-              <b style={{color:'#0f63a5',}}>First-time realtors</b> and <b style={{color:'#0f63a5'}}> newly established agents</b> looking to build a strong foundation in the real estate industry.
+                <b style={{ color: '#0f63a5', }}>First-time realtors</b> and <b style={{ color: '#0f63a5' }}> newly established agents</b> looking to build a strong foundation in the real estate industry.
             </>
-          ),
-          
-        image:Services.mentoring1,
+        ),
+
+        image: "https://dprstorage.b-cdn.net/RW/Beginnerhero.png",
         list: {
             listTitle: "Key Benefits:",
             listItems: [
@@ -48,10 +48,10 @@ const tabs = [
         subtitle: 'Who can apply:',
         description: (
             <>
-                <b style={{color:'#0f63a5'}}>Mid-level professionals </b> and <b style={{color:'#0f63a5'}}> small teams seeking</b> to improve their sales effectiveness and negotiation skills.,
+                <b style={{ color: '#0f63a5' }}>Mid-level professionals </b> and <b style={{ color: '#0f63a5' }}> small teams seeking</b> to improve their sales effectiveness and negotiation skills.,
             </>
         ),
-        image:Services.mentoring2,
+        image: "https://dprstorage.b-cdn.net/RW/Acceleratorhero.png",
         list: {
             listTitle: "Key Features:",
             listItems: [
@@ -74,12 +74,12 @@ const tabs = [
     {
         title: "Luxury Sales Mastery",
         subtitle: 'Who can apply:',
-        description:(
+        description: (
             <>
-               <b style={{color:'#0f63a5'}}>Agents and teams</b>  focusing on selling high-value properties and serving affluent clientele.,
+                <b style={{ color: '#0f63a5' }}>Agents and teams</b>  focusing on selling high-value properties and serving affluent clientele.,
             </>
         ),
-        image:Services.mentoring3,
+        image: "https://dprstorage.b-cdn.net/RW/Organizationalbanner.png",
         list: {
             listTitle: "Key Features:",
             listItems: [
@@ -100,14 +100,43 @@ const tabs = [
         ]
     },
     {
+        title: "Uber Luxury Sales Mastery",
+        subtitle: 'Who can apply:',
+        description: (
+            <>
+                <b style={{ color: '#0f63a5' }}>Top-tier agents </b>and<b style={{ color: '#0f63a5' }}>real estate professionals</b>  aiming to break into the ultra-luxury segment dealing with ₹10 Cr+ properties, NRI clientele, and iconic global listings.
+            </>
+        ),
+        image: "https://dprstorage.b-cdn.net/RW/uberluxury.png",
+        list: {
+            listTitle: "Key Features:",
+            listItems: [
+                "Ultra-Luxury Buyer Psychology: Understand the mindset, expectations, and decision-making patterns of billionaires and elite investors",
+                "OPrivate Client Protocols: Learn the art of discretion, personalization, and delivering white-glove service to ultra-high-net-worth clients",
+                "Brand Authority & Networking: Build a globally recognized luxury brand and gain access to exclusive HNI networks and referral ecosystems",
+
+            ],
+        },
+        paragraph: [
+            {
+                title: "Duration:",
+                discription: "7+1 sessions (including a personalized strategy refinement session)."
+            },
+            {
+                title: "Ideal For",
+                discription: "Elite realtors and boutique firms aiming to transition from luxury sales to commanding a presence in the ultra-luxury, global property market."
+            }
+        ]
+    },
+    {
         title: "Organizational mentoring",
         subtitle: 'Who can apply:',
         description: (
             <>
-                 <b style={{color:'#0f63a5'}}>Business owners, developers, and team leaders </b>aiming to elevate their organization’s performance and brand image.,
+                <b style={{ color: '#0f63a5' }}>Business owners, developers, and team leaders </b>aiming to elevate their organization’s performance and brand image.,
             </>
         ),
-        image:Services.mentoring4,
+        image: "https://dprstorage.b-cdn.net/RW/Luxuryheroban.png",
         list: {
             listTitle: "Key Features:",
             listItems: [
@@ -128,22 +157,23 @@ const tabs = [
         ]
     },
     {
-        title: "Exclusive Personalized Mentorship",
+        title: "Exclusive Personalized Mentorship – On-Job Training",
         subtitle: 'Who can apply:',
         description: "Elite professionals seeking one-on-one mentorship tailored to their unique goals.",
-        image:Services.mentoring5,
+        image: "https://dprstorage.b-cdn.net/RW/Personalizedhero.png",
         list: {
             listTitle: "Key Features:",
             listItems: [
                 "Tailored Coaching: Get highly customized coaching to address specific challenges and goals",
                 "On-Demand Sessions: Flexible scheduling to suit your availability",
                 "Performance Reviews: Regular evaluations to track and enhance your progress",
+                " Team Integration: You will be working with Team Rajiv Williams for a full year, gaining real-time exposure and executional insight on live projects"
             ],
         },
         paragraph: [
             {
                 title: "Duration:",
-                discription: "Flexible (hourly or project-based)."
+                discription: "Minimum 1 year (includes on-job project-based mentorship)."
             },
             {
                 title: "Ideal For",
@@ -152,51 +182,59 @@ const tabs = [
         ]
     },
     {
-        title: "Uber Luxury Sales Mastery",
-        subtitle: 'Who can apply:',
+        title: "Hiring & Placement",
+        subtitle: 'Partnering With : ',
         description: (
             <>
-                <b style={{color:'#0f63a5'}}>Top-tier agents </b>and<b style={{color:'#0f63a5'}}>real estate professionals</b>  aiming to break into the ultra-luxury segment dealing with ₹10 Cr+ properties, NRI clientele, and iconic global listings.
+                <b style={{ color: '#0f63a5' }}>Real Estate Organizations, Developers,</b> and <b style={{ color: '#0f63a5' }}>Brokerages</b> looking to hire high-performance professionals trained in luxury and uber-luxury sales.Also for individuals who’ve completed Rajiv Williams’ mentoring programs and are ready to step into elite roles.",
             </>
         ),
-        image:Services.mentoring6,
+        image: '',
         list: {
-            listTitle: "Key Features:",
+            listTitle: "What We Offer:",
             listItems: [
-                "Ultra-Luxury Buyer Psychology: Understand the mindset, expectations, and decision-making patterns of billionaires and elite investors",
-                "OPrivate Client Protocols: Learn the art of discretion, personalization, and delivering white-glove service to ultra-high-net-worth clients",
-                "Brand Authority & Networking: Build a globally recognized luxury brand and gain access to exclusive HNI networks and referral ecosystems",
-                
+                "Talent Acquisition for Real Estate Organizations: We help companies hire qualified, sales-ready professionals trained under Rajiv Williams' luxury frameworks.",
+                " Placement for Trained Mentees: Professionals mentored under Rajiv Williams get access to exclusive job placement opportunities with top-tier firms.",
+                " Role-Specific Matching: Whether you're hiring for sales, leadership, or branding roles—we match skillsets to growth-focused environments.",
+                "Industry-Aligned Screening: Candidates are evaluated for sales psychology, client handling skills, luxury market readiness, and branding acumen."
             ],
         },
         paragraph: [
             {
-                title: "Duration:",
-                discription: "7+1 sessions (including a personalized strategy refinement session)."
+                title: "Why It Works:",
+                discription: "Every candidate placed through us comes with a foundation in high-value sales systems, on-job training, and real-world exposure ensuring faster onboarding, stronger performance, and brand alignment."
             },
             {
-                title: "Ideal For",
-                discription: "Elite realtors and boutique firms aiming to transition from luxury sales to commanding a presence in the ultra-luxury, global property market."
+                title: "Let’s Build Your Dream Team or Land You in One.",
+                discription: ""
             }
         ]
     },
+
 ];
 
 const MentoringTabs: React.FC = () => {
     const [activeIndex, setActiveIndex] = useState(0);
-    const [isPopupOpen, setPopupOpen] = useState(false);
+    // const [isPopupOpen, setPopupOpen] = useState(false);
     const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
     const contentRef = useRef<HTMLDivElement>(null);
+    const [isPopupOpen, setPopupOpen] = useState(false);
+    const [popupType, setPopupType] = useState('contact');
+    const [projectName, setProjectName] = useState('');
+
 
     const easeSlow = "cubic-bezier(0.4, 0, 0, 1)";
 
     const handleOpenPopup = () => {
+        setPopupType('project');
+        setProjectName(tabs[activeIndex].title); // ✅ Get title of current tab
         setPopupOpen(true);
-    };
-
-    const handleClosePopup = () => {
+      };
+      const handleClosePopup = () => {
         setPopupOpen(false);
-    };
+      };
+      
+      
 
     useEffect(() => {
         const img = imageRefs.current[activeIndex];
@@ -237,12 +275,12 @@ const MentoringTabs: React.FC = () => {
     }, [activeIndex]);
 
     return (
-        <Box sx={{ 
+        <Box sx={{
             py: 8, overflow: "visible", bgcolor: "#fff", display: 'flex', flexDirection: 'column',
-            background: '#f7f5f0', borderTop: '1px solid #ccc', borderBottom: '1px solid #ccc' ,
-             }}>
+            background: '#f7f5f0', borderTop: '1px solid #ccc', borderBottom: '1px solid #ccc',
+        }}>
             <Box sx={{ mx: "auto", px: 4 }}>
-                <Typography variant="h2" sx={{mb:5,color:'primary.main',textAlign:'center',}}>
+                <Typography variant="h2" sx={{ mb: 5, color: 'primary.main', textAlign: 'center', }}>
                     Advisory, Training & Mentoring
                 </Typography>
                 <Container maxWidth='lg'>
@@ -251,7 +289,7 @@ const MentoringTabs: React.FC = () => {
 
                         {/* Tab List */}
                         <Grid item xs={12} md={4} style={{ position: 'sticky', top: 0, alignSelf: 'flex-start' }}>
-                            <Box sx={{ pl: 2, position: "sticky", top: 0, height: '100%',width:'100%' }}>
+                            <Box sx={{ pl: 2, position: "sticky", top: 0, height: '100%', width: '100%' }}>
                                 {/* Vertical Line */}
                                 <Box
                                     sx={{
@@ -287,9 +325,9 @@ const MentoringTabs: React.FC = () => {
                                                 textTransform: "none",
                                                 color: activeIndex === index ? "black" : "white",
                                                 fontWeight: activeIndex === index ? 600 : 400,
-                                                height:'95px',
+                                                height: '75px',
                                                 background: activeIndex === index ? "white" : "primary.main",
-                                                border:activeIndex===index?'2px solid #0f63a5':'1px solid transparent',
+                                                border: activeIndex === index ? '2px solid #0f63a5' : '1px solid transparent',
                                             }}
                                         >
                                             {tab.title}
@@ -332,13 +370,13 @@ const MentoringTabs: React.FC = () => {
                             </Box>
                             {/* Content */}
                             <Box ref={contentRef} sx={{ color: "black", textAlign: 'start' }}>
-                                <Typography variant="h4" component="h2" mb={2} sx={{ color: "black", mt: 2 }}>
+                                <Typography variant="h4" component="h2" mb={2} sx={{ color: "primary.main", mt: 2 }}>
                                     {tabs[activeIndex].title}
                                 </Typography>
                                 <Typography variant="h6" sx={{ color: "black", mb: 1 }}>
                                     {tabs[activeIndex].subtitle}
                                 </Typography>
-                                <Typography sx={{ color: "black" }}>
+                                <Typography variant="body2" sx={{ color: "black" }}>
                                     {tabs[activeIndex].description}
                                 </Typography>
                                 <Box>
@@ -351,7 +389,7 @@ const MentoringTabs: React.FC = () => {
                                         </Typography>
                                     ))}
                                 </Box>
-                            
+
                                 <Box sx={{ mt: 3 }}>
                                     {tabs[activeIndex].paragraph.map((para, index) => (
                                         <Box key={index} sx={{ mb: 2 }}>
@@ -388,8 +426,13 @@ const MentoringTabs: React.FC = () => {
                 </Container>
             </Box>
 
-            {/* Popup Form */}
-            <PopupForm open={isPopupOpen} onClose={handleClosePopup} />
+            <PopupForm
+  open={isPopupOpen}
+  onClose={handleClosePopup}
+  type={popupType}
+  projectName={projectName}
+/>
+
         </Box>
     );
 };

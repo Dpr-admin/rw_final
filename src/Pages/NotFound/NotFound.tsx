@@ -2,14 +2,17 @@ import React, { useRef, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 import VanillaTilt from 'vanilla-tilt';
 import notFoundImage from '../../assets/images/notfound.svg';
+import { Homeimages } from '../../assets';
+import SpotlightButton from '../../Components/SpotlightButton';
 
 function NotFound() {
   const theme = useTheme();
   const tiltRef = useRef<HTMLImageElement | null>(null);
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (tiltRef.current) {
@@ -42,6 +45,8 @@ function NotFound() {
         backgroundColor: theme.palette.background.default,
       }}
     >
+       {/* Fixed, Centered Background Image */}
+
       <Box
         sx={{
           width: { xs: '100%', md: '50%' },
@@ -52,7 +57,7 @@ function NotFound() {
         <Box
           ref={tiltRef}
           component="img"
-          src={notFoundImage}
+          src={Homeimages.notfound}
           alt="404 Not Found"
           sx={{
             width: '100%',
@@ -71,10 +76,10 @@ function NotFound() {
           alignItems: { xs: 'center', md: 'flex-start' },
         }}
       >
-        <Typography color="inherit" gutterBottom sx={{ fontWeight: 700 }}>
+        {/* <Typography color="inherit" gutterBottom sx={{ fontWeight: 700 }}>
           <span style={{ color: theme.palette.primary.main, fontSize: '150px' }}>40</span>
           <span style={{ color: '#000000', fontSize: '150px' }}>4</span>
-        </Typography>
+        </Typography> */}
 
         <Typography
           variant="h5"
@@ -97,18 +102,21 @@ function NotFound() {
           The page you're looking for isn't available. Try to search again or use the button below.
         </Typography>
 
-        <Button
-          variant="contained"
-          color="primary"
-          component={Link}
-          to="/home"
+        <SpotlightButton
+          onClick={() => navigate('/')}
+          background="linear-gradient(to right, #fff, #fff)"
+          textColor="#fff"
+          spotlightColor="linear-gradient(to right, #000, #000)"
+          innerBackground="#0f63a5"
+          activeTextColor="#fff"
           sx={{
-            padding: '10px 24px',
-            borderRadius: '8px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
           }}
         >
           Go back to Homepage
-        </Button>
+        </SpotlightButton>
       </Box>
     </Box>
   );

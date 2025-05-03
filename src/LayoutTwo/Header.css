@@ -56,70 +56,12 @@
   position: absolute;
   top: 100%;
   left: 15%;
-  /* background-color: white; */
-  /* background-color: "rgba(15, 99, 165, 0.7)";
-    backdrop-filter: "blur(10px)";
-    -webkit-backdrop-filter: "blur(10px)"; */
-    /* color: black;
-  min-width: 150px;
-  border-top: 4px solid #000;   
-    border-bottom: 4px solid #000;
-  padding: 8px 28px;
-  border-radius: 8px;
-  text-align: justify; */
-
 
 }
-
-.sub-dropdown-menu {}
 
 .dropdown-menu li:hover .sub-menu {
   display: block;
 }
-
-.sub-menu ul {
-  list-style: none !important;
-  padding: 0;
-  margin: 0;
-}
-
-.sub-menu li {
-  padding: 14px;
-  white-space: nowrap;
-  /* Ensure single line text */
-  color: #ffffff;
-}
-
-.sub-menu li:hover {
-  background: #0F63A5;
-  color: #ffffff;
-}
-
-/* .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: black;
-    color: white;
-    padding: 10px;
-    width: 200px;
-  } */
-
-.sub-dropdown-menu {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  background: black;
-  color: white;
-  padding: 10px;
-  width: 280px;
-  display: block;
-  padding: 8px 20px;
-  border-radius: 5px;
-  text-align: start;
-
-}
-
 
 .dropdown-item {
   color: black !important;
@@ -135,22 +77,6 @@
   color: #0F63A5;
 }
 
-/* Mobile Drawer */
-/* .mobile-menu {
-    width: 250px;
-    background-color: #333;
-    height: 100%;
-    padding: 20px 0;
-  } */
-
-/* Icons */
-/* .menu-button {
-    display: none;
-    background-color: none;
-  } */
-
-
-
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -164,17 +90,9 @@
   }
 }
 
-
-/* Header Background */
 .MuiAppBar-root {
   /* background: rgba(0, 0, 0, 0.9); */
   backdrop-filter: blur(10px);
-}
-
-/* Text Styling */
-.text-light {
-  color: white !important;
-  font-weight: 500;
 }
 
 /* Logo */
@@ -204,11 +122,6 @@
   color: #000 !important;
   transform: scale(1.1);
 }
-
-/* Mobile Drawer */
-/* .MuiDrawer-paper {
-    background: rgba(0, 0, 0, 0.9);
-} */
 
 
 .drawer-container {
@@ -241,36 +154,9 @@
   right: 0
 }
 
-
-
-
-
-
 .menu2 {
   display: flex;
   justify-content: center;
-}
-
-.dropdown2 {
-  padding: 20px 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  background: #34495e;
-  position: relative;
-  font-size: 18px;
-  perspective: 1000px;
-  z-index: 100;
-  cursor: pointer;
-}
-
-.dropdown2:hover {
-  background: #2980b9;
-}
-
-.dropdown2:hover .dropdown_menu li {
-  display: block;
 }
 
 .dropdown_menu {
@@ -295,9 +181,6 @@
   background-color: #2980b9;
 }
 
-.dropdown2:hover .dropdown_menu--animated {
-  display: block;
-}
 
 .dropdown_menu--animated {
   display: none;

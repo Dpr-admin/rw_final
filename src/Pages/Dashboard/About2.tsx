@@ -108,10 +108,10 @@ const FeatureSection: React.FC = () => {
         { title: 'Find with me ', text: '', Icon: Overview4 },
     ];
 
-    const sliderImages = [
-        Homeimages.rwimg2,
-        Homeimages.rwimg2
-    ];
+    // const sliderImages = [
+    //     Homeimages.rwimg2,
+    //     Homeimages.rwimg2
+    // ];
 
     return (
         <Box sx={{ py: 10 }}>
@@ -178,13 +178,13 @@ const FeatureSection: React.FC = () => {
                     <Grid item xs={12} md={4} sx={{ pt: 3 }}>
                         <Box sx={{ maxWidth: 350, mx: 'auto', mb: 6, position: 'relative' }}>
                             <Box sx={{ position: 'relative', zIndex: 1 }}>
-                                <Slider {...sliderSettings}>
+                                {/* <Slider {...sliderSettings}>
                                     {sliderImages.map((img, idx) => (
                                         <Box key={idx}>
                                             <Box
                                                 component="img"
                                                 src={img}
-                                                alt=""
+                                                alt="Best Real Estate Mentor in Hyderabad"
                                                 sx={{
                                                     width: '100%',
                                                     height: 'auto',
@@ -194,7 +194,7 @@ const FeatureSection: React.FC = () => {
                                             />
                                         </Box>
                                     ))}
-                                </Slider>
+                                </Slider> */}
                             </Box>
                         </Box>
                         <Box textAlign="center">
@@ -275,7 +275,7 @@ const FeatureSection: React.FC = () => {
                                         <IconButton sx={iconButtonStyle} component="a" href="https://www.youtube.com/@maverick20885" target="_blank" rel="noopener noreferrer">
                                             <YouTubeIcon />
                                         </IconButton>
-                                        <IconButton sx={iconButtonStyle} component="a" href="https://www.linkedin.com/in/williamsrajiv" target="_blank" rel="noopener noreferrer">
+                                        <IconButton sx={iconButtonStyle} component="a" href="https://www.linkedin.com/in/rajivwilliams/" target="_blank" rel="noopener noreferrer">
                                             <LinkedInIcon />
                                         </IconButton>
                                     </Box>

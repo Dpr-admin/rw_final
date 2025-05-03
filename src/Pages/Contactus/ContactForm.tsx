@@ -13,8 +13,14 @@ import {
 } from '@mui/material';
 import ContactInput from '../../Components/ContactInput';
 import AnimatedBorderButton from '../../Components/AnimatedBorderButton';
+import { useNavigate } from 'react-router-dom';
 
 const ContactSection = () => {
+    const navigate = useNavigate();  // Initialize the navigate hook
+
+    const handleHomeClick = () => {
+      navigate('/');
+    };
     return (
         <Box sx={{ py: 6, color: '#fff', borderRadius: '12px', mt: 12, }}>
             <Container maxWidth="lg" >
@@ -23,7 +29,13 @@ const ContactSection = () => {
                     <Container maxWidth="lg" >
                         <Box sx={{ mb: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                             <Breadcrumbs separator={<span style={{ color: '#000' }}>–</span>}>
-                                <Box color="black">Home</Box>
+                                <Box color="black"
+                                onClick={handleHomeClick} 
+                                sx={{
+                                    cursor:'pointer'
+                                }}
+                                >
+                                    Home</Box>
                                 <Typography sx={{ color: 'primary.main', fontWeight: 600 }}>Contact me</Typography>
                             </Breadcrumbs>
                         </Box>

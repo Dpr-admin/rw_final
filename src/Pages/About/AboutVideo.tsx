@@ -6,7 +6,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { About } from '../../assets';
 import ImageReveal from '../../Components/ImageReveal';
 
-const AboutVideoSection: React.FC = () => {
+const AboutVideo: React.FC = () => {
   const videoRef = useRef<HTMLDivElement | null>(null);
   const [open, setOpen] = useState(false);
 
@@ -48,7 +48,7 @@ const AboutVideoSection: React.FC = () => {
             /> */}
             <ImageReveal
               src={About.aboutvideo}
-              alt=""
+              alt="Best Real Estate Mentor in Hyderabad"
               width="100%"
               height="auto"
               threshold={0.8}
@@ -152,4 +152,4 @@ const AboutVideoSection: React.FC = () => {
   );
 };
 
-export default AboutVideoSection;
+export default AboutVideo;

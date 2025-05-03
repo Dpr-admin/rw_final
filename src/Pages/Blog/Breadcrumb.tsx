@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Box, Container, keyframes, styled, Typography } from '@mui/material';
 import { ReactComponent as Overview1 } from '../../assets/images/home/charminar.svg';
 
-// Animation keyframes for stroke-dashoffset and color transition
+
 const fillAni = keyframes`
   0% {
     stroke-dashoffset: 2500;
@@ -41,7 +41,7 @@ const SvgWrapper = styled(Box)(({ theme }) => ({
   },
 }));
 
-const HeroHeadline: React.FC = () => {
+const Breadcrumb: React.FC = () => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
@@ -61,10 +61,6 @@ const HeroHeadline: React.FC = () => {
             textAlign: { xs: 'center', md: 'left' },
           }}
         >
-          {/* <SvgWrapper className={isActive ? 'active' : ''}>
-            <Overview1 />
-          </SvgWrapper> */}
-    
           <Container maxWidth="lg">
             <Typography
               variant="h3"
@@ -81,7 +77,7 @@ const HeroHeadline: React.FC = () => {
               <Box
                 component="span"
                 sx={{
-                  WebkitTextStroke: '1px #0f63a5',
+                  WebkitTextStroke: '1px #000',
                   WebkitTextFillColor: 'transparent',
                   textDecorationColor: '#0f63a5',
                   fontWeight: 700,
@@ -94,7 +90,7 @@ const HeroHeadline: React.FC = () => {
               <Box
                 component="span"
                 sx={{
-                  WebkitTextStroke: '1px #0f63a5',
+                  WebkitTextStroke: '1px #000',
                   WebkitTextFillColor: 'transparent',
                   fontWeight: 700,
                   display: 'inline',
@@ -130,7 +126,7 @@ const HeroHeadline: React.FC = () => {
               <Box
                 component="span"
                 sx={{
-                  WebkitTextStroke: '1px #0f63a5',
+                  WebkitTextStroke: '1px #000',
                   WebkitTextFillColor: 'transparent',
                   fontWeight: 700,
                   display: 'inline',
@@ -146,4 +142,4 @@ const HeroHeadline: React.FC = () => {
   );
 };
 
-export default HeroHeadline;
+export default Breadcrumb;

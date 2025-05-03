@@ -7,7 +7,7 @@ import {
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { gsap } from 'gsap';
-import { Homeimages } from '../assets';
+import { Homeimages, rwbrochure } from '../assets';
 import AnimatedBorderButton from './AnimatedBorderButton';
 import { useForm, Controller } from 'react-hook-form';
 import * as yup from 'yup';
@@ -17,7 +17,16 @@ import { useMutation } from '@tanstack/react-query';
 import CustomInput from './CustomInput';
 import { contactForm } from '../api/services';
 
-const schema: yup.ObjectSchema<Omit<LeadData, 'type'>> = yup.object({
+interface PopupFormProps {
+  open: boolean;
+  onClose: () => void;
+  onHoverReset?: () => void;
+  type?: string; // ADD THIS LINE
+  projectName?: string; // ✅ Add this
+}
+
+
+const schema: yup.ObjectSchema<Omit<LeadData, 'type' | 'projectName'>> = yup.object({
   name: yup.string().required('Name is required'),
   email: yup.string().email('Invalid email format').required('Email is required'),
   phoneNumber: yup
@@ -33,15 +42,18 @@ interface LeadData {
   phoneNumber: string;
   message?: string;
   type?: string;
+  projectName?: string; // ✅ Add this
 }
 
 interface PopupFormProps {
   open: boolean;
   onClose: () => void;
   onHoverReset?: () => void;
+  type?: string;
+  projectName?: string;
 }
 
-const PopupForm: React.FC<PopupFormProps> = ({ open, onClose, onHoverReset }) => {
+const PopupForm: React.FC<PopupFormProps> = ({ open, onClose, onHoverReset, type = 'contact' ,  projectName, }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const {
@@ -56,15 +68,25 @@ const PopupForm: React.FC<PopupFormProps> = ({ open, onClose, onHoverReset }) =>
   const mutation = useMutation({
     mutationFn: (newFormData: LeadData) => contactForm(newFormData),
     onSuccess: () => {
-      toast.success('Successfully submitted!');
+      toast.success('Brochure request sent successfully!');
+      downloadBrochure();
       resetForm();
       onClose();
+      
     },
     onError: (error: any) => {
       toast.error(error?.response?.data?.message || 'Submission failed');
     },
   });
-
+  const downloadBrochure = () => {
+    const link = document.createElement("a");
+    link.href = rwbrochure;
+    link.download = "rwbrochure.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+ 
   const resetForm = () => {
     reset({
       name: '',
@@ -75,7 +97,13 @@ const PopupForm: React.FC<PopupFormProps> = ({ open, onClose, onHoverReset }) =>
   };
 
   const onSubmit = (data: LeadData) => {
-    mutation.mutate({ ...data, type: 'contact' });
+    const payload: LeadData = {
+      ...data,
+      type,
+      ...(type === 'project' && projectName ? { projectName } : {})
+    };
+  
+    mutation.mutate(payload);
   };
 
   useEffect(() => {
@@ -145,7 +173,7 @@ const PopupForm: React.FC<PopupFormProps> = ({ open, onClose, onHoverReset }) =>
           <Box
             sx={{
               position: 'relative',
-              backgroundImage: `url(${Homeimages.popupbg})`,
+              backgroundImage: `url(${Homeimages.popup2})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               p: 3,
@@ -172,7 +200,7 @@ const PopupForm: React.FC<PopupFormProps> = ({ open, onClose, onHoverReset }) =>
                   src={Homeimages.rwlogo}
                   width="100px"
                   height="100px"
-                  alt="logo"
+                  alt="Best Real Estate Mentor in Hyderabad"
                   sx={{ mx: 'auto', mb: 2, display: 'block' }}
                 />
 

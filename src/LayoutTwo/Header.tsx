@@ -45,6 +45,7 @@ import ContactForm from '../Components/PopupForm';
 import { resetHoverState } from '../Components/CustomCursor';
 import SpotlightButton from "../Components/SpotlightButton";
 
+
 const Header: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -61,26 +62,26 @@ const Header: React.FC = () => {
   const headerRef = useRef<HTMLDivElement | null>(null);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [scrollDirection, setScrollDirection] = useState<string | null>(null);
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const iconRefs = useRef<HTMLButtonElement[]>([]);
+  // const [showPopup, setShowPopup] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+const [popupType, setPopupType] = useState('contact'); // default to contact
 
   const logoRef = useRef<HTMLDivElement | null>(null);
   const navRefs = useRef<Array<HTMLDivElement | null>>([]);
   const talkButtonRef = useRef<HTMLButtonElement | null>(null);
 
-
   const handlePopupOpen = () => {
+    setPopupType('contact'); // When user clicks “Download Brochure”
     setShowPopup(true);
   };
-
+  
   const handlePopupClose = () => {
     setShowPopup(false);
-    resetHoverState(); // Reset cursor hover state when popup closes
   };
 
   useEffect(() => {
@@ -192,10 +193,6 @@ const Header: React.FC = () => {
     setDropdownOpen(dropdownOpen === menu ? null : menu);
   };
 
-  const handleDigitalMarketingHover = (open: boolean) => {
-    setDigitalMarketingOpen(open);
-  };
-
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -229,19 +226,19 @@ const Header: React.FC = () => {
 
   const navItems = [
     { label: "Home", route: "/" },
-    { label: "About", route: "/aboutus" },
+    { label: "About", route: "/about-us" },
     {
       label: "Services",
       route: "/services",
       submenu: [
-        { label: "Mentoring", route: "/services/mentoring" },
+        { label: "Mentoring", route: "/services/real-estate-mentor" },
         { label: "Sales", route: "/services/sales" },
         { label: "Branding", route: "/services/branding" },
       ],
     },
     { label: "Portfolio", route: "/portfolio" },
-    { label: "Blogs", route: "/blog" },
-    { label: "Contact Us", route: "/contactus" },
+    { label: "Blogs", route: "/blogs" },
+    { label: "Faq'S", route: "/faqs" },
   ];
 
   const renderDesktopMenu = () => (
@@ -405,8 +402,8 @@ const Header: React.FC = () => {
           >
             <Box
               component="img"
-              src={Homeimages.rwlogo}
-              alt="Logo"
+              src={Homeimages.rwsignlogo}
+              alt="Best Real Estate Mentor in Hyderabad"
               sx={{
                 width: "150px",
                 height: "150px",
@@ -580,7 +577,7 @@ const Header: React.FC = () => {
 
             <IconButton
               component="a"
-              href="https://www.linkedin.com/in/williamsrajiv" // 👉 change to your LinkedIn
+              href="https://www.linkedin.com/in/rajivwilliams/" // 👉 change to your LinkedIn
               target="_blank"
               rel="noopener noreferrer"
               sx={{
@@ -666,7 +663,7 @@ const Header: React.FC = () => {
               }}
               onClick={() => handleNavigate("/")}
             >
-              <img src={Homeimages.rwlogo} alt="logo" style={{ maxWidth: '100px', maxHeight: '80px' }} />
+              <img src={Homeimages.rwsignlogo} alt="Best Real Estate Mentor in Hyderabad" style={{ maxWidth: '100px', maxHeight: '80px' }} />
             </Box>
 
             {/* Divider */}
@@ -702,7 +699,7 @@ const Header: React.FC = () => {
               {/* Always show Let's Talk button */}
               <Box ref={talkButtonRef}>
                 <SpotlightButton
-                  onClick={() => window.open("http://bookanappointment.rajivwilliams.com/", "_blank")}
+                  onClick={handlePopupOpen}
                   background="linear-gradient(to right, #fff, #fff)"
                   textColor="#fff"
                   spotlightColor="linear-gradient(to right, #fff, #fff)"
@@ -712,28 +709,49 @@ const Header: React.FC = () => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    padding: { xs: "5px 12px", md: "10px 20px" },
-                    fontSize: { xs: "12px", md: "16px" },
+                    padding: { xs: '0px 16px', md: '10px 20px' },
+                    fontSize: { xs: '12px', md: '16px' },
                   }}
                 >
-                  Let's talk
+                  {/* Text is hidden on mobile, shown on desktop */}
+                  <Box sx={{ display: { xs: 'none', md: 'inline' } }}>Download Brochure</Box>
+
+                  {/* Icon is shown only on mobile */}
                   <Box
                     component="img"
                     src={Homeimages.arrow}
-                    alt="arrow"
+                    alt="Best Real Estate Mentor in Hyderabad"
+                    sx={{
+                      width: '16px',
+                      // marginLeft: '8px',
+                      filter: 'brightness(0) invert(1)',
+                      display: { xs: 'inline', md: 'none' }, // Icon only on mobile
+                      justifyContent:'center',
+                      alignItems:'center'
+                    }}
+                  />
+
+                  {/* Icon is shown on desktop with the full text */}
+                  <Box
+                    component="img"
+                    src={Homeimages.arrow}
+                    alt="Best Real Estate Mentor in Hyderabad"
                     sx={{
                       width: '16px',
                       marginLeft: '8px',
                       filter: 'brightness(0) invert(1)',
+                      display: { xs: 'none', md: 'inline' }, // Icon only on desktop with text
+                      
                     }}
                   />
                 </SpotlightButton>
               </Box>
 
+
               {/* Only show hamburger in mobile */}
               {isMobile && (
                 <IconButton color="inherit" onClick={handleDrawerToggle}>
-                  <MenuIcon />
+                  <MenuIcon sx={{fontSize:'50px'}}/>
                 </IconButton>
               )}
             </Box>
@@ -746,9 +764,14 @@ const Header: React.FC = () => {
       </Box>
 
 
-      {/* Popup Form */}
-      {showPopup && <PopupForm open={showPopup} onClose={handlePopupClose} onHoverReset={resetHoverState} />}
-
+      {showPopup && (
+  <PopupForm
+    open={showPopup}
+    onClose={handlePopupClose}
+    onHoverReset={resetHoverState}
+    type={popupType} // pass type here
+  />
+)}
     </Container>
   );
 };

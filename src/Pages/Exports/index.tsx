@@ -1,7 +1,6 @@
 export {default as Dashboard} from '../Dashboard';
 export {default as NotFound} from '../NotFound/NotFound';
 export {default as About} from '../About';
-export {default as Projects} from '../Projects/';
 export {default as Contactus} from '../Contactus';
 export {default as Faqs} from '../Faqs';
 export {default as Blog} from '../Blog';

@@ -73,14 +73,14 @@ const AllProjectsMerged: React.FC = () => {
                     <ImageReveal
 
                       src={service.image}
-                      alt=""
-                      width="490px"
+                      alt="Best Real Estate Mentor in Hyderabad"
+                      width="auto"
                       height="auto"
                       threshold={0.8}
                       scaleDuration={3}
                       sx={{
 
-                        width:{xs:"300px",md:'490px'}
+                        width: { xs: "300px", md: 'auto' }
                         // transition: 'transform 0.3s ease',
                         // '&:hover': {
                         //   transform: 'scale(1.1)', // Hover zoom effect
@@ -131,10 +131,10 @@ const AllProjectsMerged: React.FC = () => {
                   <Box
                     sx={{
                       position: 'relative',
-                      py: {xs:0,md:4},
-                    //   pl: service.isReverse ? 3 : 12.5,
-                    //   pr: service.isReverse ? 12.5 : 3,
-                    pl: {
+                      py: { xs: 0, md: 4 },
+                      //   pl: service.isReverse ? 3 : 12.5,
+                      //   pr: service.isReverse ? 12.5 : 3,
+                      pl: {
                         xs: 0,
                         md: service.isReverse ? 3 : 12.5,
                       },
@@ -142,7 +142,7 @@ const AllProjectsMerged: React.FC = () => {
                         xs: 0,
                         md: service.isReverse ? 12.5 : 3,
                       },
-                      
+
                       display: 'flex',
                       justifyContent: 'flex-start',
                       alignItems: 'flex-start',
@@ -218,7 +218,7 @@ const AllProjectsMerged: React.FC = () => {
                     <Typography variant="h3" sx={{ textTransform: 'uppercase', mb: 0 }}>
                       <SmoothWaveText
                         variant="h4"
-                        sx={{ color: '#1c1f26', textDecoration: 'none', textAlign: 'start', fontWeight: 700 ,mt:{xs:4,lg:0}}}
+                        sx={{ color: '#1c1f26', textDecoration: 'none', textAlign: 'start', fontWeight: 700, mt: { xs: 4, lg: 0 } }}
                       >
                         {service.title}
                       </SmoothWaveText>
@@ -235,8 +235,8 @@ const AllProjectsMerged: React.FC = () => {
                       {service.bhk && (
                         <Grid item xs={12} sm={6} md={6}>
                           <Box sx={{ display: 'flex', gap: 1, justifyContent: 'start' }}>
-                            <Box sx={{ fontWeight: 700, color: 'primary.main' ,fontSize:'16px'}}>
-                              BHK :
+                            <Box sx={{ fontWeight: 700, color: 'primary.main', fontSize: '16px' }}>
+                              BedRoom :
                             </Box>
                             <Typography variant="body2" sx={{ textAlign: 'start' }}>{service.bhk}</Typography>
                           </Box>
@@ -252,7 +252,7 @@ const AllProjectsMerged: React.FC = () => {
                           }}
                         >
                           <Box sx={{ display: 'flex', gap: 1, justifyContent: 'start' }}>
-                            <Box sx={{ fontWeight: 700, color: 'primary.main' ,fontSize:'16px'}}>
+                            <Box sx={{ fontWeight: 700, color: 'primary.main', fontSize: '16px' }}>
                               RERA:
                             </Box>
                             <Typography variant="body2" sx={{ textAlign: 'start' }}>{service.rera}</Typography>
@@ -267,10 +267,10 @@ const AllProjectsMerged: React.FC = () => {
                           }}
                         >
                           <Box sx={{ display: 'flex', gap: 1, justifyContent: 'start' }}>
-                            <Box sx={{ fontWeight: 700, color: 'primary.main' ,fontSize:'16px'}}>
+                            <Box sx={{ fontWeight: 700, color: 'primary.main', fontSize: '16px' }}>
                               Location:
                             </Box>
-                            <Typography variant="body2"  sx={{ textAlign: 'start' }}>{service.location}</Typography>
+                            <Typography variant="body2" sx={{ textAlign: 'start' }}>{service.location}</Typography>
                           </Box>
                         </Grid>
                       )}
@@ -278,31 +278,36 @@ const AllProjectsMerged: React.FC = () => {
                       {service.developer && (
                         <Grid item xs={12} sm={6} md={6}>
                           <Box sx={{ display: 'flex', gap: 1, justifyContent: 'start' }}>
-                            <Box sx={{ fontWeight: 700, color: 'primary.main' ,fontSize:'16px'}}>
+                            <Box sx={{ fontWeight: 700, color: 'primary.main', fontSize: '16px' }}>
                               Developer:
                             </Box>
-                            <Typography variant="body2"  sx={{ textAlign: 'start' }}>{service.developer}</Typography>
+                            <Typography variant="body2" sx={{ textAlign: 'start' }}>{service.developer}</Typography>
                           </Box>
                         </Grid>
                       )}
                       {service.status && (
                         <Grid item xs={12} sm={6} md={6}>
                           <Box sx={{ display: 'flex', gap: 1, justifyContent: 'start' }}>
-                            <Box sx={{ fontWeight: 700, color: 'primary.main' ,fontSize:'16px'}}>
+                            <Box sx={{ fontWeight: 700, color: 'primary.main', fontSize: '16px' }}>
                               Status:
                             </Box>
-                            <Typography variant="body2"  sx={{ textAlign: 'start' }}>{service.status}</Typography>
+                            <Typography variant="body2" sx={{ textAlign: 'start' }}>{service.status}</Typography>
                           </Box>
                         </Grid>
                       )}
                     </Grid>
-                 
 
 
 
+                    <Box>
+
+                    </Box>
                     {/* Highlights */}
                     {service.highlights && (
                       <List dense sx={{ mt: 2, pl: 0 }}>
+                        <Typography variant='h6' sx={{ color: 'primary.main' ,textAlign:'start'}}>
+                        USP's
+                        </Typography>
                         {service.highlights.map((point, i) => (
                           <ListItem key={i} disableGutters>
                             <ListItemIcon sx={{ minWidth: 32 }}>
@@ -348,7 +353,7 @@ const AllProjectsMerged: React.FC = () => {
                       <Box
                         component="img"
                         src={Homeimages.whatsapp}
-                        alt="WhatsApp"
+                        alt="Best Real Estate Mentor in Hyderabad"
                         onClick={(e) => {
                           e.stopPropagation();
                           const message = encodeURIComponent(`Hi, I'm interested in ${service.title}`);

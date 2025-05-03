@@ -8,7 +8,6 @@ import './App.css';
 import router from './Routes/routes';
 import { theme } from './Theme/theme';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import Preloader from './Components/Preloader';
 import CustomCursor from './Components/CustomCursor';
 import Preloader2 from './Components/Preloader2';
 // import { CustomCursor } from './Components/CustomCursor'; // Use named import

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Rajiv Williams",
+  "name": "Best Real Estate Mentor in Hyderabad | Rajiv Williams",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,10 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#0f63a5",
+  "background_color": "#ffffff",
+  "description": "Find the best real estate mentor in Hyderabad. Gain expert insights and personalized guidance to excel in the property market and achieve your goals.",
+  "categories": ["Luxury Sales Mastery Trainer", "Luxury Sales Concierge", "Brand Strategist"],
+  "orientation": "portrait",
+  "prefer_related_applications": false
 }

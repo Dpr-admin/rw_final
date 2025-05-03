@@ -15,6 +15,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { gsap } from 'gsap';
 import { Services } from '../../../../assets';
+import SpotlightButton from '../../../../Components/SpotlightButton';
+import PopupForm from '../../../../Components/PopupForm';
 
 interface Workshop {
     title: string;
@@ -41,7 +43,7 @@ const workshops: Workshop[] = [
             </>
           ),
           
-        image:Services.mentoring1,
+        image:"https://dprstorage.b-cdn.net/RW/Beginnerhero.png",
         list: {
             listTitle: "Key Benefits:",
             listItems: [
@@ -69,7 +71,7 @@ const workshops: Workshop[] = [
                 <b style={{color:'#0f63a5'}}>Mid-level professionals </b> and <b style={{color:'#0f63a5'}}> small teams seeking</b> to improve their sales effectiveness and negotiation skills.,
             </>
         ),
-        image:Services.mentoring2,
+        image:"https://dprstorage.b-cdn.net/RW/Acceleratorhero.png",
         list: {
             listTitle: "Key Features:",
             listItems: [
@@ -97,7 +99,7 @@ const workshops: Workshop[] = [
                <b style={{color:'#0f63a5'}}>Agents and teams</b>  focusing on selling high-value properties and serving affluent clientele.,
             </>
         ),
-        image:Services.mentoring3,
+        image:"https://dprstorage.b-cdn.net/RW/Organizationalbanner.png",
         list: {
             listTitle: "Key Features:",
             listItems: [
@@ -118,58 +120,6 @@ const workshops: Workshop[] = [
         ]
     },
     {
-        title: "Organizational mentoring",
-        subtitle: 'Who can apply:',
-        description: (
-            <>
-                 <b style={{color:'#0f63a5'}}>Business owners, developers, and team leaders </b>aiming to elevate their organization’s performance and brand image.,
-            </>
-        ),
-        image:Services.mentoring4,
-        list: {
-            listTitle: "Key Features:",
-            listItems: [
-                "Customized Branding Strategies: Tailor branding efforts to align with your organization’s unique strengths.",
-                "Market Positioning and Execution: Learn how to position your brand effectively in the competitive market.",
-                "Leadership Mentoring: Gain insights into leading high-performing teams and ensuring organizational success.",
-            ],
-        },
-        paragraph: [
-            {
-                title: "Duration:",
-                discription: "A recommended 6-month program for sustained growth and transformation."
-            },
-            {
-                title: "Ideal For",
-                discription: "Leaders looking to establish themselves and their organizations as market icons."
-            }
-        ]
-    },
-    {
-        title: "Exclusive Personalized Mentorship",
-        subtitle: 'Who can apply:',
-        description: "Elite professionals seeking one-on-one mentorship tailored to their unique goals.",
-        image:Services.mentoring5,
-        list: {
-            listTitle: "Key Features:",
-            listItems: [
-                "Tailored Coaching: Get highly customized coaching to address specific challenges and goals",
-                "On-Demand Sessions: Flexible scheduling to suit your availability",
-                "Performance Reviews: Regular evaluations to track and enhance your progress",
-            ],
-        },
-        paragraph: [
-            {
-                title: "Duration:",
-                discription: "Flexible (hourly or project-based)."
-            },
-            {
-                title: "Ideal For",
-                discription: "Individuals who prefer personalized guidance to refine their strategies and achieve exceptional results in real estate."
-            }
-        ]
-    },
-    {
         title: "Uber Luxury Sales Mastery",
         subtitle: 'Who can apply:',
         description: (
@@ -177,7 +127,7 @@ const workshops: Workshop[] = [
                 <b style={{color:'#0f63a5'}}>Top-tier agents </b>and<b style={{color:'#0f63a5'}}>real estate professionals</b>  aiming to break into the ultra-luxury segment dealing with ₹10 Cr+ properties, NRI clientele, and iconic global listings.
             </>
         ),
-        image:Services.mentoring6,
+        image:"https://dprstorage.b-cdn.net/RW/uberluxury.png",
         list: {
             listTitle: "Key Features:",
             listItems: [
@@ -198,6 +148,89 @@ const workshops: Workshop[] = [
             }
         ]
     },
+    {
+        title: "Organizational mentoring",
+        subtitle: 'Who can apply:',
+        description: (
+            <>
+                 <b style={{color:'#0f63a5'}}>Business owners, developers, and team leaders </b>aiming to elevate their organization’s performance and brand image.,
+            </>
+        ),
+        image:"https://dprstorage.b-cdn.net/RW/Luxuryheroban.png",
+        list: {
+            listTitle: "Key Features:",
+            listItems: [
+                "Customized Branding Strategies: Tailor branding efforts to align with your organization’s unique strengths.",
+                "Market Positioning and Execution: Learn how to position your brand effectively in the competitive market.",
+                "Leadership Mentoring: Gain insights into leading high-performing teams and ensuring organizational success.",
+            ],
+        },
+        paragraph: [
+            {
+                title: "Duration:",
+                discription: "A recommended 6-month program for sustained growth and transformation."
+            },
+            {
+                title: "Ideal For",
+                discription: "Leaders looking to establish themselves and their organizations as market icons."
+            }
+        ]
+    },
+    {
+        title: "Exclusive Personalized Mentorship – On-Job Training",
+        subtitle: 'Who can apply:',
+        description: "Elite professionals seeking one-on-one mentorship tailored to their unique goals.",
+        image:"https://dprstorage.b-cdn.net/RW/Personalizedhero.png",
+        list: {
+            listTitle: "Key Features:",
+            listItems: [
+                "Tailored Coaching: Get highly customized coaching to address specific challenges and goals",
+                "On-Demand Sessions: Flexible scheduling to suit your availability",
+                "Performance Reviews: Regular evaluations to track and enhance your progress",
+                " Team Integration: You will be working with Team Rajiv Williams for a full year, gaining real-time exposure and executional insight on live projects"
+            ],
+        },
+        paragraph: [
+            {
+                title: "Duration:",
+                discription: "Minimum 1 year (includes on-job project-based mentorship)."
+            },
+            {
+                title: "Ideal For",
+                discription: "Individuals who prefer personalized guidance to refine their strategies and achieve exceptional results in real estate."
+            }
+        ]
+    },
+    {
+        title: "Hiring & Placement",
+        subtitle: 'Partnering With : ',
+        description:(
+            <>
+                 <b style={{color:'#0f63a5'}}>Real Estate Organizations, Developers,</b> and <b style={{color:'#0f63a5'}}>Brokerages</b> looking to hire high-performance professionals trained in luxury and uber-luxury sales.Also for individuals who’ve completed Rajiv Williams’ mentoring programs and are ready to step into elite roles.",
+            </>
+        ) ,
+        image:'',
+        list: {
+            listTitle: "What We Offer:",
+            listItems: [
+              "Talent Acquisition for Real Estate Organizations: We help companies hire qualified, sales-ready professionals trained under Rajiv Williams' luxury frameworks.",
+              " Placement for Trained Mentees: Professionals mentored under Rajiv Williams get access to exclusive job placement opportunities with top-tier firms.",
+              " Role-Specific Matching: Whether you're hiring for sales, leadership, or branding roles—we match skillsets to growth-focused environments.",
+              "Industry-Aligned Screening: Candidates are evaluated for sales psychology, client handling skills, luxury market readiness, and branding acumen."
+            ],
+        },
+        paragraph: [
+            {
+                title: "Why It Works:",
+                discription: "Every candidate placed through us comes with a foundation in high-value sales systems, on-job training, and real-world exposure ensuring faster onboarding, stronger performance, and brand alignment."
+            },
+            {
+                title: "Let’s Build Your Dream Team or Land You in One.",
+                discription: ""
+            }
+        ]
+    },
+
 ];
 
 const WorkshopAccordionList: React.FC = () => {
@@ -206,6 +239,10 @@ const WorkshopAccordionList: React.FC = () => {
     const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
     const contentRef = useRef<HTMLDivElement | null>(null);
     const easeSlow = 'power2.out';
+    const [popupType, setPopupType] = useState('contact');
+    const [projectName, setProjectName] = useState('');
+    const [isPopupOpen, setPopupOpen] = useState(false);
+
 
     const contentRefs = useRef(
         workshops.map(() => ({
@@ -213,6 +250,15 @@ const WorkshopAccordionList: React.FC = () => {
             liRefs: [] as (HTMLLIElement | null)[],
         }))
     );
+    const handleOpenPopup = (title: string) => {
+        setPopupType('project');
+        setProjectName(title);
+        setPopupOpen(true);
+      };
+    
+      const handleClosePopup = () => {
+        setPopupOpen(false);
+      };
 
     useEffect(() => {
         if (expandedIndex !== null) {
@@ -363,10 +409,35 @@ const WorkshopAccordionList: React.FC = () => {
                                     </Box>
                                 ))}
                             </Box>
+
+                            <SpotlightButton
+                                     onClick={() => handleOpenPopup(workshop.title)} // ✅ pass title
+                                    background="linear-gradient(to right, #fff, #fff)"
+                                    textColor="#fff"
+                                    spotlightColor="linear-gradient(to right, #000, #000)"
+                                    innerBackground="#0f63a5"
+                                    activeTextColor="white"
+                                    sx={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+
+                                    }}
+                                >
+                                    Contact Us
+
+
+                                </SpotlightButton>
                         </AccordionDetails>
                     </Accordion>
                 ))}
             </Container>
+            <PopupForm
+        open={isPopupOpen}
+        onClose={handleClosePopup}
+        type={popupType}
+        projectName={projectName}
+      />
         </Box>
     );
 };

@@ -83,7 +83,7 @@ const Branding = () => {
   }, []);
 
   const handleClick = () => {
-    window.open('https://dezignshark.com', '_blank');
+    window.open('https://dezignshark.com/services/digital-marketing-hyderabad', '_blank');
   };
 
   useEffect(() => {
@@ -194,8 +194,8 @@ const Branding = () => {
           /> */}
           <Box  >
               <ImageReveal
-                src={Services.serv3}
-                alt=""
+                src="https://dprstorage.b-cdn.net/RW/serv3.png"
+                alt="Best Real Estate Mentor in Hyderabad"
                 width="100%"
                 height="auto"
                 threshold={0.8}
@@ -205,8 +205,8 @@ const Branding = () => {
               </Box>
               <Box sx={{mt:10}}>
               <ImageReveal
-                src={Services.servm3}
-                alt=""
+                src="https://dprstorage.b-cdn.net/RW/servm3.png"
+                alt="Best Real Estate Mentor in Hyderabad"
                 width="100%"
                 height="auto"
                 threshold={0.8}
@@ -218,7 +218,7 @@ const Branding = () => {
         </Container>
       </Box>
 
-      <Container maxWidth="xl" sx={{ mt: 2 }}>
+      <Container maxWidth="xl" sx={{ mt: 2,px:{xs:3,md:8} }}>
         
         <SmoothWaveText variant="h4" sx={{ fontSize: 36, mb: 2, textAlign: 'start', fontWeight: 700 ,color:'primary.main'}}>
           Build a Magnetic Brand That Converts
@@ -226,16 +226,16 @@ const Branding = () => {
 
         <Box id="text" sx={{ mb: 4 }}>
           <Typography variant="body2" sx={{ textAlign: 'start' }}>
-            Most agents chase leads. Top agents attract them. With over 15 years of luxury real estate experience, I mentor professionals to lead with brand power—not desperation. I’m Rajiv Williams, your trusted brand management consultant and real estate growth mentor.
+            Most Real Estate Organizations & Professionals chase Sales & Closures. Top Firms attract them. I mentor Organizations & Professionals to lead with Awareness by Branding, not desperation. I’m Rajiv Williams, your trusted Real Estate Growth Mentor & Brand Management Consultant.
           </Typography>
           <Typography variant="body2" sx={{ textAlign: 'start', mt: 2 }}>
-            Through my brand consultant services, I empower realtors and builders to rise above the noise. Whether you’re a growing team or a builder entering premium markets, a solid brand marketing strategy is your foundation.
+          I empower Builders, Developers & Realtors to rise above the noise. Whether you’re a growing team or a new builder entering premium markets, a solid brand & a unique marketing strategy is the core of your foundation & who you aspire to be.
           </Typography>
           <Typography variant="body2" sx={{ textAlign: 'start', mt: 2 }}>
-            As a brand marketing strategist, I design systems that build influence, unlock elite referrals, and accelerate deal flow. This isn’t just personal branding—it’s positioning for high-ticket success.
+          As a brand marketing strategist, I design systems that build influence, unlock elite referrals, and accelerate lead flow. This isn’t just Corporate or Personal branding—it’s positioning for high-ticket success.
           </Typography>
           <Typography variant="body2" sx={{ textAlign: 'start', mt: 2 }}>
-            Ready to attract rather than chase? Let’s align your identity, messaging, and sales approach with what high-net-worth clients want.
+          Ready to attract rather than chase? Let’s align your identity, communication strategies, and sales approach with what the Ultra high-net-worth clients are looking for !
           </Typography>
         </Box>
 

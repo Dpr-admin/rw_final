@@ -4,7 +4,7 @@ import AllPortfolioDetails from './AllPortfolioDetails'
 const index = () => {
   return (
     <div>
-        <AllPortfolioDetails />
+        {/* <AllPortfolioDetails /> */}
       
     </div>
   )

@@ -11,8 +11,8 @@ export const PortfolioDetailsData = [
       previous: 'Home',
     },
     heading: 'Seta Event',
-    mainImage: Portfolio.portouter1,
-    topImage: Portfolio.portouter1,
+    mainImage:"https://dprstorage.b-cdn.net/RW/exhibit1.png",
+    topImage: "https://dprstorage.b-cdn.net/RW/exhibit1.png",
     projectData: {
       program: "SEAT Event",
       year: " 2024",
@@ -33,7 +33,7 @@ export const PortfolioDetailsData = [
     steps: [
 
     ],
-    bottomImage: Portfolio.portinnerf1,
+    bottomImage:"https://dprstorage.b-cdn.net/RW/portinnerf1.png",
     finalText: [
 
       "A special thank you to the inspiring panelists and participants. Your insights into the industry were nothing short of brilliant. It was a privilege to witness firsthand the thought leadership and expertise you brought to the discussions. I am honored to have played a part in such a pivotal event that highlights the future of technology.",
@@ -48,9 +48,9 @@ export const PortfolioDetailsData = [
       previous: 'Home',
     },
     heading: 'Inspiring Future',
-    mainImage: Portfolio.portouter2,
+    mainImage:"https://dprstorage.b-cdn.net/RW/exhibit3.png",
 
-    topImage: Portfolio.portouter2,
+    topImage:"https://dprstorage.b-cdn.net/RW/exhibit3.png",
     projectData: {
       program: "Inspiring Day Program",
       year: " 2024",
@@ -72,7 +72,7 @@ export const PortfolioDetailsData = [
     steps: [
 
     ],
-    bottomImage: Portfolio.portinner2_1,
+    bottomImage: "https://dprstorage.b-cdn.net/RW/portinner2-1.png",
     finalText: [
 
       "To the entire college community, thank you for the opportunity to contribute and learn alongside you. Together, we are nurturing a generation of leaders who will leave a lasting impact.",
@@ -86,9 +86,9 @@ export const PortfolioDetailsData = [
       previous: 'Home',
     },
     heading: 'Sales Mentoring',
-    mainImage: Portfolio.salesprograminner,
+    mainImage: "https://dprstorage.b-cdn.net/RW/salesprograminner.png",
 
-    topImage: Portfolio.salesprograminner,
+    topImage: "https://dprstorage.b-cdn.net/RW/salesprograminner.png",
     projectData: {
       program: "Anantha Projects",
       year: " 2024",
@@ -109,7 +109,7 @@ export const PortfolioDetailsData = [
     steps: [
 
     ],
-    bottomImage: Portfolio.portinner2_1,
+    bottomImage: "https://dprstorage.b-cdn.net/RW/portinner2-1.png",
     finalText: [
 
      "Moreover, they were taught to highlight not just the features of the property but the lifestyle it offers. Excellence in every interaction was the primary goal, ensuring the client experience is unmatched.",
