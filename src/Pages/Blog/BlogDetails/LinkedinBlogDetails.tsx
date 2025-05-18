@@ -7,11 +7,12 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import ImageReveal from '../../../Components/ImageReveal';
 import SmoothWaveText from '../../../Components/SmoothWaveText';
+import { Helmet } from 'react-helmet-async';
 
 const slugify = (text: string) =>
   text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
 
-const BlogDetails: React.FC = () => {
+const LinkedinBlogDetails: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const [blog, setBlog] = useState<any>(null);
 
@@ -49,7 +50,19 @@ const BlogDetails: React.FC = () => {
 
   return (
     <Container maxWidth="xl" sx={{ mb: 8 }}>
-      <Box sx={{ mb: 5, px: { xs: 0, md: 8 } ,mt:{xs:'130px',md:'20px'}}}>
+      <Helmet>
+        <title>{blog.metaTitle || blog.title}</title>
+        <meta name="description" content={blog.metaDescription || blog.description} />
+        <meta property="og:title" content={blog.metaTitle || blog.title} />
+        <meta property="og:description" content={blog.metaDescription || blog.description} />
+        <meta
+          property="og:image"
+          content={`https://dprstorage.b-cdn.net${blog.imageurl || blog.bannerImage}`}
+        />
+        <meta property="og:url" content={appUrl} />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
+      <Box sx={{ mb: 5, px: { xs: 0, md: 8 }, mt: { xs: '130px', md: '20px' } }}>
         <ImageReveal
           src={`https://dprstorage.b-cdn.net${blog.imageurl}`}
           alt="Blog"
@@ -60,40 +73,28 @@ const BlogDetails: React.FC = () => {
           sx={{ mb: 5 }}
         />
 
-        <SmoothWaveText
-          variant="h4"
-          sx={{ fontWeight: 700, textAlign: 'start' }}
-        >
-          {blog.title}
-        </SmoothWaveText>
-
-        {blog.sections.map((section: any) => {
+        {blog.sections?.map((section: any) => {
           const Tag = section.type as keyof HTMLElementTagNameMap;
           return (
-            <Box key={section._id} sx={{ marginBottom: '20px', textAlign: 'start' }}>
+            <Box key={section._id} sx={{ marginBottom: "20px", textAlign: "start" }}>
               {React.createElement(
                 Tag,
-                { style: { marginBottom: '5px', color: '#0f63a5' } },
-                section.title
+                { style: { marginBottom: "5px", color: "#000" } },
+                <SmoothWaveText variant={section.type as any} sx={{ fontWeight: 700, color: "#000", mb: 2 }}>
+                  {section.title}
+                </SmoothWaveText>
               )}
-              <Typography variant='body2'>{section.description}</Typography>
+              {section.description
+                .replace(/\n/g, "\n")
+                .split("\n")
+                .map((line: string, idx: number) => (
+                  <Typography key={idx} variant="body2" sx={{ color: "black", mb: 1 }}>
+                    {line}
+                  </Typography>
+                ))}
             </Box>
           );
         })}
-
-        {/* {blog.embedposturl && blog.embedposturl.includes('linkedin.com') && ( */}
-        {/* <Box sx={{ mt: 5 }}>
-            <iframe
-              src="https://www.linkedin.com/embed/feed/update/urn:li:share:7293999163199918080"
-              height="450"
-              width="100%"
-              frameBorder="0"
-              allowFullScreen
-              title="LinkedIn Post"
-              style={{ borderRadius: '8px' }}
-            />
-          </Box> */}
-        {/* )} */}
 
         {/* Social Share Icons */}
         <Box sx={{ mt: 6 }}>
@@ -162,7 +163,7 @@ const BlogDetails: React.FC = () => {
           rel="noopener noreferrer"
           sx={{
             textDecoration: "none",
-            
+
           }}
         >
           <Box
@@ -176,7 +177,7 @@ const BlogDetails: React.FC = () => {
               maxWidth: 1000,
               backgroundColor: '#fff',
               boxShadow: 1,
-              mt:5
+              mt: 5
             }}
           >
             <Box display="flex" alignItems="start" gap={2}
@@ -185,7 +186,7 @@ const BlogDetails: React.FC = () => {
                 width: '100%',
               }}
             >
-              <Avatar src={profile.avatarUrl} alt={profile.name}  sx={{width:100,height:100}}/>
+              <Avatar src={profile.avatarUrl} alt={profile.name} sx={{ width: 100, height: 100 }} />
               <Box>
                 <Typography fontWeight="bold" sx={{ textAlign: 'start' }}>
                   {profile.name} - {profile.title}
@@ -202,7 +203,7 @@ const BlogDetails: React.FC = () => {
                 sx={{ width: 160, height: 100 }}
               />
             </Box>
-            </Box>
+          </Box>
 
         </Link>
 
@@ -211,4 +212,4 @@ const BlogDetails: React.FC = () => {
   );
 };
 
-export default BlogDetails;
+export default LinkedinBlogDetails;

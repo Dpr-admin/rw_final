@@ -1,37 +1,51 @@
-import React, { useState } from 'react';
-import { Box, Container, Grid, List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import { Box, Container, Grid, List, ListItem, ListItemIcon, ListItemText, Typography, Pagination } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { LuExpand } from 'react-icons/lu';
-import SpotlightButton from '../../../../Components/SpotlightButton';
+import { gsap } from 'gsap';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import StarPurple500Icon from '@mui/icons-material/StarPurple500';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Homeimages } from '../../../../assets';
 import SmoothWaveText from '../../../../Components/SmoothWaveText';
 import ImageReveal from '../../../../Components/ImageReveal';
 import { projectsData } from './AllProjectData';
 
-
 const AllProjectsMerged: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
   const navigate = useNavigate();
+
+  const itemsPerPage = 5;
+  const totalPages = Math.ceil(projectsData.length / itemsPerPage);
+  const currentProjects = projectsData.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  useEffect(() => {
+    const tl = gsap.timeline({ repeat: -1, yoyo: true });
+    tl.to(".talk-to-advisor-icon", { x: 10, duration: 0.5 });
+  }, []);
+
+  const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
+    setCurrentPage(value);
+  };
 
   return (
     <Container maxWidth='xl'>
-
-      <Box className="services-section" sx={{ pt: '215px', pb: '10px' }}>
+      <Box className="services-section" sx={{ pt: '215px', pb: '10px', px: { xs: 'auto', md: 5 } }}>
         <Box className="auto-container">
-          {projectsData.map((service, index) => (
+          {currentProjects.map((service, index) => (
             <Box
               key={index}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              onClick={() => {
-                if (service.link?.startsWith('http')) {
-                  window.open(service.link, '_blank'); // ✅ external links
-                } else {
-                  navigate(service.link || '/'); // ✅ internal links
-                }
-              }}
+              // onClick={() => {
+              //   if (service.link?.startsWith('http')) {
+              //     window.open(service.link, '_blank');
+              //   } else {
+              //     navigate(service.link || '/');
+              //   }
+              // }}
               sx={{
                 position: 'relative',
                 border: '2px solid #1c1f26',
@@ -56,12 +70,14 @@ const AllProjectsMerged: React.FC = () => {
               <Grid
                 container
                 spacing={4}
-                direction={service.isReverse ? 'row-reverse' : 'row'}
+                direction={index % 2 === 0 ? 'row-reverse' : 'row'}
                 alignItems="flex-start"
               >
                 {/* IMAGE SECTION */}
                 <Grid item lg={5}>
                   <Box
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    onMouseLeave={() => setHoveredIndex(null)}
                     sx={{
                       position: 'relative',
                       mb: '30px',
@@ -69,9 +85,7 @@ const AllProjectsMerged: React.FC = () => {
                       overflow: 'hidden',
                     }}
                   >
-                    {/* <img src={service.image} alt="" width="100%" /> */}
                     <ImageReveal
-
                       src={service.image}
                       alt="Best Real Estate Mentor in Hyderabad"
                       width="auto"
@@ -79,12 +93,7 @@ const AllProjectsMerged: React.FC = () => {
                       threshold={0.8}
                       scaleDuration={3}
                       sx={{
-
-                        width: { xs: "300px", md: 'auto' }
-                        // transition: 'transform 0.3s ease',
-                        // '&:hover': {
-                        //   transform: 'scale(1.1)', // Hover zoom effect
-                        // },
+                        width: { xs: '300px', md: 'auto' },
                       }}
                     />
                     <Box
@@ -132,17 +141,14 @@ const AllProjectsMerged: React.FC = () => {
                     sx={{
                       position: 'relative',
                       py: { xs: 0, md: 4 },
-                      //   pl: service.isReverse ? 3 : 12.5,
-                      //   pr: service.isReverse ? 12.5 : 3,
                       pl: {
                         xs: 0,
-                        md: service.isReverse ? 3 : 12.5,
+                        md: index % 2 === 0 ? 3 : 12.5,
                       },
                       pr: {
                         xs: 0,
-                        md: service.isReverse ? 12.5 : 3,
+                        md: index % 2 === 0 ? 12.5 : 3,
                       },
-
                       display: 'flex',
                       justifyContent: 'flex-start',
                       alignItems: 'flex-start',
@@ -153,8 +159,8 @@ const AllProjectsMerged: React.FC = () => {
                     <Box
                       sx={{
                         position: {
-                          xs: 'relative', // Mobile: behave like block
-                          md: 'absolute', // Desktop: position over content
+                          xs: 'relative',
+                          md: 'absolute',
                         },
                         top: {
                           xs: 'auto',
@@ -163,7 +169,7 @@ const AllProjectsMerged: React.FC = () => {
                         width: 200,
                         height: 60,
                         mt: {
-                          xs: 2, // Margin on mobile to push it below image
+                          xs: 2,
                           md: 0,
                         },
                         lineHeight: '100px',
@@ -179,11 +185,11 @@ const AllProjectsMerged: React.FC = () => {
                         justifyContent: 'center',
                         left: {
                           xs: 'auto',
-                          sm: service.isReverse ? 0 : 'auto',
+                          sm: index % 2 === 0 ? 0 : 'auto',
                         },
                         right: {
                           xs: 'auto',
-                          sm: service.isReverse ? 'auto' : 0,
+                          sm: index % 2 === 0 ? 'auto' : 0,
                         },
                       }}
                     >
@@ -204,8 +210,8 @@ const AllProjectsMerged: React.FC = () => {
                         color: 'primary.main',
                         width: 'max-content',
                         fontWeight: 700,
-                        left: service.isReverse ? 'auto' : '-18px',
-                        right: service.isReverse ? '-200px' : 'auto',
+                        left: index % 2 === 0 ? 'auto' : '-18px',
+                        right: index % 2 === 0 ? '-200px' : 'auto',
                         display: {
                           xs: 'none',
                           sm: 'block',
@@ -224,13 +230,6 @@ const AllProjectsMerged: React.FC = () => {
                       </SmoothWaveText>
                     </Typography>
 
-                    {/* <Typography
-                      variant="body2"
-                      sx={{ mb: 3, mr: 6, textAlign: 'start', fontWeight: 600 }}
-                    >
-                      {service.description}
-                    </Typography> */}
-
                     <Grid container spacing={2} sx={{ mt: 2 }}>
                       {service.bhk && (
                         <Grid item xs={12} sm={6} md={6}>
@@ -246,8 +245,8 @@ const AllProjectsMerged: React.FC = () => {
                         <Grid item xs={12} sm={6} md={6}
                           sx={{
                             display: {
-                              xs: 'block',  // visible on mobile
-                              md: 'none',   // hidden on desktop
+                              xs: 'block',
+                              md: 'none',
                             },
                           }}
                         >
@@ -261,11 +260,7 @@ const AllProjectsMerged: React.FC = () => {
                       )}
 
                       {service.location && (
-                        <Grid item xs={12} sm={6} md={6}
-                          sx={{
-
-                          }}
-                        >
+                        <Grid item xs={12} sm={6} md={6}>
                           <Box sx={{ display: 'flex', gap: 1, justifyContent: 'start' }}>
                             <Box sx={{ fontWeight: 700, color: 'primary.main', fontSize: '16px' }}>
                               Location:
@@ -275,13 +270,13 @@ const AllProjectsMerged: React.FC = () => {
                         </Grid>
                       )}
 
-                      {service.developer && (
-                        <Grid item xs={12} sm={6} md={6}>
+                      {service.units && (
+                        <Grid item xs={12} sm={6} md={6}> 
                           <Box sx={{ display: 'flex', gap: 1, justifyContent: 'start' }}>
                             <Box sx={{ fontWeight: 700, color: 'primary.main', fontSize: '16px' }}>
-                              Developer:
+                              No Of Units:
                             </Box>
-                            <Typography variant="body2" sx={{ textAlign: 'start' }}>{service.developer}</Typography>
+                            <Typography variant="body2" sx={{ textAlign: 'start' }}>{service.units}</Typography>
                           </Box>
                         </Grid>
                       )}
@@ -297,16 +292,10 @@ const AllProjectsMerged: React.FC = () => {
                       )}
                     </Grid>
 
-
-
-                    <Box>
-
-                    </Box>
-                    {/* Highlights */}
                     {service.highlights && (
                       <List dense sx={{ mt: 2, pl: 0 }}>
-                        <Typography variant='h6' sx={{ color: 'primary.main' ,textAlign:'start'}}>
-                        USP's
+                        <Typography variant='h6' sx={{ color: 'primary.main', textAlign: 'start' }}>
+                          Unique Features
                         </Typography>
                         {service.highlights.map((point, i) => (
                           <ListItem key={i} disableGutters>
@@ -322,34 +311,30 @@ const AllProjectsMerged: React.FC = () => {
                     <Box
                       sx={{
                         display: 'flex',
-                        // justifyContent: 'flex-end',
                         gap: 2,
                         width: '100%',
                         mt: 3,
                         alignItems: 'center'
                       }}
                     >
-
-                      {/* CTA Button */}
-                      <SpotlightButton
-                        background="linear-gradient(to right, #fff, #fff)"
-                        textColor="#fff"
-                        spotlightColor="linear-gradient(to right, #000, #000)"
-                        innerBackground="#0f63a5"
-                        activeTextColor="#fff"
+                      <Box
                         sx={{
                           display: 'flex',
                           alignItems: 'center',
-                          justifyContent: 'flex-start',
+                          cursor: 'pointer',
+                          color: 'primary.main',
+                          fontWeight: 700,
+                          fontSize: 16,
+                          gap: 1,
                         }}
                         onClick={() => {
-                          const event = window.event as MouseEvent;
-                          event?.stopPropagation();
-                          navigate('/');
+                          const message = encodeURIComponent(`Hi, I'm interested in ${service.title}`);
+                          window.open(`https://wa.me/+919885420885?text=${message}`, '_blank');
                         }}
                       >
-                        Know More
-                      </SpotlightButton>
+                        Talk to Advisor
+                        <ArrowForwardIcon className="talk-to-advisor-icon" />
+                      </Box>
                       <Box
                         component="img"
                         src={Homeimages.whatsapp}
@@ -369,13 +354,22 @@ const AllProjectsMerged: React.FC = () => {
                           },
                         }}
                       />
-
                     </Box>
                   </Box>
                 </Grid>
               </Grid>
             </Box>
           ))}
+        </Box>
+
+        {/* PAGINATION */}
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+          <Pagination
+            count={totalPages}
+            page={currentPage}
+            onChange={handlePageChange}
+            color="primary"
+          />
         </Box>
       </Box>
     </Container>

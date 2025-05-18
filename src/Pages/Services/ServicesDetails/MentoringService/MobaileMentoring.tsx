@@ -55,7 +55,7 @@ const workshops: Workshop[] = [
         paragraph: [
             {
                 title: "Duration:",
-                discription: "A focused 4-hour workshop designed to deliver maximum impact in a short time."
+                discription: "A focused 2-hour workshop designed to deliver maximum impact in a short time."
             },
             {
                 title: "Ideal For:",
@@ -124,7 +124,7 @@ const workshops: Workshop[] = [
         subtitle: 'Who can apply:',
         description: (
             <>
-                <b style={{color:'#0f63a5'}}>Top-tier agents </b>and<b style={{color:'#0f63a5'}}>real estate professionals</b>  aiming to break into the ultra-luxury segment dealing with ₹10 Cr+ properties, NRI clientele, and iconic global listings.
+                <b style={{color:'#0f63a5'}}>Top-tier agents </b>and<b style={{color:'#0f63a5'}}> real estate professionals</b>  aiming to break into the ultra-luxury segment dealing with ₹10 Cr+ properties, NRI clientele, and iconic global listings.
             </>
         ),
         image:"https://dprstorage.b-cdn.net/RW/uberluxury.png",

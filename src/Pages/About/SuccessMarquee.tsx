@@ -22,9 +22,9 @@ const MarqueeContent = styled(Box)({
 
 const MarqueeText: React.FC = () => {
     const items = [
-        "3k+ success projects",
-        "2k+ happy clients",
-        "30+ team members",
+        "1000+ Individuals  Trained",
+        "2000+ happy clients",
+        " 1% Years Of Real Estate Experience",
     ];
 
     return (

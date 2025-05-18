@@ -17,7 +17,7 @@ const services: ServiceItem[] = [
     number: 'I',
     title: 'Mentoring',
     image: "https://dprstorage.b-cdn.net/RW/servsmall1.png",
-    Link: 'services/mentoring',
+    Link: 'services/real-estate-mentor',
   },
   {
     number: 'II',
