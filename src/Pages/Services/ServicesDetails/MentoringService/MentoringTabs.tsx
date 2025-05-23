@@ -416,9 +416,7 @@ const MentoringTabs: React.FC = () => {
 
                                     }}
                                 >
-                                    Contact Us
-
-
+                                   Talk to an Expert
                                 </SpotlightButton>
                             </Box>
                         </Grid>

@@ -47,7 +47,22 @@ import portfolioslider1 from './images//portfolio/portfolio1.jpg'
 import blogslider1 from './images/blog/blogslider.png'
 import bloguser from './images/blog/user.png'
 
+import magaliobanner from './images/projects/megaliobanner.png'
+import projectbannerbg from './images/projects/bannerbg.png'
+import gradientline from './images/projects/gardientline.png'
+import magaliologo from './images/projects/magaliologo.png'
+import projectaboutbg from './images/projects/projectaboutbg.png'
+import gal1 from './images/projects/g1.png'
+import gal2 from './images/projects/gal2.png'
+import gal3 from './images/projects/gal3.png'
+import gal4 from './images/projects/gal4.png'
+import gal5 from './images/projects/gal5.png'
 
+export {
+    magaliobanner,projectbannerbg,gradientline,magaliologo,projectaboutbg,
+    gal1,gal2,gal3,gal4,gal5
+}
+ 
 export{
     rwbrochure
 }

@@ -253,5 +253,170 @@ export const projectsData: ProjectData[] = [
     status: '',
 
   },
+  {
+    title: 'One Oak ',
+    image: "https://dprstorage.b-cdn.net/RW/projects/oneoak.png",
+    sqft: '4240.00 - 7800.00 sq.ft',
+    location: ' Manchirevula',
+    bhk: '3 / 4 BHK Villas',
+    rera: 'P02400004291',
+    units: '22 Units',
+    highlights: [
 
+    ],
+    status: '',
+
+  },
+  {
+    title: 'MSN ONE ',
+    image: "https://dprstorage.b-cdn.net/RW/projects/msnone.png",
+    sqft: '5250.00 - 7460.00 sq.ft',
+    location: ' Kokapet',
+    bhk: '4 BHK Uber Luxury',
+    rera: '',
+    units: '655 Units',
+    highlights: [
+
+    ],
+    status: '',
+
+  },
+
+  {
+    title: 'Haven RiverSide',
+    image: "https://dprstorage.b-cdn.net/RW/projects/haven.png",
+    sqft: '1269 - 4598 sq.ft',
+    location: ' TSPA Junction',
+    bhk: '4 BHK Uber Luxury',
+    rera: 'P02400004765',
+    units: '410 units',
+    highlights: [
+
+    ],
+    status: '',
+
+  },
+  {
+    title: ' bridge Epsilon',
+    image: "https://dprstorage.b-cdn.net/RW/projects/bridge.png",
+    sqft: '6105 - 6175 sq.ft',
+    location: ' Tukkuguda',
+    bhk: '4 BHK Villa',
+    rera: 'P02400009348',
+    units: '128 Unitss',
+    highlights: [
+
+    ],
+    status: '',
+
+  },
+  {
+    title: ' SREENIDHI',
+    image: "https://dprstorage.b-cdn.net/RW/projects/sreenidhi.png",
+    sqft: '4000.00 - 11,363.00 sq.ft',
+    location: ' Jubilee Hills',
+    bhk: 'Commercial Spaces',
+    rera: 'A02500003489',
+    units: '',
+    highlights: [
+      "Iconic address at Jubilee Hills’ hilltop",
+      "High-street frontage on Road No. 78",
+      "Grade-A workspaces with efficient floorplates",
+      "Exclusive entry for office zone with valet provision"
+    ],
+    status: '',
+
+  },
+
+  {
+    title: ' Northstar Allura',
+    image: "https://dprstorage.b-cdn.net/RW/projects/northstar.png",
+    sqft: '4019.00- 4910.00 sq.ft',
+    location: ' Kokapet,',
+    bhk: '4 BHK Luxury Villa ',
+    rera: 'P02400006130',
+    units: '54 Units',
+    highlights: [
+      "Innovative Concept - Each Villa with two road access",
+      "Surrounded by major MNCs and IT Companies",
+      "Imported Italian marble & bath fixtures",
+      "Fully-loaded clubhouse with an indoor badminton court, gym, party hall & swimming pool"
+
+    ],
+    status: '',
+
+  },
+  {
+    title: ' Nestmarkers',
+    image: "https://dprstorage.b-cdn.net/RW/projects/newmark.png",
+    sqft: '3140.00 - 10000.00 sq.ft',
+    location: ' Tukkuguda',
+    bhk: '4 BHK Luxury Villas',
+    rera: '',
+    units: '220 Units',
+    highlights: [
+      "Villas that are truly customizable, a first in Hyderabad",
+      "The property boasts a 450-acre oxygen factory, creating its own microclimate",
+      "Amenities include organic farming, pet grooming facilities, a barbecue area, a theme park, and a mini theatre"
+
+    ],
+    status: '',
+
+  },
+    {
+    title: ' ankura homes',
+    image: "https://dprstorage.b-cdn.net/RW/projects/konak.png",
+    sqft: '.00 - .00 sq.ft',
+    location: ' ',
+    bhk: '',
+    rera: 'P01100008925',
+    units: '104 Villas',
+    highlights: [
+  
+    ],
+    status: '',
+
+  },
+      {
+    title: 'SYLVANOR BY BLUEFIN',
+    image: "https://dprstorage.b-cdn.net/RW/projects/SYLVANOR.png",
+    sqft: '.00 - .00 sq.ft',
+    location: 'Mokila  ',
+    bhk: '',
+    rera: '',
+    units: '147 Villas',
+    highlights: [
+  
+    ],
+    status: '',
+
+  },
+  {
+    title: 'Som Boulevard ',
+    image: "https://dprstorage.b-cdn.net/RW/projects/SomBoulevard.png",
+    sqft: '2,700.00 - 4,275.00 sq.ft',
+    location: ' Mokila ',
+    bhk: '4BHK Dulpex luxury Villas',
+    rera: 'P02400003701',
+    units: '270 Villas',
+    highlights: [
+  
+    ],
+    status: '',
+
+  },
+  {
+    title: 'cascades ',
+    image: "https://dprstorage.b-cdn.net/RW/projects/cascades.png",
+    sqft: '2560.00 - 4825 .00 sq.ft',
+    location: 'Kokapet   ',
+    bhk: '3 / 4 BHK Villas',
+    rera: 'P02400009538',
+    units: '1199 Units',
+    highlights: [
+  
+    ],
+    status: '',
+
+  },
 ];

@@ -424,9 +424,7 @@ const WorkshopAccordionList: React.FC = () => {
 
                                     }}
                                 >
-                                    Contact Us
-
-
+                                    Talk to an Expert
                                 </SpotlightButton>
                         </AccordionDetails>
                     </Accordion>

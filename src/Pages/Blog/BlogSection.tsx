@@ -1,3 +1,4 @@
+// ...existing imports...
 import React, { useEffect, useState } from 'react';
 import { Box, Grid, Typography, Container, Pagination } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
@@ -14,7 +15,7 @@ interface Blog {
   date: string;
   image: string;
   source: 'static' | 'api';
-  slug: string;
+  slug?: string;
 }
 
 const slugify = (text: string): string =>
@@ -44,7 +45,6 @@ const BlogSection = () => {
         const res = await axios.get<{ blogs: any[] }>(
           'https://blog.dprprop.com/clients/6814779c33c366561f26aec9/blogs'
         );
-
         const apiBlogs: Blog[] = (res.data.blogs || []).map((b) => ({
           id: b._id,
           title: b.title,
@@ -55,9 +55,8 @@ const BlogSection = () => {
           }),
           image: `https://dprstorage.b-cdn.net${b.imageurl}`,
           source: 'api',
-          slug: slugify(b.title),
+          slug: b.slug, // <-- use the slug from API
         }));
-
         const combinedBlogs = [...apiBlogs, ...mapStaticBlogs()];
         setAllBlogs(combinedBlogs);
       } catch (err) {
@@ -65,7 +64,6 @@ const BlogSection = () => {
         setAllBlogs(mapStaticBlogs());
       }
     };
-
     fetchAPI();
   }, []);
 
@@ -75,14 +73,9 @@ const BlogSection = () => {
   return (
     <Box sx={{ color: '#000', pt: 6 }}>
       {/* Header & Marquee */}
-      <Box >
+      <Box>
         <Box sx={{ py: 4, overflow: 'hidden' }}>
-          <Container maxWidth="lg"
-            sx={{
-              borderTop: '1px solid #777777',
-
-            }}>
-
+          <Container maxWidth="lg" sx={{ borderTop: '1px solid #777777' }}>
             {/* Header */}
             <Box
               sx={{
@@ -90,8 +83,7 @@ const BlogSection = () => {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 my: 4,
-                pt: 2
-
+                pt: 2,
               }}
             >
               <SmoothWaveText
@@ -103,11 +95,10 @@ const BlogSection = () => {
                   fontSize: '14px',
                 }}
               >
-                                     // News blogs
+                // News blogs
               </SmoothWaveText>
-
               <SmoothWaveText
-                className='cursor-hover-target'
+                className="cursor-hover-target"
                 variant="subtitle2"
                 onClick={() => navigate('/blogs')}
                 sx={{
@@ -126,14 +117,13 @@ const BlogSection = () => {
               </SmoothWaveText>
             </Box>
           </Container>
-
           {/* Marquee */}
-          <Marquee gradient={false} speed={80} style={{ overflow: 'hidden', }}>
+          <Marquee gradient={false} speed={80} style={{ overflow: 'hidden' }}>
             {marqueeWords.map((word, index) => (
               <Typography
-                className='cursor-hover-target'
+                className="cursor-hover-target"
                 key={index}
-                variant='h2'
+                variant="h2"
                 component="span"
                 sx={{
                   fontSize: { xs: '40px', md: '90px' },
@@ -143,7 +133,7 @@ const BlogSection = () => {
                   textTransform: 'uppercase',
                   mx: 3,
                   whiteSpace: 'nowrap',
-                  fontWeight: 700
+                  fontWeight: 700,
                 }}
               >
                 {word}
@@ -152,24 +142,21 @@ const BlogSection = () => {
           </Marquee>
         </Box>
         <Container maxWidth="lg">
-          <Box
-            sx={{ borderTop: '1px solid #777777', }}>
-
-          </Box>
+          <Box sx={{ borderTop: '1px solid #777777' }}></Box>
         </Container>
       </Box>
-
       {/* Blog List */}
-      <Container maxWidth="xl" >
+      <Container maxWidth="xl">
         <Box sx={{ px: 5, pt: 5 }}>
-
           {currentBlogs.map((post, index) => {
             const isEven = index % 2 === 0;
             return (
               <Box
                 key={post.id}
                 onClick={() =>
-                  navigate(post.source === 'static' ? `/blog/${post.id}` : `/blogs/${post.slug}`)
+                  post.source === 'api'
+                    ? navigate(`/blogs/${post.slug}`)
+                    : navigate(`/blog/${post.id}`)
                 }
                 sx={{
                   cursor: 'pointer',
@@ -197,7 +184,12 @@ const BlogSection = () => {
                     </SmoothWaveText>
                     <Typography
                       variant="h6"
-                      sx={{ color: 'primary.main', fontWeight: 700, display: 'flex', alignItems: 'center' }}
+                      sx={{
+                        color: 'primary.main',
+                        fontWeight: 700,
+                        display: 'flex',
+                        alignItems: 'center',
+                      }}
                     >
                       Read the story <EastIcon sx={{ fontSize: '1rem', ml: 1 }} />
                     </Typography>
@@ -216,7 +208,6 @@ const BlogSection = () => {
               </Box>
             );
           })}
-
           {/* MUI Pagination */}
           <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 4 }}>
             <Pagination

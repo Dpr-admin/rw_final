@@ -18,6 +18,7 @@ import Blog from "../Pages/Blog";
 import AllBlogDetails from "../Pages/Blog/BlogDetails/AllBlogDetails";
 import Contactus from "../Pages/Contactus";
 import Faqs from "../Pages/Faqs";
+import ProjectDetails from "../Pages/Services/ServicesDetails/SalesServices/ProjectDetails";
 
 
 
@@ -101,6 +102,10 @@ const router = createBrowserRouter([
     path: "*", // Catch-all route for 404 Not Found
     element: <NotFound />,
   },
+  {
+        path: "/megalio",
+        element: <ProjectDetails/>,
+      },
 ]);
 
 

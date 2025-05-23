@@ -83,8 +83,7 @@ const Footer = () => {
             {/* Left Info Section */}
             <Grid item xs={12} md={6} px={4} py={6} >
               <Typography variant="body1" sx={{ color: 'white', textDecoration: 'underline', textAlign: 'start' }}>
-                Feel free to reach out to me.
-                I'm always open to discuss new projects
+                Reach out to discuss your next project
               </Typography>
 
               <Box mt={4} sx={{ display: 'flex', alignItems: 'start', justifyContent: 'start', flexDirection: 'column' }}>

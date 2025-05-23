@@ -24,7 +24,7 @@ const MarqueeText: React.FC = () => {
     const items = [
         "1000+ Individuals  Trained",
         "2000+ happy clients",
-        " 1% Years Of Real Estate Experience",
+        " 15 Years Of Real Estate Experience",
     ];
 
     return (
